@@ -1,0 +1,33 @@
+# Isolated BCM43602 D0 retention candidate
+
+Prepared from Ubuntu trial source plus only upstream 0682 at PR 596 commit
+`1aac35af814bc9b3e0fa7669cdb9e42ebf277795`. Zero-fuzz reproduction matches the
+existing candidate exactly, and the remaining C/header/build sources match the
+trial baseline. Patches 0680/0681, firmware, NVRAM and manager settings are excluded.
+
+Only PCI 14e4:43ba with subsystem 106b:0173 saves state after successful driver
+D3 preparation. On this kernel that state_saved flag prevents the PCI core's
+ordinary prepare-to-sleep power transition. This is not proof that Apple firmware
+or an upstream bridge will preserve the device throughout S3.
+
+The exact model/IDs match this host. External evidence is primarily s2idle;
+the newer PR report still has S3 Wi-Fi re-probe and Thunderbolt warnings. No
+local suspend test is authorized by candidate preparation. Do not switch to
+s2idle or repeat any consumed test to validate it automatically.
+
+Build/package only: `python3 experiments/kernel-42/analysis/package-resume-drivers.py wifi`.
+The signed DEB is `mbp143-wifi-d0-7.0.14-mbp14342p1` 0.1-1. It contains only
+brcmfmac.ko, an exact-kernel override, docs and module-index/initramfs hooks.
+Unchanged vendor helpers are not shipped: their exported-symbol ABI is checked
+against target headers. Keep the original module and existing credentials.
+
+The package is uninstalled and unloaded. Before future installation, back up
+the selected module/initramfs and inspect the one-package APT plan; verify both
+selection and regenerated initramfs. Use a normal reboot, never a live Wi-Fi
+unload. Rollback would remove only the new package and verify original selection/
+initramfs before reboot. Preserve the official fallback, working NVRAM/firmware,
+all consumed guards and the permanent sleep block.
+
+Normal boot requires association and interface-bound traffic verification.
+Actual S3, sustained post-resume traffic and power/thermal effects remain
+unverified. Do not bundle with the audio or T1 experiments for attribution.

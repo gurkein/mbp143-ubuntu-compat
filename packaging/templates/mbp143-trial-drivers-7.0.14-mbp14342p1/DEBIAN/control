@@ -1,0 +1,11 @@
+Package: mbp143-trial-drivers-7.0.14-mbp14342p1
+Version: 7.0.0-42.42+mbp143.1
+Architecture: amd64
+Maintainer: Local MacBook Trial Builder <builder@localhost>
+Section: kernel
+Priority: optional
+Depends: linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1), kmod, linux-initramfs-tool
+Description: MacBookPro14,3 audio and Touch Bar drivers for one trial kernel
+ Prebuilt, locally signed CS8409, iBridge and Touch Bar modules scoped only
+ to 7.0.14-mbp14342p1. Existing DKMS packages are left in place. These binaries must
+ be rebuilt when the trial kernel changes.

@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""Deploy the signed repeat pair and its policy; never live-reload or request PM."""
+from pathlib import Path
+import argparse
+import datetime
+import hashlib
+import importlib.util
+import json
+import os
+import shutil
+import subprocess
+
+ROOT=next(p for p in Path(__file__).resolve().parents if (p/'AGENTS.md').exists())
+BASE=ROOT/'experiments/kernel-42/candidates'
+KVER='7.0.14-mbp14342p1'
+OLD=json.loads((BASE/'t1-s3-ordered/package/package-validation.json').read_text())
+NEW=json.loads((BASE/'t1-s3-repeat/package/package-validation.json').read_text())
+ENTRY='mbp14342p1-s3-repeat-user-trial'
+SCRIPT=Path('/etc/grub.d/47_mbp143_s3_repeat_user_trial')
+CFG=Path('/boot/grub/grub.cfg');ENV=Path('/boot/grub/grubenv')
+MANIFEST=Path('/usr/local/share/mbp143-suspend-trial/modules.json')
+CHECK=Path('/usr/local/libexec/mbp143-suspend-trial-check')
+TARGETS=[CFG,ENV,SCRIPT,MANIFEST,CHECK]
+INITRD=Path('/boot/initrd.img-'+KVER)
+BACKUPS=Path('/var/backups/mbp143-t1-s3-repeat')
+
+def get(args):return subprocess.check_output([str(x) for x in args],text=True).strip()
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def env():return dict(l.split('=',1) for l in get(['grub-editenv',ENV,'list']).splitlines() if '=' in l)
+def write(p,s,mode=0o644):
+    p.parent.mkdir(parents=True,exist_ok=True,mode=0o755);p.write_text(s);p.chmod(mode)
+
+def logged(backup,args,allowed=(0,)):
+    p=subprocess.run([str(x) for x in args],capture_output=True,text=True)
+    with (backup/'commands.log').open('a') as f:f.write(p.stdout+p.stderr)
+    assert p.returncode in allowed,'Command failed; see private backup log'
+    return p
+
+def restore(backup):
+    # Package selection and old image are restored together. Loaded modules
+    # remain untouched; a planned reboot is required after a future downgrade.
+    logged(backup,['apt-get','-y','--allow-downgrades','--no-remove','--no-install-recommends',
+                   'install',backup/Path(OLD['deb']).name])
+    saved=json.loads((backup/'targets.json').read_text())
+    for i,p in enumerate(TARGETS):
+        if saved[str(p)]:shutil.copy2(backup/('config-'+str(i)),p)
+        elif p.exists():p.unlink()
+    shutil.copy2(backup/INITRD.name,INITRD)
+    logged(backup,['systemctl','daemon-reload'])
+    assert get(['dpkg-query','-W','-f=${Version}',OLD['package']])=='0.4-1'
+    for name,r in OLD['modules'].items():assert sha(get(['modinfo','-n',name]))==r['sha256']
+
+def install():
+    assert get(['uname','-r'])==KVER and not get(['dpkg','--audit'])
+    assert get(['dpkg-query','-W','-f=${db:Status-Status} ${Version}',NEW['package']])=='installed 0.4-1'
+    assert sha(ROOT/NEW['deb'])==NEW['deb_sha256'] and sha(ROOT/OLD['deb'])==OLD['deb_sha256']
+    assert not SCRIPT.exists()
+    e=env();assert e.get('saved_entry')=='mbp14342p1-s3-user-trial' and not e.get('next_entry')
+    assert not e.get('mbp143_t1_v04_s3_once') and not e.get('mbp143_paired_resume_v01_s3_once')
+    assert not Path('/run/mbp143-suspend-trial-runtime.json').exists()
+    assert not Path('/run/mbp143-suspend-trial-failed.json').exists()
+    assert Path('/sys/module/apple_ibridge/parameters/skip_acpi_power').read_text().strip()=='1'
+    before=CFG.read_text()
+    spec=importlib.util.spec_from_file_location('policy',ROOT/'scripts/power/configure-mbp143-s3-trial.py')
+    policy=importlib.util.module_from_spec(spec);spec.loader.exec_module(policy)
+    m=policy.boot_helpers();base=m.stanza(before,policy.BASE)
+    payload=policy.persistent_stanza(base).replace(policy.ENTRY,ENTRY).replace(policy.OPTION,'apple_ibridge.s3_notify_repeat=1').replace(
+        'Ubuntu native PME + S3 user trial (one cycle per boot)','Ubuntu native PME + repeated S3 user trial')
+    assert payload.count('s3_notify_repeat=1')==1 and 's3_notify_once' not in payload
+    files=list((ROOT/'state/kernel-42').glob('*.json'))+[Path('/etc/systemd/sleep.conf.d/99-mbp143-disable-suspend.conf'),
+        Path('/etc/systemd/system/systemd-suspend.service.d/50-mbp143-user-trial.conf')]
+    files+=list(Path('/etc/grub.d').glob('4[3456]_mbp143*'))
+    for name in ['snd-hda-codec-cs8409','brcmfmac','brcmfmac-wcc','brcmfmac-cyw','brcmfmac-bca','brcmutil']:
+        files.append(Path(get(['modinfo','-n',name])))
+    for folder in ['updates/mbp143-trial','updates/mbp143-t1-mode-result']:
+        files+=list((Path('/lib/modules')/KVER/folder).glob('apple-*.ko'))
+    for name in OLD['modules']:
+        files.append(Path(get(['modinfo','-k','7.0.0-42-generic','-n',name])))
+        assert sha(get(['modinfo','-n',name]))==OLD['modules'][name]['sha256']
+        assert (Path('/sys/module')/name.replace('-','_')/'srcversion').read_text().strip()==OLD['modules'][name]['srcversion']
+    preserved={str(p):sha(p) for p in files}
+    assert 'AllowSuspend=yes' in Path('/etc/systemd/sleep.conf.d/99-mbp143-disable-suspend.conf').read_text()
+    now=datetime.datetime.now().astimezone();backup=BACKUPS/now.strftime('%Y%m%d-%H%M%S')
+    backup.mkdir(parents=True,mode=0o700);backup.chmod(0o700)
+    for i,p in enumerate(TARGETS):
+        if p.exists():shutil.copy2(p,backup/('config-'+str(i)))
+    (backup/'targets.json').write_text(json.dumps({str(p):p.exists() for p in TARGETS},indent=2)+'\n')
+    shutil.copy2(ROOT/OLD['deb'],backup/Path(OLD['deb']).name);shutil.copy2(INITRD,backup/INITRD.name)
+    (backup/'preserved.json').write_text(json.dumps(preserved,indent=2)+'\n')
+    loaded={name:(Path('/sys/module')/name.replace('-','_')/'srcversion').read_text().strip() for name in OLD['modules']}
+    for name in OLD['modules']:shutil.copy2(get(['modinfo','-n',name]),backup/('prior-'+name+'.ko'))
+    try:
+        plan=logged(backup,['apt-get','-s','--no-remove','--no-install-recommends','install',ROOT/NEW['deb']]).stdout
+        assert [l.split()[1] for l in plan.splitlines() if l.startswith('Inst ')]==[NEW['package']]
+        assert not any(l.startswith('Remv ') for l in plan.splitlines())
+        logged(backup,['apt-get','-y','--no-remove','--no-install-recommends','install',ROOT/NEW['deb']])
+        assert get(['dpkg-query','-W','-f=${db:Status-Status} ${Version}',NEW['package']])=='installed 0.5-1'
+        assert not get(['dpkg','--audit'])
+        unpacked=backup/'initramfs-verification';logged(backup,['unmkinitramfs',INITRD,unpacked])
+        for name,r in NEW['modules'].items():
+            path=Path(get(['modinfo','-n',name]));assert sha(path)==r['sha256']
+            assert get(['modinfo','-F','sig_key',path])==get(['modinfo','-F','sig_key',backup/('prior-'+name+'.ko')])
+            copies=list(unpacked.rglob(path.name));assert copies and all(sha(p)==r['sha256'] for p in copies)
+            assert (Path('/sys/module')/name.replace('-','_')/'srcversion').read_text().strip()==loaded[name]
+        for name in ['snd-hda-codec-cs8409','brcmfmac','brcmfmac-wcc','brcmfmac-cyw','brcmfmac-bca','brcmutil']:
+            path=Path(get(['modinfo','-n',name]));copies=list(unpacked.rglob(path.name));assert copies and all(sha(p)==sha(path) for p in copies),name
+        deps=list(unpacked.rglob('modules.dep'));assert deps
+        assert any('updates/mbp143-t1-phase-trace/apple-ibridge.ko' in line for p in deps for line in p.read_text().splitlines()
+                   if line.startswith('updates/mbp143-t1-phase-trace/apple-touchbar.ko:'))
+        manifest=json.loads(MANIFEST.read_text());manifest['profile']='repeat'
+        for name,r in NEW['modules'].items():
+            manifest['modules'][name]={'sha256':r['sha256'],'srcversion':r['srcversion'],'path':get(['modinfo','-n',name])}
+        write(MANIFEST,json.dumps(manifest,indent=2)+'\n')
+        write(CHECK,(ROOT/'scripts/power/mbp143-suspend-trial-check.py').read_text(),0o755)
+        write(SCRIPT,payload,0o755);logged(backup,['grub-script-check',SCRIPT]);logged(backup,['update-grub']);logged(backup,['grub-script-check',CFG])
+        after=CFG.read_text();assert m.stanza(after,policy.BASE)==base and '7.0.0-42-generic' in after
+        assert after.count('apple_ibridge.s3_notify_repeat=1')==1
+        assert after.count('apple_ibridge.s3_notify_once=1')==before.count('apple_ibridge.s3_notify_once=1')
+        assert 'mbp14342p1-s3-user-trial' in after
+        logged(backup,['systemctl','daemon-reload']);logged(backup,['systemd-analyze','verify','systemd-suspend.service'])
+        logged(backup,['grub-set-default',ENTRY]);e=env()
+        assert e.get('saved_entry')==ENTRY and not e.get('next_entry')
+        assert not e.get('mbp143_t1_v04_s3_once') and not e.get('mbp143_paired_resume_v01_s3_once')
+        assert all(sha(p)==v for p,v in preserved.items())
+        check=logged(backup,[CHECK],allowed=(1,));assert 'module_matches check failed' in check.stderr
+        verification=json.loads(logged(backup,['python3',ROOT/'experiments/kernel-42/analysis/verify-t1-s3-repeat.py']).stdout)
+        assert verification['activation'].startswith('pending one normal activation reboot')
+    except BaseException:
+        restore(backup)
+        raise
+    result={'completed_at':datetime.datetime.now().astimezone().isoformat(),'package':NEW['package'],'old_version':'0.4-1','installed_version':'0.5-1',
+        'activation':'pending one activation reboot; both old 0.4 sources remain loaded','new_default':ENTRY,
+        'boot_option':'apple_ibridge.s3_notify_repeat=1; once option absent from this entry',
+        'signed_modules_initramfs_and_peer_dependency_verified':True,'audio_WiFi_vendor_helpers_in_image_verified':True,
+        'policy_profile':'repeat; rejects loaded/selected mismatch until activation','systemd_failure_latch':'boot-local; no old guard reset',
+        'old_20_state_reports_and_unrelated_modules_unchanged':True,'old_boot_entries_flags_and_fallbacks_preserved':True,
+        'hardware_repeatability':'not verified yet; offline five-cycle and failure tests passed',
+        'backup':str(backup),'rollback_DEB':str(backup/Path(OLD['deb']).name),'reboot_queued':False,'suspend_performed':False}
+    (backup/'installed-sha256.json').write_text(json.dumps({str(p):sha(p) for p in TARGETS},indent=2)+'\n')
+    out=ROOT/'results'/now.strftime('%Y-%m-%d')/(now.strftime('%H%M%S')+'-T1-repeat-install');out.mkdir(exist_ok=False)
+    for name,data in [('installation.json',result),('activation.json',verification)]:
+        p=out/name;p.write_text(json.dumps(data,indent=2)+'\n');os.chown(p,1000,1000);p.chmod(0o644)
+    os.chown(out,1000,1000);out.chmod(0o755)
+    print(json.dumps({'report':str(out.relative_to(ROOT)),**result},indent=2))
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);group=parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--install',action='store_true');group.add_argument('--rollback',type=Path);args=parser.parse_args()
+    assert os.geteuid()==0;os.umask(0o077)
+    if args.rollback:
+        backup=args.rollback.resolve();assert backup.parent==BACKUPS
+        installed=json.loads((backup/'installed-sha256.json').read_text())
+        assert all(sha(p)==v for p,v in installed.items() if Path(p)!=ENV)
+        assert env().get('saved_entry')==ENTRY and not env().get('next_entry')
+        restore(backup);print('Signed 0.4 and prior one-cycle policy restored; reboot required, no live reload or PM operation.')
+    else:install()
+
+if __name__=='__main__':main()

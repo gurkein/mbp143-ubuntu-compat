@@ -1,0 +1,13 @@
+{
+  "drivers/acpi/pci_root.c": "99f383361f4ddce02f9c20cb4c02a62f60ee4bdd955455761d01cfe76008cffa",
+  "drivers/pci/pci.c": "2bcbd88484a94b97f522f7cf5481facaecdf0cc2cd3c5e66bb448d2ca280c31d",
+  "drivers/thunderbolt/tb.h": "3bb9f136566cb5f07fed54d0a98dcbf8fd83947c74a8b9ce3d969cd1490771e5",
+  "drivers/thunderbolt/switch.c": "5d1fe1b8c6b5d29a10f2af29b23aceae6dbbb4a903d7c6a1415c24961f55409b",
+  "drivers/thunderbolt/acpi.c": "140d30492986685a5e6ea9369c60b79a2ca909b47ae6c61c93135e102af04df0",
+  "drivers/thunderbolt/tb_regs.h": "b8bcf8d4ec6a73bd54f7adb41fd1c6b7f32f4e22a36dc61248ec1e07aeda256d",
+  "drivers/thunderbolt/nhi.h": "556d511a5dcc3f11c83eded7f3f172a44737b61aba3b1a9ad42539db4c292336",
+  "drivers/thunderbolt/nhi.c": "b67420da5e6c12289ca6e464591ea16c50d2efacbcdbe3071011ea1af157e69d",
+  "drivers/thunderbolt/domain.c": "bdef8350f92b99f3d80465a877b0afe99d66af8a695dfd0adefd5ca4a1b5a24e",
+  "drivers/gpu/drm/amd/amdgpu/vi.c": "d4b95ae8108b33f13862ff30cae199048d776cd3fe760563a30eec565a0c98fd",
+  "drivers/acpi/acpica/hwpci.c": "07a5ec259623d867c86a769da1d57888ec5908deaf959779f87bc922f56f79d0"
+}

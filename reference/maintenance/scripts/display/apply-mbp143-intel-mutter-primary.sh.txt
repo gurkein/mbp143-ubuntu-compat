@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+rule=/etc/udev/rules.d/61-mbp143-mutter-primary-gpu.rules
+backup=/var/backups/mbp143-intel-display-menu/61-mbp143-mutter-primary-gpu.rules.pre-install
+
+if [[ $EUID -ne 0 ]]; then
+  echo "Run this script with sudo." >&2
+  exit 1
+fi
+
+case ${1:-install} in
+  external)
+    external_backup=/var/backups/mbp143-intel-display-menu/61-mbp143-mutter-primary-gpu.rules.before-external
+    install -d -m 0700 "$(dirname "$external_backup")"
+    if [[ -e $rule && ! -e $external_backup ]]; then
+      cp -a "$rule" "$external_backup"
+    fi
+    cat >"$rule" <<'RULE'
+# Keep Intel as Mutter's primary GPU, but allow Radeon-driven external displays.
+SUBSYSTEM=="drm", ENV{DEVTYPE}=="drm_minor", ENV{DEVNAME}=="/dev/dri/card[0-9]", SUBSYSTEMS=="pci", ATTRS{vendor}=="0x8086", ATTRS{device}=="0x591b", TAG+="mutter-device-preferred-primary"
+# Remove the old ignore tag from the live udev database as well as future events.
+SUBSYSTEM=="drm", ENV{DEVTYPE}=="drm_minor", ENV{DEVNAME}=="/dev/dri/card[0-9]", SUBSYSTEMS=="pci", ATTRS{vendor}=="0x1002", ATTRS{device}=="0x67ef", TAG-="mutter-device-ignore"
+RULE
+    chmod 0644 "$rule"
+    udevadm control --reload
+    udevadm trigger --subsystem-match=drm --sysname-match='card[0-9]'
+    udevadm settle
+    echo "Intel remains preferred; Radeon is available to Mutter. An existing GNOME session may need a new login."
+    ;;
+  rollback-external)
+    external_backup=/var/backups/mbp143-intel-display-menu/61-mbp143-mutter-primary-gpu.rules.before-external
+    test -f "$external_backup"
+    cp -a "$external_backup" "$rule"
+    udevadm control --reload
+    udevadm trigger --subsystem-match=drm --sysname-match='card[0-9]'
+    udevadm settle
+    echo "Restored the rule saved before external-display support. A new GNOME login may be needed."
+    ;;
+  install)
+    install -d -m 0700 "$(dirname "$backup")"
+    if [[ -e $rule && ! -e $backup ]]; then
+      cp -a "$rule" "$backup"
+    fi
+    cat >"$rule" <<'RULE'
+# MacBookPro14,3: gmux can leave the inactive Radeon eDP connector visible.
+# Prefer the Intel HD 630 as Mutter's compositor GPU in Intel-first mode.
+SUBSYSTEM=="drm", ENV{DEVTYPE}=="drm_minor", ENV{DEVNAME}=="/dev/dri/card[0-9]", SUBSYSTEMS=="pci", ATTRS{vendor}=="0x8086", ATTRS{device}=="0x591b", TAG+="mutter-device-preferred-primary"
+# Do not let Mutter open the Radeon KMS device when firmware selected Intel.
+# The amdgpu render node remains available for DRI_PRIME application offload.
+SUBSYSTEM=="drm", ENV{DEVTYPE}=="drm_minor", ENV{DEVNAME}=="/dev/dri/card[0-9]", SUBSYSTEMS=="pci", ATTRS{vendor}=="0x1002", ATTRS{device}=="0x67ef", ATTRS{boot_vga}=="0", TAG+="mutter-device-ignore"
+RULE
+    chmod 0644 "$rule"
+    udevadm control --reload
+    udevadm trigger --subsystem-match=drm
+    echo "Intel is tagged as Mutter's preferred primary GPU. Reboot to apply it to GNOME."
+    ;;
+  rollback)
+    rm -f "$rule"
+    if [[ -e $backup ]]; then
+      cp -a "$backup" "$rule"
+    fi
+    udevadm control --reload
+    udevadm trigger --subsystem-match=drm
+    echo "Mutter primary-GPU preference removed. Reboot to apply the change."
+    ;;
+  *)
+    echo "Usage: sudo $0 [install|rollback|external|rollback-external]" >&2
+    exit 2
+    ;;
+esac

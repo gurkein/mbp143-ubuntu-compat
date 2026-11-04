@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+firmware_file=/lib/firmware/brcm/brcmfmac43602-pcie.txt
+backup_dir=/var/backups/mbp143-wifi-address-fix
+wifi_if=wlp3s0
+
+if [[ $EUID -ne 0 ]]; then
+  echo "Run this script with sudo." >&2
+  exit 1
+fi
+
+if [[ ! -f $firmware_file ]]; then
+  echo "The installed BCM43602 NVRAM file was not found." >&2
+  exit 1
+fi
+
+if [[ ${1:-} == rollback ]]; then
+  if [[ ! -f $backup_dir/brcmfmac43602-pcie.txt.pre-address-fix ]]; then
+    echo "No address-fix backup is available." >&2
+    exit 1
+  fi
+  install -m 0644 "$backup_dir/brcmfmac43602-pcie.txt.pre-address-fix" "$firmware_file"
+  update-initramfs -u
+  echo "Previous Wi-Fi NVRAM restored. Reboot to apply it."
+  exit 0
+fi
+
+if [[ $# -ne 0 ]]; then
+  echo "Usage: $0 [rollback]" >&2
+  exit 1
+fi
+
+read -r -s -p "Enter the Wi-Fi address reported by macOS: " macos_mac
+echo
+read -r -s -p "Enter it again: " macos_mac_confirm
+echo
+
+macos_mac=${macos_mac,,}
+macos_mac_confirm=${macos_mac_confirm,,}
+if [[ $macos_mac != "$macos_mac_confirm" ]]; then
+  echo "The entries do not match; refusing to modify firmware." >&2
+  exit 1
+fi
+if [[ ! $macos_mac =~ ^([0-9a-f]{2}:){5}[0-9a-f]{2}$ ]]; then
+  echo "Invalid address format; refusing to modify firmware." >&2
+  exit 1
+fi
+first_octet=$((16#${macos_mac%%:*}))
+if (( (first_octet & 1) != 0 )); then
+  echo "A unicast address is required; refusing to modify firmware." >&2
+  exit 1
+fi
+
+install -d -m 0700 "$backup_dir"
+if [[ ! -f $backup_dir/brcmfmac43602-pcie.txt.pre-address-fix ]]; then
+  install -m 0600 "$firmware_file" "$backup_dir/brcmfmac43602-pcie.txt.pre-address-fix"
+fi
+
+temporary_file=$(mktemp)
+trap 'rm -f "$temporary_file"' EXIT
+sed "s/^macaddr=.*/macaddr=$macos_mac/" "$firmware_file" > "$temporary_file"
+if cmp -s "$temporary_file" "$firmware_file"; then
+  echo "The installed NVRAM already contains the supplied address."
+  exit 0
+fi
+install -m 0644 "$temporary_file" "$firmware_file"
+update-initramfs -u
+
+unset macos_mac macos_mac_confirm
+echo "The macOS Wi-Fi address was installed without displaying it."
+echo "Reboot normally to load it; do not reload brcmfmac in the running desktop."

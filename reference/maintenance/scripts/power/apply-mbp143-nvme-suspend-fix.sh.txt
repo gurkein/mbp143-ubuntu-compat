@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+helper=/usr/local/libexec/mbp143-nvme-no-d3cold
+unit=/etc/systemd/system/mbp143-nvme-no-d3cold.service
+backup_dir=/var/backups/mbp143-nvme-suspend-fix
+
+if [[ $EUID -ne 0 ]]; then
+  echo "Run this script with sudo." >&2
+  exit 1
+fi
+
+if [[ $(cat /sys/class/dmi/id/product_name) != MacBookPro14,3 ]]; then
+  echo "Refusing to run: this fix is only for MacBookPro14,3." >&2
+  exit 1
+fi
+
+case ${1:-install} in
+  install)
+    install -d -m 0700 "$backup_dir"
+    install -d -m 0755 "$(dirname "$helper")"
+    for path in "$helper" "$unit"; do
+      name=$(basename "$path")
+      if [[ -e $path && ! -e $backup_dir/$name.pre-fix ]]; then
+        cp -a "$path" "$backup_dir/$name.pre-fix"
+      fi
+    done
+
+    cat >"$helper" <<'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+
+dev=/sys/bus/pci/devices/0000:02:00.0
+
+[[ $(cat /sys/class/dmi/id/product_name) == MacBookPro14,3 ]] || exit 0
+[[ -d $dev ]] || { echo "Expected internal NVMe PCI device is absent" >&2; exit 1; }
+[[ $(cat "$dev/class") == 0x010802 ]] || { echo "PCI device is not an NVMe controller" >&2; exit 1; }
+[[ $(cat "$dev/vendor") == 0x144d && $(cat "$dev/device") == 0xa804 ]] || {
+  echo "Internal NVMe identity does not match the verified controller" >&2
+  exit 1
+}
+[[ $(basename "$(readlink -f "$dev/driver")") == nvme ]] || {
+  echo "Internal SSD is not bound to the nvme driver" >&2
+  exit 1
+}
+
+echo 0 >"$dev/d3cold_allowed"
+[[ $(cat "$dev/d3cold_allowed") == 0 ]]
+EOF
+    chmod 0755 "$helper"
+
+    cat >"$unit" <<EOF
+[Unit]
+Description=Disable D3cold for MacBookPro14,3 internal NVMe controller
+After=sysinit.target
+Before=sleep.target
+ConditionPathExists=/sys/bus/pci/devices/0000:02:00.0/d3cold_allowed
+
+[Service]
+Type=oneshot
+ExecStart=$helper
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+    chmod 0644 "$unit"
+    systemctl daemon-reload
+    systemctl enable --now mbp143-nvme-no-d3cold.service
+    systemctl is-active --quiet mbp143-nvme-no-d3cold.service
+    [[ $(cat /sys/bus/pci/devices/0000:02:00.0/d3cold_allowed) == 0 ]]
+    echo "Internal NVMe D3cold disabled and verified. Reboot persistence is enabled."
+    ;;
+  rollback)
+    systemctl disable --now mbp143-nvme-no-d3cold.service 2>/dev/null || true
+    if [[ -e $backup_dir/mbp143-nvme-no-d3cold.pre-fix ]]; then
+      cp -a "$backup_dir/mbp143-nvme-no-d3cold.pre-fix" "$helper"
+    else
+      rm -f "$helper"
+    fi
+    if [[ -e $backup_dir/mbp143-nvme-no-d3cold.service.pre-fix ]]; then
+      cp -a "$backup_dir/mbp143-nvme-no-d3cold.service.pre-fix" "$unit"
+    else
+      rm -f "$unit"
+    fi
+    systemctl daemon-reload
+    if [[ -e /sys/bus/pci/devices/0000:02:00.0/d3cold_allowed ]]; then
+      echo 1 >/sys/bus/pci/devices/0000:02:00.0/d3cold_allowed
+    fi
+    echo "NVMe D3cold override removed."
+    ;;
+  *)
+    echo "Usage: sudo $0 [install|rollback]" >&2
+    exit 2
+    ;;
+esac

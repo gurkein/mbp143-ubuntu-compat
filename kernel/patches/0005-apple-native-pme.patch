@@ -1,0 +1,15 @@
+Subject: [LOCAL BACKPORT] Apple native PME; same calculate_control change with concise comment
+Source: https://lore.landau.one/lkml/20260924132859.24751-1-fbeltranmillalen%40gmail.com/
+
+--- a/drivers/acpi/pci_root.c
++++ b/drivers/acpi/pci_root.c
+@@ -570,7 +570,8 @@
+ 	 * platform, so avoid calling _OSC at all
+ 	 */
+ 	if (x86_apple_machine) {
+-		root->osc_control_set = ~OSC_PCI_EXPRESS_PME_CONTROL;
++		/* Include native PME, using only features this kernel supports. */
++		root->osc_control_set = calculate_control();
+ 		decode_osc_control(root, "OS assumes control of",
+ 				   root->osc_control_set);
+ 		return;

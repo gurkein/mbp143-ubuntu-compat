@@ -1,0 +1,5 @@
+{
+  "seven_kernel_patches_zero_fuzz_exact_source_match": 11,
+  "t1_aggregate_patch_exact_source_match": true,
+  "audio_aggregate_patch_exact_source_match": true
+}

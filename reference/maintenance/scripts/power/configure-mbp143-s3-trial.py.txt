@@ -1,0 +1,213 @@
+#!/usr/bin/env python3
+"""Install or roll back the user-requested S3 default, without sleeping/rebooting."""
+from pathlib import Path
+import argparse
+import datetime
+import hashlib
+import importlib.util
+import json
+import os
+import shutil
+import subprocess
+
+ROOT = next(p for p in Path(__file__).resolve().parents if (p/'AGENTS.md').exists())
+BASE = 'mbp14342p1-native-pme'
+ENTRY = 'mbp14342p1-s3-user-trial'
+OPTION = 'apple_ibridge.s3_notify_once=1'
+SLEEP = Path('/etc/systemd/sleep.conf.d/99-mbp143-disable-suspend.conf')
+GRUB = Path('/boot/grub/grub.cfg')
+ENV = Path('/boot/grub/grubenv')
+SCRIPT = Path('/etc/grub.d/46_mbp143_s3_user_trial')
+CHECK = Path('/usr/local/libexec/mbp143-suspend-trial-check')
+MANIFEST = Path('/usr/local/share/mbp143-suspend-trial/modules.json')
+UNIT = Path('/etc/systemd/system/systemd-suspend.service.d/50-mbp143-user-trial.conf')
+TARGETS = [GRUB, ENV, SLEEP, SCRIPT, CHECK, MANIFEST, UNIT]
+BACKUPS = Path('/var/backups/mbp143-user-s3-trial')
+
+def sha(p):
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+def output(args):
+    return subprocess.check_output(args, text=True).strip()
+
+def write(path, content, mode=0o644):
+    path.parent.mkdir(parents=True, exist_ok=True, mode=0o755)
+    path.write_text(content)
+    path.chmod(mode)
+
+def boot_helpers():
+    path = ROOT/'experiments/kernel-42/analysis/prepare-paired-resume-s3-boot.py'
+    spec = importlib.util.spec_from_file_location('boot', path)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+def persistent_stanza(base):
+    m = boot_helpers()
+    # Reuse the already reviewed command-line normalization, discard its one-shot
+    # wrapper, and keep the old consumed wrapper/files unchanged on the host.
+    prepared = m.prepare(base)
+    start = prepared.index('    menuentry ')
+    end = prepared.index('\n  fi\nfi\n', start)
+    trial = '\n'.join(line.removeprefix('    ') for line in prepared[start:end].splitlines())+'\n'
+    trial = trial.replace(m.ENTRY_ID, ENTRY).replace(m.TITLE,
+        'Ubuntu native PME + S3 user trial (one cycle per boot)')
+    assert trial.count(OPTION) == 1 and m.FLAG not in trial and 'savedefault' not in trial
+    return '#!/bin/sh\nexec tail -n +3 "$0"\n'+trial
+
+def restore(backup):
+    saved = json.loads((backup/'targets.json').read_text())
+    for index, path in enumerate(TARGETS):
+        record = saved[str(path)]
+        if record['existed']:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(backup/str(index), path)
+        elif path.exists():
+            path.unlink()
+    subprocess.run(['systemctl', 'daemon-reload'], check=True)
+    subprocess.run(['systemctl', 'reload', 'systemd-logind.service'], check=True)
+
+def install():
+    assert os.uname().release == '7.0.14-mbp14342p1'
+    assert Path('/sys/class/dmi/id/product_name').read_text().strip() == 'MacBookPro14,3'
+    assert not output(['dpkg', '--audit'])
+    for path in [SCRIPT, CHECK, MANIFEST, UNIT]:
+        assert not path.exists(), 'Trial already installed; do not overwrite it'
+    assert 'AllowSuspend=no' in SLEEP.read_text()
+    assert Path('/sys/module/apple_ibridge/parameters/skip_acpi_power').read_text().strip() == '1'
+    assert Path('/sys/module/apple_ibridge/parameters/s3_notify_once').read_text().strip() == 'Y'
+    state = json.loads((ROOT/'state/kernel-42/paired-resume-v01-s3-attempt.json').read_text())
+    assert state['stage'] == 'reviewed_partial_functional_both_USB_trees'
+    assert (ROOT/'state/kernel-42/paired-resume-v01-s3-transition.json').exists()
+    legacy = list((ROOT/'state/kernel-42').glob('*.json')) + [
+        Path('/etc/grub.d/43_mbp143_trial_native_pme'),
+        Path('/etc/grub.d/44_mbp143_t1_s3_once'),
+        Path('/etc/grub.d/45_mbp143_paired_resume_s3_once')]
+    preserved = {str(p): sha(p) for p in legacy}
+    before = GRUB.read_text()
+    env = dict(line.split('=',1) for line in output(['grub-editenv',str(ENV),'list']).splitlines() if '=' in line)
+    assert env.get('saved_entry') == BASE
+    assert not any(env.get(k) for k in ['next_entry','mbp143_t1_v04_s3_once','mbp143_paired_resume_v01_s3_once'])
+    m = boot_helpers()
+    base = m.stanza(before, BASE)
+    payload = persistent_stanza(base)
+    assert ENTRY not in before
+    modules = {}
+    t1 = json.loads((ROOT/'experiments/kernel-42/candidates/t1-s3-ordered/package/package-validation.json').read_text())
+    for name, rec in t1['modules'].items():
+        modules[name] = dict(sha256=rec['sha256'],srcversion=rec['srcversion'])
+    for relative in ['audio-pr220/package/package-validation.json',
+                     'connectivity-pr596/wifi-d0-only/package-v0.1-4/package-validation.json']:
+        meta = json.loads((ROOT/'experiments/kernel-42/candidates'/relative).read_text())
+        assert output(['dpkg-query','-W','-f=${Version}',meta['package']]) == meta['version']
+        modules[meta['module']] = dict(sha256=meta['module_sha256'],srcversion=meta['srcversion'])
+    assert output(['dpkg-query','-W','-f=${Version}',t1['package']]) == '0.4-1'
+    for name, rec in modules.items():
+        path = Path(output(['modinfo','-n',name]))
+        assert sha(path) == rec['sha256']
+        assert (Path('/sys/module')/name.replace('-','_')/'srcversion').read_text().strip() == rec['srcversion']
+        rec['path'] = str(path)
+        preserved[str(path)] = sha(path)
+    for unit in ['sleep.target','suspend.target']:
+        p = subprocess.run(['systemctl','is-enabled',unit],capture_output=True,text=True)
+        assert 'masked' not in p.stdout
+    now = datetime.datetime.now().astimezone()
+    backup = BACKUPS/now.strftime('%Y%m%d-%H%M%S')
+    backup.mkdir(parents=True, mode=0o700)
+    backup.chmod(0o700)
+    saved = {}
+    for index, path in enumerate(TARGETS):
+        saved[str(path)] = {'existed':path.exists()}
+        if path.exists():
+            shutil.copy2(path, backup/str(index))
+    (backup/'targets.json').write_text(json.dumps(saved,indent=2)+'\n')
+    def logged(args, allowed=(0,)):
+        p = subprocess.run(args,capture_output=True,text=True)
+        with (backup/'commands.log').open('a') as f:
+            f.write(p.stdout+p.stderr)
+        assert p.returncode in allowed, 'Command failed; see private backup log'
+        return p
+    try:
+        write(SCRIPT, payload, 0o755)
+        logged(['grub-script-check',str(SCRIPT)])
+        logged(['update-grub'])
+        logged(['grub-script-check',str(GRUB)])
+        after = GRUB.read_text()
+        assert m.stanza(after,BASE) == base and '7.0.0-42-generic' in after
+        assert after.count(OPTION) == before.count(OPTION)+1
+        assert after.count("$menuentry_id_option '"+ENTRY+"'") == 1
+        write(CHECK, (ROOT/'scripts/power/mbp143-suspend-trial-check.py').read_text(), 0o755)
+        write(MANIFEST, json.dumps({'kernel':'7.0.14-mbp14342p1','modules':modules},indent=2)+'\n')
+        write(UNIT, '[Service]\nExecStartPre='+str(CHECK)+' --prepare\nExecStopPost='+str(CHECK)+' --cleanup\n')
+        write(SLEEP, '# User-requested S3 trial; one T1 cycle per boot. See INSTALL.md.\n'
+              '[Sleep]\nAllowSuspend=yes\nAllowHibernation=no\nAllowHybridSleep=no\n'
+              'AllowSuspendThenHibernate=no\nSuspendState=mem\nMemorySleepMode=deep\n')
+        logged(['systemctl','daemon-reload'])
+        logged(['systemd-analyze','verify','systemd-suspend.service'])
+        logged(['systemctl','reload','systemd-logind.service'])
+        effective = output(['systemd-analyze','cat-config','systemd/sleep.conf'])
+        values = {}
+        for line in effective.splitlines():
+            if line and not line.startswith(('#','[')) and '=' in line:
+                k,v = line.split('=',1);values[k.strip()] = v.strip()
+        assert values['AllowSuspend']=='yes' and values['MemorySleepMode']=='deep'
+        assert all(values[k]=='no' for k in ['AllowHibernation','AllowHybridSleep','AllowSuspendThenHibernate'])
+        availability = logged(['busctl','call','org.freedesktop.login1','/org/freedesktop/login1',
+                               'org.freedesktop.login1.Manager','CanSuspend']).stdout.strip()
+        assert availability == 's "yes"', 'logind does not advertise suspend'
+        # No preparation/PM operation: current binding must still be refused.
+        refusal = logged([str(CHECK)],allowed=(1,))
+        assert 'one S3 cycle for this boot was already used' in refusal.stderr
+        assert not Path('/run/mbp143-suspend-trial-runtime.json').exists()
+        logged(['grub-set-default',ENTRY])
+        current = dict(line.split('=',1) for line in output(['grub-editenv',str(ENV),'list']).splitlines() if '=' in line)
+        assert current.get('saved_entry')==ENTRY and not current.get('next_entry')
+        assert not current.get('mbp143_t1_v04_s3_once') and not current.get('mbp143_paired_resume_v01_s3_once')
+        assert all(sha(p)==v for p,v in preserved.items())
+    except BaseException:
+        restore(backup)
+        raise
+    result = {'installed_at':now.isoformat(),'saved_default':ENTRY,'new_persistent_entry':str(SCRIPT),
+              'single_added_kernel_option':OPTION,'normal_native_PME_and_official_fallback_preserved':True,
+              'AllowSuspend':True,'hibernation_hybrid_suspend_then_hibernate':False,'mode':'deep',
+              'logind_CanSuspend':'yes','systemd_unit_syntax':'passed','exact_driver_guard_installed':True,
+              'T1_runtime_pinned_only_during_sleep_and_restored_after':True,
+              'current_consumed_binding_refused_without_PM_write':True,'one_S3_per_boot_limit_retained':True,
+              'all_20_state_JSON_and_modules_unchanged':True,'old_one_shot_entries_and_flags_unchanged':True,
+              'backup':str(backup),'reboot_required_for_next_cycle':True,'reboot_queued':False,'suspend_performed':False,
+              'limitation':'Normal logind/NetworkManager orchestration and unattended wake have not yet been validated; no RTC auto-wake is installed.'}
+    (backup/'installed-sha256.json').write_text(json.dumps({str(p):sha(p) for p in TARGETS},indent=2)+'\n')
+    out = ROOT/'results'/now.strftime('%Y-%m-%d')/(now.strftime('%H%M%S')+'-user-persistent-S3-policy')
+    out.mkdir(exist_ok=False)
+    p = out/'installation.json'
+    p.write_text(json.dumps(result,indent=2)+'\n')
+    for p in [out,out/'installation.json']:
+        os.chown(p,1000,1000)
+        p.chmod(0o755 if p.is_dir() else 0o644)
+    print(json.dumps({'report':str(out.relative_to(ROOT)),**result},indent=2))
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--install',action='store_true')
+    mode.add_argument('--rollback',type=Path)
+    args = parser.parse_args()
+    assert os.geteuid()==0
+    os.umask(0o077)
+    if args.rollback:
+        backup = args.rollback.resolve()
+        assert backup.parent == BACKUPS
+        installed = json.loads((backup/'installed-sha256.json').read_text())
+        # grubenv normally changes during boot; verify the selected policy and
+        # absence of a pending one-shot instead of requiring its old byte hash.
+        assert all(sha(p)==value for p,value in installed.items() if Path(p)!=ENV), 'Configuration changed since install; review before rollback'
+        env = dict(line.split('=',1) for line in output(['grub-editenv',str(ENV),'list']).splitlines() if '=' in line)
+        assert env.get('saved_entry')==ENTRY and not env.get('next_entry')
+        assert not env.get('mbp143_t1_v04_s3_once') and not env.get('mbp143_paired_resume_v01_s3_once')
+        restore(backup)
+        print('Previous native-PME default and suspend block restored; no reboot/suspend performed.')
+    else:
+        install()
+
+if __name__=='__main__':
+    main()

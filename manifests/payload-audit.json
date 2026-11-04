@@ -1,0 +1,60 @@
+{
+  "kernel_source_archive": "kernel-source-7.0.14-mbp14342p1.tar.gz",
+  "public_fixture_keys_verified_against_original": [
+    "tools/testing/selftests/sgx/sign_key.pem",
+    "tools/testing/selftests/net/ovpn/data64.key"
+  ],
+  "private_module_signing_key_copied": false,
+  "package_payloads": [
+    {
+      "package": "linux-headers-7.0.14-mbp14342p1",
+      "payload_files": 7423,
+      "private_key_token_matches": 0,
+      "files_containing_original_build_path": 5,
+      "note": "Original DEBs preserved byte-for-byte; build paths can remain in generated headers/module metadata. No hooks executed."
+    },
+    {
+      "package": "linux-image-7.0.14-mbp14342p1",
+      "payload_files": 6921,
+      "private_key_token_matches": 0,
+      "files_containing_original_build_path": 5141,
+      "note": "Original DEBs preserved byte-for-byte; build paths can remain in generated headers/module metadata. No hooks executed."
+    },
+    {
+      "package": "mbp143-trial-drivers-7.0.14-mbp14342p1",
+      "payload_files": 4,
+      "private_key_token_matches": 0,
+      "files_containing_original_build_path": 2,
+      "note": "Original DEBs preserved byte-for-byte; build paths can remain in generated headers/module metadata. No hooks executed."
+    },
+    {
+      "package": "mbp143-t1-mode-result-7.0.14-mbp14342p1",
+      "payload_files": 5,
+      "private_key_token_matches": 0,
+      "files_containing_original_build_path": 0,
+      "note": "Original DEBs preserved byte-for-byte; build paths can remain in generated headers/module metadata. No hooks executed."
+    },
+    {
+      "package": "mbp143-t1-phase-trace-7.0.14-mbp14342p1",
+      "version": "0.6-1",
+      "payload_files": 6,
+      "private_key_token_matches": 0,
+      "files_containing_original_build_path": 0,
+      "note": "Selected signed DEB preserved byte-for-byte. No hooks executed during audit."
+    },
+    {
+      "package": "mbp143-audio-resume-7.0.14-mbp14342p1",
+      "payload_files": 8,
+      "private_key_token_matches": 0,
+      "files_containing_original_build_path": 0,
+      "note": "Original DEBs preserved byte-for-byte; build paths can remain in generated headers/module metadata. No hooks executed."
+    },
+    {
+      "package": "mbp143-wifi-d0-7.0.14-mbp14342p1",
+      "payload_files": 7,
+      "private_key_token_matches": 0,
+      "files_containing_original_build_path": 0,
+      "note": "Original DEBs preserved byte-for-byte; build paths can remain in generated headers/module metadata. No hooks executed."
+    }
+  ]
+}

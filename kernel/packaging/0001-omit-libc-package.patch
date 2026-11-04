@@ -1,0 +1,10 @@
+--- a/scripts/package/mkdebian
++++ b/scripts/package/mkdebian
+@@ -226,6 +226,7 @@
+ cat <<EOF >> debian/control
+ 
+ Package: linux-libc-dev
++Build-Profiles: <!pkg.${sourcename}.nokernellibc>
+ Section: devel
+ Provides: linux-kernel-headers
+ Architecture: $debarch

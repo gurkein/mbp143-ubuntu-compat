@@ -1,0 +1,3719 @@
+{
+  "maintenance_commit": "db23821e1d2ca7e4cea8a1716d9010cc12a59e03",
+  "note": "Source paths are maintenance-relative; no private signing material copied.",
+  "files": [
+    {
+      "source": "experiments/kernel-42/patches/0001-pci-config-accessible.patch",
+      "destination": "kernel/patches/0001-pci-config-accessible.patch",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "48c6e8c31e72f6b7762828b80433edec178d5f8295d4401cf4045821ceb50ced",
+      "bytes": 1178
+    },
+    {
+      "source": "experiments/kernel-42/patches/0002-pci-save-v3.patch",
+      "destination": "kernel/patches/0002-pci-save-v3.patch",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "12a43337dce5b0a7ae0315203ebc84da1382ba84a928ba92ccada54c05af1126",
+      "bytes": 966
+    },
+    {
+      "source": "experiments/kernel-42/patches/0003-pci-link-v3.patch",
+      "destination": "kernel/patches/0003-pci-link-v3.patch",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "84de6e1334ad296af8bc5284246332fb27ed3076227eaed22c9e387326679881",
+      "bytes": 1953
+    },
+    {
+      "source": "experiments/kernel-42/patches/0004-acpica-parent-bus.patch",
+      "destination": "kernel/patches/0004-acpica-parent-bus.patch",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d30945b24d903bcdcecd5fce92c7a7bdaaa1604afd98c804fdd4e3d272736882",
+      "bytes": 1177
+    },
+    {
+      "source": "experiments/kernel-42/patches/0005-apple-native-pme.patch",
+      "destination": "kernel/patches/0005-apple-native-pme.patch",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d3fddbed422b92e76f61842f8267407ff49dce1630f4e03ea7709b0c6ddcc053",
+      "bytes": 615
+    },
+    {
+      "source": "experiments/kernel-42/patches/0006-amdgpu-vi-vram.patch",
+      "destination": "kernel/patches/0006-amdgpu-vi-vram.patch",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f41b71f5f5c8340acbec74776145ef991e7827f3458f59dc01f6abbb9c07752a",
+      "bytes": 731
+    },
+    {
+      "source": "experiments/kernel-42/patches/0007-thunderbolt-sxfp-v3.patch",
+      "destination": "kernel/patches/0007-thunderbolt-sxfp-v3.patch",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6855f8a16309df23dc85252e5910b6f64b788af79fc6b16cb078b1fba594c526",
+      "bytes": 6941
+    },
+    {
+      "source": "experiments/kernel-42/patches/manifest.json",
+      "destination": "kernel/patches/manifest.json",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1d93e8a0cdb1e4379953084602c3f1861c9d4fcaf584efe2a2c4d392949db13d",
+      "bytes": 2128
+    },
+    {
+      "source": "experiments/kernel-42/patches/series",
+      "destination": "kernel/patches/series",
+      "component": "kernel",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "23306ca93e758401eab21ec28dc317a8eefbd85d46fbfd7f346042b3543f73a5",
+      "bytes": 193
+    },
+    {
+      "source": "experiments/kernel-42/packaging/0001-omit-libc-package.patch",
+      "destination": "kernel/packaging/0001-omit-libc-package.patch",
+      "component": "kernel",
+      "license": "GPL-2.0-only",
+      "disposition": "git",
+      "sha256": "5f3cbc218908ddbd961121d59b5d0fac109953ec9034924814cc56bc04c33ade",
+      "bytes": 261
+    },
+    {
+      "source": "experiments/kernel-42/build/.config",
+      "destination": "kernel/config/mbp14342p1.config",
+      "component": "kernel",
+      "license": "GPL-2.0-only",
+      "disposition": "git",
+      "sha256": "b3af16a1a494932743c2421cc039b3e85960f7bd992058ca0726620f5e347d34",
+      "bytes": 308598
+    },
+    {
+      "source": "experiments/kernel-42/toolchain.txt",
+      "destination": "kernel/toolchain.txt",
+      "component": "kernel",
+      "license": "factual build metadata",
+      "disposition": "git",
+      "sha256": "75872b7ad2c712e8cdb18a732adf197f72350fc3fbe858ec2f9c6816705df423",
+      "bytes": 438
+    },
+    {
+      "source": "experiments/kernel-42/downloads/certificates/canonical-certs.pem",
+      "destination": "kernel/public-certificates/canonical-certs.pem",
+      "component": "kernel",
+      "license": "public certificate data",
+      "disposition": "git",
+      "sha256": "74432a8d3bb67b8efca98cbba2c4c97b60318622c84f58f91cfedc45e536acb8",
+      "bytes": 28820
+    },
+    {
+      "source": "experiments/kernel-42/downloads/certificates/canonical-revoked-certs.pem",
+      "destination": "kernel/public-certificates/canonical-revoked-certs.pem",
+      "component": "kernel",
+      "license": "public certificate data",
+      "disposition": "git",
+      "sha256": "60aa9e3001bf8fd2a5ad8ae83204be7adc1b83f0a9d5614f2a5fe63755a8b688",
+      "bytes": 38606
+    },
+    {
+      "source": "experiments/kernel-42/validation/apple-ib-drv-0.1/apple-ibridge.c",
+      "destination": "drivers/t1/baseline/apple-ibridge.c",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "96fc45f6ab17a01a1472e180ad7ff36648188db7a65dfc6712cf24eb7b09952d",
+      "bytes": 19619
+    },
+    {
+      "source": "experiments/kernel-42/validation/apple-ib-drv-0.1/apple-touchbar.c",
+      "destination": "drivers/t1/baseline/apple-touchbar.c",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "4f1ad3b6883a940605d29f34f2824ba2979e574c31184ab64425f51b62409b9d",
+      "bytes": 41317
+    },
+    {
+      "source": "experiments/kernel-42/validation/apple-ib-drv-0.1/apple-ibridge.h",
+      "destination": "drivers/t1/baseline/apple-ibridge.h",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "34d7c6c294a657b3675502e9e082cb5499ef0204c4a0206360be7498a3754754",
+      "bytes": 313
+    },
+    {
+      "source": "experiments/kernel-42/validation/apple-ib-drv-0.1/hid-ids.h",
+      "destination": "drivers/t1/baseline/hid-ids.h",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "70b551b047fc5c4e8c029764b64ef0a6167aa93b55913459f8df487ec1be2974",
+      "bytes": 55613
+    },
+    {
+      "source": "experiments/kernel-42/validation/apple-ib-drv-0.1/Makefile",
+      "destination": "drivers/t1/baseline/Makefile",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "0b83960367a409292ce1b12c2d3cb62aa3a1bf9b5a911a999b9de1a222f33982",
+      "bytes": 360
+    },
+    {
+      "source": "assets/input/t1-touchbar/apple-ib-drv/LICENSE",
+      "destination": "drivers/t1/baseline/LICENSE",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73",
+      "bytes": 18046
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/apple-ibridge.c",
+      "destination": "drivers/t1/mode-result-0.1/apple-ibridge.c",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "96fc45f6ab17a01a1472e180ad7ff36648188db7a65dfc6712cf24eb7b09952d",
+      "bytes": 19619
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/apple-touchbar.c",
+      "destination": "drivers/t1/mode-result-0.1/apple-touchbar.c",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "6bb295f41872247e6d48cf5134d9b06fca90251e31281e40e5e55e9ae1b4924e",
+      "bytes": 41433
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/apple-ibridge.h",
+      "destination": "drivers/t1/mode-result-0.1/apple-ibridge.h",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "34d7c6c294a657b3675502e9e082cb5499ef0204c4a0206360be7498a3754754",
+      "bytes": 313
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/hid-ids.h",
+      "destination": "drivers/t1/mode-result-0.1/hid-ids.h",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "70b551b047fc5c4e8c029764b64ef0a6167aa93b55913459f8df487ec1be2974",
+      "bytes": 55613
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/Makefile",
+      "destination": "drivers/t1/mode-result-0.1/Makefile",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "0b83960367a409292ce1b12c2d3cb62aa3a1bf9b5a911a999b9de1a222f33982",
+      "bytes": 360
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/LICENSE",
+      "destination": "drivers/t1/mode-result-0.1/LICENSE",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73",
+      "bytes": 18046
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/mode-result.patch",
+      "destination": "drivers/t1/patches/mode-result.patch",
+      "component": "t1",
+      "license": "per-file SPDX; GPL-2.0 driver, preserved upstream notices",
+      "disposition": "git",
+      "sha256": "4822452c680ffa5dc122f173ee027dfc1ba37dd9effd9b74421fb6c911599ae2",
+      "bytes": 375
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/Kconfig",
+      "destination": "drivers/audio/baseline/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bc0d7d3ed6b53304c7d74b80a5731e0a41dedc85dbf52ee69dbff5a5d7def190",
+      "bytes": 205
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/Makefile",
+      "destination": "drivers/audio/baseline/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b7439d9319e734cf57b42107914bec87d9e5d5d6a7a878167f3dcf28714caad7",
+      "bytes": 298
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/Kconfig",
+      "destination": "drivers/audio/baseline/codecs/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "43c5b77da7077a8d1414761790eeeaf665de28cfa7a2d4c2577f8ae9da94f653",
+      "bytes": 4342
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/Makefile",
+      "destination": "drivers/audio/baseline/codecs/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b1486446ff117966d22789ccee550dde2b2ec6541a057fe7fc24e9759adc016f",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/analog.c",
+      "destination": "drivers/audio/baseline/codecs/analog.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c4c7c95f553f9151a3e64bf76f5a422a7f844e788175c7aaf2d4b9b6cc82b482",
+      "bytes": 30462
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/ca0110.c",
+      "destination": "drivers/audio/baseline/codecs/ca0110.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "34aa04b16c0f1063dcdf5a6d4925dabed71a796bfdd41f56a4f4634835993c06",
+      "bytes": 1918
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/ca0132.c",
+      "destination": "drivers/audio/baseline/codecs/ca0132.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d5a5f1536b9f0de4cc502970b214a43dd26ff9d539efa2b7f221479e8ca5bb7b",
+      "bytes": 285296
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/ca0132_regs.h",
+      "destination": "drivers/audio/baseline/codecs/ca0132_regs.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a29e01d84cf9d79a91fecffb3e2ff58f7023fdf1dfae850964d0b3b30c22d1ab",
+      "bytes": 13680
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/Kconfig",
+      "destination": "drivers/audio/baseline/codecs/cirrus/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4dc655a25e7d62c4f78fdd40ef741df395c5690a14e61d266219f0711bfd368d",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/Makefile",
+      "destination": "drivers/audio/baseline/codecs/cirrus/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3c4e6cceb04141bc0172af060520fa6dc4e7facc8910594b22e36b395091a921",
+      "bytes": 387
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/cirrus_apple.h",
+      "destination": "drivers/audio/baseline/codecs/cirrus/cirrus_apple.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c410540874beff8e7befd1e4b472d57dad50821c173b3b96fd4af52ac4431949",
+      "bytes": 123449
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/cs420x.c",
+      "destination": "drivers/audio/baseline/codecs/cirrus/cs420x.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "44b7f25a946e0e7352e2200f8195adf7ceae0969597f7c5738f96a6a6843dcd0",
+      "bytes": 21296
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/cs421x.c",
+      "destination": "drivers/audio/baseline/codecs/cirrus/cs421x.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "9a289eb57bd1b7b554034e8d19b00a53e3540ef36dc9172ec20d7d6544bda902",
+      "bytes": 15329
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/cs8409-tables.c",
+      "destination": "drivers/audio/baseline/codecs/cirrus/cs8409-tables.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "15bbfda8ad3bf245d0ecaf592ca9775c5c196a4a358c11a50a6cff6684996836",
+      "bytes": 28142
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/cs8409.c",
+      "destination": "drivers/audio/baseline/codecs/cirrus/cs8409.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "14921ad18db576fb3763a26bc2252efc99a56de84a2ab1ff1765f4c07b38764a",
+      "bytes": 48780
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/cs8409.h",
+      "destination": "drivers/audio/baseline/codecs/cirrus/cs8409.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "959e1394048b6d2317707ed9f909d0e6f3ec5715e34735e0eaf92c3a685d758c",
+      "bytes": 11788
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/patch_cirrus_boot84.h",
+      "destination": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_boot84.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c5efdcec9cdf9cfc5b4975b4d238cdad98e2c4302e0c4067c70b73234b185fb9",
+      "bytes": 213049
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/patch_cirrus_hda_generic_copy.h",
+      "destination": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_hda_generic_copy.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f405aa473b5aa0bfccb139a05e632dabe73af6aeb5757ab33d990c7571a3c281",
+      "bytes": 11569
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/patch_cirrus_new84.h",
+      "destination": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_new84.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7da73abb0af6ba7930b3e660540267727bca577987969f3db5fe5a95ff133173",
+      "bytes": 75349
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/patch_cirrus_real84.h",
+      "destination": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_real84.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a2c0a96cefc8adff9b5791d2ea93580ceb02d97012216dfbd37bd4b529a14c25",
+      "bytes": 285353
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cirrus/patch_cirrus_real84_i2c.h",
+      "destination": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_real84_i2c.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5becd39e05b8a27e7a337fc1651a4fe6c71d21be47c934cd76407351f24d4f5a",
+      "bytes": 87744
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cm9825.c",
+      "destination": "drivers/audio/baseline/codecs/cm9825.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "671f84c52fb6acf869850036c2a80b75fc815e169b7f77a60d9a701d6edb6e71",
+      "bytes": 16401
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/cmedia.c",
+      "destination": "drivers/audio/baseline/codecs/cmedia.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "688dc096ce5df23ab4286eb35be359eb04caed308dd50a40ed152c60cda6148a",
+      "bytes": 2380
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/conexant.c",
+      "destination": "drivers/audio/baseline/codecs/conexant.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "30f5172b833dfe1d8eb0aacb4e436436e4cc4a593868cce01c10855ce93db554",
+      "bytes": 41185
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/generic.c",
+      "destination": "drivers/audio/baseline/codecs/generic.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4233c1a9a8a8da0c8f7a8263aea54c7e225881fddf62f845699dfdceed81929e",
+      "bytes": 168220
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/generic.h",
+      "destination": "drivers/audio/baseline/codecs/generic.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "9175959750d86f715d15eb2e4c063a95861ed7d737418e9f55843b1af04446d6",
+      "bytes": 12468
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/Kconfig",
+      "destination": "drivers/audio/baseline/codecs/hdmi/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a9b36a3f4dff994e3f6f97c2daabcb6a87f5b7de846d19a904d9594bf0d59e26",
+      "bytes": 2984
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/Makefile",
+      "destination": "drivers/audio/baseline/codecs/hdmi/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f20ef5b0d12aba1ba46cc273c61a11b0e35219024d158b85e6b4027fac08b444",
+      "bytes": 832
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/atihdmi.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/atihdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ff351602e365d26f3c535ccf1307928ed1936456e70e3b6f9a31c731c33fd9cf",
+      "bytes": 18134
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/eld.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/eld.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "58f636d68a7544ee1e1bddf968a2b2700494bed31194f310c1fb56811b43c830",
+      "bytes": 6220
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/hdmi.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/hdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a574456e5d68a3bfa1ade166df066124176bb492871c95741815f87739bb2c0e",
+      "bytes": 64965
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/hdmi_local.h",
+      "destination": "drivers/audio/baseline/codecs/hdmi/hdmi_local.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c5b03f997c2d3415697a019bf47f9808773f641b086789884492e842ec6ec054",
+      "bytes": 9384
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/intelhdmi.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/intelhdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b9a00664e4e3553f1e22d1e32042055d125d6d081ff2652856ba763ff8c87ea2",
+      "bytes": 22790
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/nvhdmi-mcp.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/nvhdmi-mcp.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ddb4911abb0cd7a65733b7400ef635a5e4919f9925bf6d3131ec9ddb56d1fa1f",
+      "bytes": 10141
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/nvhdmi.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/nvhdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8a6f32ee11f45edfb7ea4bd68e35f1c7ae88a9983acb276bb604fbef298d2743",
+      "bytes": 9157
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/simplehdmi.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/simplehdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "44b2442b79480069b086dd3e2d9201a1f82526b10ddd4ac1019afaf1b9256b49",
+      "bytes": 6797
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/hdmi/tegrahdmi.c",
+      "destination": "drivers/audio/baseline/codecs/hdmi/tegrahdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f46298d988db9cfe7b670e1b830abfcda384643a61d110ebdb6672e63839d313",
+      "bytes": 9208
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/helpers/hp_x360.c",
+      "destination": "drivers/audio/baseline/codecs/helpers/hp_x360.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c10fd55e7caae781e3c7b28bfe8e34873bd4a33cbdf0e5e3b618903d56df977e",
+      "bytes": 8049
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/helpers/ideapad_hotkey_led.c",
+      "destination": "drivers/audio/baseline/codecs/helpers/ideapad_hotkey_led.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d9acb8c9ecaccc6b695b8da2441f417467dffc280ec79a02a9eafec8d49c2af3",
+      "bytes": 882
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/helpers/ideapad_s740.c",
+      "destination": "drivers/audio/baseline/codecs/helpers/ideapad_s740.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "46cbca36fd49f8cb2b0f5e174d7317c4bbbbce8e33a8a373775e0abc370c9962",
+      "bytes": 19734
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/helpers/thinkpad.c",
+      "destination": "drivers/audio/baseline/codecs/helpers/thinkpad.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7e2094b1437bff998c1471a4bb5275c01d1b5700cabe569f123d72cf997387c6",
+      "bytes": 891
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/Kconfig",
+      "destination": "drivers/audio/baseline/codecs/realtek/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b7f5ea771248de808323d56f473d92ea94950a34d906333b82cbccf759de52c2",
+      "bytes": 2926
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/Makefile",
+      "destination": "drivers/audio/baseline/codecs/realtek/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d70166902fe4551912ff679bdb9c16a0699a8353ffdd8621a6ffa270289cf80f",
+      "bytes": 1159
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc260.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc260.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "07e85264e0bbe573e550e8fb1759d0db86a20fd75b635e3e0fc8be016444c4ca",
+      "bytes": 7644
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc262.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc262.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bd2623ad98145c6df6e90ab686f63cec5a0d2530ef13162f3c31d21d1780c934",
+      "bytes": 5521
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc268.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc268.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4562f62968d88a7d6f60d04df80dc4b9ba66f87059abec9b9dc7a4fc51da79fd",
+      "bytes": 5039
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc269.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc269.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2a4e71acf34ce81a7c73eeed9838f1c1819f78495c1c38d94bda5576746dbabb",
+      "bytes": 329290
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc662.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc662.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bc5777963662badc8e5ca8c284675ceaba89380c65dc74b432c264f4d4678231",
+      "bytes": 38036
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc680.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc680.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f2da800f1db8e40bb74b6f86ecf4e91d416d5d03eca4323b6872b2aa57ed5fde",
+      "bytes": 1480
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc861.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc861.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b9bfcd4cdeb71cb0f5c56dcfeab6bde7e20ef8fd3c64a66405cd0a6f312c1924",
+      "bytes": 4244
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc861vd.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc861vd.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6bd0feba1e2150e07f3922e8414587d2cdd4ae3ef99eba39a8ff76d0dbb5782c",
+      "bytes": 3328
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc880.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc880.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "37a3fe78e6afc4f96155f7e2f52503a714fbaaeb634f6144ae977f0cb4736d58",
+      "bytes": 15646
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/alc882.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/alc882.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7ac01b966830092758e34b45f19ca7da073c895937b3285c64ef9b7a11aa4505",
+      "bytes": 29464
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/realtek.c",
+      "destination": "drivers/audio/baseline/codecs/realtek/realtek.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "26d3701d46b2f4cbfb59c60100587009d7ae4759a440025a5d78d4f42963ab2f",
+      "bytes": 62802
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/realtek/realtek.h",
+      "destination": "drivers/audio/baseline/codecs/realtek/realtek.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2d8490340f08c10dfb968b9254fd96bffe11b0da3884403dcfb4ff43ca7b28cd",
+      "bytes": 9993
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/senarytech.c",
+      "destination": "drivers/audio/baseline/codecs/senarytech.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4816918c82553b317da79ab946e1bb0351b9a03049caf255de02293d5eee2439",
+      "bytes": 6262
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/si3054.c",
+      "destination": "drivers/audio/baseline/codecs/si3054.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "afdf9702b08b2540674fbfcf7bfba07f85d3c49acf8aefad93e7fb8be39c6657",
+      "bytes": 8355
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/Kconfig",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4084e0a981a7e7ec6befa1855ef071373cd59e2b066ea015293e5cbc9eeb1661",
+      "bytes": 4010
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/Makefile",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "09717a2ca2f70a0c832f16d9d16b5a468b1fc8a3971b8bc7c4b2aa8c4ff2453a",
+      "bytes": 468
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cirrus_scodec.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cirrus_scodec.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ef251fcb484a32ff33f4024da88136d00577bbeb45cf2c3f6440e8572cb6d354",
+      "bytes": 1918
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cirrus_scodec.h",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cirrus_scodec.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c9b78b62c0d2052ecbfe74f1f13794f8a1fb0ba7b3ab2209d7e56ed8ce5b4b48",
+      "bytes": 343
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cirrus_scodec_test.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cirrus_scodec_test.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "e8a6cdf541629465cbe3f1d362a61d8c392caa12eac5f33d226f042af7c8e825",
+      "bytes": 10516
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l41_hda.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0e6e68ce90cdc045d419eff8c7a39d5f67d18ae7689dbf4ebd3a04af3096b9ea",
+      "bytes": 59349
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l41_hda.h",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c1b64ee96be3fd3fb17a72e6d32e2a5d21bae41bdf26a7d14a5e2f41df96c80c",
+      "bytes": 2601
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l41_hda_i2c.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_i2c.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "30ea3873d9fb2f218d2cfaf66720b04044774a4fee333b682f17f8c8656f534d",
+      "bytes": 1738
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l41_hda_property.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_property.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c25fff7c86502a91d22d63dbb3005a4c19e9798074780d57314041f44caa309f",
+      "bytes": 25730
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l41_hda_property.h",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_property.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c43460924cd780748fbba7298b295ab3ef08c1c7c0c51dfd94ea059e0f9420c4",
+      "bytes": 441
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l41_hda_spi.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_spi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "53561d01ff3bc1225cd3c39645c2a8dcec95625bf1eeb2a6421ebab0679172c1",
+      "bytes": 1613
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l56_hda.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "184a0f81b918d3dfb2a787944b448a20b85ea3375f87d91f094e2ad42f189805",
+      "bytes": 35887
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l56_hda.h",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "099bdc87ed9e96043b2f6d19369b0470b0907a10210451c4787f789d108a1180",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l56_hda_i2c.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda_i2c.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "fa657e582d06e7fb3e4c5d96c9ebd7e8801c4fcea657ddeb1c39cddaa14af2ea",
+      "bytes": 2180
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/cs35l56_hda_spi.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda_spi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5afccd350dec254ac900fd57d6e9f4af2280a3097815131c41fe2c213bc0d39e",
+      "bytes": 2275
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/hda_component.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/hda_component.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "23d1a456bc3bac9a64e377afadcd5a5e2241bd1ed5fc68f754e4178ba2665ea3",
+      "bytes": 5841
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/hda_component.h",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/hda_component.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "71559a1d0d50d05e63b593dac96a041791292500dfedd606334804487fbcc8ae",
+      "bytes": 3071
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/tas2781_hda.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1c3782b6e57d3b8360958ea38053ad32cf15de1a15b6e532b1a71dcee4144bcc",
+      "bytes": 11944
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/tas2781_hda.h",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "22e0af0f836b1bf663747a19252ddd3de874ad6fb8c1c42fe0afdcb6db3ef97f",
+      "bytes": 2695
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/tas2781_hda_i2c.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda_i2c.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b566eefa5ab0bff74f48d9c55d42b3f8c36800fb846061cc5a3c5ff654015bc4",
+      "bytes": 22657
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/side-codecs/tas2781_hda_spi.c",
+      "destination": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda_spi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "de30ac6bd8fe2aeafbd5a14140a6daeec8d5f01add8a34ef96abdd294f8e4c54",
+      "bytes": 25741
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/sigmatel.c",
+      "destination": "drivers/audio/baseline/codecs/sigmatel.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b53e4f8fc877bc297a698b230a405acbe5847c1a891a0f6097ab4b77b6c105e9",
+      "bytes": 140688
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/codecs/via.c",
+      "destination": "drivers/audio/baseline/codecs/via.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "729d706689daa93cbfa0c04ab5aadb6094c09b36b1e244f45705b431550ccbe5",
+      "bytes": 31291
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/Kconfig",
+      "destination": "drivers/audio/baseline/common/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f8b399b4d876c323f297e5d21bf39dfd43fa85fa0e939d64504d74f2c1cc7d63",
+      "bytes": 3218
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/Makefile",
+      "destination": "drivers/audio/baseline/common/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b35818428f2d015bcb2a9492e09f5f42c28e1dee5ea08d14ccd0cdda556cdef3",
+      "bytes": 396
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/auto_parser.c",
+      "destination": "drivers/audio/baseline/common/auto_parser.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ea5fee6080d5a9d571c232b039d2e66748410bab084e2f0972ca52a9f323d4f5",
+      "bytes": 31568
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/beep.c",
+      "destination": "drivers/audio/baseline/common/beep.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "23acd4c4a2019a30e2fe4894512a5885bb381afd5b2ba316fd92f37a4e5a574a",
+      "bytes": 8384
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/bind.c",
+      "destination": "drivers/audio/baseline/common/bind.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2de3d08a9c976bb554e26f5fcd06afb3aaba51966dffce83f4dffd7203f1ccb5",
+      "bytes": 8580
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/codec.c",
+      "destination": "drivers/audio/baseline/common/codec.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "fd6b631d1251b6192d64fa72611dd7225968a2009bb8bca50065337d05e5019e",
+      "bytes": 112350
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/controller.c",
+      "destination": "drivers/audio/baseline/common/controller.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f74fc9c8f742e535ed02448869eea31e48cb643662e739bab4582f54306cb602",
+      "bytes": 35510
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/controller_trace.h",
+      "destination": "drivers/audio/baseline/common/controller_trace.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a92ffc1a878b17ea4953b76033bf04964643512ca93ec18544df45176828dfc0",
+      "bytes": 2203
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/hda_auto_parser.h",
+      "destination": "drivers/audio/baseline/common/hda_auto_parser.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "59c9e34e50f22e36ddc45dc22ca822838104e745884e6841bee73e65876a0716",
+      "bytes": 3424
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/hda_beep.h",
+      "destination": "drivers/audio/baseline/common/hda_beep.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "9e943b14f5ab34c3d96474adb9f7ad289e8e413616af4c1ff69c93ad7f7cf4cf",
+      "bytes": 1223
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/hda_controller.h",
+      "destination": "drivers/audio/baseline/common/hda_controller.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bfde4d1166d4593430c48533d3050500d409e44633090a578ebb3b655d112100",
+      "bytes": 6562
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/hda_jack.h",
+      "destination": "drivers/audio/baseline/common/hda_jack.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b6af84afebab898958e2a972acab3783ed1849c826961f8333f01bd127572b49",
+      "bytes": 5913
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/hda_local.h",
+      "destination": "drivers/audio/baseline/common/hda_local.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "21b31260451c5fd4868f030cad31b86012acd3e5091caaa39a902d648073d2a9",
+      "bytes": 24611
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/hwdep.c",
+      "destination": "drivers/audio/baseline/common/hwdep.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2df08a819a1dce6f6193d4788c78874825825c9b9a35af5dd608f12445c259e7",
+      "bytes": 2769
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/jack.c",
+      "destination": "drivers/audio/baseline/common/jack.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3220e341fcb569b0cde1368f8803a87836cac3283ede8ff5424020b906b9efde",
+      "bytes": 20812
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/proc.c",
+      "destination": "drivers/audio/baseline/common/proc.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "95de5f4348e97c2437cff90ac5f2afb682010f7a9ed53ce070afcc0eb5b30e5a",
+      "bytes": 27745
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/common/sysfs.c",
+      "destination": "drivers/audio/baseline/common/sysfs.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "238cce5be076d65e60d90f4d69953f2c2769a64554edcb3a722edcec1166f0ed",
+      "bytes": 18486
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/Kconfig",
+      "destination": "drivers/audio/baseline/controllers/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "06ae1e8933377a14eeafa7e1521025522b98314af3feb57db611bd789e6f59fc",
+      "bytes": 1634
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/Makefile",
+      "destination": "drivers/audio/baseline/controllers/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0685632260ba328f33922637a3650c799424c00d0f19afa572c004e48fb2ed53",
+      "bytes": 435
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/acpi.c",
+      "destination": "drivers/audio/baseline/controllers/acpi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6a3847257cb02be869d5de0ddf6a874e7d6ffde546b98715bc8b83479ef7de10",
+      "bytes": 7562
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/cix-ipbloq.c",
+      "destination": "drivers/audio/baseline/controllers/cix-ipbloq.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "59f8ccd5f121e3f3a00d1703cb62d559cc5c72230d221b73f050209dfdf02e26",
+      "bytes": 10764
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/intel.c",
+      "destination": "drivers/audio/baseline/controllers/intel.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5a7afc7bf59329c37713416ee3b4ba4348070a27c74c663e2ac10531c61e0149",
+      "bytes": 86835
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/intel.h",
+      "destination": "drivers/audio/baseline/controllers/intel.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2022df70e27637510ef62a06022eea71750dbdf12c65b77c3356d79ef52ebe80",
+      "bytes": 860
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/intel_trace.h",
+      "destination": "drivers/audio/baseline/controllers/intel_trace.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8dc1dac71407a7214a77ebe85ca5bb1ded16b1bb871047c1ba48698ddbef5e1b",
+      "bytes": 1005
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/controllers/tegra.c",
+      "destination": "drivers/audio/baseline/controllers/tegra.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d8f8d94621c290de83d3febdec9e62aa2d07d6c93f9b6dc8c762c8578155165c",
+      "bytes": 16425
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/Kconfig",
+      "destination": "drivers/audio/baseline/core/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a8ff8bbc4d2ff3f2643bd9c0c8d1608f9484bf863b8da84bbd9f31ddfac60fe8",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/Makefile",
+      "destination": "drivers/audio/baseline/core/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "53a3e5af7e677ba19d4c647512fbc185121847778db2f30c6c30ade009603563",
+      "bytes": 697
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/array.c",
+      "destination": "drivers/audio/baseline/core/array.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "15bfa86cbb28790d0dd4ec45e949bbb968f76d4542aa2dda35095dfcaa012e67",
+      "bytes": 1247
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/bus.c",
+      "destination": "drivers/audio/baseline/core/bus.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "13ab8ca4fede06fccb9b7e9b4ef5b8360b211c46b181d56e29953ab4e9a82a08",
+      "bytes": 7554
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/component.c",
+      "destination": "drivers/audio/baseline/core/component.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a6fdd2e0b46971a0716be03c69095d6e2ff9a166c745513f6e1622c7d3a1d8f1",
+      "bytes": 9956
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/controller.c",
+      "destination": "drivers/audio/baseline/core/controller.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7197df1815af3cc7f36c3a08bbb47cfc2b4d3a735fc2349d42773286e17cb129",
+      "bytes": 20173
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/device.c",
+      "destination": "drivers/audio/baseline/core/device.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1330274ab296d410d7cd258ae28d59789194d139b780fe73fccefac0ee997abe",
+      "bytes": 29808
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/ext/Makefile",
+      "destination": "drivers/audio/baseline/core/ext/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3ec981358d24edff1ecad6f83ac15503b7358545ba1ab16dc51dfc22be8a5b0e",
+      "bytes": 144
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/ext/bus.c",
+      "destination": "drivers/audio/baseline/core/ext/bus.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8760c8dfb38029f7b99ef1ff19ad250da7e1eba64a47ea5c6c9103f3ae266a67",
+      "bytes": 3634
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/ext/controller.c",
+      "destination": "drivers/audio/baseline/core/ext/controller.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "44baf2b86a7a7b200f27a1bcc5f2e69c2f01f9990c4da3046c3a8a1e824ec2b6",
+      "bytes": 10380
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/ext/stream.c",
+      "destination": "drivers/audio/baseline/core/ext/stream.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "cf7b0ec10d18c134c0d0226b5b763862d0654004ef73ad08e71fa48e6509f50f",
+      "bytes": 12664
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/hda_bus_type.c",
+      "destination": "drivers/audio/baseline/core/hda_bus_type.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "85fbdb567b174dc3d31f02e9ceb8d947164a7b0c8d949c1e6209246ce1b21e51",
+      "bytes": 2186
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/hdmi_chmap.c",
+      "destination": "drivers/audio/baseline/core/hdmi_chmap.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f9938462fc4709c62d380e99094c851795fa6f3036b93d1fef331e35f25f268f",
+      "bytes": 25235
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/i915.c",
+      "destination": "drivers/audio/baseline/core/i915.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "007b4c1dc4124d34c3d81d9b1b0ae3f7a8413629c1fb2805c4131d3e734ccfb5",
+      "bytes": 5751
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/intel-dsp-config.c",
+      "destination": "drivers/audio/baseline/core/intel-dsp-config.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "adec3d8c2819558a44cdf9b1eceb1a17e7db3e09ff3cdfce0386edf72e749935",
+      "bytes": 19901
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/intel-nhlt.c",
+      "destination": "drivers/audio/baseline/core/intel-nhlt.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7795926ef1e148ac18fcc23e3b95258c5819dd87de796f36b5c836760a37f0ed",
+      "bytes": 10929
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/intel-sdw-acpi.c",
+      "destination": "drivers/audio/baseline/core/intel-sdw-acpi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3cd659ed3c56a9e12b0dbbb57023bc84fa0aebc5a76d80495d38b363d32126b7",
+      "bytes": 5220
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/local.h",
+      "destination": "drivers/audio/baseline/core/local.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a2f91781a601fdbe2142e710caefd649112e285582cd923ce498c76d8fcba638",
+      "bytes": 924
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/regmap.c",
+      "destination": "drivers/audio/baseline/core/regmap.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4be0060cb0dc30695f76686d6e8482b654291808df0f411667b2d281ea0b98db",
+      "bytes": 15241
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/stream.c",
+      "destination": "drivers/audio/baseline/core/stream.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7f7597196cf0b984a8197f560d76ac1a4cf103b3b8a01078e10f53329d2038b4",
+      "bytes": 27552
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/sysfs.c",
+      "destination": "drivers/audio/baseline/core/sysfs.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1c3f32c1670217c52af65cc03bb97331e6c8fc82ef47079439b3369c4183ee89",
+      "bytes": 11503
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/trace.c",
+      "destination": "drivers/audio/baseline/core/trace.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d95f42e5cbb28b5fd8615cf56db2630c375e81d92baa0c29d0538090451d20b0",
+      "bytes": 143
+    },
+    {
+      "source": "experiments/kernel-42/validation/mbp143-cs8409-0.1/source/core/trace.h",
+      "destination": "drivers/audio/baseline/core/trace.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7988c841db9bee36f52b68a31d7ac4d60b83299595a418fd3875cd10bd0e53c0",
+      "bytes": 2319
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bc0d7d3ed6b53304c7d74b80a5731e0a41dedc85dbf52ee69dbff5a5d7def190",
+      "bytes": 205
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/Makefile",
+      "destination": "drivers/audio/pr220-0.1/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b7439d9319e734cf57b42107914bec87d9e5d5d6a7a878167f3dcf28714caad7",
+      "bytes": 298
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/codecs/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "43c5b77da7077a8d1414761790eeeaf665de28cfa7a2d4c2577f8ae9da94f653",
+      "bytes": 4342
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/Makefile",
+      "destination": "drivers/audio/pr220-0.1/codecs/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b1486446ff117966d22789ccee550dde2b2ec6541a057fe7fc24e9759adc016f",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/analog.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/analog.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c4c7c95f553f9151a3e64bf76f5a422a7f844e788175c7aaf2d4b9b6cc82b482",
+      "bytes": 30462
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/ca0110.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/ca0110.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "34aa04b16c0f1063dcdf5a6d4925dabed71a796bfdd41f56a4f4634835993c06",
+      "bytes": 1918
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/ca0132.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/ca0132.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d5a5f1536b9f0de4cc502970b214a43dd26ff9d539efa2b7f221479e8ca5bb7b",
+      "bytes": 285296
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/ca0132_regs.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/ca0132_regs.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a29e01d84cf9d79a91fecffb3e2ff58f7023fdf1dfae850964d0b3b30c22d1ab",
+      "bytes": 13680
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4dc655a25e7d62c4f78fdd40ef741df395c5690a14e61d266219f0711bfd368d",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/Makefile",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3c4e6cceb04141bc0172af060520fa6dc4e7facc8910594b22e36b395091a921",
+      "bytes": 387
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/cirrus_apple.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/cirrus_apple.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a1aa073301333d972ed65ff276579a889e6d06a7f1461702375db5a99136bb99",
+      "bytes": 127988
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/cs420x.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/cs420x.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "44b7f25a946e0e7352e2200f8195adf7ceae0969597f7c5738f96a6a6843dcd0",
+      "bytes": 21296
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/cs421x.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/cs421x.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "9a289eb57bd1b7b554034e8d19b00a53e3540ef36dc9172ec20d7d6544bda902",
+      "bytes": 15329
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/cs8409-tables.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/cs8409-tables.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "15bbfda8ad3bf245d0ecaf592ca9775c5c196a4a358c11a50a6cff6684996836",
+      "bytes": 28142
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/cs8409.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/cs8409.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "14921ad18db576fb3763a26bc2252efc99a56de84a2ab1ff1765f4c07b38764a",
+      "bytes": 48780
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/cs8409.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/cs8409.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "959e1394048b6d2317707ed9f909d0e6f3ec5715e34735e0eaf92c3a685d758c",
+      "bytes": 11788
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/patch_cirrus_boot84.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_boot84.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c5efdcec9cdf9cfc5b4975b4d238cdad98e2c4302e0c4067c70b73234b185fb9",
+      "bytes": 213049
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/patch_cirrus_hda_generic_copy.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_hda_generic_copy.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f405aa473b5aa0bfccb139a05e632dabe73af6aeb5757ab33d990c7571a3c281",
+      "bytes": 11569
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/patch_cirrus_new84.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_new84.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7da73abb0af6ba7930b3e660540267727bca577987969f3db5fe5a95ff133173",
+      "bytes": 75349
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/patch_cirrus_real84.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_real84.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a2c0a96cefc8adff9b5791d2ea93580ceb02d97012216dfbd37bd4b529a14c25",
+      "bytes": 285353
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cirrus/patch_cirrus_real84_i2c.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_real84_i2c.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5becd39e05b8a27e7a337fc1651a4fe6c71d21be47c934cd76407351f24d4f5a",
+      "bytes": 87744
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cm9825.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/cm9825.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "671f84c52fb6acf869850036c2a80b75fc815e169b7f77a60d9a701d6edb6e71",
+      "bytes": 16401
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/cmedia.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/cmedia.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "688dc096ce5df23ab4286eb35be359eb04caed308dd50a40ed152c60cda6148a",
+      "bytes": 2380
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/conexant.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/conexant.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "30f5172b833dfe1d8eb0aacb4e436436e4cc4a593868cce01c10855ce93db554",
+      "bytes": 41185
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/generic.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/generic.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4233c1a9a8a8da0c8f7a8263aea54c7e225881fddf62f845699dfdceed81929e",
+      "bytes": 168220
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/generic.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/generic.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "9175959750d86f715d15eb2e4c063a95861ed7d737418e9f55843b1af04446d6",
+      "bytes": 12468
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a9b36a3f4dff994e3f6f97c2daabcb6a87f5b7de846d19a904d9594bf0d59e26",
+      "bytes": 2984
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/Makefile",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f20ef5b0d12aba1ba46cc273c61a11b0e35219024d158b85e6b4027fac08b444",
+      "bytes": 832
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/atihdmi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/atihdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ff351602e365d26f3c535ccf1307928ed1936456e70e3b6f9a31c731c33fd9cf",
+      "bytes": 18134
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/eld.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/eld.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "58f636d68a7544ee1e1bddf968a2b2700494bed31194f310c1fb56811b43c830",
+      "bytes": 6220
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/hdmi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/hdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a574456e5d68a3bfa1ade166df066124176bb492871c95741815f87739bb2c0e",
+      "bytes": 64965
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/hdmi_local.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/hdmi_local.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c5b03f997c2d3415697a019bf47f9808773f641b086789884492e842ec6ec054",
+      "bytes": 9384
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/intelhdmi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/intelhdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b9a00664e4e3553f1e22d1e32042055d125d6d081ff2652856ba763ff8c87ea2",
+      "bytes": 22790
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/nvhdmi-mcp.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/nvhdmi-mcp.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ddb4911abb0cd7a65733b7400ef635a5e4919f9925bf6d3131ec9ddb56d1fa1f",
+      "bytes": 10141
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/nvhdmi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/nvhdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8a6f32ee11f45edfb7ea4bd68e35f1c7ae88a9983acb276bb604fbef298d2743",
+      "bytes": 9157
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/simplehdmi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/simplehdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "44b2442b79480069b086dd3e2d9201a1f82526b10ddd4ac1019afaf1b9256b49",
+      "bytes": 6797
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/hdmi/tegrahdmi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/hdmi/tegrahdmi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f46298d988db9cfe7b670e1b830abfcda384643a61d110ebdb6672e63839d313",
+      "bytes": 9208
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/helpers/hp_x360.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/helpers/hp_x360.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c10fd55e7caae781e3c7b28bfe8e34873bd4a33cbdf0e5e3b618903d56df977e",
+      "bytes": 8049
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/helpers/ideapad_hotkey_led.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/helpers/ideapad_hotkey_led.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d9acb8c9ecaccc6b695b8da2441f417467dffc280ec79a02a9eafec8d49c2af3",
+      "bytes": 882
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/helpers/ideapad_s740.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/helpers/ideapad_s740.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "46cbca36fd49f8cb2b0f5e174d7317c4bbbbce8e33a8a373775e0abc370c9962",
+      "bytes": 19734
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/helpers/thinkpad.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/helpers/thinkpad.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7e2094b1437bff998c1471a4bb5275c01d1b5700cabe569f123d72cf997387c6",
+      "bytes": 891
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b7f5ea771248de808323d56f473d92ea94950a34d906333b82cbccf759de52c2",
+      "bytes": 2926
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/Makefile",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d70166902fe4551912ff679bdb9c16a0699a8353ffdd8621a6ffa270289cf80f",
+      "bytes": 1159
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc260.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc260.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "07e85264e0bbe573e550e8fb1759d0db86a20fd75b635e3e0fc8be016444c4ca",
+      "bytes": 7644
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc262.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc262.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bd2623ad98145c6df6e90ab686f63cec5a0d2530ef13162f3c31d21d1780c934",
+      "bytes": 5521
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc268.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc268.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4562f62968d88a7d6f60d04df80dc4b9ba66f87059abec9b9dc7a4fc51da79fd",
+      "bytes": 5039
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc269.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc269.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2a4e71acf34ce81a7c73eeed9838f1c1819f78495c1c38d94bda5576746dbabb",
+      "bytes": 329290
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc662.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc662.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bc5777963662badc8e5ca8c284675ceaba89380c65dc74b432c264f4d4678231",
+      "bytes": 38036
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc680.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc680.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f2da800f1db8e40bb74b6f86ecf4e91d416d5d03eca4323b6872b2aa57ed5fde",
+      "bytes": 1480
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc861.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc861.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b9bfcd4cdeb71cb0f5c56dcfeab6bde7e20ef8fd3c64a66405cd0a6f312c1924",
+      "bytes": 4244
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc861vd.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc861vd.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6bd0feba1e2150e07f3922e8414587d2cdd4ae3ef99eba39a8ff76d0dbb5782c",
+      "bytes": 3328
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc880.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc880.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "37a3fe78e6afc4f96155f7e2f52503a714fbaaeb634f6144ae977f0cb4736d58",
+      "bytes": 15646
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/alc882.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/alc882.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7ac01b966830092758e34b45f19ca7da073c895937b3285c64ef9b7a11aa4505",
+      "bytes": 29464
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/realtek.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/realtek.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "26d3701d46b2f4cbfb59c60100587009d7ae4759a440025a5d78d4f42963ab2f",
+      "bytes": 62802
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/realtek/realtek.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/realtek/realtek.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2d8490340f08c10dfb968b9254fd96bffe11b0da3884403dcfb4ff43ca7b28cd",
+      "bytes": 9993
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/senarytech.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/senarytech.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4816918c82553b317da79ab946e1bb0351b9a03049caf255de02293d5eee2439",
+      "bytes": 6262
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/si3054.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/si3054.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "afdf9702b08b2540674fbfcf7bfba07f85d3c49acf8aefad93e7fb8be39c6657",
+      "bytes": 8355
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4084e0a981a7e7ec6befa1855ef071373cd59e2b066ea015293e5cbc9eeb1661",
+      "bytes": 4010
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/Makefile",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "09717a2ca2f70a0c832f16d9d16b5a468b1fc8a3971b8bc7c4b2aa8c4ff2453a",
+      "bytes": 468
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cirrus_scodec.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cirrus_scodec.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ef251fcb484a32ff33f4024da88136d00577bbeb45cf2c3f6440e8572cb6d354",
+      "bytes": 1918
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cirrus_scodec.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cirrus_scodec.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c9b78b62c0d2052ecbfe74f1f13794f8a1fb0ba7b3ab2209d7e56ed8ce5b4b48",
+      "bytes": 343
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cirrus_scodec_test.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cirrus_scodec_test.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "e8a6cdf541629465cbe3f1d362a61d8c392caa12eac5f33d226f042af7c8e825",
+      "bytes": 10516
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l41_hda.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0e6e68ce90cdc045d419eff8c7a39d5f67d18ae7689dbf4ebd3a04af3096b9ea",
+      "bytes": 59349
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l41_hda.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c1b64ee96be3fd3fb17a72e6d32e2a5d21bae41bdf26a7d14a5e2f41df96c80c",
+      "bytes": 2601
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l41_hda_i2c.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_i2c.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "30ea3873d9fb2f218d2cfaf66720b04044774a4fee333b682f17f8c8656f534d",
+      "bytes": 1738
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l41_hda_property.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_property.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c25fff7c86502a91d22d63dbb3005a4c19e9798074780d57314041f44caa309f",
+      "bytes": 25730
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l41_hda_property.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_property.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c43460924cd780748fbba7298b295ab3ef08c1c7c0c51dfd94ea059e0f9420c4",
+      "bytes": 441
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l41_hda_spi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_spi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "53561d01ff3bc1225cd3c39645c2a8dcec95625bf1eeb2a6421ebab0679172c1",
+      "bytes": 1613
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l56_hda.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "184a0f81b918d3dfb2a787944b448a20b85ea3375f87d91f094e2ad42f189805",
+      "bytes": 35887
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l56_hda.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "099bdc87ed9e96043b2f6d19369b0470b0907a10210451c4787f789d108a1180",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l56_hda_i2c.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda_i2c.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "fa657e582d06e7fb3e4c5d96c9ebd7e8801c4fcea657ddeb1c39cddaa14af2ea",
+      "bytes": 2180
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/cs35l56_hda_spi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda_spi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5afccd350dec254ac900fd57d6e9f4af2280a3097815131c41fe2c213bc0d39e",
+      "bytes": 2275
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/hda_component.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/hda_component.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "23d1a456bc3bac9a64e377afadcd5a5e2241bd1ed5fc68f754e4178ba2665ea3",
+      "bytes": 5841
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/hda_component.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/hda_component.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "71559a1d0d50d05e63b593dac96a041791292500dfedd606334804487fbcc8ae",
+      "bytes": 3071
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/tas2781_hda.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1c3782b6e57d3b8360958ea38053ad32cf15de1a15b6e532b1a71dcee4144bcc",
+      "bytes": 11944
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/tas2781_hda.h",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "22e0af0f836b1bf663747a19252ddd3de874ad6fb8c1c42fe0afdcb6db3ef97f",
+      "bytes": 2695
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/tas2781_hda_i2c.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda_i2c.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b566eefa5ab0bff74f48d9c55d42b3f8c36800fb846061cc5a3c5ff654015bc4",
+      "bytes": 22657
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/side-codecs/tas2781_hda_spi.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda_spi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "de30ac6bd8fe2aeafbd5a14140a6daeec8d5f01add8a34ef96abdd294f8e4c54",
+      "bytes": 25741
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/sigmatel.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/sigmatel.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b53e4f8fc877bc297a698b230a405acbe5847c1a891a0f6097ab4b77b6c105e9",
+      "bytes": 140688
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/codecs/via.c",
+      "destination": "drivers/audio/pr220-0.1/codecs/via.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "729d706689daa93cbfa0c04ab5aadb6094c09b36b1e244f45705b431550ccbe5",
+      "bytes": 31291
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/common/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f8b399b4d876c323f297e5d21bf39dfd43fa85fa0e939d64504d74f2c1cc7d63",
+      "bytes": 3218
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/Makefile",
+      "destination": "drivers/audio/pr220-0.1/common/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b35818428f2d015bcb2a9492e09f5f42c28e1dee5ea08d14ccd0cdda556cdef3",
+      "bytes": 396
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/auto_parser.c",
+      "destination": "drivers/audio/pr220-0.1/common/auto_parser.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ea5fee6080d5a9d571c232b039d2e66748410bab084e2f0972ca52a9f323d4f5",
+      "bytes": 31568
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/beep.c",
+      "destination": "drivers/audio/pr220-0.1/common/beep.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "23acd4c4a2019a30e2fe4894512a5885bb381afd5b2ba316fd92f37a4e5a574a",
+      "bytes": 8384
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/bind.c",
+      "destination": "drivers/audio/pr220-0.1/common/bind.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2de3d08a9c976bb554e26f5fcd06afb3aaba51966dffce83f4dffd7203f1ccb5",
+      "bytes": 8580
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/codec.c",
+      "destination": "drivers/audio/pr220-0.1/common/codec.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "fd6b631d1251b6192d64fa72611dd7225968a2009bb8bca50065337d05e5019e",
+      "bytes": 112350
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/controller.c",
+      "destination": "drivers/audio/pr220-0.1/common/controller.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f74fc9c8f742e535ed02448869eea31e48cb643662e739bab4582f54306cb602",
+      "bytes": 35510
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/controller_trace.h",
+      "destination": "drivers/audio/pr220-0.1/common/controller_trace.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a92ffc1a878b17ea4953b76033bf04964643512ca93ec18544df45176828dfc0",
+      "bytes": 2203
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/hda_auto_parser.h",
+      "destination": "drivers/audio/pr220-0.1/common/hda_auto_parser.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "59c9e34e50f22e36ddc45dc22ca822838104e745884e6841bee73e65876a0716",
+      "bytes": 3424
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/hda_beep.h",
+      "destination": "drivers/audio/pr220-0.1/common/hda_beep.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "9e943b14f5ab34c3d96474adb9f7ad289e8e413616af4c1ff69c93ad7f7cf4cf",
+      "bytes": 1223
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/hda_controller.h",
+      "destination": "drivers/audio/pr220-0.1/common/hda_controller.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bfde4d1166d4593430c48533d3050500d409e44633090a578ebb3b655d112100",
+      "bytes": 6562
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/hda_jack.h",
+      "destination": "drivers/audio/pr220-0.1/common/hda_jack.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b6af84afebab898958e2a972acab3783ed1849c826961f8333f01bd127572b49",
+      "bytes": 5913
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/hda_local.h",
+      "destination": "drivers/audio/pr220-0.1/common/hda_local.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "21b31260451c5fd4868f030cad31b86012acd3e5091caaa39a902d648073d2a9",
+      "bytes": 24611
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/hwdep.c",
+      "destination": "drivers/audio/pr220-0.1/common/hwdep.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2df08a819a1dce6f6193d4788c78874825825c9b9a35af5dd608f12445c259e7",
+      "bytes": 2769
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/jack.c",
+      "destination": "drivers/audio/pr220-0.1/common/jack.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3220e341fcb569b0cde1368f8803a87836cac3283ede8ff5424020b906b9efde",
+      "bytes": 20812
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/proc.c",
+      "destination": "drivers/audio/pr220-0.1/common/proc.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "95de5f4348e97c2437cff90ac5f2afb682010f7a9ed53ce070afcc0eb5b30e5a",
+      "bytes": 27745
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/common/sysfs.c",
+      "destination": "drivers/audio/pr220-0.1/common/sysfs.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "238cce5be076d65e60d90f4d69953f2c2769a64554edcb3a722edcec1166f0ed",
+      "bytes": 18486
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/controllers/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "06ae1e8933377a14eeafa7e1521025522b98314af3feb57db611bd789e6f59fc",
+      "bytes": 1634
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/Makefile",
+      "destination": "drivers/audio/pr220-0.1/controllers/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0685632260ba328f33922637a3650c799424c00d0f19afa572c004e48fb2ed53",
+      "bytes": 435
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/acpi.c",
+      "destination": "drivers/audio/pr220-0.1/controllers/acpi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6a3847257cb02be869d5de0ddf6a874e7d6ffde546b98715bc8b83479ef7de10",
+      "bytes": 7562
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/cix-ipbloq.c",
+      "destination": "drivers/audio/pr220-0.1/controllers/cix-ipbloq.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "59f8ccd5f121e3f3a00d1703cb62d559cc5c72230d221b73f050209dfdf02e26",
+      "bytes": 10764
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/intel.c",
+      "destination": "drivers/audio/pr220-0.1/controllers/intel.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5a7afc7bf59329c37713416ee3b4ba4348070a27c74c663e2ac10531c61e0149",
+      "bytes": 86835
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/intel.h",
+      "destination": "drivers/audio/pr220-0.1/controllers/intel.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2022df70e27637510ef62a06022eea71750dbdf12c65b77c3356d79ef52ebe80",
+      "bytes": 860
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/intel_trace.h",
+      "destination": "drivers/audio/pr220-0.1/controllers/intel_trace.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8dc1dac71407a7214a77ebe85ca5bb1ded16b1bb871047c1ba48698ddbef5e1b",
+      "bytes": 1005
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/controllers/tegra.c",
+      "destination": "drivers/audio/pr220-0.1/controllers/tegra.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d8f8d94621c290de83d3febdec9e62aa2d07d6c93f9b6dc8c762c8578155165c",
+      "bytes": 16425
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/Kconfig",
+      "destination": "drivers/audio/pr220-0.1/core/Kconfig",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a8ff8bbc4d2ff3f2643bd9c0c8d1608f9484bf863b8da84bbd9f31ddfac60fe8",
+      "bytes": 1353
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/Makefile",
+      "destination": "drivers/audio/pr220-0.1/core/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "53a3e5af7e677ba19d4c647512fbc185121847778db2f30c6c30ade009603563",
+      "bytes": 697
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/array.c",
+      "destination": "drivers/audio/pr220-0.1/core/array.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "15bfa86cbb28790d0dd4ec45e949bbb968f76d4542aa2dda35095dfcaa012e67",
+      "bytes": 1247
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/bus.c",
+      "destination": "drivers/audio/pr220-0.1/core/bus.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "13ab8ca4fede06fccb9b7e9b4ef5b8360b211c46b181d56e29953ab4e9a82a08",
+      "bytes": 7554
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/component.c",
+      "destination": "drivers/audio/pr220-0.1/core/component.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a6fdd2e0b46971a0716be03c69095d6e2ff9a166c745513f6e1622c7d3a1d8f1",
+      "bytes": 9956
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/controller.c",
+      "destination": "drivers/audio/pr220-0.1/core/controller.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7197df1815af3cc7f36c3a08bbb47cfc2b4d3a735fc2349d42773286e17cb129",
+      "bytes": 20173
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/device.c",
+      "destination": "drivers/audio/pr220-0.1/core/device.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1330274ab296d410d7cd258ae28d59789194d139b780fe73fccefac0ee997abe",
+      "bytes": 29808
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/ext/Makefile",
+      "destination": "drivers/audio/pr220-0.1/core/ext/Makefile",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3ec981358d24edff1ecad6f83ac15503b7358545ba1ab16dc51dfc22be8a5b0e",
+      "bytes": 144
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/ext/bus.c",
+      "destination": "drivers/audio/pr220-0.1/core/ext/bus.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8760c8dfb38029f7b99ef1ff19ad250da7e1eba64a47ea5c6c9103f3ae266a67",
+      "bytes": 3634
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/ext/controller.c",
+      "destination": "drivers/audio/pr220-0.1/core/ext/controller.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "44baf2b86a7a7b200f27a1bcc5f2e69c2f01f9990c4da3046c3a8a1e824ec2b6",
+      "bytes": 10380
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/ext/stream.c",
+      "destination": "drivers/audio/pr220-0.1/core/ext/stream.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "cf7b0ec10d18c134c0d0226b5b763862d0654004ef73ad08e71fa48e6509f50f",
+      "bytes": 12664
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/hda_bus_type.c",
+      "destination": "drivers/audio/pr220-0.1/core/hda_bus_type.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "85fbdb567b174dc3d31f02e9ceb8d947164a7b0c8d949c1e6209246ce1b21e51",
+      "bytes": 2186
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/hdmi_chmap.c",
+      "destination": "drivers/audio/pr220-0.1/core/hdmi_chmap.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "f9938462fc4709c62d380e99094c851795fa6f3036b93d1fef331e35f25f268f",
+      "bytes": 25235
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/i915.c",
+      "destination": "drivers/audio/pr220-0.1/core/i915.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "007b4c1dc4124d34c3d81d9b1b0ae3f7a8413629c1fb2805c4131d3e734ccfb5",
+      "bytes": 5751
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/intel-dsp-config.c",
+      "destination": "drivers/audio/pr220-0.1/core/intel-dsp-config.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "adec3d8c2819558a44cdf9b1eceb1a17e7db3e09ff3cdfce0386edf72e749935",
+      "bytes": 19901
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/intel-nhlt.c",
+      "destination": "drivers/audio/pr220-0.1/core/intel-nhlt.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7795926ef1e148ac18fcc23e3b95258c5819dd87de796f36b5c836760a37f0ed",
+      "bytes": 10929
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/intel-sdw-acpi.c",
+      "destination": "drivers/audio/pr220-0.1/core/intel-sdw-acpi.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3cd659ed3c56a9e12b0dbbb57023bc84fa0aebc5a76d80495d38b363d32126b7",
+      "bytes": 5220
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/local.h",
+      "destination": "drivers/audio/pr220-0.1/core/local.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a2f91781a601fdbe2142e710caefd649112e285582cd923ce498c76d8fcba638",
+      "bytes": 924
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/regmap.c",
+      "destination": "drivers/audio/pr220-0.1/core/regmap.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4be0060cb0dc30695f76686d6e8482b654291808df0f411667b2d281ea0b98db",
+      "bytes": 15241
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/stream.c",
+      "destination": "drivers/audio/pr220-0.1/core/stream.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7f7597196cf0b984a8197f560d76ac1a4cf103b3b8a01078e10f53329d2038b4",
+      "bytes": 27552
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/sysfs.c",
+      "destination": "drivers/audio/pr220-0.1/core/sysfs.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1c3f32c1670217c52af65cc03bb97331e6c8fc82ef47079439b3369c4183ee89",
+      "bytes": 11503
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/trace.c",
+      "destination": "drivers/audio/pr220-0.1/core/trace.c",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d95f42e5cbb28b5fd8615cf56db2630c375e81d92baa0c29d0538090451d20b0",
+      "bytes": 143
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/source/core/trace.h",
+      "destination": "drivers/audio/pr220-0.1/core/trace.h",
+      "component": "audio",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7988c841db9bee36f52b68a31d7ac4d60b83299595a418fd3875cd10bd0e53c0",
+      "bytes": 2319
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/upstream-220-kernel7.patch",
+      "destination": "drivers/audio/upstream-220-kernel7.patch",
+      "component": "audio",
+      "license": "GPL-2.0-or-later",
+      "disposition": "git",
+      "sha256": "cf97c9b960aaef4237d2d8260363b6f580c3d15ce0afae62ed9b066eaf0327c3",
+      "bytes": 4871
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/error-propagation.patch",
+      "destination": "drivers/audio/error-propagation.patch",
+      "component": "audio",
+      "license": "GPL-2.0-or-later",
+      "disposition": "git",
+      "sha256": "62551c6f1a53fbfa04c6eb8fce98926ff082bd672f9bcf3773416eb35f7d11e5",
+      "bytes": 1992
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/combined-kernel7.patch",
+      "destination": "drivers/audio/combined-kernel7.patch",
+      "component": "audio",
+      "license": "GPL-2.0-or-later",
+      "disposition": "git",
+      "sha256": "8cd8a45da723a7714e7e2adfddc8aab6d77444bf0752baefeb3a66b674cafe4b",
+      "bytes": 5336
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/LICENSE",
+      "destination": "drivers/audio/LICENSE",
+      "component": "audio",
+      "license": "GPL-2.0-or-later",
+      "disposition": "git",
+      "sha256": "091f12b2fa3623ded73330f65776bad538b50e87c617677b6aa3b6472bee368c",
+      "bytes": 18004
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/Kconfig",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/Kconfig",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bcf68063fb3d3d3659bf7c166dfe1da7bf54353247c925578e961b3446175648",
+      "bytes": 1478
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/Makefile",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/Makefile",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "fba4e66e491186c5fdd295d81602a83abc5f8b827a104f9910fe6aa9214f815f",
+      "bytes": 1151
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/acpi.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/acpi.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "af412ce1d3272d28dc971639a8f831d64118d11db43878dadf70ce6167cf6dfa",
+      "bytes": 1367
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/Makefile",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/Makefile",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6c39522eb3de877fcd9970e5931f89118f75d0894d2dc049ca7be602725e52d2",
+      "bytes": 211
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/core.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/core.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "458cd390000adcf2a9139ea5942d0e465bc46f2a2e214664150ec06ee21b3394",
+      "bytes": 820
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/module.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/module.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b6df241efded8bc5f04f7fae146bc4cffbebf68956d4154557af8797b35de874",
+      "bytes": 635
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/vops.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/vops.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4c8bc4a10d463cd4f9494745da61706044e7b30b782af0b8d0338a4cab08f60a",
+      "bytes": 264
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcdc.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcdc.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "57a06f51624f3128f38df82223cc0501ec11594a7d0428a855e156854ce7959b",
+      "bytes": 12741
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcdc.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcdc.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "98aca9e796804b6cd0f15c490370c674bbdb2b1be84e3210c0a657a14afc6fea",
+      "bytes": 686
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "9cf9ce0e27981ec399957c4e098de9bd9924332c6a36c4330cf61ff165f6b7d0",
+      "bytes": 33434
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/btcoex.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/btcoex.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bce337ad63ef4cccc5ec2bba0b64fe58f122e6b3e79111160c6d4877697028b0",
+      "bytes": 12688
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/btcoex.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/btcoex.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "2be4914926e397f223564af45b31cf350bd5d9f67c1494752f9148ae41607bee",
+      "bytes": 451
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bus.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bus.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5c99cbafa3c881ea96ccdf8fd9f693e070da39a953c6e658d6c6f4634f73eab4",
+      "bytes": 9930
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "caa7cf46c5c379362a910e94354465d3162272599bc69da6fbddfb578a50d461",
+      "bytes": 235362
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "89031854e21941889ca07315f693c53ef0b61b94c022bce5743cc204e003735e",
+      "bytes": 14940
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "932e25c75f9ea5247194dfdb78c6b41a457af68d7a558935a7b5489bf548aa9d",
+      "bytes": 39339
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "cb6ffbc01bfd35629acfaf87daa8f5a6ef4f9ce4f4f393c19b05c2bd18ff791e",
+      "bytes": 2841
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/common.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/common.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8b16af808a17e3a141f34e14b76d7c83090fbc04a9b98428744b98008b65bfc7",
+      "bytes": 17632
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/common.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/common.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b319771764b2ff2f32ee7e57718ff350b3ecfc093c07066dcbaa4a480a63c590",
+      "bytes": 2922
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4a5a5ac64da90251b1a6a24262d421f47c3ab365d58a95633bdf7380a3472473",
+      "bytes": 5503
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b2899336d680ca868536b25d1601ae99325ab66aaf1c565b4e638c71827b7369",
+      "bytes": 1877
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "8aca12c8be3f038c6b28437e35fbecbb838ab890bcf7e8e0600aec9e5a06bc30",
+      "bytes": 39260
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "e3134845f2f7fd0eb90e2631b63cde479957b44bda8904ddab74b274718069cf",
+      "bytes": 6545
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/Makefile",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/Makefile",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4778fece953ca85f9d9e46a5f8edc1fa23139e09afcb043929ac1778dde4e6ca",
+      "bytes": 211
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/core.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/core.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ad8f9ed772d3b452a3c6c69df9eb43e2c951f9cbd6d921ae9f633a2229b2b6ad",
+      "bytes": 11278
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/fwil_types.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/fwil_types.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "e700b02a130f543f12a238928f84ec9b70b238750ca15d3dfb7570b73bf4973c",
+      "bytes": 2015
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/module.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/module.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bf88ed5ceb44279951199d9cd8e9dd0538f5352876425ab8492d27be6b62e96d",
+      "bytes": 640
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/vops.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/vops.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "003495b3c00879aa9e0f32085d2eeb42f318cffbe202c8ed6b2c94848aad99ac",
+      "bytes": 264
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/debug.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/debug.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "bbc97b72f2bcfa04757184daddab1de03d57da1d9eb3f3f8374722f5351dfa39",
+      "bytes": 1209
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/debug.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/debug.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "05baaf3bf1d6d3364482b5f139555d4fb9b1b4c0379ad91853696ee3b05063bb",
+      "bytes": 4291
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/dmi.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/dmi.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b45b39f0981a2a057cccc8382be2638a6421e82ab8ce1efe25af0f4a7e0f0d0b",
+      "bytes": 7103
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6afeeeab48e2907b8f9b2f7cb6c9999fdf25c565b09847a1e6d9385d80b59b8d",
+      "bytes": 10246
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "809332a24eb3135eab24a17c9e54057284b5f5809148dcbe940bc13c157ca719",
+      "bytes": 3486
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/firmware.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/firmware.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "008127d2f2b4a9c657132b3836916f8b7a833de6217c574149a695e7ce25d004",
+      "bytes": 21046
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/firmware.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/firmware.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "166e4115f3d25e27526d94e04322286228e33ae2b6c983985c1d6d2a56c40123",
+      "bytes": 2520
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7c58d8f3a5069b8c60c6d2590a8adfce5875ee89076f983b4375ee04e28705a9",
+      "bytes": 11393
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4b8c494a06a911f3a01c45aa42e4cb93a53aac78cab644288996a27420200925",
+      "bytes": 2205
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fweh.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fweh.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "4a4c090a81e7c2a954834e98db41633f1cc5dd0a6b739edc5dbfc9b0bcd9f51c",
+      "bytes": 13486
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fweh.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fweh.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d36dbcf93b7aa789d1988463915880c20405d8fa09733e021b69675d7bb7ca2c",
+      "bytes": 12082
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1ba05bb9a089f6da2e7cdc863473c6168e2443e5c97d9e4906a94bde8bb202a9",
+      "bytes": 10054
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "770964dcbe004e1df7e7c5faecda90358e44cbd2fd56f25ceb73aaaf6a296f79",
+      "bytes": 6604
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil_types.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil_types.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "fa2f1b88f6b33c92a39a86bf4cfda9f368cf025347e03cf4614de9d7be46456d",
+      "bytes": 35677
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1cf8308959ad6ae2651f97c94bb391b88f0e6b39edf6712889a37fe1366dc266",
+      "bytes": 69514
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "51f14e634a8bf96de8d31a4861064038f9755daa1df6be80ef4e391b5e0c1966",
+      "bytes": 1706
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwvid.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwvid.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0b495cc8e5287c1f24b1ae411f0d74c6c0bbe491a866c1982f6a0d0eb616a7c1",
+      "bytes": 4541
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwvid.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwvid.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6d9150aaa8257c87eb7a093819c115ad197fe1c1a9850fd9ba80df747a5952fc",
+      "bytes": 2232
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "e05ca59da6de5b465b6358855da8036ea23e79b682e23d621bbccf4b224995ee",
+      "bytes": 45460
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "982683ed0fe0d984acbac405e1e5a9fe84fe0b1c54a9ab793c5961df8c3c9519",
+      "bytes": 1410
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/of.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/of.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0e80aada2e487c7402aa610a3509a1d16976841250919220e592c7add2303bc4",
+      "bytes": 3901
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/of.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/of.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "d27052440389dbc249e7435fccef43c18f8d07bf641563327ef0cf2bfab3cd7b",
+      "bytes": 367
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "96d95f329ac570bc3dedcd107e657727505c5ea7ca85403ca8078c3566bcadad",
+      "bytes": 74067
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "22ef3d1394b01eb096c67fcd08396f2b233ac840af1632d52716580088a6567f",
+      "bytes": 6802
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0211bb9ca1c8497da09bb332d392df73a845cf4d494be6e65dba1303d99223b2",
+      "bytes": 77822
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5d48671dc3226f929b813a0f48038d51a9a1b7de29711f41954fc4b6ce48680b",
+      "bytes": 249
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pno.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pno.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "114a8750a6c223afd9085dd2ecfc190c020e5cbd22efba6924e30caa322e4b4c",
+      "bytes": 14181
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pno.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pno.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "190211270b7ab6f92dc63acde26c2cb87aedc1774f98eafe6953e4f583f94512",
+      "bytes": 1928
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/proto.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/proto.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "e22e27641979e939f44657fc1e74495bb8cacb80e593cc5b100d9c957a6e8c23",
+      "bytes": 1592
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/proto.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/proto.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1c815ae635b0aa6434861be03d44eb715a4c6c359f4c9b834566c4de8944e081",
+      "bytes": 4068
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6889d448c8e7fab5cf28c3189675deda19a5d7c6e523895bf280441909fa8b9b",
+      "bytes": 129413
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "245881dce2fc3a9765a547ed29a56c0761ccfbaf6d7406ad43081e0d509a2d1b",
+      "bytes": 11397
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/tracepoint.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/tracepoint.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ef90882e078eee963a8ae2dcbbd0ef2608af38654d48a16de9c904a55467001c",
+      "bytes": 624
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/tracepoint.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/tracepoint.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1e76ac445913a9a77bf1d2fb501144048394125b638f831fb12ba4e406799932",
+      "bytes": 3366
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/usb.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/usb.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "596d2635d32f549db77e5c4bde7cf8873033b82cc9310b5f962523147e57cc91",
+      "bytes": 39719
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/usb.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/usb.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "0c9675eb3c21dd861fadf220190ce8ee5cb90f797e15a5f0f237fe773cfd774f",
+      "bytes": 801
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/vendor.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/vendor.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "3ddfd4441d70028324e92e91d2c2dd78d708bf5ed7f26194fb150c5189fe6414",
+      "bytes": 2719
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/vendor.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/vendor.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "24b201a75470706ceb47d4526db2b246aef7b89c17ec864eb7dfd7042841928f",
+      "bytes": 1034
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/Makefile",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/Makefile",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "c5d3e784b7629c9af24ee00bb133047baa6439e47893252e6514b64c38713e37",
+      "bytes": 211
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/core.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/core.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "a9ce6bb39905dcbf13e4276adc7563c8e20a57768070646abcab48f6c2199885",
+      "bytes": 868
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/module.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/module.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "5a2b30fa87576b3411c6399bd10539d1a05e74549f0af952d6adef78f2ecaaa1",
+      "bytes": 641
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/vops.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/vops.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1197bea9205d535c10fbd63dd498e92c2eae882e1392aa5a0e9a66c555d11788",
+      "bytes": 264
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/xtlv.c",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/xtlv.c",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "ff938acbe02c36881a51f83ca93e0265122edbb346fc8ca958946768e5dbb994",
+      "bytes": 1725
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/brcmfmac/xtlv.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/xtlv.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "6e2d62dda30960e008bd29c2cd9b5f9b9a20884014f65f6b32d3b9f32f912983",
+      "bytes": 707
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "32ebf65e5aa69162f8bc1f2f1d5793e8a337fcd47cc4d0c8bee23f0ba4f2d87d",
+      "bytes": 4131
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1ed2dcc37d792957f2f722b38f6ac1688d210f83316ddacc53a107b7cc3cfe0d",
+      "bytes": 4625
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/include/brcmu_utils.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcmu_utils.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "b033458f10401bde6e2ef1c14f64f137f15c0858c8df934f22718e248201d478",
+      "bytes": 5857
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/include/brcmu_wifi.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcmu_wifi.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "e768af55936c75aa9e8cc679b9c6c0bd199b3b0e08dad8bd15792f9596517423",
+      "bytes": 7674
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/include/chipcommon.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/chipcommon.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "1e7e449c3e54b725c6b7dc8ef1dfd8a4b8a5027941b496a1f211b36b4cfe1ddf",
+      "bytes": 8471
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/include/defs.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/defs.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "80568f1354dd96c0dbd49f64939e652d9d25d12a2d54c890068bf64eda23466a",
+      "bytes": 2154
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/source/drivers/net/wireless/broadcom/brcm80211/include/soc.h",
+      "destination": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/soc.h",
+      "component": "wifi",
+      "license": "upstream per-file licenses",
+      "disposition": "git",
+      "sha256": "7b74ceaf8afce6ec9c79f9f3053c5120d6e68a61c41f19a8cb6084a65046fbfa",
+      "bytes": 553
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/upstream/0682-brcmfmac-bcm43602-keep-d0-on-suspend.patch",
+      "destination": "drivers/wifi/0682-brcmfmac-bcm43602-keep-d0-on-suspend.patch",
+      "component": "wifi",
+      "license": "ISC",
+      "disposition": "git",
+      "sha256": "fe67c659096e64f30ce92588133b06a4e38bbf204816a353619b2cccb290348c",
+      "bytes": 825
+    },
+    {
+      "source": "experiments/kernel-42/linux-source-7.0.0/LICENSES/preferred/GPL-2.0",
+      "destination": "LICENSES/GPL-2.0.txt",
+      "component": "licenses",
+      "license": "GPL-2.0",
+      "disposition": "git",
+      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+      "bytes": 18600
+    },
+    {
+      "source": "experiments/kernel-42/linux-source-7.0.0/LICENSES/preferred/MIT",
+      "destination": "LICENSES/MIT.txt",
+      "component": "licenses",
+      "license": "MIT",
+      "disposition": "git",
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "bytes": 1372
+    },
+    {
+      "source": "experiments/kernel-42/linux-source-7.0.0/LICENSES/deprecated/ISC",
+      "destination": "LICENSES/ISC.txt",
+      "component": "licenses",
+      "license": "ISC",
+      "disposition": "git",
+      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388",
+      "bytes": 1046
+    },
+    {
+      "source": "assets/input/t1-touchbar/LICENSE",
+      "destination": "LICENSES/t1-wrapper-MIT.txt",
+      "component": "licenses",
+      "license": "MIT",
+      "disposition": "git",
+      "sha256": "2c6e5bfefee7882143062dd03d67ec8505f89764c574ead329e066de20931ee9",
+      "bytes": 1064
+    },
+    {
+      "source": "experiments/kernel-42/build-trial.py",
+      "destination": "reference/maintenance/experiments/kernel-42/build-trial.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "60e880346785403bb2987170bca2b378f2bc437a4aa77555e8c6a988675f6177",
+      "bytes": 3454
+    },
+    {
+      "source": "experiments/kernel-42/build-trial-drivers.py",
+      "destination": "reference/maintenance/experiments/kernel-42/build-trial-drivers.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "947c6aed74809f6f07ed886055e5b5a4f425f508135f7ee01ec66c2df47f33b4",
+      "bytes": 5430
+    },
+    {
+      "source": "experiments/kernel-42/prepare-source.py",
+      "destination": "reference/maintenance/experiments/kernel-42/prepare-source.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "a7a9570ee8fac7fa66ab39ff881b6ccaec3224717b9617f9b9605447337a9811",
+      "bytes": 9493
+    },
+    {
+      "source": "experiments/kernel-42/verify-packages.py",
+      "destination": "reference/maintenance/experiments/kernel-42/verify-packages.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "4203457f7dcebf19084f30afca3d44d21bff3e2f238daf66adf3e9d114480b01",
+      "bytes": 3270
+    },
+    {
+      "source": "experiments/kernel-42/analysis/prepare-audio-pr220.py",
+      "destination": "reference/maintenance/experiments/kernel-42/analysis/prepare-audio-pr220.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "8e0f3fa76c9f4b13b5a204e09330dfeaa87c9504d6bc92acf96095a13b90a76d",
+      "bytes": 3899
+    },
+    {
+      "source": "experiments/kernel-42/analysis/prepare-t1-s3-repeat.py",
+      "destination": "reference/maintenance/experiments/kernel-42/analysis/prepare-t1-s3-repeat.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "1b4965679c3b31340c60b9e7f8f8a6dccd67db44a72d535435f9a73ca23d97de",
+      "bytes": 9814
+    },
+    {
+      "source": "experiments/kernel-42/analysis/package-t1-mode-result.py",
+      "destination": "reference/maintenance/experiments/kernel-42/analysis/package-t1-mode-result.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "15ebbeefdc624229eb26ec1302c01a56c9dd31cc85070d90b74927e3f7b000a8",
+      "bytes": 6302
+    },
+    {
+      "source": "experiments/kernel-42/analysis/package-t1-s3-repeat.py",
+      "destination": "reference/maintenance/experiments/kernel-42/analysis/package-t1-s3-repeat.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "e5a0022b937d6ed31c8877ce0a4e6e3510799835febf60cde8a3735c4ec5733d",
+      "bytes": 10793
+    },
+    {
+      "source": "experiments/kernel-42/analysis/package-resume-drivers.py",
+      "destination": "reference/maintenance/experiments/kernel-42/analysis/package-resume-drivers.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "98aec81fb7b4b134f0848dd88a9f995f098f1f8a1970c2a4eaab6f7ac9492bb5",
+      "bytes": 9465
+    },
+    {
+      "source": "experiments/kernel-42/analysis/package-wifi-hostonly-fix.py",
+      "destination": "reference/maintenance/experiments/kernel-42/analysis/package-wifi-hostonly-fix.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "32c380965195042fcb7d13bb6bed2c55469431fc8dd05ba299f8fdd39af5c8b9",
+      "bytes": 4067
+    },
+    {
+      "source": "scripts/power/mbp143-suspend-trial-check.py",
+      "destination": "reference/maintenance/scripts/power/mbp143-suspend-trial-check.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "f03a283023ce5f15db5615c510dafee1760147426623b4bdd6b38576d09ede63",
+      "bytes": 7700
+    },
+    {
+      "source": "scripts/power/configure-mbp143-s3-trial.py",
+      "destination": "reference/maintenance/scripts/power/configure-mbp143-s3-trial.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "2e5be9f81e90afae0548f7bcef5b6991525765e587e5326a8615f7df241169d5",
+      "bytes": 11771
+    },
+    {
+      "source": "scripts/power/apply-mbp143-nvme-suspend-fix.sh",
+      "destination": "reference/maintenance/scripts/power/apply-mbp143-nvme-suspend-fix.sh.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "21d3934a27529800db59d892432c1fcd32c0810a63e9b55393f49fe272d5db7a",
+      "bytes": 2879
+    },
+    {
+      "source": "scripts/network/apply-mbp143-wifi-fix.sh",
+      "destination": "reference/maintenance/scripts/network/apply-mbp143-wifi-fix.sh.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git; adapted/redacted public copy; private original retained",
+      "sha256": "7699999cd9eb3ef2d9115f91c43867ef79f3c722cae1b92f9126eccbe55be963",
+      "bytes": 2211,
+      "source_sha256": "bd3139680a1c693aedd759f7e68eba128492135a4371cb92b912c0b530d4243d"
+    },
+    {
+      "source": "scripts/network/apply-mbp143-wifi-address-fix.sh",
+      "destination": "reference/maintenance/scripts/network/apply-mbp143-wifi-address-fix.sh.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "f0024b004f26a5f01f15d46224903bed1f656ae59ac9543d93d082d0e9bdabf6",
+      "bytes": 2127
+    },
+    {
+      "source": "scripts/display/apply-mbp143-intel-mutter-primary.sh",
+      "destination": "reference/maintenance/scripts/display/apply-mbp143-intel-mutter-primary.sh.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "1ef0f8932fd332ea1f82e2f6d0333e732631a37b8dc83585ba830b0e7dec917b",
+      "bytes": 3230
+    },
+    {
+      "source": "scripts/display/refresh-radeon-udev.py",
+      "destination": "reference/maintenance/scripts/display/refresh-radeon-udev.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "64f198a225e855d2ada6d35de55fbf23c277b759b96d8ca1afda5d31f76e3805",
+      "bytes": 1524
+    },
+    {
+      "source": "experiments/kernel-42/analysis/install-t1-s3-repeat.py",
+      "destination": "reference/maintenance/experiments/kernel-42/analysis/install-t1-s3-repeat.py.txt",
+      "component": "historical recipes",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git",
+      "sha256": "9e4eea637872451c4b4c58c0753ae7d1ee93432355965477a49f0a9505b5c8a6",
+      "bytes": 11260
+    },
+    {
+      "source": "experiments/kernel-42/analysis/test-audio-pr220-offline.py",
+      "destination": "tests/offline/test-audio-pr220-offline.py",
+      "component": "offline test",
+      "license": "MIT (independent local tool; imported fragments retain original notices)",
+      "disposition": "git; path-only adaptation",
+      "source_sha256": "6b468b88090f48a1ed1ad3744a83835d3ae6540c6f4c909888f43644d809727c",
+      "sha256": "be300efadee29b6ab0543edc38d0bf4b2c98a211e845caa22485c966296dae99"
+    },
+    {
+      "source": "experiments/kernel-42/packages/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
+      "destination": "dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
+      "component": "binary packages",
+      "license": "see per-file source notices",
+      "disposition": "release asset",
+      "sha256": "a1ffea1597f0909c83a9c0a54e08ad2a5a5befa862810375b65597cb584eb4e1",
+      "bytes": 14695572
+    },
+    {
+      "source": "experiments/kernel-42/packages/linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
+      "destination": "dist/linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
+      "component": "binary packages",
+      "license": "see per-file source notices",
+      "disposition": "release asset",
+      "sha256": "bad5a0ba5b31c99f98285e812d292cebaddcb702e5e04b540053ce57e1194076",
+      "bytes": 161406954
+    },
+    {
+      "source": "experiments/kernel-42/packages/mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
+      "destination": "dist/mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
+      "component": "binary packages",
+      "license": "see per-file source notices",
+      "disposition": "release asset",
+      "sha256": "832b6b041fdc9b269b0dea908edf72091b978eff85f7e7376831fea7e5d58788",
+      "bytes": 72276
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-mode-result-only/package/mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-1_amd64.deb",
+      "destination": "dist/mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-1_amd64.deb",
+      "component": "binary packages",
+      "license": "see per-file source notices",
+      "disposition": "release asset",
+      "sha256": "be5e270f3a4e40450e8203144108b9892991281027f9440ddb2da12790df37ad",
+      "bytes": 22892
+    },
+    {
+      "source": "experiments/kernel-42/candidates/audio-pr220/package/mbp143-audio-resume-7.0.14-mbp14342p1_0.1-1_amd64.deb",
+      "destination": "dist/mbp143-audio-resume-7.0.14-mbp14342p1_0.1-1_amd64.deb",
+      "component": "binary packages",
+      "license": "see per-file source notices",
+      "disposition": "release asset",
+      "sha256": "3c606444c1b2871c97fb02f3757cd3b9eaad4353c7d048e1d94dd8cabdd83ca5",
+      "bytes": 64778
+    },
+    {
+      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/package-v0.1-4/mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-4_amd64.deb",
+      "destination": "dist/mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-4_amd64.deb",
+      "component": "binary packages",
+      "license": "see per-file source notices",
+      "disposition": "release asset",
+      "sha256": "bd53ab7969815da4d502d213f39e8f52cd90b1069bf0713405a86212195ff177",
+      "bytes": 228846
+    },
+    {
+      "source": "assets/boot/intel-display/mbp143-gpu-switch.c",
+      "destination": "boot/efi/mbp143-gpu-switch.c",
+      "component": "graphics/EFI",
+      "version": "original local helper; publication recipe revision 1",
+      "license": "MIT",
+      "disposition": "git; unchanged source",
+      "source_sha256": "1b3426fc3721207e66ae3eef5c04b081cbdef3b8e8ca92e3c0e71a2ab774adf1",
+      "sha256": "1b3426fc3721207e66ae3eef5c04b081cbdef3b8e8ca92e3c0e71a2ab774adf1",
+      "bytes": 5464
+    },
+    {
+      "source": "assets/boot/intel-display/Makefile",
+      "destination": "boot/efi/Makefile",
+      "component": "graphics/EFI",
+      "version": "original local helper; publication recipe revision 1",
+      "license": "MIT",
+      "disposition": "git; source/output-path adaptation, no install target",
+      "source_sha256": "370ae0dbcce9ab221797561a71753ea085e303b72197f9bd8b49f3f010a3e055",
+      "sha256": "ce44c82e71370c05a28017caa02b3c829bbf99b17667164afd29c2983138b65d",
+      "bytes": 1402
+    },
+    {
+      "source": "scripts/boot/apply-mbp143-intel-display-menu.sh",
+      "destination": "reference/maintenance/scripts/boot/apply-mbp143-intel-display-menu.sh.txt",
+      "component": "graphics/EFI",
+      "version": "original local helper; publication recipe revision 1",
+      "license": "MIT",
+      "disposition": "git; adapted/redacted public copy; private original retained",
+      "source_sha256": "a6f6d82fa7e5a3e10637de15fef2bf2094822fc5d418ee03a8b9cf71ae597142",
+      "sha256": "d77453decb36f8da1cbac3dbba5057d03e4b8e2c372e63ea94be38a7b7019aca",
+      "bytes": 5119
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/source/apple-ibridge.c",
+      "destination": "drivers/t1/automatic-0.6/apple-ibridge.c",
+      "component": "t1",
+      "version": "0.6-1",
+      "license": "preserved per-file SPDX",
+      "disposition": "git",
+      "sha256": "9477e60aa33b99e7685bd4f4b8c95b5282b97c9ae39b89ddb1778240a15622ca",
+      "bytes": 33469
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/source/apple-touchbar.c",
+      "destination": "drivers/t1/automatic-0.6/apple-touchbar.c",
+      "component": "t1",
+      "version": "0.6-1",
+      "license": "preserved per-file SPDX",
+      "disposition": "git",
+      "sha256": "8a67581adc63b4432c7cc3235f2e26c5f679ad43e80e673bcffd40b035d9580b",
+      "bytes": 45363
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/source/apple-ibridge.h",
+      "destination": "drivers/t1/automatic-0.6/apple-ibridge.h",
+      "component": "t1",
+      "version": "0.6-1",
+      "license": "preserved per-file SPDX",
+      "disposition": "git",
+      "sha256": "d42de71370e6d60cbdaedb4028ce4fe4048940c20a513f0221f752479e0c200a",
+      "bytes": 955
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/source/hid-ids.h",
+      "destination": "drivers/t1/automatic-0.6/hid-ids.h",
+      "component": "t1",
+      "version": "0.6-1",
+      "license": "preserved per-file SPDX",
+      "disposition": "git",
+      "sha256": "70b551b047fc5c4e8c029764b64ef0a6167aa93b55913459f8df487ec1be2974",
+      "bytes": 55613
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/source/Makefile",
+      "destination": "drivers/t1/automatic-0.6/Makefile",
+      "component": "t1",
+      "version": "0.6-1",
+      "license": "preserved per-file SPDX",
+      "disposition": "git",
+      "sha256": "0b83960367a409292ce1b12c2d3cb62aa3a1bf9b5a911a999b9de1a222f33982",
+      "bytes": 360
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/source/LICENSE",
+      "destination": "drivers/t1/automatic-0.6/LICENSE",
+      "component": "t1",
+      "version": "0.6-1",
+      "license": "preserved per-file SPDX",
+      "disposition": "git",
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73",
+      "bytes": 18046
+    },
+    {
+      "source": "experiments/kernel-42/analysis/test-t1-s3-automatic-offline.py",
+      "destination": "tests/offline/test-t1-s3-automatic-offline.py",
+      "component": "automatic driver checks",
+      "version": "0.6",
+      "license": "MIT",
+      "disposition": "git; source-relative path adaptation where required",
+      "source_sha256": "14ba9d5540f8ad310e510825a374402ac336a892539723ac8f5474893d1a73bb",
+      "sha256": "2b071745b8cde0b0fc117beec66196a0bed3524631ba1e1ca2b137027d4160f4",
+      "bytes": 12176
+    },
+    {
+      "source": "scripts/power/mbp143-suspend-check.py",
+      "destination": "tests/policy/mbp143-suspend-check.py",
+      "component": "automatic driver checks",
+      "version": "0.6",
+      "license": "MIT",
+      "disposition": "git; source-relative path adaptation where required",
+      "source_sha256": "2c64e7657da4c128ea5fb414599d7504668123e220656c07d070950e927ea79b",
+      "sha256": "2c64e7657da4c128ea5fb414599d7504668123e220656c07d070950e927ea79b",
+      "bytes": 7082
+    },
+    {
+      "source": "scripts/power/test-suspend-check-offline.py",
+      "destination": "tests/policy/test-suspend-check-offline.py",
+      "component": "automatic driver checks",
+      "version": "0.6",
+      "license": "MIT",
+      "disposition": "git; source-relative path adaptation where required",
+      "source_sha256": "c9a51f8ee761fb3b67ff213404bf4811f6065f30e2a6fe553985ef0136ae6d93",
+      "sha256": "c9a51f8ee761fb3b67ff213404bf4811f6065f30e2a6fe553985ef0136ae6d93",
+      "bytes": 2831
+    },
+    {
+      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-1_amd64.deb",
+      "destination": "dist/mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-1_amd64.deb",
+      "component": "t1 binary package",
+      "version": "0.6-1",
+      "license": "preserved source licenses",
+      "disposition": "release asset",
+      "sha256": "a5fb4bf9024668e318f680dc3db71c3ac5d5d867b403fdb98c452f34acdf70e3",
+      "bytes": 39544
+    }
+  ],
+  "component_versions": {
+    "kernel": "7.0.0-42.42+mbp143.1 / 7.0.14-mbp14342p1",
+    "t1": "baseline + mode-result 0.1-1 + automatic 0.6-1",
+    "audio": "PR220 0.1-1",
+    "wifi": "D0 source 0.1-1, unchanged binary in packaging 0.1-4",
+    "graphics/EFI": "original GPU-selection source; portable build-only recipe revision 1"
+  },
+  "origin_register": "docs/source-provenance.md and THIRD_PARTY_NOTICES.md",
+  "license_selection": "Independent tools MIT; new documentation CC BY 4.0; imported work retains per-file notices.",
+  "graphics_EFI_extraction_checkpoint": "db1eec42fe9a49826c2171f1f57b5bb8002b3a47",
+  "automatic_driver_checkpoint": "b44d58ed4964e993aa3b075e110a86c7d801a560",
+  "privacy": "Private setup details omitted in prose/references; old unpublished history retained privately; original binary build-path metadata remains documented."
+}

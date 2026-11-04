@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""Build trial artifacts only. Never installs packages or changes boot policy."""
+from pathlib import Path
+import os, subprocess, time, json, shutil, signal, fcntl
+
+ROOT=Path(__file__).resolve().parent
+SRC=ROOT/'linux-source-7.0.0'
+BUILD=ROOT/'build'
+env=os.environ.copy()
+env.update(KBUILD_BUILD_USER='mbp143-builder',KBUILD_BUILD_HOST='local',
+           KBUILD_BUILD_VERSION='1',KDEB_SOURCENAME='linux-mbp143',
+           KDEB_PKGVERSION='7.0.0-42.42+mbp143.1',KDEB_CHANGELOG_DIST='resolute',
+           DEBFULLNAME='Local MacBook Trial Builder',DEBEMAIL='builder@localhost',
+           DEB_BUILD_PROFILES='pkg.linux-mbp143.nokerneldbg pkg.linux-mbp143.nokernellibc',
+           DEB_BUILD_OPTIONS='parallel=2',DPKG_DEB_COMPRESSOR_TYPE='zstd',
+           DPKG_DEB_COMPRESSOR_LEVEL='3')
+
+def run(stage, cmd):
+    started=time.time()
+    logfile=ROOT/'logs'/f'{stage}.log'
+    with logfile.open('a') as log:
+        log.write('\n=== Resumable build invocation: '+time.strftime('%Y-%m-%d %H:%M:%S')+' ===\n')
+        log.flush()
+        p=subprocess.Popen(cmd,cwd=SRC,env=env,stdout=log,stderr=subprocess.STDOUT)
+        while p.poll() is None:
+            free=shutil.disk_usage(ROOT).free
+            temperatures=[]
+            for hwmon in Path('/sys/class/hwmon').glob('*'):
+                try:
+                    if (hwmon/'name').read_text().strip()=='coretemp':
+                        temperatures.extend(int(f.read_text())/1000 for f in hwmon.glob('temp*_input'))
+                except OSError:
+                    pass
+            hottest=max(temperatures,default=0)
+            (ROOT/'logs/status.json').write_text(json.dumps({
+                'stage':stage,'pid':p.pid,'elapsed_seconds':round(time.time()-started),
+                'free_gib':round(free/2**30,1),'cpu_temp_c':hottest,'running':True})+'\n')
+            if free<15*2**30:
+                p.terminate()
+                raise RuntimeError('Stopped own build: less than 15 GiB disk free')
+            if hottest>=95:
+                p.terminate()
+                p.wait()
+                (ROOT/'logs/status.json').write_text(json.dumps({
+                    'stage':stage,'running':False,'stopped_reason':'CPU temperature reached 95 C',
+                    'cpu_temp_c':hottest})+'\n')
+                raise RuntimeError('Stopped own build: CPU temperature reached 95 C')
+            time.sleep(10)
+    state={'stage':stage,'exit_code':p.returncode,'running':False,
+           'elapsed_seconds':round(time.time()-started)}
+    (ROOT/'logs/status.json').write_text(json.dumps(state)+'\n')
+    print(json.dumps(state),flush=True)
+    if p.returncode:
+        print('\n'.join(logfile.read_text(errors='replace').splitlines()[-45:]),flush=True)
+        raise SystemExit(p.returncode)
+
+if __name__=='__main__':
+    lock=(ROOT/'logs/build.lock').open('w')
+    fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+    run('full-build',['nice','-n','19','make','O=../build','AWK=mawk','-j2','all'])
+    run('deb-packaging',['nice','-n','19','make','O=../build','AWK=mawk','-j2','bindeb-pkg'])
+    for pattern in ['*.deb','*.buildinfo','*.changes']:
+        for f in ROOT.glob(pattern):
+            shutil.move(f,ROOT/'packages'/f.name)
+    run('trial-driver-packaging',['python3',str(ROOT/'build-trial-drivers.py')])
+    run('package-validation',['python3',str(ROOT/'verify-packages.py')])
+    print('Validated trial .deb artifacts ready in',ROOT/'packages',flush=True)

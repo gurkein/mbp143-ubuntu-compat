@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""Recreate only the ignored Radeon DRM card's udev record, not its driver."""
+from pathlib import Path
+import subprocess, os, json
+assert os.geteuid()==0
+def props(card):
+    q=subprocess.check_output(['udevadm','info','-q','property','-p',str(card)],text=True)
+    return dict(x.split('=',1) for x in q.splitlines() if '=' in x)
+cards=list(Path('/sys/class/drm').glob('card[0-9]'))
+radeon=[p for p in cards if (p/'device/vendor').read_text().strip()=='0x1002']
+intel=[p for p in cards if (p/'device/vendor').read_text().strip()=='0x8086']
+assert len(radeon)==len(intel)==1
+card=radeon[0]
+assert 'mutter-device-preferred-primary' in props(intel[0]).get('CURRENT_TAGS','')
+assert 'mutter-device-ignore' not in props(card).get('CURRENT_TAGS','')
+assert Path('/sys/class/graphics/fb0/name').read_text().strip()=='i915drmfb'
+if 'mutter-device-ignore' in props(card).get('TAGS',''):
+    try:
+        subprocess.run(['udevadm','trigger','--action=remove',str(card)],check=True)
+        subprocess.run(['udevadm','settle','--timeout=15'],check=True)
+    finally:
+        subprocess.run(['udevadm','trigger','--action=add',str(card)],check=True)
+        subprocess.run(['udevadm','settle','--timeout=15'],check=True)
+p=props(card)
+assert 'mutter-device-ignore' not in p.get('TAGS','')
+assert 'mutter-device-ignore' not in p.get('CURRENT_TAGS','')
+print(json.dumps({'card':card.name,'historical_ignore_cleared':True,
+                  'framebuffer':Path('/sys/class/graphics/fb0/name').read_text().strip()}))

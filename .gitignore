@@ -1,0 +1,17 @@
+/dist/
+/build/
+__pycache__/
+*.pyc
+*.o
+*.ko
+*.efi
+*.mod
+*.mod.c
+*.cmd
+Module.symvers
+modules.order
+*.key
+*.p12
+*.pfx
+signing_key.pem
+.env

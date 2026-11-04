@@ -1,0 +1,11 @@
+Package: mbp143-t1-phase-trace-7.0.14-mbp14342p1
+Version: 0.6-1
+Architecture: amd64
+Maintainer: Local MacBook Trial Builder <builder@localhost>
+Section: kernel
+Priority: optional
+Depends: mbp143-t1-mode-result-7.0.14-mbp14342p1 (= 0.1-1), mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1), kmod, linux-initramfs-tool
+Description: Guarded T1 PM callback diagnostics for one trial kernel
+ Serialize T1 mode work and automatic model-scoped S3 firmware notifications.
+ No once/repeat activation parameter; sleep availability belongs to system policy.
+ No activation, sleep enablement or hardware test is included.

@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source_nvram=/tmp/mbp143-brcmfmac43602.txt
+expected_sha256=ad80eafca52946e0186a6d18985edf4991481a526b2d2e4876321b948bbbcfec
+firmware_dir=/lib/firmware/brcm
+backup_dir=/var/backups/mbp143-wifi-fix
+wifi_if=wlp3s0
+
+if [[ $EUID -ne 0 ]]; then
+  echo "Run this script with sudo." >&2
+  exit 1
+fi
+
+if [[ ! -r $source_nvram ]]; then
+  wget -q -O "$source_nvram" \
+    https://raw.githubusercontent.com/animatek/macbook-bcm43602-linux/main/files/brcmfmac43602-pcie.txt
+fi
+
+actual_sha256=$(sha256sum "$source_nvram" | awk '{print $1}')
+if [[ $actual_sha256 != $expected_sha256 ]]; then
+  echo "NVRAM source checksum mismatch; refusing to install." >&2
+  exit 1
+fi
+
+read -r -s -p "Enter the Wi-Fi address reported by macOS: " adapter_mac
+echo
+adapter_mac=${adapter_mac,,}
+if [[ ! $adapter_mac =~ ^([0-9a-f]{2}:){5}[0-9a-f]{2}$ ]]; then
+  echo "Invalid address format; refusing to install." >&2
+  exit 1
+fi
+first_octet=$((16#${adapter_mac%%:*}))
+if (( (first_octet & 1) != 0 )); then
+  echo "A unicast address is required; refusing to install." >&2
+  exit 1
+fi
+install -d -m 0755 "$backup_dir" "$firmware_dir" /etc/modprobe.d /etc/NetworkManager/conf.d
+
+for existing in \
+  "$firmware_dir/brcmfmac43602-pcie.txt" \
+  /etc/modprobe.d/brcmfmac-mbp143.conf \
+  /etc/NetworkManager/conf.d/99-wifi-powersave-off.conf; do
+  if [[ -e $existing || -L $existing ]]; then
+    cp -a "$existing" "$backup_dir/$(basename "$existing").pre-fix"
+  fi
+done
+
+sed \
+  -e "s/^macaddr=.*/macaddr=$adapter_mac/" \
+  -e 's/^ccode=.*/ccode=<COUNTRY_CODE>/' \
+  "$source_nvram" > "$firmware_dir/brcmfmac43602-pcie.txt"
+chmod 0644 "$firmware_dir/brcmfmac43602-pcie.txt"
+
+cat > /etc/modprobe.d/brcmfmac-mbp143.conf <<'EOF'
+options brcmfmac roamoff=1 feature_disable=0x2000
+EOF
+
+cat > /etc/NetworkManager/conf.d/99-wifi-powersave-off.conf <<'EOF'
+[connection]
+wifi.powersave=2
+EOF
+
+if [[ -e "$firmware_dir/brcmfmac43602-pcie.bin.zst" ]]; then
+  ln -sfn brcmfmac43602-pcie.bin.zst \
+    "$firmware_dir/brcmfmac43602-pcie.Apple Inc.-MacBookPro14,3.bin.zst"
+fi
+
+update-initramfs -u
+
+echo "Wi-Fi fix installed. Backups: $backup_dir"
+echo "Reboot normally to load it; do not reload brcmfmac in the running desktop."

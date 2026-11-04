@@ -1,0 +1,19 @@
+name: Offline source checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify imported sources and patches
+        run: python3 scripts/verify-files.py
+      - name: Reproduce patch outputs in temporary copies
+        run: python3 scripts/verify-patches.py
+      - name: Test T1 state machine and races
+        run: python3 tests/offline/test-t1-s3-automatic-offline.py
+      - name: Test audio recovery and error propagation
+        run: python3 tests/offline/test-audio-pr220-offline.py
+      - name: Test readiness refusals and restoration using temporary files
+        run: python3 tests/policy/test-suspend-check-offline.py

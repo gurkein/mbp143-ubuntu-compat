@@ -1,0 +1,199 @@
+#!/usr/bin/env python3
+"""Package default-off repeat-mode S3 candidate; validate offline, never install or arm."""
+from pathlib import Path
+import argparse
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import tempfile
+
+os.umask(0o022)
+ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'AGENTS.md').exists())
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--candidate', choices=['t1-s3-repeat'], default='t1-s3-repeat')
+parser.add_argument('--resume-incomplete',action='store_true')
+args = parser.parse_args()
+VERSION = '0.5-1'
+KVER = '7.0.14-mbp14342p1'
+PKG = 'mbp143-t1-phase-trace-' + KVER
+BASE = ROOT / 'experiments/kernel-42/candidates' / args.candidate
+OUT = BASE / 'package'
+if args.resume_incomplete:
+    assert OUT.exists() and not (OUT/'package-validation.json').exists()
+    assert not list(OUT.glob('*.deb')), 'Do not overwrite a completed artifact'
+OUT.mkdir(exist_ok=args.resume_incomplete)
+SOURCE = OUT / 'source'
+SOURCE.mkdir(exist_ok=args.resume_incomplete)
+for name in ['apple-ibridge.c', 'apple-touchbar.c', 'apple-ibridge.h', 'hid-ids.h', 'Makefile', 'LICENSE']:
+    shutil.copyfile(BASE / name, SOURCE / name)
+for name in ['apple-ibridge.c', 'apple-touchbar.c']:
+    f = SOURCE / name
+    text = f.read_text()
+    assert text.count('static bool pm_trace;') == 1
+    f.write_text(text.replace('static bool pm_trace;', 'static bool pm_trace = true;'))
+subprocess.run(['make', '-C', str(SOURCE), 'KERNELRELEASE=' + KVER, '-j4'], check=True)
+stage = OUT / 'stage'
+subdir = 'updates/mbp143-t1-phase-trace'
+module_dir = stage / 'lib/modules' / KVER / subdir
+module_dir.mkdir(parents=True,exist_ok=args.resume_incomplete)
+build = ROOT / 'experiments/kernel-42/build'
+modules = {}
+for name in ['apple-ibridge', 'apple-touchbar']:
+    f = module_dir / (name + '.ko')
+    shutil.copyfile(SOURCE / f.name, f)
+    subprocess.run(['strip', '--strip-debug', str(f)], check=True)
+    subprocess.run([str(build / 'scripts/sign-file'), 'sha512', str(build / 'certs/signing_key.pem'),
+                    str(build / 'certs/signing_key.x509'), str(f)], check=True)
+    fields = {k:subprocess.check_output(['modinfo', '-F', k, str(f)], text=True).strip()
+              for k in ['vermagic', 'srcversion', 'signer', 'sig_key']}
+    assert fields['vermagic'].split()[0] == KVER and fields['signer']
+    current = subprocess.check_output(['modinfo', '-n', name], text=True).strip()
+    assert fields.pop('sig_key') == subprocess.check_output(['modinfo','-F','sig_key',current],text=True).strip()
+    modules[name] = {**fields, 'sha256': hashlib.sha256(f.read_bytes()).hexdigest()}
+config = stage / 'usr/lib/depmod.d/zz-mbp143-t1-phase-trace.conf'
+config.parent.mkdir(parents=True,exist_ok=args.resume_incomplete)
+config.write_text('# Diagnostic overrides, exact trial kernel only.\n' + ''.join(
+    f'override {n} ^7[.]0[.]14-mbp14342p1$ {subdir}\n'
+    for n in ['apple-ibridge','apple-touchbar']))
+control = stage / 'DEBIAN'
+control.mkdir(exist_ok=args.resume_incomplete)
+details = (' Serialize T1 mode work and guarded repeat S3 firmware notifications.\n'
+           ' S3 firmware notification option defaults OFF and is read-only.\n'
+           ' No activation, sleep enablement or hardware test is included.\n')
+(control / 'control').write_text(f'''Package: {PKG}
+Version: {VERSION}
+Architecture: amd64
+Maintainer: Local MacBook Trial Builder <builder@localhost>
+Section: kernel
+Priority: optional
+Depends: mbp143-t1-mode-result-{KVER} (= 0.1-1), mbp143-trial-drivers-{KVER} (= 7.0.0-42.42+mbp143.1), kmod, linux-initramfs-tool
+Description: Guarded T1 PM callback diagnostics for one trial kernel
+{details}\
+''')
+hook = f'''#!/bin/sh
+set -e
+case "$1" in
+  configure|remove|purge)
+    if [ -d /lib/modules/{KVER} ]; then
+      depmod -a {KVER}
+      if [ -e /boot/vmlinuz-{KVER} ]; then
+        update-initramfs -u -k {KVER}
+      fi
+    fi
+    ;;
+esac
+exit 0
+'''
+for name in ['postinst','postrm']:
+    f=control/name
+    f.write_text(hook)
+    f.chmod(0o755)
+    subprocess.run(['sh','-n',str(f)],check=True)
+doc=stage/'usr/share/doc'/PKG
+doc.mkdir(parents=True,exist_ok=args.resume_incomplete)
+patch_name = 's3-repeat.patch'
+shutil.copyfile(BASE/patch_name,doc/patch_name)
+shutil.copyfile(BASE/'LICENSE',doc/'copyright')
+shutil.copyfile(BASE/'README.md', doc/'README')
+# Verify imports against the exact target headers, not the running host's ABI.
+exports = {row[1]: int(row[0], 16) for line in
+           Path('/lib/modules', KVER, 'build/Module.symvers').read_text().splitlines()
+           if len(row := line.split()) >= 2}
+peer_exports = {row[1]: int(row[0], 16) for line in
+                (SOURCE/'Module.symvers').read_text().splitlines()
+                if len(row := line.split()) >= 3 and row[1].startswith('appleib_tb_')}
+assert len(peer_exports) == 5
+assert not set(peer_exports).intersection(exports), 'Unexpected kernel symbol collision'
+exports.update(peer_exports)
+for name in modules:
+    imported = subprocess.check_output(
+        ['modprobe', '--show-modversions', str(module_dir/(name+'.ko'))], text=True)
+    rows = [line.split() for line in imported.splitlines() if line.strip()]
+    assert rows, 'Expected versioned imports'
+    for crc, symbol in rows:
+        assert exports.get(symbol) == int(crc, 16), ('Import ABI mismatch', symbol)
+    modules[name]['matching_import_CRCs'] = len(rows)
+    modules[name]['peer_imports'] = [symbol for crc,symbol in rows if symbol in peer_exports]
+    if name == 'apple-touchbar':
+        assert set(modules[name]['peer_imports']) == set(peer_exports)
+        depends = subprocess.check_output(['modinfo','-F','depends',str(module_dir/(name+'.ko'))],text=True).strip()
+        assert 'apple-ibridge' in depends.split(',')
+        modules[name]['depends_on_matching_bridge'] = True
+    parameters = subprocess.check_output(['modinfo','-p',str(module_dir/(name+'.ko'))],text=True)
+    if name == 'apple-ibridge':
+        assert all(x+':' in parameters for x in ['s3_notify_once','s3_notify_repeat','s3_repeat_status','s3_repeat_completed','skip_acpi_power'])
+    assert all('static bool '+x+';' in (SOURCE/'apple-ibridge.c').read_text() for x in ['s3_notify_once','s3_notify_repeat'])
+# Preserve the signed, active 0.4 downgrade artifact; never modify it.
+previous = ROOT/'experiments/kernel-42/candidates/t1-s3-ordered/package'
+old_meta = json.loads((previous/'package-validation.json').read_text())
+old_deb = ROOT/old_meta['deb']
+assert hashlib.sha256(old_deb.read_bytes()).hexdigest() == old_meta['deb_sha256']
+
+# Use all host depmod configuration rules plus the proposed vendor file.
+with tempfile.TemporaryDirectory(prefix='mbp143-phase-selection-') as tmp:
+    sandbox=Path(tmp)
+    configs=sandbox/'config'
+    configs.mkdir()
+    for folder in ['/usr/lib/depmod.d','/usr/local/lib/depmod.d','/run/depmod.d','/etc/depmod.d']:
+        for f in Path(folder).glob('*.conf'):
+            shutil.copyfile(f,configs/f.name)
+    shutil.copyfile(config,configs/config.name)
+    dest=sandbox/'lib/modules'/KVER
+    host=Path('/lib/modules')/KVER
+    for directory in ['updates/mbp143-trial','updates/mbp143-t1-mode-result']:
+        for original in (host/directory).glob('apple-*.ko'):
+            target=dest/directory/original.name
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(original,target)
+    for f in module_dir.glob('*.ko'):
+        target=dest/subdir/f.name
+        target.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(f,target)
+    for name in ['modules.order','modules.builtin','modules.builtin.modinfo']:
+        if (host/name).exists():shutil.copyfile(host/name,dest/name)
+    subprocess.run(['depmod','-b',tmp,'-C',str(configs),KVER],check=True,capture_output=True)
+    dependency=(dest/'modules.dep').read_text()
+    for name in ['apple-ibridge','apple-touchbar']:
+        assert subdir+'/'+name+'.ko:' in dependency
+    # Model an explicit downgrade to 0.4 with the same override rule/path.
+    for name in ['apple-ibridge','apple-touchbar']:
+        original = previous/'stage/lib/modules'/KVER/subdir/(name+'.ko')
+        assert hashlib.sha256(original.read_bytes()).hexdigest() == old_meta['modules'][name]['sha256']
+        shutil.copyfile(original, dest/subdir/original.name)
+    subprocess.run(['depmod','-b',tmp,'-C',str(configs),KVER],check=True,capture_output=True)
+    for name in ['apple-ibridge','apple-touchbar']:
+        selected = subprocess.check_output(['modinfo','-b',tmp,'-k',KVER,'-n',name],text=True).strip()
+        assert hashlib.sha256(Path(selected).read_bytes()).hexdigest() == old_meta['modules'][name]['sha256']
+    for f in (dest/subdir).glob('*.ko'):f.unlink()
+    (configs/config.name).unlink()
+    subprocess.run(['depmod','-b',tmp,'-C',str(configs),KVER],check=True,capture_output=True)
+    dependency=(dest/'modules.dep').read_text()
+    assert 'updates/mbp143-t1-mode-result/apple-touchbar.ko:' in dependency
+    assert 'updates/mbp143-trial/apple-ibridge.ko:' in dependency
+deb=OUT/(PKG+'_'+VERSION+'_amd64.deb')
+subprocess.run(['dpkg-deb','--root-owner-group','--build',str(stage),str(deb)],check=True)
+result={'package':PKG,'version':VERSION,'source_candidate':args.candidate,
+        'deb':str(deb.relative_to(ROOT)),
+        'deb_sha256':hashlib.sha256(deb.read_bytes()).hexdigest(),'modules':modules,
+        'selection_downgrade_and_removal_with_host_configuration':'passed',
+        'rollback_deb':str(old_deb.relative_to(ROOT)),
+        'rollback_deb_sha256':old_meta['deb_sha256'],
+        'diagnostic_build_trace_default':True,'source_candidate_trace_default':False,
+        's3_notify_once_default':False,'s3_notify_once_read_only':True,
+        's3_notify_repeat_default':False,'s3_notify_repeat_read_only':True,
+        'legacy_one_shot_semantics_preserved':True,'firmware_resume_flag_required_for_repeat':True,
+        'refresh_cache_commit_required_for_repeat':True,'T1_write_failures_terminal':True,
+        'read_only_repeat_status_and_completed_count':True,
+        'offline_actual_C_repeat_and_failure_tests':'passed',
+        'global_modprobe_configuration_added':False,
+        'new_SOCW_evaluation_sites':2,'legacy_SOCW_probe_guard_preserved':True,
+        'firmware_behavior':'unverified; may hard-freeze if explicitly enabled',
+        'device_stage_test_when_enabled':'would execute AML; do not reuse old runners',
+        'wake_mode_worker_order':'I/O gate covers SOCW and full worker/cache commit; refresh queued before reopen',
+        'peer_exports_checked':sorted(peer_exports),
+        'new_module_dependency_normal_boot':'unverified',
+        'installed':False,'loaded':False,'power_test_authorized':False}
+(OUT/'package-validation.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))

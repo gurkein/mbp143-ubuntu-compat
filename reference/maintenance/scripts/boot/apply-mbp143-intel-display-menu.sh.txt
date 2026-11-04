@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source_dir=/path/to/maintenance-workspace/assets/boot/intel-display
+efi_dir=/boot/efi/EFI/ubuntu
+grub_script=/etc/grub.d/41_mbp143_gpu_switch
+grub_defaults=/etc/default/grub.d/97-mbp143-gpu-switch.cfg
+backup_dir=/var/backups/mbp143-intel-display-menu
+
+if [[ $EUID -ne 0 ]]; then
+  echo "Run this script with sudo." >&2
+  exit 1
+fi
+
+backup_once() {
+  local source=$1 name=$2
+  if [[ -e $source && ! -e $backup_dir/$name ]]; then
+    cp -a "$source" "$backup_dir/$name"
+  fi
+}
+
+case ${1:-install} in
+  install)
+    command -v make >/dev/null
+    command -v x86_64-w64-mingw32-ld >/dev/null || {
+      echo "Missing PE linker; install binutils-mingw-w64-x86-64." >&2
+      exit 1
+    }
+    [[ -f /usr/include/efi/efi.h ]] || {
+      echo "Missing EFI headers; install the gnu-efi package." >&2
+      exit 1
+    }
+    make -C "$source_dir" clean all
+    for helper in mbp143-set-igd.efi mbp143-set-dis.efi mbp143-windows-radeon.efi; do
+      file "$source_dir/$helper" | grep -Fq 'PE32+ executable for EFI (application)'
+      objdump -x "$source_dir/$helper" | grep -Eq 'Subsystem[[:space:]]+0000000a'
+      objdump -x "$source_dir/$helper" | grep -Fq 'Base Relocation Directory [.reloc]'
+    done
+    install -d -m 0700 "$backup_dir"
+    backup_once "$efi_dir/mbp143-set-igd.efi" mbp143-set-igd.efi.pre-install
+    backup_once "$efi_dir/mbp143-set-dis.efi" mbp143-set-dis.efi.pre-install
+    backup_once "$efi_dir/mbp143-windows-radeon.efi" mbp143-windows-radeon.efi.pre-install
+    backup_once "$grub_script" 41_mbp143_gpu_switch.pre-install
+    backup_once "$grub_defaults" 97-mbp143-gpu-switch.cfg.pre-install
+    cp -a /boot/grub/grub.cfg "$backup_dir/grub.cfg.pre-install"
+
+    install -d -m 0755 "$efi_dir" /etc/default/grub.d
+    install -m 0644 "$source_dir/mbp143-set-igd.efi" "$efi_dir/mbp143-set-igd.efi"
+    install -m 0644 "$source_dir/mbp143-set-dis.efi" "$efi_dir/mbp143-set-dis.efi"
+    install -m 0644 "$source_dir/mbp143-windows-radeon.efi" "$efi_dir/mbp143-windows-radeon.efi"
+
+    cat >"$grub_script" <<'GRUB_SCRIPT'
+#!/bin/sh
+exec tail -n +3 $0
+
+menuentry 'Ubuntu with Intel display (sets Intel and reboots)' --class ubuntu --class os {
+    set saved_entry=0
+    set next_entry=0
+    save_env saved_entry
+    save_env next_entry
+    insmod part_gpt
+    insmod fat
+    search --no-floppy --file --set=esp /EFI/ubuntu/mbp143-set-igd.efi
+    chainloader ($esp)/EFI/ubuntu/mbp143-set-igd.efi
+}
+
+menuentry 'Ubuntu with Radeon display (sets Radeon and reboots)' --class ubuntu --class os {
+    set saved_entry=0
+    set next_entry=0
+    save_env saved_entry
+    save_env next_entry
+    insmod part_gpt
+    insmod fat
+    search --no-floppy --file --set=esp /EFI/ubuntu/mbp143-set-dis.efi
+    chainloader ($esp)/EFI/ubuntu/mbp143-set-dis.efi
+}
+
+menuentry 'Windows Boot Manager (sets Radeon and reboots)' --class windows --class os {
+    savedefault
+    insmod part_gpt
+    insmod fat
+    search --no-floppy --file --set=esp /EFI/ubuntu/mbp143-windows-radeon.efi
+    chainloader ($esp)/EFI/ubuntu/mbp143-windows-radeon.efi
+}
+GRUB_SCRIPT
+    chmod 0755 "$grub_script"
+    cat >"$grub_defaults" <<'GRUB_DEFAULTS'
+# Keep the GPU recovery entries reachable during the Intel-display experiment.
+GRUB_TIMEOUT_STYLE=menu
+GRUB_TIMEOUT=8
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+GRUB_DISABLE_OS_PROBER=true
+GRUB_DEFAULTS
+    chmod 0644 "$grub_defaults"
+    update-grub
+
+    cmp -s "$source_dir/mbp143-set-igd.efi" "$efi_dir/mbp143-set-igd.efi"
+    cmp -s "$source_dir/mbp143-set-dis.efi" "$efi_dir/mbp143-set-dis.efi"
+    cmp -s "$source_dir/mbp143-windows-radeon.efi" "$efi_dir/mbp143-windows-radeon.efi"
+    grep -Fq 'Ubuntu with Intel display (sets Intel and reboots)' /boot/grub/grub.cfg
+    grep -Fq 'Ubuntu with Radeon display (sets Radeon and reboots)' /boot/grub/grub.cfg
+    grep -Fq 'Windows Boot Manager (sets Radeon and reboots)' /boot/grub/grub.cfg
+    echo "Intel/Radeon GPU switch entries installed. No GPU preference was changed."
+    ;;
+  rollback)
+    rm -f "$efi_dir/mbp143-set-igd.efi" "$efi_dir/mbp143-set-dis.efi" \
+      "$efi_dir/mbp143-windows-radeon.efi"
+    rm -f "$grub_script" "$grub_defaults"
+    [[ ! -e $backup_dir/mbp143-set-igd.efi.pre-install ]] || \
+      cp -a "$backup_dir/mbp143-set-igd.efi.pre-install" "$efi_dir/mbp143-set-igd.efi"
+    [[ ! -e $backup_dir/mbp143-set-dis.efi.pre-install ]] || \
+      cp -a "$backup_dir/mbp143-set-dis.efi.pre-install" "$efi_dir/mbp143-set-dis.efi"
+    [[ ! -e $backup_dir/mbp143-windows-radeon.efi.pre-install ]] || \
+      cp -a "$backup_dir/mbp143-windows-radeon.efi.pre-install" "$efi_dir/mbp143-windows-radeon.efi"
+    [[ ! -e $backup_dir/41_mbp143_gpu_switch.pre-install ]] || \
+      cp -a "$backup_dir/41_mbp143_gpu_switch.pre-install" "$grub_script"
+    [[ ! -e $backup_dir/97-mbp143-gpu-switch.cfg.pre-install ]] || \
+      cp -a "$backup_dir/97-mbp143-gpu-switch.cfg.pre-install" "$grub_defaults"
+    update-grub
+    echo "Intel/Radeon GPU switch entries removed. The current GPU preference was not changed."
+    ;;
+  *)
+    echo "Usage: sudo $0 [install|rollback]" >&2
+    exit 2
+    ;;
+esac

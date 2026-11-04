@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+"""Inspect local trial packages and simulate dependency resolution; no install."""
+from pathlib import Path, PurePosixPath
+import subprocess, tarfile, hashlib, json
+
+ROOT=Path(__file__).resolve().parent
+KVER='7.0.14-mbp14342p1'
+VERSION='7.0.0-42.42+mbp143.1'
+expected={'linux-image-'+KVER,'linux-headers-'+KVER,'mbp143-trial-drivers-'+KVER}
+records=[]
+packages=sorted((ROOT/'packages').glob('*.deb'))
+assert len(packages)==3,[p.name for p in packages]
+for deb in packages:
+    fields=subprocess.check_output(['dpkg-deb','-f',str(deb),'Package','Version','Architecture'],text=True)
+    values=dict(l.split(': ',1) for l in fields.splitlines())
+    name=values['Package'];assert name in expected,name
+    assert values['Version']==VERSION and values['Architecture']=='amd64',values
+    names=[];image_sha=None
+    proc=subprocess.Popen(['dpkg-deb','--fsys-tarfile',str(deb)],stdout=subprocess.PIPE)
+    with tarfile.open(fileobj=proc.stdout,mode='r|') as t:
+        for member in t:
+            path=PurePosixPath(member.name)
+            assert not path.is_absolute() and '..' not in path.parts,member.name
+            n=str(path)
+            names.append(n)
+            assert not n.startswith(('etc/default/grub','etc/systemd','etc/modprobe.d')),n
+            if n.startswith('lib/modules/'):
+                assert path.parts[2]==KVER,n
+            assert not n.endswith(('signing_key.pem','MOK.priv')),n
+            if n==f'boot/vmlinuz-{KVER}':
+                image_sha=hashlib.sha256(t.extractfile(member).read()).hexdigest()
+    assert proc.wait()==0
+    if name.startswith('linux-image-'):
+        assert image_sha==hashlib.sha256((ROOT/'build/arch/x86/boot/bzImage').read_bytes()).hexdigest()
+        for mod in ['i915','amdgpu','apple-gmux','applespi','brcmfmac','uvcvideo','thunderbolt','nvme']:
+            assert any(PurePosixPath(n).name in [mod+'.ko',mod+'.ko.zst',mod+'.ko.xz',mod+'.ko.gz'] for n in names),mod
+    elif name.startswith('linux-headers-'):
+        assert f'usr/src/linux-headers-{KVER}/Module.symvers' in names
+        assert f'usr/src/linux-headers-{KVER}/include/config/kernel.release' in names
+    else:
+        for mod in ['apple-ibridge','apple-touchbar','snd-hda-codec-cs8409']:
+            assert f'lib/modules/{KVER}/updates/mbp143-trial/{mod}.ko' in names,mod
+    records.append({'file':deb.name,'package':name,'version':VERSION,'architecture':'amd64',
+                    'bytes':deb.stat().st_size,'sha256':hashlib.sha256(deb.read_bytes()).hexdigest(),
+                    'archive_members':len(names)})
+assert {r['package'] for r in records}==expected
+simulation=subprocess.run(['apt-get','--simulate','--no-remove','--no-install-recommends','install',
+                            *[str(p) for p in packages]],capture_output=True,text=True)
+(ROOT/'logs/trial-install-simulation.log').write_text(simulation.stdout+simulation.stderr)
+assert simulation.returncode==0,(simulation.stdout,simulation.stderr)
+(ROOT/'packages/manifest.json').write_text(json.dumps(records,indent=2)+'\n')
+(ROOT/'packages/SHA256SUMS').write_text(''.join(r['sha256']+'  '+r['file']+'\n' for r in records))
+print(json.dumps(records,indent=2))
+print('Package content checks and APT no-removal simulation passed; nothing installed.')

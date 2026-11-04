@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+"""Backport pinned PR220 into an isolated kernel-7 source; never install/load."""
+from pathlib import Path
+import difflib
+import json
+import shutil
+import subprocess
+import hashlib
+
+ROOT=next(p for p in Path(__file__).resolve().parents if (p/'AGENTS.md').exists())
+BASE=ROOT/'experiments/kernel-42/validation/mbp143-cs8409-0.1/source'
+OUT=ROOT/'experiments/kernel-42/candidates/audio-pr220'
+OUT.mkdir(exist_ok=False)
+SOURCE=OUT/'source'
+ignore=shutil.ignore_patterns('*.o','*.ko','*.mod','*.mod.c','.*.cmd','*.a',
+                             'Module.symvers','modules.order','.tmp_versions','.git')
+shutil.copytree(BASE,SOURCE,ignore=ignore)
+shutil.copyfile(ROOT/'assets/audio/snd_hda_macbookpro-k7/LICENSE',OUT/'LICENSE')
+upstream=ROOT/'experiments/kernel-42/candidates/audio-pr220-upstream.patch'
+mapped=upstream.read_text().replace('a/patch_cirrus/','a/codecs/cirrus/').replace('b/patch_cirrus/','b/codecs/cirrus/')
+(OUT/'upstream-220-kernel7.patch').write_text(mapped)
+target=SOURCE/'codecs/cirrus/cirrus_apple.h'
+baseline=target.read_text()
+p=subprocess.run(['patch','--batch','--fuzz=0','-p1','-i',str(OUT/'upstream-220-kernel7.patch')],
+                 cwd=SOURCE,capture_output=True,text=True,check=True)
+(OUT/'application.log').write_text(p.stdout+p.stderr)
+assert 'fuzz' not in p.stdout.lower()+p.stderr.lower()
+before=target.read_text()
+code=before
+def change(old,new):
+    global code
+    assert code.count(old)==1,old
+    code=code.replace(old,new)
+
+change('static void cs_8409_apple_redo_boot_setup(struct hda_codec *codec)',
+       'static int cs_8409_apple_redo_boot_setup(struct hda_codec *codec)')
+change('''	if (err < 0)
+		codec_err(codec, "cs8409: programming the codec after resume failed: %d\\n", err);
+
+	spec->headset_phase''', '''	if (err < 0) {
+		codec_err(codec, "cs8409: programming the codec after resume failed: %d\\n", err);
+		goto out;
+	}
+
+	spec->headset_phase''')
+change('''	spec->block_unsol = 0;
+
+	if (cs_8409_apple_lost_setup(codec))
+		codec_err(codec, "cs8409: the codec still reads as unprogrammed after the boot setup\\n");
+}''', '''	if (cs_8409_apple_lost_setup(codec)) {
+		codec_err(codec, "cs8409: the codec still reads as unprogrammed after the boot setup\\n");
+		err = -EIO;
+	}
+out:
+	/* Do not leave asynchronous event dispatch blocked on any returned error. */
+	spec->block_unsol = 0;
+	return err;
+}''')
+change('\t\tcs_8409_apple_redo_boot_setup(codec);',
+       '\t\treturn cs_8409_apple_redo_boot_setup(codec);')
+change('''static int cs_8409_apple_resume(struct hda_codec *codec)
+{
+''', '''static int cs_8409_apple_resume(struct hda_codec *codec)
+{
+	int err;
+
+''')
+change('        snd_hda_codec_init(codec);       ', '''        err = snd_hda_codec_init(codec);
+	if (err < 0)
+		return err;''')
+target.write_text(code)
+(OUT/'error-propagation.patch').write_text(''.join(difflib.unified_diff(
+    before.splitlines(True),code.splitlines(True),fromfile='a/codecs/cirrus/cirrus_apple.h',tofile='b/codecs/cirrus/cirrus_apple.h')))
+(OUT/'combined-kernel7.patch').write_text(''.join(difflib.unified_diff(
+    baseline.splitlines(True),code.splitlines(True),fromfile='a/codecs/cirrus/cirrus_apple.h',tofile='b/codecs/cirrus/cirrus_apple.h')))
+(OUT/'provenance.json').write_text(json.dumps({'upstream':'https://github.com/davidjo/snd_hda_macbookpro/pull/220',
+ 'commit':'b8bc4d935335a9a5476c478d491adf9b18012f58','baseline_kernel7_fork':'53dd5fa',
+ 'baseline_header_sha256':hashlib.sha256(baseline.encode()).hexdigest(),
+ 'upstream_patch_sha256':hashlib.sha256(upstream.read_bytes()).hexdigest(),
+ 'candidate_header_sha256':hashlib.sha256(code.encode()).hexdigest(),
+ 'local_changes':'path mapping and init/resume error propagation; no notifier, new lock or unbounded retry',
+ 'installed':False,'hardware_test_authorized':False},indent=2)+'\n')
+print('Prepared isolated PR220 backport with explicit error propagation; no system change.')

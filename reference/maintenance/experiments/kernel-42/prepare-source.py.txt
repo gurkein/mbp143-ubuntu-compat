@@ -1,0 +1,205 @@
+#!/usr/bin/env python3
+"""Prepare reviewed backports against the pinned Ubuntu source snapshot."""
+from pathlib import Path
+import difflib, json, subprocess, shutil, re, hashlib
+
+ROOT=Path(__file__).resolve().parent
+SRC=ROOT/'linux-source-7.0.0'
+ORIG=ROOT/'pristine-files'
+SERIES=[]
+
+# Re-run only from the saved pristine versions of files this script owns.
+for saved in ORIG.rglob('*') if ORIG.exists() else []:
+    if saved.is_file():
+        shutil.copyfile(saved, SRC/saved.relative_to(ORIG))
+
+def change(path, before, after):
+    p=SRC/path
+    text=p.read_text()
+    assert text.count(before)==1, (path, before[:100], text.count(before))
+    p.write_text(text.replace(before,after,1))
+
+def step(name, paths, action, source, notes):
+    before={p:(SRC/p).read_text() for p in paths}
+    for p,t in before.items():
+        backup=ORIG/p
+        if not backup.exists():
+            backup.parent.mkdir(parents=True,exist_ok=True); backup.write_text(t)
+    action()
+    diff=''.join(''.join(difflib.unified_diff(before[p].splitlines(True),
+                    (SRC/p).read_text().splitlines(True),fromfile='a/'+p,tofile='b/'+p)) for p in paths)
+    assert diff
+    patch=ROOT/'patches'/name
+    patch.write_text('Subject: [LOCAL BACKPORT] '+notes+'\nSource: '+source+'\n\n'+diff)
+    SERIES.append({'file':name,'source':source,'notes':notes,
+                   'sha256':hashlib.sha256(patch.read_bytes()).hexdigest()})
+
+def apply_original(name):
+    text=(ROOT/'originals'/name).read_text()
+    text=text[text.index('diff --git '):]
+    subprocess.run(['patch','--batch','--fuzz=0','-p1'],input=text,text=True,cwd=SRC,check=True)
+
+def prerequisite():
+    d=json.loads((ROOT/'originals/pci-prerequisite.json').read_text())['commit']
+    patch='--- a/drivers/pci/pci.c\n+++ b/drivers/pci/pci.c\n'+d['files'][0]['patch']+'\n'
+    subprocess.run(['patch','--batch','--fuzz=0','-p1'],input=patch,text=True,cwd=SRC,check=True)
+
+step('0001-pci-config-accessible.patch',['drivers/pci/pci.c'],prerequisite,
+     'https://github.com/torvalds/linux/commit/e18d1abc3bff0a24a5299f3c150ab9546e9439aa',
+     'PCI accessibility prerequisite; unchanged logic, line offsets only')
+step('0002-pci-save-v3.patch',['drivers/pci/pci.c'],lambda:apply_original('pci-save-v3.txt'),
+     'https://lists.openwall.net/linux-kernel/2026/10/19/3216',
+     'PCI v3 preserve saved configuration; line offsets only')
+step('0003-pci-link-v3.patch',['drivers/pci/pci.c'],lambda:apply_original('pci-link-v3.txt'),
+     'https://lists.openwall.net/linux-kernel/2026/10/19/3211',
+     'PCI v3 reject inaccessible link status; line offsets only')
+
+def acpica():
+    path='drivers/acpi/acpica/hwpci.c'
+    change(path,'#define PCI_CFG_PRIMARY_BUS_NUMBER_REG      0x18\n','')
+    p=SRC/path; text=p.read_text()
+    start=text.index('\t/* Bridge: Get the Primary bus_number */')
+    end=text.index('\t/* Bridge: Get the Secondary bus_number */',start)
+    old=text[start:end]
+    assert '*is_bridge = TRUE;' in old and 'pci_id->bus = (u16)pci_value;' in old
+    new='''\t/*
+\t * The parent bridge already supplied this bridge's bus number. Its
+\t * own primary-bus register can still read zero during D3cold -> D0,
+\t * before PCI configuration has been restored. Keep the inherited bus
+\t * so a PCI_Config operation region does not cache the wrong device.
+\t */
+\t*is_bridge = TRUE;
+
+'''
+    change(path,old,new)
+step('0004-acpica-parent-bus.patch',['drivers/acpi/acpica/hwpci.c'],acpica,
+     'https://github.com/open-acpica/acpica/pull/1236',
+     'ACPICA PR 1236 head 578ce82251c75eb44dcc36ce5b16caa6bdb315c6; Linux naming adaptation')
+
+def pme():
+    change('drivers/acpi/pci_root.c',
+           '\t\troot->osc_control_set = ~OSC_PCI_EXPRESS_PME_CONTROL;',
+           '\t\t/* Include native PME, using only features this kernel supports. */\n'
+           '\t\troot->osc_control_set = calculate_control();')
+step('0005-apple-native-pme.patch',['drivers/acpi/pci_root.c'],pme,
+     'https://lore.landau.one/lkml/20260924132859.24751-1-fbeltranmillalen%40gmail.com/',
+     'Apple native PME; same calculate_control change with concise comment')
+
+def vi():
+    change('drivers/gpu/drm/amd/amdgpu/vi.c',
+           'static bool vi_need_reset_on_init(struct amdgpu_device *adev)\n{\n\tu32 clock_cntl, pc;\n',
+           '''static bool vi_need_reset_on_init(struct amdgpu_device *adev)
+{
+\tu32 clock_cntl, pc;
+
+\t/*
+\t * MacBookPros with switchable graphics put VRAM at 0 when the iGPU
+\t * is enabled. A later post moves it to the VBIOS default, so reset
+\t * and post at load to use that layout from the beginning.
+\t */
+\tif (adev->pdev->subsystem_vendor == PCI_VENDOR_ID_APPLE &&
+\t    !(RREG32(mmMC_VM_FB_LOCATION) & MC_VM_FB_LOCATION__FB_BASE_MASK))
+\t\treturn true;
+''')
+step('0006-amdgpu-vi-vram.patch',['drivers/gpu/drm/amd/amdgpu/vi.c'],vi,
+     'https://www.mail-archive.com/amd-gfx%40lists.freedesktop.org/msg153399.html',
+     'VI v3 VRAM predicate; Ubuntu 42 has no intermediate reset quirk table to remove')
+
+TB=['drivers/thunderbolt/'+p for p in ['acpi.c','domain.c','nhi.h','nhi.c','switch.c','tb.h','tb_regs.h']]
+def thunderbolt():
+    change(TB[0],'#include <linux/pm_runtime.h>','#include <linux/pm_runtime.h>\n#include <linux/suspend.h>')
+    change(TB[0],'static bool tb_acpi_bus_match(struct device *dev)',
+'''/* Called with tb->lock held while the software control channel is live. */
+void tb_acpi_force_power(struct tb *tb)
+{
+\tstruct tb_switch *sw = tb->root_switch;
+\tstruct acpi_device *adev;
+\tacpi_status status;
+
+\tif (tb_switch_is_icm(sw))
+\t\treturn;
+\tif (!pm_suspend_in_progress() || !pm_suspend_via_firmware())
+\t\treturn;
+
+\tadev = ACPI_COMPANION(&tb->nhi->pdev->dev);
+\tif (!adev || !acpi_has_method(adev->handle, "SXFP"))
+\t\treturn;
+\tif (tb_switch_set_bit26(sw, false))
+\t\treturn;
+
+\ttb_sw_dbg(sw, "ACPI: calling SXFP\\n");
+\tstatus = acpi_execute_simple_method(adev->handle, "SXFP", 0);
+\tif (ACPI_FAILURE(status))
+\t\ttb_sw_warn(sw, "ACPI: SXFP failed: %s\\n",
+\t\t\t   acpi_format_exception(status));
+}
+
+static bool tb_acpi_bus_match(struct device *dev)''')
+    change(TB[1], '\tmutex_lock(&tb->lock);\n\tif (tb->cm_ops->suspend_noirq)',
+           '\tmutex_lock(&tb->lock);\n\tif (tb->nhi->ops && tb->nhi->ops->pre_suspend_noirq)\n'
+           '\t\ttb->nhi->ops->pre_suspend_noirq(tb->nhi);\n\tif (tb->cm_ops->suspend_noirq)')
+    change(TB[2], ' * @suspend_noirq: NHI specific suspend_noirq hook',
+           ' * @pre_suspend_noirq: runs before the domain control channel is stopped\n'
+           ' * @suspend_noirq: NHI specific suspend_noirq hook')
+    change(TB[2], '\tint (*init)(struct tb_nhi *nhi);',
+           '\tint (*init)(struct tb_nhi *nhi);\n\tvoid (*pre_suspend_noirq)(struct tb_nhi *nhi);')
+    change(TB[3], '#include <linux/pm_runtime.h>',
+           '#include <linux/pm_runtime.h>\n#include <linux/platform_data/x86/apple.h>')
+    p=SRC/TB[3]; text=p.read_text()
+    m=re.search(r'static (?:const )?struct pci_device_id nhi_ids\[\] = \{',text); assert m
+    change(TB[3],m.group(),'''static void ar_nhi_pre_suspend_noirq(struct tb_nhi *nhi)
+{
+\tif (x86_apple_machine)
+\t\ttb_acpi_force_power(pci_get_drvdata(nhi->pdev));
+}
+
+/* Alpine Ridge previously had NULL ops on this kernel. */
+static const struct tb_nhi_ops ar_nhi_ops = {
+\t.pre_suspend_noirq = ar_nhi_pre_suspend_noirq,
+};
+
+'''+m.group())
+    for variant in ['2C','4C','USBONLY','LP','LP_USBONLY','C_2C','C_4C','C_USBONLY']:
+        ident='PCI_DEVICE_ID_INTEL_ALPINE_RIDGE_'+variant+'_NHI'
+        change(TB[3],'{ PCI_VDEVICE(INTEL, '+ident+') },',
+               '{ PCI_VDEVICE(INTEL, '+ident+'),\n'
+               '\t  .driver_data = (kernel_ulong_t)&ar_nhi_ops },')
+    # Preserve the upstream read/modify/write protocol without changing any
+    # existing switch operation. This helper is called only by the S3 hook.
+    with (SRC/TB[4]).open('a') as f:
+        f.write('''
+/* Alpine Ridge plug-events CS_20 bit 26 must be clear before SXFP(0). */
+int tb_switch_set_bit26(struct tb_switch *sw, bool value)
+{
+\tunsigned int offset = sw->cap_plug_events + TB_PLUG_EVENTS_CS_20;
+\tu32 val;
+\tint ret;
+
+\tret = tb_sw_read(sw, &val, TB_CFG_SWITCH, offset, 1);
+\tif (ret)
+\t\treturn ret;
+\tif (!!(val & TB_PLUG_EVENTS_CS_20_BIT26) == value)
+\t\treturn 0;
+\tif (value)
+\t\tval |= TB_PLUG_EVENTS_CS_20_BIT26;
+\telse
+\t\tval &= ~TB_PLUG_EVENTS_CS_20_BIT26;
+\treturn tb_sw_write(sw, &val, TB_CFG_SWITCH, offset, 1);
+}
+''')
+    change(TB[5],'int tb_switch_xhci_connect(struct tb_switch *sw);',
+           'int tb_switch_xhci_connect(struct tb_switch *sw);\nint tb_switch_set_bit26(struct tb_switch *sw, bool value);')
+    change(TB[5],'int tb_acpi_init(void);','int tb_acpi_init(void);\nvoid tb_acpi_force_power(struct tb *tb);')
+    change(TB[5],'static inline int tb_acpi_init(void) { return 0; }',
+           'static inline int tb_acpi_init(void) { return 0; }\nstatic inline void tb_acpi_force_power(struct tb *tb) { }')
+    change(TB[6],'#define TB_PLUG_EVENTS_CS_1_HI','''#define TB_PLUG_EVENTS_CS_20 0x14
+#define TB_PLUG_EVENTS_CS_20_BIT26 BIT(26)
+
+#define TB_PLUG_EVENTS_CS_1_HI''')
+
+step('0007-thunderbolt-sxfp-v3.patch',TB,thunderbolt,
+     'https://lkml.rescloud.iu.edu/hypermail/linux/kernel/2610.2/13908.html',
+     'SXFP v3: nhi.c instead of newer pci.c; pdev device accessor; nullable legacy ops')
+(ROOT/'patches/series').write_text(''.join(s['file']+'\n' for s in SERIES))
+(ROOT/'patches/manifest.json').write_text(json.dumps(SERIES,indent=2)+'\n')
+print('Prepared',len(SERIES),'reviewable backports')

@@ -1,0 +1,21 @@
+Subject: [LOCAL BACKPORT] VI v3 VRAM predicate; Ubuntu 42 has no intermediate reset quirk table to remove
+Source: https://www.mail-archive.com/amd-gfx%40lists.freedesktop.org/msg153399.html
+
+--- a/drivers/gpu/drm/amd/amdgpu/vi.c
++++ b/drivers/gpu/drm/amd/amdgpu/vi.c
+@@ -1411,6 +1411,15 @@
+ {
+ 	u32 clock_cntl, pc;
+ 
++	/*
++	 * MacBookPros with switchable graphics put VRAM at 0 when the iGPU
++	 * is enabled. A later post moves it to the VBIOS default, so reset
++	 * and post at load to use that layout from the beginning.
++	 */
++	if (adev->pdev->subsystem_vendor == PCI_VENDOR_ID_APPLE &&
++	    !(RREG32(mmMC_VM_FB_LOCATION) & MC_VM_FB_LOCATION__FB_BASE_MASK))
++		return true;
++
+ 	if (adev->flags & AMD_IS_APU)
+ 		return false;
+ 

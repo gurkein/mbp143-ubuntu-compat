@@ -1,0 +1,3 @@
+Experimental kernel-specific binaries; not a DKMS replacement.
+Keep options apple_ibridge skip_acpi_power=1 and the existing suspend block.
+No hardware/runtime suspend validation has been performed.

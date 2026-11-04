@@ -1,0 +1,5 @@
+Only apple-touchbar is overridden on 7.0.14-mbp14342p1.
+Original trial modules remain installed. No live unload or power test.
+Activation requires a separately planned reboot.
+Rollback: apt-get remove mbp143-t1-mode-result-7.0.14-mbp14342p1; then plan a reboot.
+Keep skip_acpi_power=1 and the global sleep block.

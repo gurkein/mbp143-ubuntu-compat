@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-04",
+  "hardware_operations_performed": false,
+  "packages_rebuilt": true,
+  "kernel_rebuilt": false,
+  "modules_rebuilt": true,
+  "system_configuration_changed": true,
+  "imported_source_and_original_deb_hashes": "passed",
+  "patch_reproduction": {
+    "seven_kernel_patches_zero_fuzz_exact_source_match": 11,
+    "t1_aggregate_patch_exact_source_match": true,
+    "audio_aggregate_patch_exact_source_match": true
+  },
+  "wifi_patch_reproduction": "passed zero-fuzz, exact pcie.c output",
+  "offline_T1_actual_C_state_machine_race_failure_tests": "passed",
+  "offline_audio_five_HDA_scenario_groups": "passed",
+  "offline_policy_refusal_restoration_failure_latch_tests": "passed",
+  "package_payload_private_key_token_scan": "passed seven packages; see payload-audit.json",
+  "module_compilation_from_new_checkout": "Selected 0.6 sources compiled against exact packaged headers before publication copy; 125 imports and peer exports verified. No complete kernel rebuild.",
+  "kernel_full_build_from_new_checkout": "not performed",
+  "limitations": [
+    "No new hardware qualification",
+    "Original binary metadata retains local build-path strings",
+    "Source/build tools provided; no claim of byte-identical reproducibility",
+    "No release checksum signature created",
+    "No GitHub authentication/upload performed"
+  ],
+  "python_syntax": "passed",
+  "authored_document_relative_links": "passed",
+  "graphics_EFI_publication": {
+    "original_C_source_hash_matches": true,
+    "portable_Makefile_dry_run": "passed three compile/link variants from outside the project directory",
+    "authored_document_relative_links": "passed",
+    "EFI_binary_compiled": false,
+    "EFI_binary_executed": false,
+    "firmware_or_GRUB_modified": false,
+    "historical_installer": "text reference only; embedded defaults are not applied"
+  },
+  "automatic_driver_installed": "0.6-1 selected; 0.5 bridge loaded; pending normal reboot",
+  "driver_activation_parameters": false,
+  "legacy_0_5_hardware_evidence": "historical only; no 0.6 hardware acceptance inferred",
+  "package_build_scope": "Only two T1 modules/new 0.6 package; kernel/audio/Wi-Fi binaries unchanged",
+  "privacy_review": "Private prose/reference details redacted; old unpublished Git history excluded; binary path metadata limitation retained",
+  "clean_checkout_source_and_offline_checks": "passed on final redacted automatic-source staging tree; no maintenance dependency",
+  "automatic_C_and_readiness_tests": "passed"
+}

@@ -1,0 +1,2560 @@
+{
+  "note": "All publication-tree files except this self-referential manifest; excludes dist/build/cache.",
+  "files": [
+    {
+      "file": ".github/ISSUE_TEMPLATE/hardware.md",
+      "bytes": 613,
+      "sha256": "d5fc70f189f9c33bec6b460e3c18af27b2f0640ce6a98ac8dbf8a26df3a64678"
+    },
+    {
+      "file": ".github/workflows/offline.yml",
+      "bytes": 763,
+      "sha256": "ed6523a3c37aa9b68745ce16dc4693967e9cac1076a29f0b9cf87eb87fcd6e01"
+    },
+    {
+      "file": ".gitignore",
+      "bytes": 137,
+      "sha256": "593ba013855b25c93d94e20033fd4ba4735133c283088b8e21b874757411ab05"
+    },
+    {
+      "file": "CHANGELOG.md",
+      "bytes": 1156,
+      "sha256": "6ae65c74dd2eb4d928d0225aa34663207260a164754f7ef0a303c08cacb83179"
+    },
+    {
+      "file": "LICENSE.md",
+      "bytes": 1059,
+      "sha256": "9611a977ddb3af035642db559fd53b06595874148949d508987845c9ce73c613"
+    },
+    {
+      "file": "LICENSES/GPL-2.0.txt",
+      "bytes": 18600,
+      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
+    },
+    {
+      "file": "LICENSES/ISC.txt",
+      "bytes": 1046,
+      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
+    },
+    {
+      "file": "LICENSES/MIT-project.txt",
+      "bytes": 1090,
+      "sha256": "a0f8f80b690a2f60faf01b2af5ef5de06aa9aad386279bb3c9f18a30653ac116"
+    },
+    {
+      "file": "LICENSES/MIT.txt",
+      "bytes": 1372,
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/0BSD",
+      "bytes": 983,
+      "sha256": "6b50bcee8c2f90c73558dee62e444dde54f3cea86ccfcea84aa8be60005e67b4"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/CC0-1.0",
+      "bytes": 7386,
+      "sha256": "c8a97e7369419869e2d60eab21a9f13bf293bfc33aed0de3c459644a8edd0c80"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/GFDL-1.1",
+      "bytes": 19177,
+      "sha256": "8f13a0664b7e0f30d7a9001f3ecd87d3dea7964559d08337ca1a4b129d9e0e0d"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/GFDL-1.2",
+      "bytes": 21352,
+      "sha256": "e43e6da62a83b8bf96819ff1226151da373cb87f165cd538f405978a0a8c6b7a"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/GPL-1.0",
+      "bytes": 12951,
+      "sha256": "e72efc63ce52380f374733ec7a733f5c11efa3c1f2b0cb48a9c355868ee5b09c"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/ISC",
+      "bytes": 1046,
+      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/Linux-OpenIB",
+      "bytes": 1317,
+      "sha256": "8ae20d34c2a74c85ae2760dd0034baf18e44bee3289b9b3a4fe46768b4ea2cd6"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/X11",
+      "bytes": 1625,
+      "sha256": "21115f2385035c1ceeda8820b7f050c89a30418457a5e2a5c6091f2545d40e44"
+    },
+    {
+      "file": "LICENSES/kernel/deprecated/Zlib",
+      "bytes": 1165,
+      "sha256": "3b42160485d3d596ff8a4956958c4360dc55f1e2414c964aef0ad2d3c2a92abb"
+    },
+    {
+      "file": "LICENSES/kernel/dual/Apache-2.0",
+      "bytes": 10045,
+      "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12"
+    },
+    {
+      "file": "LICENSES/kernel/dual/CC-BY-4.0",
+      "bytes": 19355,
+      "sha256": "84d5ad08940d29065d8a6f062effa4204c2235c9f2487aa53748ed0a0a6cce86"
+    },
+    {
+      "file": "LICENSES/kernel/dual/CDDL-1.0",
+      "bytes": 19511,
+      "sha256": "490abf7869e4638fbb43df99a20e5683224617a6bf9ffd06971cb02b153e53c1"
+    },
+    {
+      "file": "LICENSES/kernel/dual/MPL-1.1",
+      "bytes": 26321,
+      "sha256": "ccbda1d2f0cfef821f39e1880aae9213c7933e07713ee638ad1fb02547c0b97b"
+    },
+    {
+      "file": "LICENSES/kernel/dual/copyleft-next-0.3.1",
+      "bytes": 11429,
+      "sha256": "28386705873e5eacf16b5d34dd06e58737a2c5a3622acda380a0f236c0a6d02a"
+    },
+    {
+      "file": "LICENSES/kernel/exceptions/GCC-exception-2.0",
+      "bytes": 997,
+      "sha256": "0dca50b78073055447d02e8f6ae4fa94c1d0e6d7fbb4c874c9db5eb960c8b3d4"
+    },
+    {
+      "file": "LICENSES/kernel/exceptions/Linux-syscall-note",
+      "bytes": 1258,
+      "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f"
+    },
+    {
+      "file": "LICENSES/kernel/preferred/BSD-2-Clause",
+      "bytes": 1641,
+      "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
+    },
+    {
+      "file": "LICENSES/kernel/preferred/BSD-3-Clause",
+      "bytes": 1845,
+      "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
+    },
+    {
+      "file": "LICENSES/kernel/preferred/BSD-3-Clause-Clear",
+      "bytes": 2035,
+      "sha256": "3f8a01d020e77c045e364c4681ee78c591041b7a38aa61972f689f4bc4cb5088"
+    },
+    {
+      "file": "LICENSES/kernel/preferred/GPL-2.0",
+      "bytes": 18600,
+      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
+    },
+    {
+      "file": "LICENSES/kernel/preferred/LGPL-2.0",
+      "bytes": 26144,
+      "sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433"
+    },
+    {
+      "file": "LICENSES/kernel/preferred/LGPL-2.1",
+      "bytes": 27493,
+      "sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229"
+    },
+    {
+      "file": "LICENSES/kernel/preferred/MIT",
+      "bytes": 1372,
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
+    },
+    {
+      "file": "LICENSES/t1-wrapper-MIT.txt",
+      "bytes": 1064,
+      "sha256": "2c6e5bfefee7882143062dd03d67ec8505f89764c574ead329e066de20931ee9"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3433,
+      "sha256": "c2ba2074cbafc51602779ae7167bc680047cebd015c69708a09e76d587de2855"
+    },
+    {
+      "file": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2808,
+      "sha256": "2dacdacaefda7ab55e6b7cf59ac37bb9abf035432817b98385a026619d06ad29"
+    },
+    {
+      "file": "boot/efi/Makefile",
+      "bytes": 1402,
+      "sha256": "ce44c82e71370c05a28017caa02b3c829bbf99b17667164afd29c2983138b65d"
+    },
+    {
+      "file": "boot/efi/mbp143-gpu-switch.c",
+      "bytes": 5464,
+      "sha256": "1b3426fc3721207e66ae3eef5c04b081cbdef3b8e8ca92e3c0e71a2ab774adf1"
+    },
+    {
+      "file": "docs/building.md",
+      "bytes": 3093,
+      "sha256": "2d3c9f5c7b684aac50a7b4d67d0e725a362f36996c65c59767c72a7f63d91082"
+    },
+    {
+      "file": "docs/compatibility.md",
+      "bytes": 3723,
+      "sha256": "86fa4b80e882776cc7008c73075d678137e85c490e7aa0565637600c3041137a"
+    },
+    {
+      "file": "docs/graphics-and-efi.md",
+      "bytes": 5638,
+      "sha256": "d13ad3c7f0139bb129c5c6c95b8c0141e764356ca7b385e519dcf6207ea4be37"
+    },
+    {
+      "file": "docs/installation.md",
+      "bytes": 3069,
+      "sha256": "73357b6ba4bc768c74327c8efe1d466ed2a2a88fbf90206b5f8b130e31a4ccbb"
+    },
+    {
+      "file": "docs/known-issues.md",
+      "bytes": 1795,
+      "sha256": "a3b71e4eecfb4644c107998e61c4723942a85dac46ee06c26358d6b9117cebad"
+    },
+    {
+      "file": "docs/publication-status.md",
+      "bytes": 2506,
+      "sha256": "9d5dcb4dbe4a7afe0539eb7a5086e9d9e70fb294c6487afd700b31a73742a299"
+    },
+    {
+      "file": "docs/release-notes.md",
+      "bytes": 1520,
+      "sha256": "b3c2ea8ea1f8d9fa007baba44ec0f2f99753c17553ba1f0b4396ae41aabbdbaa"
+    },
+    {
+      "file": "docs/rollback.md",
+      "bytes": 1938,
+      "sha256": "475e51f4948405c1358a8e832d3e38799d23f13bd176df51ca49669480358ced"
+    },
+    {
+      "file": "docs/source-provenance.md",
+      "bytes": 3216,
+      "sha256": "6ecf1a3b6861d36137ed5c09ad1f930d4917aae481aa05830191b33beb51adbb"
+    },
+    {
+      "file": "drivers/audio/LICENSE",
+      "bytes": 18004,
+      "sha256": "091f12b2fa3623ded73330f65776bad538b50e87c617677b6aa3b6472bee368c"
+    },
+    {
+      "file": "drivers/audio/baseline/Kconfig",
+      "bytes": 205,
+      "sha256": "bc0d7d3ed6b53304c7d74b80a5731e0a41dedc85dbf52ee69dbff5a5d7def190"
+    },
+    {
+      "file": "drivers/audio/baseline/Makefile",
+      "bytes": 298,
+      "sha256": "b7439d9319e734cf57b42107914bec87d9e5d5d6a7a878167f3dcf28714caad7"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/Kconfig",
+      "bytes": 4342,
+      "sha256": "43c5b77da7077a8d1414761790eeeaf665de28cfa7a2d4c2577f8ae9da94f653"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/Makefile",
+      "bytes": 1353,
+      "sha256": "b1486446ff117966d22789ccee550dde2b2ec6541a057fe7fc24e9759adc016f"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/analog.c",
+      "bytes": 30462,
+      "sha256": "c4c7c95f553f9151a3e64bf76f5a422a7f844e788175c7aaf2d4b9b6cc82b482"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/ca0110.c",
+      "bytes": 1918,
+      "sha256": "34aa04b16c0f1063dcdf5a6d4925dabed71a796bfdd41f56a4f4634835993c06"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/ca0132.c",
+      "bytes": 285296,
+      "sha256": "d5a5f1536b9f0de4cc502970b214a43dd26ff9d539efa2b7f221479e8ca5bb7b"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/ca0132_regs.h",
+      "bytes": 13680,
+      "sha256": "a29e01d84cf9d79a91fecffb3e2ff58f7023fdf1dfae850964d0b3b30c22d1ab"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/Kconfig",
+      "bytes": 1353,
+      "sha256": "4dc655a25e7d62c4f78fdd40ef741df395c5690a14e61d266219f0711bfd368d"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/Makefile",
+      "bytes": 387,
+      "sha256": "3c4e6cceb04141bc0172af060520fa6dc4e7facc8910594b22e36b395091a921"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/cirrus_apple.h",
+      "bytes": 123449,
+      "sha256": "c410540874beff8e7befd1e4b472d57dad50821c173b3b96fd4af52ac4431949"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/cs420x.c",
+      "bytes": 21296,
+      "sha256": "44b7f25a946e0e7352e2200f8195adf7ceae0969597f7c5738f96a6a6843dcd0"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/cs421x.c",
+      "bytes": 15329,
+      "sha256": "9a289eb57bd1b7b554034e8d19b00a53e3540ef36dc9172ec20d7d6544bda902"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/cs8409-tables.c",
+      "bytes": 28142,
+      "sha256": "15bbfda8ad3bf245d0ecaf592ca9775c5c196a4a358c11a50a6cff6684996836"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/cs8409.c",
+      "bytes": 48780,
+      "sha256": "14921ad18db576fb3763a26bc2252efc99a56de84a2ab1ff1765f4c07b38764a"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/cs8409.h",
+      "bytes": 11788,
+      "sha256": "959e1394048b6d2317707ed9f909d0e6f3ec5715e34735e0eaf92c3a685d758c"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_boot84.h",
+      "bytes": 213049,
+      "sha256": "c5efdcec9cdf9cfc5b4975b4d238cdad98e2c4302e0c4067c70b73234b185fb9"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_hda_generic_copy.h",
+      "bytes": 11569,
+      "sha256": "f405aa473b5aa0bfccb139a05e632dabe73af6aeb5757ab33d990c7571a3c281"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_new84.h",
+      "bytes": 75349,
+      "sha256": "7da73abb0af6ba7930b3e660540267727bca577987969f3db5fe5a95ff133173"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_real84.h",
+      "bytes": 285353,
+      "sha256": "a2c0a96cefc8adff9b5791d2ea93580ceb02d97012216dfbd37bd4b529a14c25"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cirrus/patch_cirrus_real84_i2c.h",
+      "bytes": 87744,
+      "sha256": "5becd39e05b8a27e7a337fc1651a4fe6c71d21be47c934cd76407351f24d4f5a"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cm9825.c",
+      "bytes": 16401,
+      "sha256": "671f84c52fb6acf869850036c2a80b75fc815e169b7f77a60d9a701d6edb6e71"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/cmedia.c",
+      "bytes": 2380,
+      "sha256": "688dc096ce5df23ab4286eb35be359eb04caed308dd50a40ed152c60cda6148a"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/conexant.c",
+      "bytes": 41185,
+      "sha256": "30f5172b833dfe1d8eb0aacb4e436436e4cc4a593868cce01c10855ce93db554"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/generic.c",
+      "bytes": 168220,
+      "sha256": "4233c1a9a8a8da0c8f7a8263aea54c7e225881fddf62f845699dfdceed81929e"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/generic.h",
+      "bytes": 12468,
+      "sha256": "9175959750d86f715d15eb2e4c063a95861ed7d737418e9f55843b1af04446d6"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/Kconfig",
+      "bytes": 2984,
+      "sha256": "a9b36a3f4dff994e3f6f97c2daabcb6a87f5b7de846d19a904d9594bf0d59e26"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/Makefile",
+      "bytes": 832,
+      "sha256": "f20ef5b0d12aba1ba46cc273c61a11b0e35219024d158b85e6b4027fac08b444"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/atihdmi.c",
+      "bytes": 18134,
+      "sha256": "ff351602e365d26f3c535ccf1307928ed1936456e70e3b6f9a31c731c33fd9cf"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/eld.c",
+      "bytes": 6220,
+      "sha256": "58f636d68a7544ee1e1bddf968a2b2700494bed31194f310c1fb56811b43c830"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/hdmi.c",
+      "bytes": 64965,
+      "sha256": "a574456e5d68a3bfa1ade166df066124176bb492871c95741815f87739bb2c0e"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/hdmi_local.h",
+      "bytes": 9384,
+      "sha256": "c5b03f997c2d3415697a019bf47f9808773f641b086789884492e842ec6ec054"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/intelhdmi.c",
+      "bytes": 22790,
+      "sha256": "b9a00664e4e3553f1e22d1e32042055d125d6d081ff2652856ba763ff8c87ea2"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/nvhdmi-mcp.c",
+      "bytes": 10141,
+      "sha256": "ddb4911abb0cd7a65733b7400ef635a5e4919f9925bf6d3131ec9ddb56d1fa1f"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/nvhdmi.c",
+      "bytes": 9157,
+      "sha256": "8a6f32ee11f45edfb7ea4bd68e35f1c7ae88a9983acb276bb604fbef298d2743"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/simplehdmi.c",
+      "bytes": 6797,
+      "sha256": "44b2442b79480069b086dd3e2d9201a1f82526b10ddd4ac1019afaf1b9256b49"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/hdmi/tegrahdmi.c",
+      "bytes": 9208,
+      "sha256": "f46298d988db9cfe7b670e1b830abfcda384643a61d110ebdb6672e63839d313"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/helpers/hp_x360.c",
+      "bytes": 8049,
+      "sha256": "c10fd55e7caae781e3c7b28bfe8e34873bd4a33cbdf0e5e3b618903d56df977e"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/helpers/ideapad_hotkey_led.c",
+      "bytes": 882,
+      "sha256": "d9acb8c9ecaccc6b695b8da2441f417467dffc280ec79a02a9eafec8d49c2af3"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/helpers/ideapad_s740.c",
+      "bytes": 19734,
+      "sha256": "46cbca36fd49f8cb2b0f5e174d7317c4bbbbce8e33a8a373775e0abc370c9962"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/helpers/thinkpad.c",
+      "bytes": 891,
+      "sha256": "7e2094b1437bff998c1471a4bb5275c01d1b5700cabe569f123d72cf997387c6"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/Kconfig",
+      "bytes": 2926,
+      "sha256": "b7f5ea771248de808323d56f473d92ea94950a34d906333b82cbccf759de52c2"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/Makefile",
+      "bytes": 1159,
+      "sha256": "d70166902fe4551912ff679bdb9c16a0699a8353ffdd8621a6ffa270289cf80f"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc260.c",
+      "bytes": 7644,
+      "sha256": "07e85264e0bbe573e550e8fb1759d0db86a20fd75b635e3e0fc8be016444c4ca"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc262.c",
+      "bytes": 5521,
+      "sha256": "bd2623ad98145c6df6e90ab686f63cec5a0d2530ef13162f3c31d21d1780c934"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc268.c",
+      "bytes": 5039,
+      "sha256": "4562f62968d88a7d6f60d04df80dc4b9ba66f87059abec9b9dc7a4fc51da79fd"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc269.c",
+      "bytes": 329290,
+      "sha256": "2a4e71acf34ce81a7c73eeed9838f1c1819f78495c1c38d94bda5576746dbabb"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc662.c",
+      "bytes": 38036,
+      "sha256": "bc5777963662badc8e5ca8c284675ceaba89380c65dc74b432c264f4d4678231"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc680.c",
+      "bytes": 1480,
+      "sha256": "f2da800f1db8e40bb74b6f86ecf4e91d416d5d03eca4323b6872b2aa57ed5fde"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc861.c",
+      "bytes": 4244,
+      "sha256": "b9bfcd4cdeb71cb0f5c56dcfeab6bde7e20ef8fd3c64a66405cd0a6f312c1924"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc861vd.c",
+      "bytes": 3328,
+      "sha256": "6bd0feba1e2150e07f3922e8414587d2cdd4ae3ef99eba39a8ff76d0dbb5782c"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc880.c",
+      "bytes": 15646,
+      "sha256": "37a3fe78e6afc4f96155f7e2f52503a714fbaaeb634f6144ae977f0cb4736d58"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/alc882.c",
+      "bytes": 29464,
+      "sha256": "7ac01b966830092758e34b45f19ca7da073c895937b3285c64ef9b7a11aa4505"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/realtek.c",
+      "bytes": 62802,
+      "sha256": "26d3701d46b2f4cbfb59c60100587009d7ae4759a440025a5d78d4f42963ab2f"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/realtek/realtek.h",
+      "bytes": 9993,
+      "sha256": "2d8490340f08c10dfb968b9254fd96bffe11b0da3884403dcfb4ff43ca7b28cd"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/senarytech.c",
+      "bytes": 6262,
+      "sha256": "4816918c82553b317da79ab946e1bb0351b9a03049caf255de02293d5eee2439"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/si3054.c",
+      "bytes": 8355,
+      "sha256": "afdf9702b08b2540674fbfcf7bfba07f85d3c49acf8aefad93e7fb8be39c6657"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/Kconfig",
+      "bytes": 4010,
+      "sha256": "4084e0a981a7e7ec6befa1855ef071373cd59e2b066ea015293e5cbc9eeb1661"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/Makefile",
+      "bytes": 468,
+      "sha256": "09717a2ca2f70a0c832f16d9d16b5a468b1fc8a3971b8bc7c4b2aa8c4ff2453a"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cirrus_scodec.c",
+      "bytes": 1918,
+      "sha256": "ef251fcb484a32ff33f4024da88136d00577bbeb45cf2c3f6440e8572cb6d354"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cirrus_scodec.h",
+      "bytes": 343,
+      "sha256": "c9b78b62c0d2052ecbfe74f1f13794f8a1fb0ba7b3ab2209d7e56ed8ce5b4b48"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cirrus_scodec_test.c",
+      "bytes": 10516,
+      "sha256": "e8a6cdf541629465cbe3f1d362a61d8c392caa12eac5f33d226f042af7c8e825"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda.c",
+      "bytes": 59349,
+      "sha256": "0e6e68ce90cdc045d419eff8c7a39d5f67d18ae7689dbf4ebd3a04af3096b9ea"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda.h",
+      "bytes": 2601,
+      "sha256": "c1b64ee96be3fd3fb17a72e6d32e2a5d21bae41bdf26a7d14a5e2f41df96c80c"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_i2c.c",
+      "bytes": 1738,
+      "sha256": "30ea3873d9fb2f218d2cfaf66720b04044774a4fee333b682f17f8c8656f534d"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_property.c",
+      "bytes": 25730,
+      "sha256": "c25fff7c86502a91d22d63dbb3005a4c19e9798074780d57314041f44caa309f"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_property.h",
+      "bytes": 441,
+      "sha256": "c43460924cd780748fbba7298b295ab3ef08c1c7c0c51dfd94ea059e0f9420c4"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l41_hda_spi.c",
+      "bytes": 1613,
+      "sha256": "53561d01ff3bc1225cd3c39645c2a8dcec95625bf1eeb2a6421ebab0679172c1"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda.c",
+      "bytes": 35887,
+      "sha256": "184a0f81b918d3dfb2a787944b448a20b85ea3375f87d91f094e2ad42f189805"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda.h",
+      "bytes": 1353,
+      "sha256": "099bdc87ed9e96043b2f6d19369b0470b0907a10210451c4787f789d108a1180"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda_i2c.c",
+      "bytes": 2180,
+      "sha256": "fa657e582d06e7fb3e4c5d96c9ebd7e8801c4fcea657ddeb1c39cddaa14af2ea"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/cs35l56_hda_spi.c",
+      "bytes": 2275,
+      "sha256": "5afccd350dec254ac900fd57d6e9f4af2280a3097815131c41fe2c213bc0d39e"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/hda_component.c",
+      "bytes": 5841,
+      "sha256": "23d1a456bc3bac9a64e377afadcd5a5e2241bd1ed5fc68f754e4178ba2665ea3"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/hda_component.h",
+      "bytes": 3071,
+      "sha256": "71559a1d0d50d05e63b593dac96a041791292500dfedd606334804487fbcc8ae"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda.c",
+      "bytes": 11944,
+      "sha256": "1c3782b6e57d3b8360958ea38053ad32cf15de1a15b6e532b1a71dcee4144bcc"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda.h",
+      "bytes": 2695,
+      "sha256": "22e0af0f836b1bf663747a19252ddd3de874ad6fb8c1c42fe0afdcb6db3ef97f"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda_i2c.c",
+      "bytes": 22657,
+      "sha256": "b566eefa5ab0bff74f48d9c55d42b3f8c36800fb846061cc5a3c5ff654015bc4"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/side-codecs/tas2781_hda_spi.c",
+      "bytes": 25741,
+      "sha256": "de30ac6bd8fe2aeafbd5a14140a6daeec8d5f01add8a34ef96abdd294f8e4c54"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/sigmatel.c",
+      "bytes": 140688,
+      "sha256": "b53e4f8fc877bc297a698b230a405acbe5847c1a891a0f6097ab4b77b6c105e9"
+    },
+    {
+      "file": "drivers/audio/baseline/codecs/via.c",
+      "bytes": 31291,
+      "sha256": "729d706689daa93cbfa0c04ab5aadb6094c09b36b1e244f45705b431550ccbe5"
+    },
+    {
+      "file": "drivers/audio/baseline/common/Kconfig",
+      "bytes": 3218,
+      "sha256": "f8b399b4d876c323f297e5d21bf39dfd43fa85fa0e939d64504d74f2c1cc7d63"
+    },
+    {
+      "file": "drivers/audio/baseline/common/Makefile",
+      "bytes": 396,
+      "sha256": "b35818428f2d015bcb2a9492e09f5f42c28e1dee5ea08d14ccd0cdda556cdef3"
+    },
+    {
+      "file": "drivers/audio/baseline/common/auto_parser.c",
+      "bytes": 31568,
+      "sha256": "ea5fee6080d5a9d571c232b039d2e66748410bab084e2f0972ca52a9f323d4f5"
+    },
+    {
+      "file": "drivers/audio/baseline/common/beep.c",
+      "bytes": 8384,
+      "sha256": "23acd4c4a2019a30e2fe4894512a5885bb381afd5b2ba316fd92f37a4e5a574a"
+    },
+    {
+      "file": "drivers/audio/baseline/common/bind.c",
+      "bytes": 8580,
+      "sha256": "2de3d08a9c976bb554e26f5fcd06afb3aaba51966dffce83f4dffd7203f1ccb5"
+    },
+    {
+      "file": "drivers/audio/baseline/common/codec.c",
+      "bytes": 112350,
+      "sha256": "fd6b631d1251b6192d64fa72611dd7225968a2009bb8bca50065337d05e5019e"
+    },
+    {
+      "file": "drivers/audio/baseline/common/controller.c",
+      "bytes": 35510,
+      "sha256": "f74fc9c8f742e535ed02448869eea31e48cb643662e739bab4582f54306cb602"
+    },
+    {
+      "file": "drivers/audio/baseline/common/controller_trace.h",
+      "bytes": 2203,
+      "sha256": "a92ffc1a878b17ea4953b76033bf04964643512ca93ec18544df45176828dfc0"
+    },
+    {
+      "file": "drivers/audio/baseline/common/hda_auto_parser.h",
+      "bytes": 3424,
+      "sha256": "59c9e34e50f22e36ddc45dc22ca822838104e745884e6841bee73e65876a0716"
+    },
+    {
+      "file": "drivers/audio/baseline/common/hda_beep.h",
+      "bytes": 1223,
+      "sha256": "9e943b14f5ab34c3d96474adb9f7ad289e8e413616af4c1ff69c93ad7f7cf4cf"
+    },
+    {
+      "file": "drivers/audio/baseline/common/hda_controller.h",
+      "bytes": 6562,
+      "sha256": "bfde4d1166d4593430c48533d3050500d409e44633090a578ebb3b655d112100"
+    },
+    {
+      "file": "drivers/audio/baseline/common/hda_jack.h",
+      "bytes": 5913,
+      "sha256": "b6af84afebab898958e2a972acab3783ed1849c826961f8333f01bd127572b49"
+    },
+    {
+      "file": "drivers/audio/baseline/common/hda_local.h",
+      "bytes": 24611,
+      "sha256": "21b31260451c5fd4868f030cad31b86012acd3e5091caaa39a902d648073d2a9"
+    },
+    {
+      "file": "drivers/audio/baseline/common/hwdep.c",
+      "bytes": 2769,
+      "sha256": "2df08a819a1dce6f6193d4788c78874825825c9b9a35af5dd608f12445c259e7"
+    },
+    {
+      "file": "drivers/audio/baseline/common/jack.c",
+      "bytes": 20812,
+      "sha256": "3220e341fcb569b0cde1368f8803a87836cac3283ede8ff5424020b906b9efde"
+    },
+    {
+      "file": "drivers/audio/baseline/common/proc.c",
+      "bytes": 27745,
+      "sha256": "95de5f4348e97c2437cff90ac5f2afb682010f7a9ed53ce070afcc0eb5b30e5a"
+    },
+    {
+      "file": "drivers/audio/baseline/common/sysfs.c",
+      "bytes": 18486,
+      "sha256": "238cce5be076d65e60d90f4d69953f2c2769a64554edcb3a722edcec1166f0ed"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/Kconfig",
+      "bytes": 1634,
+      "sha256": "06ae1e8933377a14eeafa7e1521025522b98314af3feb57db611bd789e6f59fc"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/Makefile",
+      "bytes": 435,
+      "sha256": "0685632260ba328f33922637a3650c799424c00d0f19afa572c004e48fb2ed53"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/acpi.c",
+      "bytes": 7562,
+      "sha256": "6a3847257cb02be869d5de0ddf6a874e7d6ffde546b98715bc8b83479ef7de10"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/cix-ipbloq.c",
+      "bytes": 10764,
+      "sha256": "59f8ccd5f121e3f3a00d1703cb62d559cc5c72230d221b73f050209dfdf02e26"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/intel.c",
+      "bytes": 86835,
+      "sha256": "5a7afc7bf59329c37713416ee3b4ba4348070a27c74c663e2ac10531c61e0149"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/intel.h",
+      "bytes": 860,
+      "sha256": "2022df70e27637510ef62a06022eea71750dbdf12c65b77c3356d79ef52ebe80"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/intel_trace.h",
+      "bytes": 1005,
+      "sha256": "8dc1dac71407a7214a77ebe85ca5bb1ded16b1bb871047c1ba48698ddbef5e1b"
+    },
+    {
+      "file": "drivers/audio/baseline/controllers/tegra.c",
+      "bytes": 16425,
+      "sha256": "d8f8d94621c290de83d3febdec9e62aa2d07d6c93f9b6dc8c762c8578155165c"
+    },
+    {
+      "file": "drivers/audio/baseline/core/Kconfig",
+      "bytes": 1353,
+      "sha256": "a8ff8bbc4d2ff3f2643bd9c0c8d1608f9484bf863b8da84bbd9f31ddfac60fe8"
+    },
+    {
+      "file": "drivers/audio/baseline/core/Makefile",
+      "bytes": 697,
+      "sha256": "53a3e5af7e677ba19d4c647512fbc185121847778db2f30c6c30ade009603563"
+    },
+    {
+      "file": "drivers/audio/baseline/core/array.c",
+      "bytes": 1247,
+      "sha256": "15bfa86cbb28790d0dd4ec45e949bbb968f76d4542aa2dda35095dfcaa012e67"
+    },
+    {
+      "file": "drivers/audio/baseline/core/bus.c",
+      "bytes": 7554,
+      "sha256": "13ab8ca4fede06fccb9b7e9b4ef5b8360b211c46b181d56e29953ab4e9a82a08"
+    },
+    {
+      "file": "drivers/audio/baseline/core/component.c",
+      "bytes": 9956,
+      "sha256": "a6fdd2e0b46971a0716be03c69095d6e2ff9a166c745513f6e1622c7d3a1d8f1"
+    },
+    {
+      "file": "drivers/audio/baseline/core/controller.c",
+      "bytes": 20173,
+      "sha256": "7197df1815af3cc7f36c3a08bbb47cfc2b4d3a735fc2349d42773286e17cb129"
+    },
+    {
+      "file": "drivers/audio/baseline/core/device.c",
+      "bytes": 29808,
+      "sha256": "1330274ab296d410d7cd258ae28d59789194d139b780fe73fccefac0ee997abe"
+    },
+    {
+      "file": "drivers/audio/baseline/core/ext/Makefile",
+      "bytes": 144,
+      "sha256": "3ec981358d24edff1ecad6f83ac15503b7358545ba1ab16dc51dfc22be8a5b0e"
+    },
+    {
+      "file": "drivers/audio/baseline/core/ext/bus.c",
+      "bytes": 3634,
+      "sha256": "8760c8dfb38029f7b99ef1ff19ad250da7e1eba64a47ea5c6c9103f3ae266a67"
+    },
+    {
+      "file": "drivers/audio/baseline/core/ext/controller.c",
+      "bytes": 10380,
+      "sha256": "44baf2b86a7a7b200f27a1bcc5f2e69c2f01f9990c4da3046c3a8a1e824ec2b6"
+    },
+    {
+      "file": "drivers/audio/baseline/core/ext/stream.c",
+      "bytes": 12664,
+      "sha256": "cf7b0ec10d18c134c0d0226b5b763862d0654004ef73ad08e71fa48e6509f50f"
+    },
+    {
+      "file": "drivers/audio/baseline/core/hda_bus_type.c",
+      "bytes": 2186,
+      "sha256": "85fbdb567b174dc3d31f02e9ceb8d947164a7b0c8d949c1e6209246ce1b21e51"
+    },
+    {
+      "file": "drivers/audio/baseline/core/hdmi_chmap.c",
+      "bytes": 25235,
+      "sha256": "f9938462fc4709c62d380e99094c851795fa6f3036b93d1fef331e35f25f268f"
+    },
+    {
+      "file": "drivers/audio/baseline/core/i915.c",
+      "bytes": 5751,
+      "sha256": "007b4c1dc4124d34c3d81d9b1b0ae3f7a8413629c1fb2805c4131d3e734ccfb5"
+    },
+    {
+      "file": "drivers/audio/baseline/core/intel-dsp-config.c",
+      "bytes": 19901,
+      "sha256": "adec3d8c2819558a44cdf9b1eceb1a17e7db3e09ff3cdfce0386edf72e749935"
+    },
+    {
+      "file": "drivers/audio/baseline/core/intel-nhlt.c",
+      "bytes": 10929,
+      "sha256": "7795926ef1e148ac18fcc23e3b95258c5819dd87de796f36b5c836760a37f0ed"
+    },
+    {
+      "file": "drivers/audio/baseline/core/intel-sdw-acpi.c",
+      "bytes": 5220,
+      "sha256": "3cd659ed3c56a9e12b0dbbb57023bc84fa0aebc5a76d80495d38b363d32126b7"
+    },
+    {
+      "file": "drivers/audio/baseline/core/local.h",
+      "bytes": 924,
+      "sha256": "a2f91781a601fdbe2142e710caefd649112e285582cd923ce498c76d8fcba638"
+    },
+    {
+      "file": "drivers/audio/baseline/core/regmap.c",
+      "bytes": 15241,
+      "sha256": "4be0060cb0dc30695f76686d6e8482b654291808df0f411667b2d281ea0b98db"
+    },
+    {
+      "file": "drivers/audio/baseline/core/stream.c",
+      "bytes": 27552,
+      "sha256": "7f7597196cf0b984a8197f560d76ac1a4cf103b3b8a01078e10f53329d2038b4"
+    },
+    {
+      "file": "drivers/audio/baseline/core/sysfs.c",
+      "bytes": 11503,
+      "sha256": "1c3f32c1670217c52af65cc03bb97331e6c8fc82ef47079439b3369c4183ee89"
+    },
+    {
+      "file": "drivers/audio/baseline/core/trace.c",
+      "bytes": 143,
+      "sha256": "d95f42e5cbb28b5fd8615cf56db2630c375e81d92baa0c29d0538090451d20b0"
+    },
+    {
+      "file": "drivers/audio/baseline/core/trace.h",
+      "bytes": 2319,
+      "sha256": "7988c841db9bee36f52b68a31d7ac4d60b83299595a418fd3875cd10bd0e53c0"
+    },
+    {
+      "file": "drivers/audio/combined-kernel7.patch",
+      "bytes": 5336,
+      "sha256": "8cd8a45da723a7714e7e2adfddc8aab6d77444bf0752baefeb3a66b674cafe4b"
+    },
+    {
+      "file": "drivers/audio/error-propagation.patch",
+      "bytes": 1992,
+      "sha256": "62551c6f1a53fbfa04c6eb8fce98926ff082bd672f9bcf3773416eb35f7d11e5"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/Kconfig",
+      "bytes": 205,
+      "sha256": "bc0d7d3ed6b53304c7d74b80a5731e0a41dedc85dbf52ee69dbff5a5d7def190"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/Makefile",
+      "bytes": 298,
+      "sha256": "b7439d9319e734cf57b42107914bec87d9e5d5d6a7a878167f3dcf28714caad7"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/Kconfig",
+      "bytes": 4342,
+      "sha256": "43c5b77da7077a8d1414761790eeeaf665de28cfa7a2d4c2577f8ae9da94f653"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/Makefile",
+      "bytes": 1353,
+      "sha256": "b1486446ff117966d22789ccee550dde2b2ec6541a057fe7fc24e9759adc016f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/analog.c",
+      "bytes": 30462,
+      "sha256": "c4c7c95f553f9151a3e64bf76f5a422a7f844e788175c7aaf2d4b9b6cc82b482"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/ca0110.c",
+      "bytes": 1918,
+      "sha256": "34aa04b16c0f1063dcdf5a6d4925dabed71a796bfdd41f56a4f4634835993c06"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/ca0132.c",
+      "bytes": 285296,
+      "sha256": "d5a5f1536b9f0de4cc502970b214a43dd26ff9d539efa2b7f221479e8ca5bb7b"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/ca0132_regs.h",
+      "bytes": 13680,
+      "sha256": "a29e01d84cf9d79a91fecffb3e2ff58f7023fdf1dfae850964d0b3b30c22d1ab"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/Kconfig",
+      "bytes": 1353,
+      "sha256": "4dc655a25e7d62c4f78fdd40ef741df395c5690a14e61d266219f0711bfd368d"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/Makefile",
+      "bytes": 387,
+      "sha256": "3c4e6cceb04141bc0172af060520fa6dc4e7facc8910594b22e36b395091a921"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/cirrus_apple.h",
+      "bytes": 127988,
+      "sha256": "a1aa073301333d972ed65ff276579a889e6d06a7f1461702375db5a99136bb99"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/cs420x.c",
+      "bytes": 21296,
+      "sha256": "44b7f25a946e0e7352e2200f8195adf7ceae0969597f7c5738f96a6a6843dcd0"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/cs421x.c",
+      "bytes": 15329,
+      "sha256": "9a289eb57bd1b7b554034e8d19b00a53e3540ef36dc9172ec20d7d6544bda902"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/cs8409-tables.c",
+      "bytes": 28142,
+      "sha256": "15bbfda8ad3bf245d0ecaf592ca9775c5c196a4a358c11a50a6cff6684996836"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/cs8409.c",
+      "bytes": 48780,
+      "sha256": "14921ad18db576fb3763a26bc2252efc99a56de84a2ab1ff1765f4c07b38764a"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/cs8409.h",
+      "bytes": 11788,
+      "sha256": "959e1394048b6d2317707ed9f909d0e6f3ec5715e34735e0eaf92c3a685d758c"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_boot84.h",
+      "bytes": 213049,
+      "sha256": "c5efdcec9cdf9cfc5b4975b4d238cdad98e2c4302e0c4067c70b73234b185fb9"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_hda_generic_copy.h",
+      "bytes": 11569,
+      "sha256": "f405aa473b5aa0bfccb139a05e632dabe73af6aeb5757ab33d990c7571a3c281"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_new84.h",
+      "bytes": 75349,
+      "sha256": "7da73abb0af6ba7930b3e660540267727bca577987969f3db5fe5a95ff133173"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_real84.h",
+      "bytes": 285353,
+      "sha256": "a2c0a96cefc8adff9b5791d2ea93580ceb02d97012216dfbd37bd4b529a14c25"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cirrus/patch_cirrus_real84_i2c.h",
+      "bytes": 87744,
+      "sha256": "5becd39e05b8a27e7a337fc1651a4fe6c71d21be47c934cd76407351f24d4f5a"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cm9825.c",
+      "bytes": 16401,
+      "sha256": "671f84c52fb6acf869850036c2a80b75fc815e169b7f77a60d9a701d6edb6e71"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/cmedia.c",
+      "bytes": 2380,
+      "sha256": "688dc096ce5df23ab4286eb35be359eb04caed308dd50a40ed152c60cda6148a"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/conexant.c",
+      "bytes": 41185,
+      "sha256": "30f5172b833dfe1d8eb0aacb4e436436e4cc4a593868cce01c10855ce93db554"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/generic.c",
+      "bytes": 168220,
+      "sha256": "4233c1a9a8a8da0c8f7a8263aea54c7e225881fddf62f845699dfdceed81929e"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/generic.h",
+      "bytes": 12468,
+      "sha256": "9175959750d86f715d15eb2e4c063a95861ed7d737418e9f55843b1af04446d6"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/Kconfig",
+      "bytes": 2984,
+      "sha256": "a9b36a3f4dff994e3f6f97c2daabcb6a87f5b7de846d19a904d9594bf0d59e26"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/Makefile",
+      "bytes": 832,
+      "sha256": "f20ef5b0d12aba1ba46cc273c61a11b0e35219024d158b85e6b4027fac08b444"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/atihdmi.c",
+      "bytes": 18134,
+      "sha256": "ff351602e365d26f3c535ccf1307928ed1936456e70e3b6f9a31c731c33fd9cf"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/eld.c",
+      "bytes": 6220,
+      "sha256": "58f636d68a7544ee1e1bddf968a2b2700494bed31194f310c1fb56811b43c830"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/hdmi.c",
+      "bytes": 64965,
+      "sha256": "a574456e5d68a3bfa1ade166df066124176bb492871c95741815f87739bb2c0e"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/hdmi_local.h",
+      "bytes": 9384,
+      "sha256": "c5b03f997c2d3415697a019bf47f9808773f641b086789884492e842ec6ec054"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/intelhdmi.c",
+      "bytes": 22790,
+      "sha256": "b9a00664e4e3553f1e22d1e32042055d125d6d081ff2652856ba763ff8c87ea2"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/nvhdmi-mcp.c",
+      "bytes": 10141,
+      "sha256": "ddb4911abb0cd7a65733b7400ef635a5e4919f9925bf6d3131ec9ddb56d1fa1f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/nvhdmi.c",
+      "bytes": 9157,
+      "sha256": "8a6f32ee11f45edfb7ea4bd68e35f1c7ae88a9983acb276bb604fbef298d2743"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/simplehdmi.c",
+      "bytes": 6797,
+      "sha256": "44b2442b79480069b086dd3e2d9201a1f82526b10ddd4ac1019afaf1b9256b49"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/hdmi/tegrahdmi.c",
+      "bytes": 9208,
+      "sha256": "f46298d988db9cfe7b670e1b830abfcda384643a61d110ebdb6672e63839d313"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/helpers/hp_x360.c",
+      "bytes": 8049,
+      "sha256": "c10fd55e7caae781e3c7b28bfe8e34873bd4a33cbdf0e5e3b618903d56df977e"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/helpers/ideapad_hotkey_led.c",
+      "bytes": 882,
+      "sha256": "d9acb8c9ecaccc6b695b8da2441f417467dffc280ec79a02a9eafec8d49c2af3"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/helpers/ideapad_s740.c",
+      "bytes": 19734,
+      "sha256": "46cbca36fd49f8cb2b0f5e174d7317c4bbbbce8e33a8a373775e0abc370c9962"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/helpers/thinkpad.c",
+      "bytes": 891,
+      "sha256": "7e2094b1437bff998c1471a4bb5275c01d1b5700cabe569f123d72cf997387c6"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/Kconfig",
+      "bytes": 2926,
+      "sha256": "b7f5ea771248de808323d56f473d92ea94950a34d906333b82cbccf759de52c2"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/Makefile",
+      "bytes": 1159,
+      "sha256": "d70166902fe4551912ff679bdb9c16a0699a8353ffdd8621a6ffa270289cf80f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc260.c",
+      "bytes": 7644,
+      "sha256": "07e85264e0bbe573e550e8fb1759d0db86a20fd75b635e3e0fc8be016444c4ca"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc262.c",
+      "bytes": 5521,
+      "sha256": "bd2623ad98145c6df6e90ab686f63cec5a0d2530ef13162f3c31d21d1780c934"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc268.c",
+      "bytes": 5039,
+      "sha256": "4562f62968d88a7d6f60d04df80dc4b9ba66f87059abec9b9dc7a4fc51da79fd"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc269.c",
+      "bytes": 329290,
+      "sha256": "2a4e71acf34ce81a7c73eeed9838f1c1819f78495c1c38d94bda5576746dbabb"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc662.c",
+      "bytes": 38036,
+      "sha256": "bc5777963662badc8e5ca8c284675ceaba89380c65dc74b432c264f4d4678231"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc680.c",
+      "bytes": 1480,
+      "sha256": "f2da800f1db8e40bb74b6f86ecf4e91d416d5d03eca4323b6872b2aa57ed5fde"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc861.c",
+      "bytes": 4244,
+      "sha256": "b9bfcd4cdeb71cb0f5c56dcfeab6bde7e20ef8fd3c64a66405cd0a6f312c1924"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc861vd.c",
+      "bytes": 3328,
+      "sha256": "6bd0feba1e2150e07f3922e8414587d2cdd4ae3ef99eba39a8ff76d0dbb5782c"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc880.c",
+      "bytes": 15646,
+      "sha256": "37a3fe78e6afc4f96155f7e2f52503a714fbaaeb634f6144ae977f0cb4736d58"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/alc882.c",
+      "bytes": 29464,
+      "sha256": "7ac01b966830092758e34b45f19ca7da073c895937b3285c64ef9b7a11aa4505"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/realtek.c",
+      "bytes": 62802,
+      "sha256": "26d3701d46b2f4cbfb59c60100587009d7ae4759a440025a5d78d4f42963ab2f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/realtek/realtek.h",
+      "bytes": 9993,
+      "sha256": "2d8490340f08c10dfb968b9254fd96bffe11b0da3884403dcfb4ff43ca7b28cd"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/senarytech.c",
+      "bytes": 6262,
+      "sha256": "4816918c82553b317da79ab946e1bb0351b9a03049caf255de02293d5eee2439"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/si3054.c",
+      "bytes": 8355,
+      "sha256": "afdf9702b08b2540674fbfcf7bfba07f85d3c49acf8aefad93e7fb8be39c6657"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/Kconfig",
+      "bytes": 4010,
+      "sha256": "4084e0a981a7e7ec6befa1855ef071373cd59e2b066ea015293e5cbc9eeb1661"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/Makefile",
+      "bytes": 468,
+      "sha256": "09717a2ca2f70a0c832f16d9d16b5a468b1fc8a3971b8bc7c4b2aa8c4ff2453a"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cirrus_scodec.c",
+      "bytes": 1918,
+      "sha256": "ef251fcb484a32ff33f4024da88136d00577bbeb45cf2c3f6440e8572cb6d354"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cirrus_scodec.h",
+      "bytes": 343,
+      "sha256": "c9b78b62c0d2052ecbfe74f1f13794f8a1fb0ba7b3ab2209d7e56ed8ce5b4b48"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cirrus_scodec_test.c",
+      "bytes": 10516,
+      "sha256": "e8a6cdf541629465cbe3f1d362a61d8c392caa12eac5f33d226f042af7c8e825"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda.c",
+      "bytes": 59349,
+      "sha256": "0e6e68ce90cdc045d419eff8c7a39d5f67d18ae7689dbf4ebd3a04af3096b9ea"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda.h",
+      "bytes": 2601,
+      "sha256": "c1b64ee96be3fd3fb17a72e6d32e2a5d21bae41bdf26a7d14a5e2f41df96c80c"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_i2c.c",
+      "bytes": 1738,
+      "sha256": "30ea3873d9fb2f218d2cfaf66720b04044774a4fee333b682f17f8c8656f534d"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_property.c",
+      "bytes": 25730,
+      "sha256": "c25fff7c86502a91d22d63dbb3005a4c19e9798074780d57314041f44caa309f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_property.h",
+      "bytes": 441,
+      "sha256": "c43460924cd780748fbba7298b295ab3ef08c1c7c0c51dfd94ea059e0f9420c4"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l41_hda_spi.c",
+      "bytes": 1613,
+      "sha256": "53561d01ff3bc1225cd3c39645c2a8dcec95625bf1eeb2a6421ebab0679172c1"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda.c",
+      "bytes": 35887,
+      "sha256": "184a0f81b918d3dfb2a787944b448a20b85ea3375f87d91f094e2ad42f189805"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda.h",
+      "bytes": 1353,
+      "sha256": "099bdc87ed9e96043b2f6d19369b0470b0907a10210451c4787f789d108a1180"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda_i2c.c",
+      "bytes": 2180,
+      "sha256": "fa657e582d06e7fb3e4c5d96c9ebd7e8801c4fcea657ddeb1c39cddaa14af2ea"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/cs35l56_hda_spi.c",
+      "bytes": 2275,
+      "sha256": "5afccd350dec254ac900fd57d6e9f4af2280a3097815131c41fe2c213bc0d39e"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/hda_component.c",
+      "bytes": 5841,
+      "sha256": "23d1a456bc3bac9a64e377afadcd5a5e2241bd1ed5fc68f754e4178ba2665ea3"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/hda_component.h",
+      "bytes": 3071,
+      "sha256": "71559a1d0d50d05e63b593dac96a041791292500dfedd606334804487fbcc8ae"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda.c",
+      "bytes": 11944,
+      "sha256": "1c3782b6e57d3b8360958ea38053ad32cf15de1a15b6e532b1a71dcee4144bcc"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda.h",
+      "bytes": 2695,
+      "sha256": "22e0af0f836b1bf663747a19252ddd3de874ad6fb8c1c42fe0afdcb6db3ef97f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda_i2c.c",
+      "bytes": 22657,
+      "sha256": "b566eefa5ab0bff74f48d9c55d42b3f8c36800fb846061cc5a3c5ff654015bc4"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/side-codecs/tas2781_hda_spi.c",
+      "bytes": 25741,
+      "sha256": "de30ac6bd8fe2aeafbd5a14140a6daeec8d5f01add8a34ef96abdd294f8e4c54"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/sigmatel.c",
+      "bytes": 140688,
+      "sha256": "b53e4f8fc877bc297a698b230a405acbe5847c1a891a0f6097ab4b77b6c105e9"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/codecs/via.c",
+      "bytes": 31291,
+      "sha256": "729d706689daa93cbfa0c04ab5aadb6094c09b36b1e244f45705b431550ccbe5"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/Kconfig",
+      "bytes": 3218,
+      "sha256": "f8b399b4d876c323f297e5d21bf39dfd43fa85fa0e939d64504d74f2c1cc7d63"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/Makefile",
+      "bytes": 396,
+      "sha256": "b35818428f2d015bcb2a9492e09f5f42c28e1dee5ea08d14ccd0cdda556cdef3"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/auto_parser.c",
+      "bytes": 31568,
+      "sha256": "ea5fee6080d5a9d571c232b039d2e66748410bab084e2f0972ca52a9f323d4f5"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/beep.c",
+      "bytes": 8384,
+      "sha256": "23acd4c4a2019a30e2fe4894512a5885bb381afd5b2ba316fd92f37a4e5a574a"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/bind.c",
+      "bytes": 8580,
+      "sha256": "2de3d08a9c976bb554e26f5fcd06afb3aaba51966dffce83f4dffd7203f1ccb5"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/codec.c",
+      "bytes": 112350,
+      "sha256": "fd6b631d1251b6192d64fa72611dd7225968a2009bb8bca50065337d05e5019e"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/controller.c",
+      "bytes": 35510,
+      "sha256": "f74fc9c8f742e535ed02448869eea31e48cb643662e739bab4582f54306cb602"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/controller_trace.h",
+      "bytes": 2203,
+      "sha256": "a92ffc1a878b17ea4953b76033bf04964643512ca93ec18544df45176828dfc0"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/hda_auto_parser.h",
+      "bytes": 3424,
+      "sha256": "59c9e34e50f22e36ddc45dc22ca822838104e745884e6841bee73e65876a0716"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/hda_beep.h",
+      "bytes": 1223,
+      "sha256": "9e943b14f5ab34c3d96474adb9f7ad289e8e413616af4c1ff69c93ad7f7cf4cf"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/hda_controller.h",
+      "bytes": 6562,
+      "sha256": "bfde4d1166d4593430c48533d3050500d409e44633090a578ebb3b655d112100"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/hda_jack.h",
+      "bytes": 5913,
+      "sha256": "b6af84afebab898958e2a972acab3783ed1849c826961f8333f01bd127572b49"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/hda_local.h",
+      "bytes": 24611,
+      "sha256": "21b31260451c5fd4868f030cad31b86012acd3e5091caaa39a902d648073d2a9"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/hwdep.c",
+      "bytes": 2769,
+      "sha256": "2df08a819a1dce6f6193d4788c78874825825c9b9a35af5dd608f12445c259e7"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/jack.c",
+      "bytes": 20812,
+      "sha256": "3220e341fcb569b0cde1368f8803a87836cac3283ede8ff5424020b906b9efde"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/proc.c",
+      "bytes": 27745,
+      "sha256": "95de5f4348e97c2437cff90ac5f2afb682010f7a9ed53ce070afcc0eb5b30e5a"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/common/sysfs.c",
+      "bytes": 18486,
+      "sha256": "238cce5be076d65e60d90f4d69953f2c2769a64554edcb3a722edcec1166f0ed"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/Kconfig",
+      "bytes": 1634,
+      "sha256": "06ae1e8933377a14eeafa7e1521025522b98314af3feb57db611bd789e6f59fc"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/Makefile",
+      "bytes": 435,
+      "sha256": "0685632260ba328f33922637a3650c799424c00d0f19afa572c004e48fb2ed53"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/acpi.c",
+      "bytes": 7562,
+      "sha256": "6a3847257cb02be869d5de0ddf6a874e7d6ffde546b98715bc8b83479ef7de10"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/cix-ipbloq.c",
+      "bytes": 10764,
+      "sha256": "59f8ccd5f121e3f3a00d1703cb62d559cc5c72230d221b73f050209dfdf02e26"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/intel.c",
+      "bytes": 86835,
+      "sha256": "5a7afc7bf59329c37713416ee3b4ba4348070a27c74c663e2ac10531c61e0149"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/intel.h",
+      "bytes": 860,
+      "sha256": "2022df70e27637510ef62a06022eea71750dbdf12c65b77c3356d79ef52ebe80"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/intel_trace.h",
+      "bytes": 1005,
+      "sha256": "8dc1dac71407a7214a77ebe85ca5bb1ded16b1bb871047c1ba48698ddbef5e1b"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/controllers/tegra.c",
+      "bytes": 16425,
+      "sha256": "d8f8d94621c290de83d3febdec9e62aa2d07d6c93f9b6dc8c762c8578155165c"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/Kconfig",
+      "bytes": 1353,
+      "sha256": "a8ff8bbc4d2ff3f2643bd9c0c8d1608f9484bf863b8da84bbd9f31ddfac60fe8"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/Makefile",
+      "bytes": 697,
+      "sha256": "53a3e5af7e677ba19d4c647512fbc185121847778db2f30c6c30ade009603563"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/array.c",
+      "bytes": 1247,
+      "sha256": "15bfa86cbb28790d0dd4ec45e949bbb968f76d4542aa2dda35095dfcaa012e67"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/bus.c",
+      "bytes": 7554,
+      "sha256": "13ab8ca4fede06fccb9b7e9b4ef5b8360b211c46b181d56e29953ab4e9a82a08"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/component.c",
+      "bytes": 9956,
+      "sha256": "a6fdd2e0b46971a0716be03c69095d6e2ff9a166c745513f6e1622c7d3a1d8f1"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/controller.c",
+      "bytes": 20173,
+      "sha256": "7197df1815af3cc7f36c3a08bbb47cfc2b4d3a735fc2349d42773286e17cb129"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/device.c",
+      "bytes": 29808,
+      "sha256": "1330274ab296d410d7cd258ae28d59789194d139b780fe73fccefac0ee997abe"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/ext/Makefile",
+      "bytes": 144,
+      "sha256": "3ec981358d24edff1ecad6f83ac15503b7358545ba1ab16dc51dfc22be8a5b0e"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/ext/bus.c",
+      "bytes": 3634,
+      "sha256": "8760c8dfb38029f7b99ef1ff19ad250da7e1eba64a47ea5c6c9103f3ae266a67"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/ext/controller.c",
+      "bytes": 10380,
+      "sha256": "44baf2b86a7a7b200f27a1bcc5f2e69c2f01f9990c4da3046c3a8a1e824ec2b6"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/ext/stream.c",
+      "bytes": 12664,
+      "sha256": "cf7b0ec10d18c134c0d0226b5b763862d0654004ef73ad08e71fa48e6509f50f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/hda_bus_type.c",
+      "bytes": 2186,
+      "sha256": "85fbdb567b174dc3d31f02e9ceb8d947164a7b0c8d949c1e6209246ce1b21e51"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/hdmi_chmap.c",
+      "bytes": 25235,
+      "sha256": "f9938462fc4709c62d380e99094c851795fa6f3036b93d1fef331e35f25f268f"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/i915.c",
+      "bytes": 5751,
+      "sha256": "007b4c1dc4124d34c3d81d9b1b0ae3f7a8413629c1fb2805c4131d3e734ccfb5"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/intel-dsp-config.c",
+      "bytes": 19901,
+      "sha256": "adec3d8c2819558a44cdf9b1eceb1a17e7db3e09ff3cdfce0386edf72e749935"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/intel-nhlt.c",
+      "bytes": 10929,
+      "sha256": "7795926ef1e148ac18fcc23e3b95258c5819dd87de796f36b5c836760a37f0ed"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/intel-sdw-acpi.c",
+      "bytes": 5220,
+      "sha256": "3cd659ed3c56a9e12b0dbbb57023bc84fa0aebc5a76d80495d38b363d32126b7"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/local.h",
+      "bytes": 924,
+      "sha256": "a2f91781a601fdbe2142e710caefd649112e285582cd923ce498c76d8fcba638"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/regmap.c",
+      "bytes": 15241,
+      "sha256": "4be0060cb0dc30695f76686d6e8482b654291808df0f411667b2d281ea0b98db"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/stream.c",
+      "bytes": 27552,
+      "sha256": "7f7597196cf0b984a8197f560d76ac1a4cf103b3b8a01078e10f53329d2038b4"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/sysfs.c",
+      "bytes": 11503,
+      "sha256": "1c3f32c1670217c52af65cc03bb97331e6c8fc82ef47079439b3369c4183ee89"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/trace.c",
+      "bytes": 143,
+      "sha256": "d95f42e5cbb28b5fd8615cf56db2630c375e81d92baa0c29d0538090451d20b0"
+    },
+    {
+      "file": "drivers/audio/pr220-0.1/core/trace.h",
+      "bytes": 2319,
+      "sha256": "7988c841db9bee36f52b68a31d7ac4d60b83299595a418fd3875cd10bd0e53c0"
+    },
+    {
+      "file": "drivers/audio/upstream-220-kernel7.patch",
+      "bytes": 4871,
+      "sha256": "cf97c9b960aaef4237d2d8260363b6f580c3d15ce0afae62ed9b066eaf0327c3"
+    },
+    {
+      "file": "drivers/t1/automatic-0.6/LICENSE",
+      "bytes": 18046,
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"
+    },
+    {
+      "file": "drivers/t1/automatic-0.6/Makefile",
+      "bytes": 360,
+      "sha256": "0b83960367a409292ce1b12c2d3cb62aa3a1bf9b5a911a999b9de1a222f33982"
+    },
+    {
+      "file": "drivers/t1/automatic-0.6/apple-ibridge.c",
+      "bytes": 33469,
+      "sha256": "9477e60aa33b99e7685bd4f4b8c95b5282b97c9ae39b89ddb1778240a15622ca"
+    },
+    {
+      "file": "drivers/t1/automatic-0.6/apple-ibridge.h",
+      "bytes": 955,
+      "sha256": "d42de71370e6d60cbdaedb4028ce4fe4048940c20a513f0221f752479e0c200a"
+    },
+    {
+      "file": "drivers/t1/automatic-0.6/apple-touchbar.c",
+      "bytes": 45363,
+      "sha256": "8a67581adc63b4432c7cc3235f2e26c5f679ad43e80e673bcffd40b035d9580b"
+    },
+    {
+      "file": "drivers/t1/automatic-0.6/hid-ids.h",
+      "bytes": 55613,
+      "sha256": "70b551b047fc5c4e8c029764b64ef0a6167aa93b55913459f8df487ec1be2974"
+    },
+    {
+      "file": "drivers/t1/baseline/LICENSE",
+      "bytes": 18046,
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"
+    },
+    {
+      "file": "drivers/t1/baseline/Makefile",
+      "bytes": 360,
+      "sha256": "0b83960367a409292ce1b12c2d3cb62aa3a1bf9b5a911a999b9de1a222f33982"
+    },
+    {
+      "file": "drivers/t1/baseline/apple-ibridge.c",
+      "bytes": 19619,
+      "sha256": "96fc45f6ab17a01a1472e180ad7ff36648188db7a65dfc6712cf24eb7b09952d"
+    },
+    {
+      "file": "drivers/t1/baseline/apple-ibridge.h",
+      "bytes": 313,
+      "sha256": "34d7c6c294a657b3675502e9e082cb5499ef0204c4a0206360be7498a3754754"
+    },
+    {
+      "file": "drivers/t1/baseline/apple-touchbar.c",
+      "bytes": 41317,
+      "sha256": "4f1ad3b6883a940605d29f34f2824ba2979e574c31184ab64425f51b62409b9d"
+    },
+    {
+      "file": "drivers/t1/baseline/hid-ids.h",
+      "bytes": 55613,
+      "sha256": "70b551b047fc5c4e8c029764b64ef0a6167aa93b55913459f8df487ec1be2974"
+    },
+    {
+      "file": "drivers/t1/mode-result-0.1/LICENSE",
+      "bytes": 18046,
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"
+    },
+    {
+      "file": "drivers/t1/mode-result-0.1/Makefile",
+      "bytes": 360,
+      "sha256": "0b83960367a409292ce1b12c2d3cb62aa3a1bf9b5a911a999b9de1a222f33982"
+    },
+    {
+      "file": "drivers/t1/mode-result-0.1/apple-ibridge.c",
+      "bytes": 19619,
+      "sha256": "96fc45f6ab17a01a1472e180ad7ff36648188db7a65dfc6712cf24eb7b09952d"
+    },
+    {
+      "file": "drivers/t1/mode-result-0.1/apple-ibridge.h",
+      "bytes": 313,
+      "sha256": "34d7c6c294a657b3675502e9e082cb5499ef0204c4a0206360be7498a3754754"
+    },
+    {
+      "file": "drivers/t1/mode-result-0.1/apple-touchbar.c",
+      "bytes": 41433,
+      "sha256": "6bb295f41872247e6d48cf5134d9b06fca90251e31281e40e5e55e9ae1b4924e"
+    },
+    {
+      "file": "drivers/t1/mode-result-0.1/hid-ids.h",
+      "bytes": 55613,
+      "sha256": "70b551b047fc5c4e8c029764b64ef0a6167aa93b55913459f8df487ec1be2974"
+    },
+    {
+      "file": "drivers/t1/patches/baseline-to-automatic-package.patch",
+      "bytes": 27516,
+      "sha256": "dd3b36e08ecdbeea9bb4e6faa04db7af555061668b2f2ddbf194bcd3e87619fe"
+    },
+    {
+      "file": "drivers/t1/patches/mode-result.patch",
+      "bytes": 375,
+      "sha256": "4822452c680ffa5dc122f173ee027dfc1ba37dd9effd9b74421fb6c911599ae2"
+    },
+    {
+      "file": "drivers/wifi/0682-brcmfmac-bcm43602-keep-d0-on-suspend.patch",
+      "bytes": 825,
+      "sha256": "fe67c659096e64f30ce92588133b06a4e38bbf204816a353619b2cccb290348c"
+    },
+    {
+      "file": "drivers/wifi/baseline/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c",
+      "bytes": 77402,
+      "sha256": "387ea4ecdfc0c817c6f916ccbd5f7445e6b02cb5a7e2846558f337edc13778ae"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/Kconfig",
+      "bytes": 1478,
+      "sha256": "bcf68063fb3d3d3659bf7c166dfe1da7bf54353247c925578e961b3446175648"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/Makefile",
+      "bytes": 1151,
+      "sha256": "fba4e66e491186c5fdd295d81602a83abc5f8b827a104f9910fe6aa9214f815f"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/acpi.c",
+      "bytes": 1367,
+      "sha256": "af412ce1d3272d28dc971639a8f831d64118d11db43878dadf70ce6167cf6dfa"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/Makefile",
+      "bytes": 211,
+      "sha256": "6c39522eb3de877fcd9970e5931f89118f75d0894d2dc049ca7be602725e52d2"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/core.c",
+      "bytes": 820,
+      "sha256": "458cd390000adcf2a9139ea5942d0e465bc46f2a2e214664150ec06ee21b3394"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/module.c",
+      "bytes": 635,
+      "sha256": "b6df241efded8bc5f04f7fae146bc4cffbebf68956d4154557af8797b35de874"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/vops.h",
+      "bytes": 264,
+      "sha256": "4c8bc4a10d463cd4f9494745da61706044e7b30b782af0b8d0338a4cab08f60a"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcdc.c",
+      "bytes": 12741,
+      "sha256": "57a06f51624f3128f38df82223cc0501ec11594a7d0428a855e156854ce7959b"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcdc.h",
+      "bytes": 686,
+      "sha256": "98aca9e796804b6cd0f15c490370c674bbdb2b1be84e3210c0a657a14afc6fea"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c",
+      "bytes": 33434,
+      "sha256": "9cf9ce0e27981ec399957c4e098de9bd9924332c6a36c4330cf61ff165f6b7d0"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/btcoex.c",
+      "bytes": 12688,
+      "sha256": "bce337ad63ef4cccc5ec2bba0b64fe58f122e6b3e79111160c6d4877697028b0"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/btcoex.h",
+      "bytes": 451,
+      "sha256": "2be4914926e397f223564af45b31cf350bd5d9f67c1494752f9148ae41607bee"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bus.h",
+      "bytes": 9930,
+      "sha256": "5c99cbafa3c881ea96ccdf8fd9f693e070da39a953c6e658d6c6f4634f73eab4"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c",
+      "bytes": 235362,
+      "sha256": "caa7cf46c5c379362a910e94354465d3162272599bc69da6fbddfb578a50d461"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.h",
+      "bytes": 14940,
+      "sha256": "89031854e21941889ca07315f693c53ef0b61b94c022bce5743cc204e003735e"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c",
+      "bytes": 39339,
+      "sha256": "932e25c75f9ea5247194dfdb78c6b41a457af68d7a558935a7b5489bf548aa9d"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.h",
+      "bytes": 2841,
+      "sha256": "cb6ffbc01bfd35629acfaf87daa8f5a6ef4f9ce4f4f393c19b05c2bd18ff791e"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/common.c",
+      "bytes": 17632,
+      "sha256": "8b16af808a17e3a141f34e14b76d7c83090fbc04a9b98428744b98008b65bfc7"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/common.h",
+      "bytes": 2922,
+      "sha256": "b319771764b2ff2f32ee7e57718ff350b3ecfc093c07066dcbaa4a480a63c590"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c",
+      "bytes": 5503,
+      "sha256": "4a5a5ac64da90251b1a6a24262d421f47c3ab365d58a95633bdf7380a3472473"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h",
+      "bytes": 1877,
+      "sha256": "b2899336d680ca868536b25d1601ae99325ab66aaf1c565b4e638c71827b7369"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c",
+      "bytes": 39260,
+      "sha256": "8aca12c8be3f038c6b28437e35fbecbb838ab890bcf7e8e0600aec9e5a06bc30"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.h",
+      "bytes": 6545,
+      "sha256": "e3134845f2f7fd0eb90e2631b63cde479957b44bda8904ddab74b274718069cf"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/Makefile",
+      "bytes": 211,
+      "sha256": "4778fece953ca85f9d9e46a5f8edc1fa23139e09afcb043929ac1778dde4e6ca"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/core.c",
+      "bytes": 11278,
+      "sha256": "ad8f9ed772d3b452a3c6c69df9eb43e2c951f9cbd6d921ae9f633a2229b2b6ad"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/fwil_types.h",
+      "bytes": 2015,
+      "sha256": "e700b02a130f543f12a238928f84ec9b70b238750ca15d3dfb7570b73bf4973c"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/module.c",
+      "bytes": 640,
+      "sha256": "bf88ed5ceb44279951199d9cd8e9dd0538f5352876425ab8492d27be6b62e96d"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/vops.h",
+      "bytes": 264,
+      "sha256": "003495b3c00879aa9e0f32085d2eeb42f318cffbe202c8ed6b2c94848aad99ac"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/debug.c",
+      "bytes": 1209,
+      "sha256": "bbc97b72f2bcfa04757184daddab1de03d57da1d9eb3f3f8374722f5351dfa39"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/debug.h",
+      "bytes": 4291,
+      "sha256": "05baaf3bf1d6d3364482b5f139555d4fb9b1b4c0379ad91853696ee3b05063bb"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/dmi.c",
+      "bytes": 7103,
+      "sha256": "b45b39f0981a2a057cccc8382be2638a6421e82ab8ce1efe25af0f4a7e0f0d0b"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.c",
+      "bytes": 10246,
+      "sha256": "6afeeeab48e2907b8f9b2f7cb6c9999fdf25c565b09847a1e6d9385d80b59b8d"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.h",
+      "bytes": 3486,
+      "sha256": "809332a24eb3135eab24a17c9e54057284b5f5809148dcbe940bc13c157ca719"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/firmware.c",
+      "bytes": 21046,
+      "sha256": "008127d2f2b4a9c657132b3836916f8b7a833de6217c574149a695e7ce25d004"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/firmware.h",
+      "bytes": 2520,
+      "sha256": "166e4115f3d25e27526d94e04322286228e33ae2b6c983985c1d6d2a56c40123"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c",
+      "bytes": 11393,
+      "sha256": "7c58d8f3a5069b8c60c6d2590a8adfce5875ee89076f983b4375ee04e28705a9"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.h",
+      "bytes": 2205,
+      "sha256": "4b8c494a06a911f3a01c45aa42e4cb93a53aac78cab644288996a27420200925"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fweh.c",
+      "bytes": 13486,
+      "sha256": "4a4c090a81e7c2a954834e98db41633f1cc5dd0a6b739edc5dbfc9b0bcd9f51c"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fweh.h",
+      "bytes": 12082,
+      "sha256": "d36dbcf93b7aa789d1988463915880c20405d8fa09733e021b69675d7bb7ca2c"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.c",
+      "bytes": 10054,
+      "sha256": "1ba05bb9a089f6da2e7cdc863473c6168e2443e5c97d9e4906a94bde8bb202a9"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h",
+      "bytes": 6604,
+      "sha256": "770964dcbe004e1df7e7c5faecda90358e44cbd2fd56f25ceb73aaaf6a296f79"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil_types.h",
+      "bytes": 35677,
+      "sha256": "fa2f1b88f6b33c92a39a86bf4cfda9f368cf025347e03cf4614de9d7be46456d"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c",
+      "bytes": 69514,
+      "sha256": "1cf8308959ad6ae2651f97c94bb391b88f0e6b39edf6712889a37fe1366dc266"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.h",
+      "bytes": 1706,
+      "sha256": "51f14e634a8bf96de8d31a4861064038f9755daa1df6be80ef4e391b5e0c1966"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwvid.c",
+      "bytes": 4541,
+      "sha256": "0b495cc8e5287c1f24b1ae411f0d74c6c0bbe491a866c1982f6a0d0eb616a7c1"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwvid.h",
+      "bytes": 2232,
+      "sha256": "6d9150aaa8257c87eb7a093819c115ad197fe1c1a9850fd9ba80df747a5952fc"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c",
+      "bytes": 45460,
+      "sha256": "e05ca59da6de5b465b6358855da8036ea23e79b682e23d621bbccf4b224995ee"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.h",
+      "bytes": 1410,
+      "sha256": "982683ed0fe0d984acbac405e1e5a9fe84fe0b1c54a9ab793c5961df8c3c9519"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/of.c",
+      "bytes": 3901,
+      "sha256": "0e80aada2e487c7402aa610a3509a1d16976841250919220e592c7add2303bc4"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/of.h",
+      "bytes": 367,
+      "sha256": "d27052440389dbc249e7435fccef43c18f8d07bf641563327ef0cf2bfab3cd7b"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c",
+      "bytes": 74067,
+      "sha256": "96d95f329ac570bc3dedcd107e657727505c5ea7ca85403ca8078c3566bcadad"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.h",
+      "bytes": 6802,
+      "sha256": "22ef3d1394b01eb096c67fcd08396f2b233ac840af1632d52716580088a6567f"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c",
+      "bytes": 77822,
+      "sha256": "0211bb9ca1c8497da09bb332d392df73a845cf4d494be6e65dba1303d99223b2"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.h",
+      "bytes": 249,
+      "sha256": "5d48671dc3226f929b813a0f48038d51a9a1b7de29711f41954fc4b6ce48680b"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pno.c",
+      "bytes": 14181,
+      "sha256": "114a8750a6c223afd9085dd2ecfc190c020e5cbd22efba6924e30caa322e4b4c"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pno.h",
+      "bytes": 1928,
+      "sha256": "190211270b7ab6f92dc63acde26c2cb87aedc1774f98eafe6953e4f583f94512"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/proto.c",
+      "bytes": 1592,
+      "sha256": "e22e27641979e939f44657fc1e74495bb8cacb80e593cc5b100d9c957a6e8c23"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/proto.h",
+      "bytes": 4068,
+      "sha256": "1c815ae635b0aa6434861be03d44eb715a4c6c359f4c9b834566c4de8944e081"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c",
+      "bytes": 129413,
+      "sha256": "6889d448c8e7fab5cf28c3189675deda19a5d7c6e523895bf280441909fa8b9b"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.h",
+      "bytes": 11397,
+      "sha256": "245881dce2fc3a9765a547ed29a56c0761ccfbaf6d7406ad43081e0d509a2d1b"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/tracepoint.c",
+      "bytes": 624,
+      "sha256": "ef90882e078eee963a8ae2dcbbd0ef2608af38654d48a16de9c904a55467001c"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/tracepoint.h",
+      "bytes": 3366,
+      "sha256": "1e76ac445913a9a77bf1d2fb501144048394125b638f831fb12ba4e406799932"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/usb.c",
+      "bytes": 39719,
+      "sha256": "596d2635d32f549db77e5c4bde7cf8873033b82cc9310b5f962523147e57cc91"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/usb.h",
+      "bytes": 801,
+      "sha256": "0c9675eb3c21dd861fadf220190ce8ee5cb90f797e15a5f0f237fe773cfd774f"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/vendor.c",
+      "bytes": 2719,
+      "sha256": "3ddfd4441d70028324e92e91d2c2dd78d708bf5ed7f26194fb150c5189fe6414"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/vendor.h",
+      "bytes": 1034,
+      "sha256": "24b201a75470706ceb47d4526db2b246aef7b89c17ec864eb7dfd7042841928f"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/Makefile",
+      "bytes": 211,
+      "sha256": "c5d3e784b7629c9af24ee00bb133047baa6439e47893252e6514b64c38713e37"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/core.c",
+      "bytes": 868,
+      "sha256": "a9ce6bb39905dcbf13e4276adc7563c8e20a57768070646abcab48f6c2199885"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/module.c",
+      "bytes": 641,
+      "sha256": "5a2b30fa87576b3411c6399bd10539d1a05e74549f0af952d6adef78f2ecaaa1"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/vops.h",
+      "bytes": 264,
+      "sha256": "1197bea9205d535c10fbd63dd498e92c2eae882e1392aa5a0e9a66c555d11788"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/xtlv.c",
+      "bytes": 1725,
+      "sha256": "ff938acbe02c36881a51f83ca93e0265122edbb346fc8ca958946768e5dbb994"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/brcmfmac/xtlv.h",
+      "bytes": 707,
+      "sha256": "6e2d62dda30960e008bd29c2cd9b5f9b9a20884014f65f6b32d3b9f32f912983"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h",
+      "bytes": 4131,
+      "sha256": "32ebf65e5aa69162f8bc1f2f1d5793e8a337fcd47cc4d0c8bee23f0ba4f2d87d"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h",
+      "bytes": 4625,
+      "sha256": "1ed2dcc37d792957f2f722b38f6ac1688d210f83316ddacc53a107b7cc3cfe0d"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcmu_utils.h",
+      "bytes": 5857,
+      "sha256": "b033458f10401bde6e2ef1c14f64f137f15c0858c8df934f22718e248201d478"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/brcmu_wifi.h",
+      "bytes": 7674,
+      "sha256": "e768af55936c75aa9e8cc679b9c6c0bd199b3b0e08dad8bd15792f9596517423"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/chipcommon.h",
+      "bytes": 8471,
+      "sha256": "1e7e449c3e54b725c6b7dc8ef1dfd8a4b8a5027941b496a1f211b36b4cfe1ddf"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/defs.h",
+      "bytes": 2154,
+      "sha256": "80568f1354dd96c0dbd49f64939e652d9d25d12a2d54c890068bf64eda23466a"
+    },
+    {
+      "file": "drivers/wifi/d0-0.1/drivers/net/wireless/broadcom/brcm80211/include/soc.h",
+      "bytes": 553,
+      "sha256": "7b74ceaf8afce6ec9c79f9f3053c5120d6e68a61c41f19a8cb6084a65046fbfa"
+    },
+    {
+      "file": "evidence/2026-11-04/SUMMARY.md",
+      "bytes": 1987,
+      "sha256": "b6211a137ff6766da04208cfe0e8d487503456df959a18413068f7511ac00ecb"
+    },
+    {
+      "file": "kernel/config/mbp14342p1.config",
+      "bytes": 308598,
+      "sha256": "b3af16a1a494932743c2421cc039b3e85960f7bd992058ca0726620f5e347d34"
+    },
+    {
+      "file": "kernel/packaging/0001-omit-libc-package.patch",
+      "bytes": 261,
+      "sha256": "5f3cbc218908ddbd961121d59b5d0fac109953ec9034924814cc56bc04c33ade"
+    },
+    {
+      "file": "kernel/patches/0001-pci-config-accessible.patch",
+      "bytes": 1178,
+      "sha256": "48c6e8c31e72f6b7762828b80433edec178d5f8295d4401cf4045821ceb50ced"
+    },
+    {
+      "file": "kernel/patches/0002-pci-save-v3.patch",
+      "bytes": 966,
+      "sha256": "12a43337dce5b0a7ae0315203ebc84da1382ba84a928ba92ccada54c05af1126"
+    },
+    {
+      "file": "kernel/patches/0003-pci-link-v3.patch",
+      "bytes": 1953,
+      "sha256": "84de6e1334ad296af8bc5284246332fb27ed3076227eaed22c9e387326679881"
+    },
+    {
+      "file": "kernel/patches/0004-acpica-parent-bus.patch",
+      "bytes": 1177,
+      "sha256": "d30945b24d903bcdcecd5fce92c7a7bdaaa1604afd98c804fdd4e3d272736882"
+    },
+    {
+      "file": "kernel/patches/0005-apple-native-pme.patch",
+      "bytes": 615,
+      "sha256": "d3fddbed422b92e76f61842f8267407ff49dce1630f4e03ea7709b0c6ddcc053"
+    },
+    {
+      "file": "kernel/patches/0006-amdgpu-vi-vram.patch",
+      "bytes": 731,
+      "sha256": "f41b71f5f5c8340acbec74776145ef991e7827f3458f59dc01f6abbb9c07752a"
+    },
+    {
+      "file": "kernel/patches/0007-thunderbolt-sxfp-v3.patch",
+      "bytes": 6941,
+      "sha256": "6855f8a16309df23dc85252e5910b6f64b788af79fc6b16cb078b1fba594c526"
+    },
+    {
+      "file": "kernel/patches/manifest.json",
+      "bytes": 2128,
+      "sha256": "1d93e8a0cdb1e4379953084602c3f1861c9d4fcaf584efe2a2c4d392949db13d"
+    },
+    {
+      "file": "kernel/patches/series",
+      "bytes": 193,
+      "sha256": "23306ca93e758401eab21ec28dc317a8eefbd85d46fbfd7f346042b3543f73a5"
+    },
+    {
+      "file": "kernel/pristine/drivers/acpi/acpica/hwpci.c",
+      "bytes": 11906,
+      "sha256": "d78b8fe56d532920cef487cf6c2cd782451110442ca0e75f0c934c35577199c7"
+    },
+    {
+      "file": "kernel/pristine/drivers/acpi/pci_root.c",
+      "bytes": 30584,
+      "sha256": "dce8c8c694c701082bdd3bb9a031c26851f089033eaa86c155f87c410bce27da"
+    },
+    {
+      "file": "kernel/pristine/drivers/gpu/drm/amd/amdgpu/vi.c",
+      "bytes": 60493,
+      "sha256": "355296ff9e8f63c8c9578272c99457f16ae81007ffab97b489676e41f99f69cd"
+    },
+    {
+      "file": "kernel/pristine/drivers/pci/pci.c",
+      "bytes": 183818,
+      "sha256": "b726f7089a80c1811b0c959c3ba7a509300dda97d04206b2da3379dd528c8a32"
+    },
+    {
+      "file": "kernel/pristine/drivers/thunderbolt/acpi.c",
+      "bytes": 10006,
+      "sha256": "18f62f5ccef2b8a3cc0b9a2b86629e1fa234a44b226d48ff39f660b6f419dd92"
+    },
+    {
+      "file": "kernel/pristine/drivers/thunderbolt/domain.c",
+      "bytes": 21358,
+      "sha256": "dcf73ece8c57c68db03f9ae97a8f24455e4393c194d6dcde3fee39062d4657a0"
+    },
+    {
+      "file": "kernel/pristine/drivers/thunderbolt/nhi.c",
+      "bytes": 41595,
+      "sha256": "5daaf2ec5c4be7bf89f664ed93ca9c71a135773a13e27c2042c9a40d1647d0e7"
+    },
+    {
+      "file": "kernel/pristine/drivers/thunderbolt/nhi.h",
+      "bytes": 3848,
+      "sha256": "c77007ab80efc2a9e85708ba7423c5401a2a7dbed470410776b31eb77fc0ff14"
+    },
+    {
+      "file": "kernel/pristine/drivers/thunderbolt/switch.c",
+      "bytes": 96767,
+      "sha256": "491440ec549929ecf02f15869e21e4e33d419ff894327875b88186cc5383ddc4"
+    },
+    {
+      "file": "kernel/pristine/drivers/thunderbolt/tb.h",
+      "bytes": 55200,
+      "sha256": "bebba1b969d1b91f15d54f5058d99d2e96323890f632edfd08fa6a5038e3e600"
+    },
+    {
+      "file": "kernel/pristine/drivers/thunderbolt/tb_regs.h",
+      "bytes": 19908,
+      "sha256": "cc7ef3dd3339c4fa04c2b6824a15144390aa6b93e0e4ac89d10dadad93447301"
+    },
+    {
+      "file": "kernel/public-certificates/canonical-certs.pem",
+      "bytes": 28820,
+      "sha256": "74432a8d3bb67b8efca98cbba2c4c97b60318622c84f58f91cfedc45e536acb8"
+    },
+    {
+      "file": "kernel/public-certificates/canonical-revoked-certs.pem",
+      "bytes": 38606,
+      "sha256": "60aa9e3001bf8fd2a5ad8ae83204be7adc1b83f0a9d5614f2a5fe63755a8b688"
+    },
+    {
+      "file": "kernel/toolchain.txt",
+      "bytes": 438,
+      "sha256": "75872b7ad2c712e8cdb18a732adf197f72350fc3fbe858ec2f9c6816705df423"
+    },
+    {
+      "file": "manifests/inputs.json",
+      "bytes": 168059,
+      "sha256": "485ccd15700493c4c0c4e505356229fb71e39691a36da1762417430235532c46"
+    },
+    {
+      "file": "manifests/kernel-patch-targets.json",
+      "bytes": 1100,
+      "sha256": "39ce2afd0ef6cdd11692bd75a23d39754ea1e8f0b323794b576e59a2d99655ef"
+    },
+    {
+      "file": "manifests/packages.json",
+      "bytes": 2710,
+      "sha256": "8f8427a8be827e93431b1a7484670f105c83b09be89f15a855b2cb1b1b0db585"
+    },
+    {
+      "file": "manifests/payload-audit.json",
+      "bytes": 2514,
+      "sha256": "d83807be7a4149911b12ebfe2b04b22b7093642f15e6c7c492a994237321f0f7"
+    },
+    {
+      "file": "manifests/source-replay.json",
+      "bytes": 163,
+      "sha256": "a0bed542d2f90a472a7e88c7348dcaf90a3af2859085bb4b26f870a7bb43da77"
+    },
+    {
+      "file": "manifests/validation.json",
+      "bytes": 2506,
+      "sha256": "d214ccfb86befbf60cebc698f150d419975910752c802d384cada8761787bda0"
+    },
+    {
+      "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",
+      "bytes": 467,
+      "sha256": "af8ff2005bbf916af6fc91ebd14fb08a921217c47966cc37656ba36ffce90bfb"
+    },
+    {
+      "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/md5sums",
+      "bytes": 786560,
+      "sha256": "2a3138660d8ba1a0ed4ba95884498a880f4911b66e7fa4537df6272f6ad22d02"
+    },
+    {
+      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/control",
+      "bytes": 424,
+      "sha256": "21df0d46ad6f15f90afebafb0fcccaec57749e9bd6bfc275f254dcb20949cea8"
+    },
+    {
+      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/md5sums",
+      "bytes": 725331,
+      "sha256": "c2c23d31e34ee1e867b68a73d0d455244d31009790240a8617c1b9b58569174a"
+    },
+    {
+      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "bytes": 572,
+      "sha256": "f5e661247484ef350de39a7b8bfc65602cd95910d4bf39639dd11575da03b023"
+    },
+    {
+      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "bytes": 568,
+      "sha256": "fea50008e18c434efb87202e5ce713205d67e250fbca8e3293c61fa7daa9af3b"
+    },
+    {
+      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/preinst",
+      "bytes": 570,
+      "sha256": "58fbc05c48e93d42f9efc11ca79fea1af8280c1a97105e5e526d70a90c37d065"
+    },
+    {
+      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/prerm",
+      "bytes": 566,
+      "sha256": "3b2aeb2037d3f84c7bab99d40b876106472fbdb2646be5f3194d302da6e2f490"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/control",
+      "bytes": 575,
+      "sha256": "e33b268c4b0bb83bf1f06f1bbb8de197cf0a780162ec3225b2133d14a5724064"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/lib/depmod.d/zz-mbp143-audio-resume-7.0.14-mbp14342p1.conf",
+      "bytes": 137,
+      "sha256": "2921e87cfc75aa76d01078e5b8955fb23d50b9ebaa647a8b57b5bfb5232c4f17"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/README",
+      "bytes": 3556,
+      "sha256": "a92e62d79fb0dd5f20f875a490c6941e9f92594999007ec5de5f0c6c3040a962"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/combined-kernel7.patch",
+      "bytes": 5336,
+      "sha256": "8cd8a45da723a7714e7e2adfddc8aab6d77444bf0752baefeb3a66b674cafe4b"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/copyright",
+      "bytes": 18004,
+      "sha256": "091f12b2fa3623ded73330f65776bad538b50e87c617677b6aa3b6472bee368c"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/error-propagation.patch",
+      "bytes": 1992,
+      "sha256": "62551c6f1a53fbfa04c6eb8fce98926ff082bd672f9bcf3773416eb35f7d11e5"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/provenance.json",
+      "bytes": 627,
+      "sha256": "11972bf8041991d46367439388136357100045a793c48d5a3bd5e904b267d2f0"
+    },
+    {
+      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/upstream-220-kernel7.patch",
+      "bytes": 4871,
+      "sha256": "cf97c9b960aaef4237d2d8260363b6f580c3d15ce0afae62ed9b066eaf0327c3"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/control",
+      "bytes": 559,
+      "sha256": "c422a2d30b6fc6e0c1b662d76aa9041a473fe773412b35cf71a2c58e79ff891e"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/lib/depmod.d/mbp143-t1-mode-result-7.0.14-mbp14342p1.conf",
+      "bytes": 131,
+      "sha256": "a4502f5311fc543a41c0961610e986328ada71655f04c7cd6640bd52431c4245"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/README",
+      "bytes": 313,
+      "sha256": "33cc968701d2b93d5cedbcecdec321e163b8d8d7fdd9d2e9f9cc64f475a0017c"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/copyright",
+      "bytes": 18046,
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/mode-result.patch",
+      "bytes": 375,
+      "sha256": "4822452c680ffa5dc122f173ee027dfc1ba37dd9effd9b74421fb6c911599ae2"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/control",
+      "bytes": 624,
+      "sha256": "2da0aa301d31fe3ac2f244dc998a24da196a53d766e84cc47b09ee6141c87f81"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/lib/depmod.d/zz-mbp143-t1-phase-trace.conf",
+      "bytes": 204,
+      "sha256": "015fd5385542817a85ef2ad9e00f5f6616a352a68b34697a6fbbd101f34c2b62"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/README",
+      "bytes": 1819,
+      "sha256": "88e4216b8a16d629eb975d2cb47dccfc5694e85c455d296dbea6d5f7f2152529"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/automatic-s3.patch",
+      "bytes": 10292,
+      "sha256": "9fa9bab7f2cdda26009ed84da02d85b39a5e8696723a52adcc0c22b31e1160d1"
+    },
+    {
+      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/copyright",
+      "bytes": 18046,
+      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"
+    },
+    {
+      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/control",
+      "bytes": 566,
+      "sha256": "beeb5f2d5c1ebe896cf096f9a8f4ab652d2f09dfc57c7b3f17812964a29a2596"
+    },
+    {
+      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/README",
+      "bytes": 199,
+      "sha256": "3ab3cc40035af3bbefb918481e9be777efc6d4dbe71906a28cf611378c1e6608"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/control",
+      "bytes": 558,
+      "sha256": "851b4234c1acd9150a63d45b8f0fd2a83098f8d2d0aeb1a3c24d8e079e961518"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "bytes": 279,
+      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/lib/depmod.d/zz-mbp143-wifi-d0-7.0.14-mbp14342p1.conf",
+      "bytes": 120,
+      "sha256": "f7abe26d69c06e3dd0971dcf4c46a1701236b300d6378683710431e3b6b59e82"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/lib/dracut/modules.d/91mbp143wifid0/module-setup.sh",
+      "bytes": 437,
+      "sha256": "b345504138bc76c289b81f745b4dcf2b20cad585911bd52688a98b056c7a8524"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/0682.patch",
+      "bytes": 825,
+      "sha256": "fe67c659096e64f30ce92588133b06a4e38bbf204816a353619b2cccb290348c"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/INITRAMFS-FIX",
+      "bytes": 600,
+      "sha256": "4bbe5136bd9782e7a1418a1c6a89e60c1536b4da85806255fe4e3b23580619bf"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/README",
+      "bytes": 2038,
+      "sha256": "f0b4294d8662e5e3d940f6cffdde362685576c62d6852d0f1398d4b492009dcc"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/copyright",
+      "bytes": 1046,
+      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/analysis/install-t1-s3-repeat.py.txt",
+      "bytes": 11260,
+      "sha256": "9e4eea637872451c4b4c58c0753ae7d1ee93432355965477a49f0a9505b5c8a6"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/analysis/package-resume-drivers.py.txt",
+      "bytes": 9465,
+      "sha256": "98aec81fb7b4b134f0848dd88a9f995f098f1f8a1970c2a4eaab6f7ac9492bb5"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/analysis/package-t1-mode-result.py.txt",
+      "bytes": 6302,
+      "sha256": "15ebbeefdc624229eb26ec1302c01a56c9dd31cc85070d90b74927e3f7b000a8"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/analysis/package-t1-s3-repeat.py.txt",
+      "bytes": 10793,
+      "sha256": "e5a0022b937d6ed31c8877ce0a4e6e3510799835febf60cde8a3735c4ec5733d"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/analysis/package-wifi-hostonly-fix.py.txt",
+      "bytes": 4067,
+      "sha256": "32c380965195042fcb7d13bb6bed2c55469431fc8dd05ba299f8fdd39af5c8b9"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/analysis/prepare-audio-pr220.py.txt",
+      "bytes": 3899,
+      "sha256": "8e0f3fa76c9f4b13b5a204e09330dfeaa87c9504d6bc92acf96095a13b90a76d"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/analysis/prepare-t1-s3-repeat.py.txt",
+      "bytes": 9814,
+      "sha256": "1b4965679c3b31340c60b9e7f8f8a6dccd67db44a72d535435f9a73ca23d97de"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/build-trial-drivers.py.txt",
+      "bytes": 5430,
+      "sha256": "947c6aed74809f6f07ed886055e5b5a4f425f508135f7ee01ec66c2df47f33b4"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/build-trial.py.txt",
+      "bytes": 3454,
+      "sha256": "60e880346785403bb2987170bca2b378f2bc437a4aa77555e8c6a988675f6177"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/prepare-source.py.txt",
+      "bytes": 9493,
+      "sha256": "a7a9570ee8fac7fa66ab39ff881b6ccaec3224717b9617f9b9605447337a9811"
+    },
+    {
+      "file": "reference/maintenance/experiments/kernel-42/verify-packages.py.txt",
+      "bytes": 3270,
+      "sha256": "4203457f7dcebf19084f30afca3d44d21bff3e2f238daf66adf3e9d114480b01"
+    },
+    {
+      "file": "reference/maintenance/scripts/boot/apply-mbp143-intel-display-menu.sh.txt",
+      "bytes": 5119,
+      "sha256": "d77453decb36f8da1cbac3dbba5057d03e4b8e2c372e63ea94be38a7b7019aca"
+    },
+    {
+      "file": "reference/maintenance/scripts/display/apply-mbp143-intel-mutter-primary.sh.txt",
+      "bytes": 3230,
+      "sha256": "1ef0f8932fd332ea1f82e2f6d0333e732631a37b8dc83585ba830b0e7dec917b"
+    },
+    {
+      "file": "reference/maintenance/scripts/display/refresh-radeon-udev.py.txt",
+      "bytes": 1524,
+      "sha256": "64f198a225e855d2ada6d35de55fbf23c277b759b96d8ca1afda5d31f76e3805"
+    },
+    {
+      "file": "reference/maintenance/scripts/network/apply-mbp143-wifi-address-fix.sh.txt",
+      "bytes": 2127,
+      "sha256": "f0024b004f26a5f01f15d46224903bed1f656ae59ac9543d93d082d0e9bdabf6"
+    },
+    {
+      "file": "reference/maintenance/scripts/network/apply-mbp143-wifi-fix.sh.txt",
+      "bytes": 2211,
+      "sha256": "7699999cd9eb3ef2d9115f91c43867ef79f3c722cae1b92f9126eccbe55be963"
+    },
+    {
+      "file": "reference/maintenance/scripts/power/apply-mbp143-nvme-suspend-fix.sh.txt",
+      "bytes": 2879,
+      "sha256": "21d3934a27529800db59d892432c1fcd32c0810a63e9b55393f49fe272d5db7a"
+    },
+    {
+      "file": "reference/maintenance/scripts/power/configure-mbp143-s3-trial.py.txt",
+      "bytes": 11771,
+      "sha256": "2e5be9f81e90afae0548f7bcef5b6991525765e587e5326a8615f7df241169d5"
+    },
+    {
+      "file": "reference/maintenance/scripts/power/mbp143-suspend-trial-check.py.txt",
+      "bytes": 7700,
+      "sha256": "f03a283023ce5f15db5615c510dafee1760147426623b4bdd6b38576d09ede63"
+    },
+    {
+      "file": "scripts/build-drivers.py",
+      "bytes": 4981,
+      "sha256": "de61e3a73279ab8ae52c5a326a2726be90d0ea5ad2d18cf64d976a0e079b1205"
+    },
+    {
+      "file": "scripts/build-kernel.py",
+      "bytes": 2231,
+      "sha256": "807426f64d8078019436c2a97e4c6f67e9bb3f9a8d426ab2fa9fce57e60f78ca"
+    },
+    {
+      "file": "scripts/verify-files.py",
+      "bytes": 1493,
+      "sha256": "85875659747d02b08295d3e3ad0cb5dd93f99cf7aaacce11d5b653b784021789"
+    },
+    {
+      "file": "scripts/verify-patches.py",
+      "bytes": 2185,
+      "sha256": "ecb5cb4728f2185d73e930aeed3c390a7607e1ce3da459cddd4e02a3a80391e5"
+    },
+    {
+      "file": "tests/offline/test-audio-pr220-offline.py",
+      "bytes": 4795,
+      "sha256": "be300efadee29b6ab0543edc38d0bf4b2c98a211e845caa22485c966296dae99"
+    },
+    {
+      "file": "tests/offline/test-t1-s3-automatic-offline.py",
+      "bytes": 12176,
+      "sha256": "2b071745b8cde0b0fc117beec66196a0bed3524631ba1e1ca2b137027d4160f4"
+    },
+    {
+      "file": "tests/policy/mbp143-suspend-check.py",
+      "bytes": 7082,
+      "sha256": "2c64e7657da4c128ea5fb414599d7504668123e220656c07d070950e927ea79b"
+    },
+    {
+      "file": "tests/policy/test-suspend-check-offline.py",
+      "bytes": 2831,
+      "sha256": "c9a51f8ee761fb3b67ff213404bf4811f6065f30e2a6fe553985ef0136ae6d93"
+    }
+  ]
+}

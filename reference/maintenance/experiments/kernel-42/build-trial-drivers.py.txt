@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""Validate packaged trial headers and build kernel-specific companion drivers."""
+from pathlib import Path
+import os, subprocess, shutil, json, hashlib
+
+ROOT=Path(__file__).resolve().parent
+BUILD=ROOT/'build'
+VERSION='7.0.0-42.42+mbp143.1'
+KVER=(BUILD/'include/config/kernel.release').read_text().strip()
+assert KVER=='7.0.14-mbp14342p1',KVER
+OUT=ROOT/'validation'
+OUT.mkdir(exist_ok=True)
+HEADERS=OUT/'headers-root'
+headers_deb=ROOT/'packages'/f'linux-headers-{KVER}_{VERSION}_amd64.deb'
+subprocess.run(['dpkg-deb','-x',str(headers_deb),str(HEADERS)],check=True)
+headers=HEADERS/'usr/src'/f'linux-headers-{KVER}'
+env=os.environ.copy();env.update(KBUILD_BUILD_USER='mbp143-builder',KBUILD_BUILD_HOST='local')
+
+def run(cmd,log):
+    with (ROOT/'logs'/log).open('w') as f:
+        r=subprocess.run(cmd,env=env,stdout=f,stderr=subprocess.STDOUT)
+    if r.returncode:
+        print((ROOT/'logs'/log).read_text()[-6000:])
+        raise SystemExit(r.returncode)
+
+ignore=shutil.ignore_patterns('*.o','*.ko','*.mod','*.mod.c','.*.cmd','Module.symvers','modules.order','.git')
+for name in ['apple-ib-drv-0.1','mbp143-cs8409-0.1']:
+    shutil.copytree(Path('/usr/src')/name,OUT/name,dirs_exist_ok=True,ignore=ignore)
+run(['make','-C',str(headers),f'M={OUT / "apple-ib-drv-0.1"}','-j2','modules'],
+    'trial-headers-touchbar.log')
+flags='-DAPPLE_PINSENSE_FIXUP -DAPPLE_CODECS -DCONFIG_SND_HDA_RECONFIG=1 -Wno-unused-variable -Wno-unused-function -Wno-error -Wno-incompatible-pointer-types -Wno-discarded-qualifiers -Wno-implicit-function-declaration'
+run(['make','-C',str(headers),f'M={OUT / "mbp143-cs8409-0.1/source"}',
+     'CFLAGS_MODULE='+flags,'-j2','modules'],'trial-headers-audio.log')
+
+# The audio source also builds a common HDA helper. We ship only the codec,
+# so require its locally generated helper symbol CRCs to match the helper
+# already supplied by the trial image, rather than accidentally hiding an
+# ABI mismatch through the external build's own Module.symvers.
+base_symbols={row[1]:row[0] for line in (headers/'Module.symvers').read_text().splitlines()
+              if len(row:=line.split())>=3}
+helper_symbols=[]
+for line in (OUT/'mbp143-cs8409-0.1/source/Module.symvers').read_text().splitlines():
+    row=line.split()
+    if len(row)>=3 and 'snd-hda-scodec-component' in row[2]:
+        assert base_symbols.get(row[1])==row[0],('HDA helper ABI mismatch',row[1])
+        helper_symbols.append(row[1])
+assert helper_symbols,'No exported HDA component helper symbols were checked'
+(ROOT/'hda-helper-abi.json').write_text(json.dumps({
+    'kernel_release':KVER,'matching_symbols':helper_symbols,
+    'result':'All helper symbol CRCs match the packaged target headers'},indent=2)+'\n')
+
+modules=[OUT/'apple-ib-drv-0.1/apple-ibridge.ko',OUT/'apple-ib-drv-0.1/apple-touchbar.ko',
+         OUT/'mbp143-cs8409-0.1/source/codecs/cirrus/snd-hda-codec-cs8409.ko']
+PACKAGE='mbp143-trial-drivers-'+KVER
+stage=OUT/PACKAGE
+module_dir=stage/'lib/modules'/KVER/'updates/mbp143-trial'
+module_dir.mkdir(parents=True,exist_ok=True)
+control=stage/'DEBIAN';control.mkdir(exist_ok=True)
+records=[]
+for mod in modules:
+    vermagic=subprocess.check_output(['modinfo','-F','vermagic',str(mod)],text=True).strip()
+    assert vermagic.split()[0]==KVER
+    # Strip before signing, so the installed binary retains a valid signature.
+    target=module_dir/mod.name;shutil.copyfile(mod,target)
+    subprocess.run(['strip','--strip-debug',str(target)],check=True)
+    subprocess.run([str(BUILD/'scripts/sign-file'),'sha512',
+                    str(BUILD/'certs/signing_key.pem'),str(BUILD/'certs/signing_key.x509'),str(target)],check=True)
+    signer=subprocess.check_output(['modinfo','-F','signer',str(target)],text=True).strip()
+    assert signer
+    records.append({'file':target.name,'vermagic':vermagic,'signer':signer,
+                    'sha256':hashlib.sha256(target.read_bytes()).hexdigest()})
+
+(control/'control').write_text(f'''Package: {PACKAGE}
+Version: {VERSION}
+Architecture: amd64
+Maintainer: Local MacBook Trial Builder <builder@localhost>
+Section: kernel
+Priority: optional
+Depends: linux-image-{KVER} (= {VERSION}), kmod, linux-initramfs-tool
+Description: MacBookPro14,3 audio and Touch Bar drivers for one trial kernel
+ Prebuilt, locally signed CS8409, iBridge and Touch Bar modules scoped only
+ to {KVER}. Existing DKMS packages are left in place. These binaries must
+ be rebuilt when the trial kernel changes.
+''')
+for hook in ['postinst','postrm']:
+    script=control/hook
+    script.write_text(f'''#!/bin/sh
+set -e
+case "$1" in
+  configure|remove|purge)
+    if [ -d /lib/modules/{KVER} ]; then
+      depmod -a {KVER}
+      if [ -e /boot/vmlinuz-{KVER} ]; then
+        update-initramfs -u -k {KVER}
+      fi
+    fi
+    ;;
+esac
+exit 0
+''')
+    script.chmod(0o755)
+doc=stage/'usr/share/doc'/PACKAGE;doc.mkdir(parents=True,exist_ok=True)
+(doc/'README').write_text('Experimental kernel-specific binaries; not a DKMS replacement.\n'
+    'Keep options apple_ibridge skip_acpi_power=1 and the existing suspend block.\n'
+    'No hardware/runtime suspend validation has been performed.\n')
+(ROOT/'driver-manifest.json').write_text(json.dumps(records,indent=2)+'\n')
+subprocess.run(['dpkg-deb','--root-owner-group','--build',str(stage),
+                str(ROOT/'packages'/f'{PACKAGE}_{VERSION}_amd64.deb')],check=True)
+print('Packaged headers compile both driver sources; signed companion package ready.')

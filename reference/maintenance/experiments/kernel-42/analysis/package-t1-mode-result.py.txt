@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+"""Build one signed, kernel-scoped Touch Bar override; never install it."""
+from pathlib import Path
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import tempfile
+
+os.umask(0o022)
+
+ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'AGENTS.md').exists())
+KVER = '7.0.14-mbp14342p1'
+PACKAGE = 'mbp143-t1-mode-result-' + KVER
+VERSION = '0.1-1'
+CANDIDATE = ROOT / 'experiments/kernel-42/candidates/t1-mode-result-only'
+OUTPUT = CANDIDATE / 'package'
+OUTPUT.mkdir(exist_ok=False)
+STAGE = OUTPUT / 'stage'
+SUBDIR = 'updates/mbp143-t1-mode-result'
+BASELINE = Path('/lib/modules') / KVER / 'updates/mbp143-trial/apple-touchbar.ko'
+
+def run(args):
+    return subprocess.check_output([str(a) for a in args], text=True).strip()
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+assert run(['uname', '-r']) == KVER
+assert run(['modinfo', '-n', 'apple_touchbar']) == str(BASELINE)
+prior = json.loads((ROOT / 'experiments/kernel-42/driver-manifest.json').read_text())
+assert digest(BASELINE) == next(x['sha256'] for x in prior if x['file'] == BASELINE.name)
+base_source = ROOT / 'assets/input/t1-touchbar/apple-ib-drv'
+assert (CANDIDATE / 'apple-ibridge.c').read_bytes() == (base_source / 'apple-ibridge.c').read_bytes()
+expected = (base_source / 'apple-touchbar.c').read_text().replace(
+    '\t\t} while (++tries < 5);\n\t} else {',
+    '\t\t} while (++tries < 5);\n\n'
+    '\t\t/* USB returns the byte count; the worker expects zero on success. */\n'
+    '\t\tif (rc >= 0)\n\t\t\trc = rc == 1 ? 0 : -EIO;\n\t} else {')
+assert (CANDIDATE / 'apple-touchbar.c').read_text() == expected
+target = STAGE / 'lib/modules' / KVER / SUBDIR / 'apple-touchbar.ko'
+target.parent.mkdir(parents=True)
+shutil.copyfile(CANDIDATE / 'apple-touchbar.ko', target)
+subprocess.run(['strip', '--strip-debug', str(target)], check=True)
+build = ROOT / 'experiments/kernel-42/build'
+subprocess.run([str(build / 'scripts/sign-file'), 'sha512',
+                str(build / 'certs/signing_key.pem'),
+                str(build / 'certs/signing_key.x509'), str(target)], check=True)
+assert run(['modinfo', '-F', 'vermagic', target]).split()[0] == KVER
+assert run(['modinfo', '-F', 'signer', target])
+assert run(['modinfo', '-F', 'sig_key', target]) == run(['modinfo', '-F', 'sig_key', BASELINE])
+assert run(['modinfo', '-F', 'srcversion', target]) != run(['modinfo', '-F', 'srcversion', BASELINE])
+config = STAGE / 'usr/lib/depmod.d' / (PACKAGE + '.conf')
+config.parent.mkdir(parents=True)
+config.write_text('# Select only this module on the exact trial kernel.\n'
+                  'override apple-touchbar ^7[.]0[.]14-mbp14342p1$ ' + SUBDIR + '\n')
+control = STAGE / 'DEBIAN'
+control.mkdir()
+(control / 'control').write_text(f'''Package: {PACKAGE}
+Version: {VERSION}
+Architecture: amd64
+Maintainer: Local MacBook Trial Builder <builder@localhost>
+Section: kernel
+Priority: optional
+Depends: mbp143-trial-drivers-{KVER} (= 7.0.0-42.42+mbp143.1), kmod, linux-initramfs-tool
+Description: Kernel-scoped T1 mode transfer result correction
+ Normalize the successful one-byte T1 USB control transfer to zero for
+ worker state tracking. Preserve SOCW guards and the existing driver package.
+ Requires a planned reboot for activation; does not reload modules.
+''')
+hook = f'''#!/bin/sh
+set -e
+case "$1" in
+  configure|remove|purge)
+    if [ -d /lib/modules/{KVER} ]; then
+      depmod -a {KVER}
+      if [ -e /boot/vmlinuz-{KVER} ]; then
+        update-initramfs -u -k {KVER}
+      fi
+    fi
+    ;;
+esac
+exit 0
+'''
+for name in ['postinst', 'postrm']:
+    f = control / name
+    f.write_text(hook)
+    f.chmod(0o755)
+    subprocess.run(['sh', '-n', str(f)], check=True)
+doc = STAGE / 'usr/share/doc' / PACKAGE
+doc.mkdir(parents=True)
+shutil.copyfile(CANDIDATE / 'mode-result.patch', doc / 'mode-result.patch')
+shutil.copyfile(CANDIDATE / 'LICENSE', doc / 'copyright')
+(doc / 'README').write_text(
+    'Only apple-touchbar is overridden on ' + KVER + '.\n'
+    'Original trial modules remain installed. No live unload or power test.\n'
+    'Activation requires a separately planned reboot.\n'
+    'Rollback: apt-get remove ' + PACKAGE + '; then plan a reboot.\n'
+    'Keep skip_acpi_power=1 and the global sleep block.\n')
+
+# Prove selection and rollback against disposable module indexes, not the host.
+with tempfile.TemporaryDirectory(prefix='mbp143-t1-depmod-') as tmp:
+    sandbox = Path(tmp)
+    modules = sandbox / 'lib/modules' / KVER
+    old = modules / 'updates/mbp143-trial/apple-touchbar.ko'
+    new = modules / SUBDIR / 'apple-touchbar.ko'
+    old.parent.mkdir(parents=True)
+    new.parent.mkdir(parents=True)
+    shutil.copyfile(BASELINE, old)
+    shutil.copyfile(target, new)
+    for name in ['modules.order', 'modules.builtin', 'modules.builtin.modinfo']:
+        source = Path('/lib/modules') / KVER / name
+        if source.exists():
+            shutil.copyfile(source, modules / name)
+    subprocess.run(['depmod', '-b', tmp, '-C', str(config), KVER], check=True,
+                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    dep = (modules / 'modules.dep').read_text()
+    assert SUBDIR + '/apple-touchbar.ko:' in dep
+    assert 'updates/mbp143-trial/apple-touchbar.ko:' not in dep
+    new.unlink()
+    subprocess.run(['depmod', '-b', tmp, '-C', str(config), KVER], check=True,
+                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    assert 'updates/mbp143-trial/apple-touchbar.ko:' in (modules / 'modules.dep').read_text()
+
+deb = OUTPUT / f'{PACKAGE}_{VERSION}_amd64.deb'
+subprocess.run(['dpkg-deb', '--root-owner-group', '--build', str(STAGE), str(deb)], check=True)
+record = {'package': PACKAGE, 'version': VERSION, 'deb': str(deb.relative_to(ROOT)),
+          'deb_sha256': digest(deb), 'module_sha256': digest(target),
+          'new_srcversion': run(['modinfo', '-F', 'srcversion', target]),
+          'old_module_sha256': digest(BASELINE),
+          'old_srcversion': run(['modinfo', '-F', 'srcversion', BASELINE]),
+          'signature_key_matches_original': True,
+          'disposable_selection_and_rollback': 'passed',
+          'installed': False, 'only_changed_module': 'apple-touchbar.ko'}
+(OUTPUT / 'package-validation.json').write_text(json.dumps(record, indent=2) + '\n')
+print(json.dumps(record, indent=2))

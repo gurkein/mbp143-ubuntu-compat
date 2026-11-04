@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""Prepare a separate repeat-mode candidate; do not change the installed driver."""
+from pathlib import Path
+import shutil
+import difflib
+
+ROOT=next(p for p in Path(__file__).resolve().parents if (p/'AGENTS.md').exists())
+BASE=ROOT/'experiments/kernel-42/candidates/t1-s3-ordered'
+OUT=BASE.with_name('t1-s3-repeat')
+OUT.mkdir(exist_ok=False)
+names=['apple-ibridge.c','apple-touchbar.c','apple-ibridge.h','hid-ids.h','Makefile','LICENSE']
+for name in names:shutil.copyfile(BASE/name,OUT/name)
+
+def change(s,old,new):
+    assert s.count(old)==1,old
+    return s.replace(old,new)
+
+p=OUT/'apple-ibridge.c';s=p.read_text()
+s=change(s,'/* One physical T1 is supported by this kernel-scoped experiment. */','''/* Independent opt-in: never change the meaning of the legacy one-shot option. */
+static bool s3_notify_repeat;
+module_param(s3_notify_repeat, bool, 0444);
+MODULE_PARM_DESC(s3_notify_repeat,
+    "EXPERIMENTAL: allow another S3 only after real firmware return and T1 refresh");
+
+/* 0=initial/rearmed, 1=in flight, 2=awaiting refresh, 3=failed, 4=complete. */
+static int appleib_repeat_status;
+static unsigned int appleib_repeat_completed;
+static int appleib_get_repeat_status(char *buffer, const struct kernel_param *kp)
+{
+    return scnprintf(buffer, 16, "%d\\n", READ_ONCE(appleib_repeat_status));
+}
+static int appleib_get_repeat_completed(char *buffer, const struct kernel_param *kp)
+{
+    return scnprintf(buffer, 16, "%u\\n", READ_ONCE(appleib_repeat_completed));
+}
+static const struct kernel_param_ops appleib_repeat_status_ops = {
+    .get = appleib_get_repeat_status,
+};
+static const struct kernel_param_ops appleib_repeat_completed_ops = {
+    .get = appleib_get_repeat_completed,
+};
+module_param_cb(s3_repeat_status, &appleib_repeat_status_ops, NULL, 0444);
+module_param_cb(s3_repeat_completed, &appleib_repeat_completed_ops, NULL, 0444);
+MODULE_PARM_DESC(s3_repeat_status, "Read-only repeat cycle state: 0 ready, 1 active, 2 refresh pending, 3 failed, 4 complete");
+MODULE_PARM_DESC(s3_repeat_completed, "Read-only count of firmware-return and T1-refresh completed cycles");
+
+static bool appleib_notifications_enabled(void)
+{
+    return s3_notify_once || s3_notify_repeat;
+}
+
+/* One physical T1 is supported by this kernel-scoped experiment. */''')
+s=s.replace('if (!s3_notify_once)','if (!appleib_notifications_enabled())').replace('if (s3_notify_once)','if (appleib_notifications_enabled())').replace('if (pm_trace || s3_notify_once)','if (pm_trace || appleib_notifications_enabled())')
+s=change(s,'static bool appleib_tb_blocked;','static bool appleib_tb_blocked;\nstatic bool appleib_tb_refresh_pending;')
+anchor='struct appleib_device {'
+s=change(s,anchor,'''/* Caller holds the I/O gate; never take s3_lock from a Touch Bar worker. */
+bool appleib_tb_report_result(bool refreshed, int result)
+{
+    if (!s3_notify_repeat)
+        return false;
+    lockdep_assert_held(&appleib_tb_io_lock);
+    if (result < 0) {
+        appleib_tb_blocked = true;
+        WRITE_ONCE(appleib_repeat_status, 3);
+        pr_err("appleib-pm phase=repeat_io_failed result=%d\\n", result);
+        return true;
+    } else if (refreshed && appleib_tb_refresh_pending &&
+               READ_ONCE(appleib_repeat_status) == 2) {
+        appleib_tb_refresh_pending = false;
+        WRITE_ONCE(appleib_repeat_completed, appleib_repeat_completed + 1);
+        WRITE_ONCE(appleib_repeat_status, 4);
+        pr_info("appleib-pm phase=repeat_cycle_complete count=%u\\n",
+                appleib_repeat_completed);
+    }
+    return false;
+}
+EXPORT_SYMBOL_GPL(appleib_tb_report_result);
+
+'''+anchor)
+s=change(s,'\tbool s3_wake_attempted;','\tbool s3_wake_attempted;\n\tbool s3_sleep_failed;\n\tbool s3_cycle_ok;')
+s=change(s,'''\t\t/* Never discard an unpaired notification or permit another attempt. */
+\t\tif (s3_notify_once && (ib_dev->s3_used || ib_dev->s3_wake_pending)) {
+\t\t\tresult = NOTIFY_BAD;
+\t\t\tbreak;
+\t\t}''','''        /* Legacy one-shot stays latched. Repeat mode only advances after a
+         * successful firmware return AND the gated refresh/cache commit. */
+        if (s3_notify_repeat) {
+            mutex_lock(&appleib_tb_io_lock);
+            if (READ_ONCE(appleib_repeat_status) == 3 ||
+                (ib_dev->s3_used && (!ib_dev->s3_cycle_ok ||
+                 ib_dev->s3_wake_pending || appleib_tb_blocked ||
+                 appleib_tb_refresh_pending ||
+                 READ_ONCE(appleib_repeat_status) != 4))) {
+                result = NOTIFY_BAD;
+            } else if (ib_dev->s3_used) {
+                ib_dev->s3_used = false;
+                ib_dev->s3_wake_attempted = false;
+                ib_dev->s3_sleep_failed = false;
+                ib_dev->s3_cycle_ok = false;
+                WRITE_ONCE(appleib_repeat_status, 0);
+                pr_info("appleib-pm phase=repeat_next_cycle_ready\\n");
+            }
+            mutex_unlock(&appleib_tb_io_lock);
+            if (result == NOTIFY_BAD)
+                break;
+        }
+        if (appleib_notifications_enabled() &&
+            (ib_dev->s3_used || ib_dev->s3_wake_pending)) {
+            result = NOTIFY_BAD;
+            break;
+        }''')
+s=change(s,'''\t\t\tif (ACPI_SUCCESS(status)) {
+\t\t\t\tib_dev->s3_wake_pending = false;''','''            if (ACPI_SUCCESS(status)) {
+                ib_dev->s3_cycle_ok = !ib_dev->s3_sleep_failed &&
+                                      pm_resume_via_firmware();
+                if (s3_notify_repeat) {
+                    appleib_tb_refresh_pending = true;
+                    /* A pre-existing worker error is terminal for this boot. */
+                    if (READ_ONCE(appleib_repeat_status) != 3)
+                        WRITE_ONCE(appleib_repeat_status,
+                                   ib_dev->s3_cycle_ok ? 2 : 3);
+                }
+                ib_dev->s3_wake_pending = false;''')
+s=change(s,'''\t\t\t} else {
+\t\t\t\t/* Terminal failure: leave USB mode work blocked, no polling. */''','''            } else {
+                if (s3_notify_repeat)
+                    WRITE_ONCE(appleib_repeat_status, 3);
+                /* Terminal failure: leave USB mode work blocked, no polling. */''')
+s=change(s,'\tib_dev->s3_used = true;','\tib_dev->s3_used = true;\n\tib_dev->s3_sleep_failed = false;\n\tib_dev->s3_cycle_ok = false;')
+s=change(s,'\tappleib_tb_blocked = true;','\tappleib_tb_blocked = true;\n\tif (s3_notify_repeat)\n\t\tWRITE_ONCE(appleib_repeat_status, 1);')
+s=change(s,'''\tif (ACPI_FAILURE(status))
+\t\tresult = -EIO;
+out:''','''    if (ACPI_FAILURE(status)) {
+        ib_dev->s3_sleep_failed = true;
+        if (s3_notify_repeat)
+            WRITE_ONCE(appleib_repeat_status, 3);
+        result = -EIO;
+    }
+out:''')
+s=change(s,'''\tif (s3_notify_once && !dmi_match(DMI_PRODUCT_NAME, "MacBookPro14,3"))''','''    if (s3_notify_once && s3_notify_repeat)
+        return -EINVAL;
+    if (appleib_notifications_enabled() && !dmi_match(DMI_PRODUCT_NAME, "MacBookPro14,3"))''')
+p.write_text(s)
+p=OUT/'apple-ibridge.h';s=p.read_text();s=change(s,'int appleib_tb_unregister_wake(struct notifier_block *nb);','int appleib_tb_unregister_wake(struct notifier_block *nb);\n/* Called under the I/O gate after cache commit, outside TB spinlock. */\nbool appleib_tb_report_result(bool refreshed, int result);');p.write_text(s)
+p=OUT/'apple-touchbar.c';s=p.read_text()
+# Both direct setters already hold the I/O gate at this point.
+s=change(s, '\trc = appletb_set_tb_mode_ungated(tb_dev, mode);\n\tif (tb_dev->is_t1)\n\t\tappleib_tb_io_end();',
+    '\trc = appletb_set_tb_mode_ungated(tb_dev, mode);\n\tif (tb_dev->is_t1) {\n\t\tappleib_tb_report_result(false, rc);\n\t\tappleib_tb_io_end();\n\t}')
+s=change(s, '\trc = appletb_set_tb_disp_ungated(tb_dev, disp);\n\tif (tb_dev->is_t1)\n\t\tappleib_tb_io_end();',
+    '\trc = appletb_set_tb_disp_ungated(tb_dev, disp);\n\tif (tb_dev->is_t1) {\n\t\tappleib_tb_report_result(false, rc);\n\t\tappleib_tb_io_end();\n\t}')
+s=change(s,'\tbool any_tb_key_pressed, need_reschedule;','\tbool any_tb_key_pressed, need_reschedule, refresh_complete;')
+s=change(s,'\tcurrent_disp = tb_dev->cur_tb_disp;','''    current_disp = tb_dev->cur_tb_disp;
+    refresh_complete = tb_dev->cur_tb_mode != APPLETB_CMD_MODE_UPD &&
+                       tb_dev->cur_tb_mode != APPLETB_CMD_MODE_NONE &&
+                       tb_dev->cur_tb_disp != APPLETB_CMD_DISP_UPD &&
+                       tb_dev->cur_tb_disp != APPLETB_CMD_DISP_NONE;''')
+anchor='\tdev_dbg(tb_dev->log_dev, "timeout calc:'
+assert s.count(anchor)==1
+s=s.replace(anchor,'''    if (tb_dev->is_t1 &&
+        appleib_tb_report_result(refresh_complete,
+                                 rc1 < 0 ? rc1 : (rc2 < 0 ? rc2 : 0))) {
+        return;
+    }
+
+'''+anchor)
+s=change(s,'''\t\tif (next_disp != current_disp &&
+\t\t    appletb_set_tb_disp_ungated(tb_dev, next_disp) == 0) {
+\t\t\tspin_lock_irqsave(&tb_dev->tb_lock, flags);
+\t\t\ttb_dev->cur_tb_disp = next_disp;
+\t\t\tspin_unlock_irqrestore(&tb_dev->tb_lock, flags);
+\t\t}''','''        if (next_disp != current_disp) {
+            int idle_rc = appletb_set_tb_disp_ungated(tb_dev, next_disp);
+            if (idle_rc == 0) {
+                spin_lock_irqsave(&tb_dev->tb_lock, flags);
+                tb_dev->cur_tb_disp = next_disp;
+                spin_unlock_irqrestore(&tb_dev->tb_lock, flags);
+            }
+            if (tb_dev->is_t1)
+                appleib_tb_report_result(false, idle_rc);
+        }''')
+p.write_text(s)
+patch=''
+for name in ['apple-ibridge.c','apple-touchbar.c','apple-ibridge.h']:
+    patch+=''.join(difflib.unified_diff((BASE/name).read_text().splitlines(True),
+        (OUT/name).read_text().splitlines(True),fromfile='a/'+name,tofile='b/'+name))
+(OUT/'s3-repeat.patch').write_text(patch)
+print('Prepared separate repeat-mode source; installed modules/policy unchanged.')

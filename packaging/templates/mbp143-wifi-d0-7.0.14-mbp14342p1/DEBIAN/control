@@ -1,0 +1,11 @@
+Package: mbp143-wifi-d0-7.0.14-mbp14342p1
+Version: 0.1-4
+Architecture: amd64
+Maintainer: Local MacBook Trial Builder <builder@localhost>
+Section: kernel
+Priority: optional
+Depends: linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1), kmod, linux-initramfs-tool
+Description: Isolated wifi resume candidate for one MacBook trial kernel
+ Exact-device BCM43602 PCI D0 retention only; no other Wi-Fi changes.
+ Preserve original modules. Planned reboot required; no live reload or sleep.
+ Candidate only: runtime behavior and suspend recovery are not verified.

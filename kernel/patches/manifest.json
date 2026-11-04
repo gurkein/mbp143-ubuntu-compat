@@ -1,0 +1,44 @@
+[
+  {
+    "file": "0001-pci-config-accessible.patch",
+    "source": "https://github.com/torvalds/linux/commit/e18d1abc3bff0a24a5299f3c150ab9546e9439aa",
+    "notes": "PCI accessibility prerequisite; unchanged logic, line offsets only",
+    "sha256": "48c6e8c31e72f6b7762828b80433edec178d5f8295d4401cf4045821ceb50ced"
+  },
+  {
+    "file": "0002-pci-save-v3.patch",
+    "source": "https://lists.openwall.net/linux-kernel/2026/10/19/3216",
+    "notes": "PCI v3 preserve saved configuration; line offsets only",
+    "sha256": "12a43337dce5b0a7ae0315203ebc84da1382ba84a928ba92ccada54c05af1126"
+  },
+  {
+    "file": "0003-pci-link-v3.patch",
+    "source": "https://lists.openwall.net/linux-kernel/2026/10/19/3211",
+    "notes": "PCI v3 reject inaccessible link status; line offsets only",
+    "sha256": "84de6e1334ad296af8bc5284246332fb27ed3076227eaed22c9e387326679881"
+  },
+  {
+    "file": "0004-acpica-parent-bus.patch",
+    "source": "https://github.com/open-acpica/acpica/pull/1236",
+    "notes": "ACPICA PR 1236 head 578ce82251c75eb44dcc36ce5b16caa6bdb315c6; Linux naming adaptation",
+    "sha256": "d30945b24d903bcdcecd5fce92c7a7bdaaa1604afd98c804fdd4e3d272736882"
+  },
+  {
+    "file": "0005-apple-native-pme.patch",
+    "source": "https://lore.landau.one/lkml/20260924132859.24751-1-fbeltranmillalen%40gmail.com/",
+    "notes": "Apple native PME; same calculate_control change with concise comment",
+    "sha256": "d3fddbed422b92e76f61842f8267407ff49dce1630f4e03ea7709b0c6ddcc053"
+  },
+  {
+    "file": "0006-amdgpu-vi-vram.patch",
+    "source": "https://www.mail-archive.com/amd-gfx%40lists.freedesktop.org/msg153399.html",
+    "notes": "VI v3 VRAM predicate; Ubuntu 42 has no intermediate reset quirk table to remove",
+    "sha256": "f41b71f5f5c8340acbec74776145ef991e7827f3458f59dc01f6abbb9c07752a"
+  },
+  {
+    "file": "0007-thunderbolt-sxfp-v3.patch",
+    "source": "https://lkml.rescloud.iu.edu/hypermail/linux/kernel/2610.2/13908.html",
+    "notes": "SXFP v3: nhi.c instead of newer pci.c; pdev device accessor; nullable legacy ops",
+    "sha256": "6855f8a16309df23dc85252e5910b6f64b788af79fc6b16cb078b1fba594c526"
+  }
+]
