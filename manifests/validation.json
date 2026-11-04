@@ -43,5 +43,7 @@
   "privacy_review": "Private prose/reference details redacted; old unpublished Git history excluded; binary path metadata limitation retained",
   "clean_checkout_source_and_offline_checks": "passed on final redacted automatic-source staging tree; no maintenance dependency",
   "automatic_C_and_readiness_tests": "passed",
-  "editorial_scope": "Wi-Fi is not a highlighted release issue; limited observations remain in compatibility coverage without driver attribution."
+  "editorial_scope": "Wi-Fi is not a highlighted release issue; limited observations remain in compatibility coverage without driver attribution.",
+  "credits": "Codex collaboration, pinned driver/patch origins and community research links documented",
+  "temporary_history_backup": "deleted at owner request; original private maintenance evidence and driver rollback backups unaffected"
 }

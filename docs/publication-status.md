@@ -38,6 +38,9 @@ ABI and system-readiness/boot-conversion tests passed for 0.6.
 
 Publication prose and historical text references omit private peripheral/AP
 models, nearby-machine details, local usernames/paths and the site-specific
-regulatory example. The unpublished old Git history is retained privately,
-outside the publication project. Original kernel/headers binaries can retain
+regulatory example. The old unpublished Git history was excluded from this project; its temporary
+private backup was subsequently deleted at the owner's request. Original kernel/headers binaries can retain
 build-path metadata; they are not claimed to be fully anonymized binaries.
+
+The maintainer accepted retaining existing build-path metadata in the selected
+binary artifacts; no rebuild for path redaction is requested.

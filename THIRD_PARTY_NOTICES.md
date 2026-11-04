@@ -1,6 +1,7 @@
 # Third-party notices
 
-Original authorship and per-file notices are preserved. This collection does
+Original authorship and per-file notices are preserved. See
+[Credits](CREDITS.md) for Codex collaboration, upstream work and research links. This collection does
 not imply endorsement by Apple, Canonical, Broadcom, AMD or upstream authors.
 
 | Component | Origin and pinned version | License treatment |

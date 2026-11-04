@@ -3715,5 +3715,5 @@
   "license_selection": "Independent tools MIT; new documentation CC BY 4.0; imported work retains per-file notices.",
   "graphics_EFI_extraction_checkpoint": "db1eec42fe9a49826c2171f1f57b5bb8002b3a47",
   "automatic_driver_checkpoint": "b44d58ed4964e993aa3b075e110a86c7d801a560",
-  "privacy": "Private setup details omitted in prose/references; old unpublished history retained privately; original binary build-path metadata remains documented."
+  "privacy": "Private setup details omitted in prose/references; old unpublished history excluded; temporary backup deleted at owner request; original binary build-path metadata remains documented."
 }

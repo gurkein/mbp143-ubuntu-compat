@@ -28,7 +28,8 @@ measured scope; unresolved causes are not attributed to individual drivers.
 - [Recovery and rollback](docs/rollback.md)
 - [Source provenance and local changes](docs/source-provenance.md)
 - [Publication status and remaining checks](docs/publication-status.md)
-- [Licensing and third-party credits](THIRD_PARTY_NOTICES.md)
+- [Credits and collaboration with Codex](CREDITS.md)
+- [Licensing and third-party notices](THIRD_PARTY_NOTICES.md)
 
 ## Repository and release contents
 

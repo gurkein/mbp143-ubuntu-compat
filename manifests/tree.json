@@ -22,6 +22,11 @@
       "sha256": "6ae65c74dd2eb4d928d0225aa34663207260a164754f7ef0a303c08cacb83179"
     },
     {
+      "file": "CREDITS.md",
+      "bytes": 4179,
+      "sha256": "c07814af3c27a21dd425ce594a7de0bf402be41517405e82b89837612c158c99"
+    },
+    {
       "file": "LICENSE.md",
       "bytes": 1059,
       "sha256": "9611a977ddb3af035642db559fd53b06595874148949d508987845c9ce73c613"
@@ -168,13 +173,13 @@
     },
     {
       "file": "README.md",
-      "bytes": 3354,
-      "sha256": "aafa826b77634f625c9d27bbc085a48f28b8e2f54cd893be7230fc4f60e29414"
+      "bytes": 3407,
+      "sha256": "bee570b85433ebcb70199c18470aa75df3b48e039073f636af88cc58814722d6"
     },
     {
       "file": "THIRD_PARTY_NOTICES.md",
-      "bytes": 2808,
-      "sha256": "2dacdacaefda7ab55e6b7cf59ac37bb9abf035432817b98385a026619d06ad29"
+      "bytes": 2893,
+      "sha256": "af52f314e5e38a0d538b03df67812ddca41768dc01a326d4f5375f32069fc852"
     },
     {
       "file": "boot/efi/Makefile",
@@ -213,8 +218,8 @@
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 2506,
-      "sha256": "9d5dcb4dbe4a7afe0539eb7a5086e9d9e70fb294c6487afd700b31a73742a299"
+      "bytes": 2702,
+      "sha256": "c08e1447b14ccb132cc741dd556cd189689cc1fcba3100c9729986ef08a7f496"
     },
     {
       "file": "docs/release-notes.md",
@@ -2168,8 +2173,8 @@
     },
     {
       "file": "manifests/inputs.json",
-      "bytes": 168059,
-      "sha256": "485ccd15700493c4c0c4e505356229fb71e39691a36da1762417430235532c46"
+      "bytes": 168092,
+      "sha256": "856ee66b54cdbae242afda62d7f4b22430ef1635350484f9ba1516deba1b7bff"
     },
     {
       "file": "manifests/kernel-patch-targets.json",
@@ -2193,8 +2198,8 @@
     },
     {
       "file": "manifests/validation.json",
-      "bytes": 2654,
-      "sha256": "da4461264a996bc48eedbbc545933df04990b4ad6bd4276864bb9226b50a66b1"
+      "bytes": 2895,
+      "sha256": "a2799ce66874bc7e28850ed4a2cc365df5ea1650d16a6c95c59e7c4f370c96ea"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",
