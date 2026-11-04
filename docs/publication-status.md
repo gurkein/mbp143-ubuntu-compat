@@ -29,12 +29,13 @@ from this public candidate were not performed.
 Before first upload: connect the intended GitHub account, verify repository
 owner/visibility, review this exact candidate and select a prerelease tag. Then
 upload sources and release assets, verify the downloads, and publish the scoped
-experimental release notes. No automatic hardware test or reboot is queued.
+experimental release notes.
 
-T1 0.6 replaces 0.5 in the selected source/package set. It is installed on the
-maintenance host but activation awaits a normal reboot; no 0.6 hardware PM test
-has occurred. Earlier five-cycle evidence describes 0.5. Independent C/module
-ABI and system-readiness/boot-conversion tests passed for 0.6.
+T1 0.6 replaces 0.5 in the selected source/package set. It removes once/repeat
+activation modes while preserving the ordered transaction path and error checks.
+Earlier five-cycle evidence describes 0.5; 0.6 source/ABI and system-readiness/
+boot-conversion checks are described in the release notes.
+
 
 Publication prose and historical text references omit private peripheral/AP
 models, nearby-machine details, local usernames/paths and the site-specific

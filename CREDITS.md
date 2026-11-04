@@ -10,7 +10,7 @@ offline tests, debugging, documentation and preparation of this repository.
 The maintainer directed the work, supplied machine context, performed physical
 interactions and reported user-observed hardware behavior. Recorded automated
 checks and human observations retain their individual scope. In particular,
-earlier 0.5 hardware results are distinct from the current 0.6 activation state.
+earlier 0.5 hardware results are distinguished from the documented 0.6 changes.
 
 ## Driver and configuration foundations
 
@@ -39,6 +39,8 @@ below are recorded in the [patch manifest](kernel/patches/manifest.json).
 | Thunderbolt SXFP ordering | [0007-thunderbolt-sxfp-v3.patch](https://lkml.rescloud.iu.edu/hypermail/linux/kernel/2610.2/13908.html) |
 
 ## Community investigation references
+
+- [Standard Agents T1Bridge](https://github.com/standardagents/t1bridge): separate experimental T1/Touch ID work and model-specific enrollment reports; consulted as a research reference.
 
 - [Dunedan: Linux on 2016/2017 MacBook Pro](https://github.com/Dunedan/mbp-2016-linux): family compatibility history and investigation links.
 - [Gavin McLelland: MacBookPro14,3 notes](https://github.com/gavinmclelland/omarchy-macbookpro14-3) and [suspend discussion](https://github.com/gavinmclelland/omarchy-macbookpro14-3/issues/12): model-specific configuration and experience reports.

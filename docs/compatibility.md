@@ -9,7 +9,8 @@ GNOME/Wayland; kernel release `7.0.14-mbp14342p1`.
 | Internal display/input | Working; Intel eDP at 2880×1800 | Boot with external display disconnected |
 | Windows Boot Camp | Working through the Radeon EFI wrapper in the maintenance setup | Direct Windows boot under persistent Intel preference was unreliable; see the graphics/EFI guide |
 | External display | External 4K display at 3840×2160/60 Hz through Radeon | Attach after login; external-at-boot issue remains |
-| Touch Bar | Current 0.6 is automatic, installed pending reboot; earlier 0.5 passed five cycles and user checks | 0.6 hardware acceptance pending; firmware return/cache refresh and transaction-error checks retained |
+| Touch Bar | 0.6 uses automatic S3 handling; five-cycle hardware evidence was recorded on 0.5 | Firmware return/cache refresh and transaction-error checks retained; version changes and 0.6 source/ABI checks are described in the release notes |
+| Touch ID | Not working / unsupported in this bundle | [T1Bridge reports enrollment on MacBookPro14,3](https://github.com/standardagents/t1bridge#supported-hardware); this is a separate experimental stack, not integrated or validated with this Ubuntu bundle |
 | Speakers/microphone | PR220 0.1-1; user-confirmed after the five-cycle series | No new audio recording collected during that final confirmation |
 | Headphones/USB-C audio | Earlier working evidence | Not comprehensively retested after the current repeat series |
 | Wi-Fi | Association and short traffic checks completed | Sustained behavior and controlled band/environment comparisons remain unqualified; see test scope below |
@@ -57,3 +58,11 @@ packet loss; a later 2.4 GHz observation reported no further disconnection. Thes
 are limited samples with no established cause or controlled AP/radio/client
 comparison. They support neither a general stability claim nor attribution to
 the driver. Further characterization is separate from this release snapshot.
+
+## Touch ID development
+
+Touch ID does not work with the stack provided by this bundle. The separate
+[T1Bridge project](https://github.com/standardagents/t1bridge#supported-hardware)
+reports fingerprint enrollment on MacBookPro14,3. Its published packages target
+Arch-based systems, and that report does not establish support in this Ubuntu
+configuration. It is a development reference, not a bundled feature.

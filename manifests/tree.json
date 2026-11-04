@@ -23,8 +23,8 @@
     },
     {
       "file": "CREDITS.md",
-      "bytes": 4179,
-      "sha256": "c07814af3c27a21dd425ce594a7de0bf402be41517405e82b89837612c158c99"
+      "bytes": 4366,
+      "sha256": "0dadabf92e41300d709bab564b763c9df3a47625500ae2624ad356eb497d45d1"
     },
     {
       "file": "LICENSE.md",
@@ -173,8 +173,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 3407,
-      "sha256": "bee570b85433ebcb70199c18470aa75df3b48e039073f636af88cc58814722d6"
+      "bytes": 3485,
+      "sha256": "ad863c19c96b8e40da36b766c93b0fcb12d3841c076e57484d579ea6ae0ce30f"
     },
     {
       "file": "THIRD_PARTY_NOTICES.md",
@@ -198,8 +198,8 @@
     },
     {
       "file": "docs/compatibility.md",
-      "bytes": 4207,
-      "sha256": "46e1708dd103218f873179d1b7ab61fa4eec246f8d8c8d64d119e05d0a7231a7"
+      "bytes": 4906,
+      "sha256": "2ac6db8f7efa2464bda3d71cf61d78a1bf6395131de74da49d6989b1be450322"
     },
     {
       "file": "docs/graphics-and-efi.md",
@@ -218,13 +218,13 @@
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 2702,
-      "sha256": "c08e1447b14ccb132cc741dd556cd189689cc1fcba3100c9729986ef08a7f496"
+      "bytes": 2654,
+      "sha256": "592c7d06595ff5566ae5c2e8fd9f51c45b28835c2a5a891fc91807bb8abe7b4b"
     },
     {
       "file": "docs/release-notes.md",
-      "bytes": 1454,
-      "sha256": "0127cbb6ed78e7361e4de6bc532c79d91626eb83414e4bb9a090ece36fe02113"
+      "bytes": 2164,
+      "sha256": "21ebcf09d308686d597735e992c208a0d6344b09fca3d2b4cfd83647e52ff574"
     },
     {
       "file": "docs/rollback.md",
@@ -2198,8 +2198,8 @@
     },
     {
       "file": "manifests/validation.json",
-      "bytes": 2895,
-      "sha256": "a2799ce66874bc7e28850ed4a2cc365df5ea1650d16a6c95c59e7c4f370c96ea"
+      "bytes": 3198,
+      "sha256": "52328237ba9962818353af25338e995cff7b4bc35d586b47b114ef08414c509f"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",

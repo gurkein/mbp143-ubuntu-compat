@@ -36,7 +36,6 @@
     "firmware_or_GRUB_modified": false,
     "historical_installer": "text reference only; embedded defaults are not applied"
   },
-  "automatic_driver_installed": "0.6-1 selected; 0.5 bridge loaded; pending normal reboot",
   "driver_activation_parameters": false,
   "legacy_0_5_hardware_evidence": "historical only; no 0.6 hardware acceptance inferred",
   "package_build_scope": "Only two T1 modules/new 0.6 package; kernel/audio/Wi-Fi binaries unchanged",
@@ -45,5 +44,8 @@
   "automatic_C_and_readiness_tests": "passed",
   "editorial_scope": "Wi-Fi is not a highlighted release issue; limited observations remain in compatibility coverage without driver attribution.",
   "credits": "Codex collaboration, pinned driver/patch origins and community research links documented",
-  "temporary_history_backup": "deleted at owner request; original private maintenance evidence and driver rollback backups unaffected"
+  "temporary_history_backup": "deleted at owner request; original private maintenance evidence and driver rollback backups unaffected",
+  "release_comparison": "0.6 changes versus hardware-tested 0.5 are documented in release notes; local deployment state is kept in private maintenance records.",
+  "release_documentation": "Describes changes from tested 0.5 to 0.6; local loaded/reboot status excluded",
+  "Touch_ID_reference": "Not working in this bundle; separate T1Bridge model-specific progress linked, reviewed 2026-11-04"
 }

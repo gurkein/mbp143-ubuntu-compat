@@ -23,5 +23,18 @@ The existing binaries retain some original local build-path metadata.
 Read installation/rollback notes before use. These packages are an experimental
 snapshot, and DEBs alone do not install the complete tested boot/power policy.
 
-Current 0.6 removes driver activation modes; source/ABI tests pass, normal-boot
-activation and hardware acceptance are pending. System policy controls suspend.
+## Changes from tested T1 0.5
+
+- Removed `s3_notify_once` and `s3_notify_repeat`; MacBookPro14,3 S3 handling is
+  automatic, with successful cycles reusable without a mode selection.
+- Kept firmware/Touch Bar I/O ordering, real firmware-return and cache-refresh
+  checks, and transaction-error handling. No firmware call site was added.
+- Renamed read-only diagnostics to `s3_status` and `s3_completed`.
+- Updated system readiness checks and the boot configuration to use the
+  automatic driver without activation arguments. System policy controls sleep
+  availability.
+- Touch Bar worker source, audio, Wi-Fi and kernel binaries are unchanged.
+
+The five-cycle hardware evidence above was recorded with 0.5. For 0.6,
+automatic/failure/abort/race tests, 125 imported-symbol CRC checks, signatures,
+module selection/downgrade, initramfs and boot-conversion checks passed.

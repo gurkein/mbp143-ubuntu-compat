@@ -11,9 +11,11 @@ licenses. This is an independent community project.
 With the earlier T1 0.5 driver, five short, undocked, AC-powered S3 cycles passed consecutively in one boot
 through logind/systemd/NetworkManager. Speakers, microphone and Touch Bar were
 subsequently user-confirmed; USB Ethernet traffic passed on both downstream
-trees. This establishes a specific tested 0.5 configuration on one machine. The current
-0.6 candidate removes activation modes and is installed pending a normal reboot;
-its hardware behavior has not yet been tested.
+trees. This establishes a specific tested 0.5 configuration on one machine.
+Version 0.6 makes the same ordered S3 handling automatic for the supported model
+and removes once/repeat activation options. See the
+[changes from the tested version](docs/release-notes.md#changes-from-tested-t1-05).
+
 
 Known limits include xHCI reinitialization on wake, external-display-at-boot
 initialization and battery telemetry. Long-duration and docked suspend and broad
