@@ -168,8 +168,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 3433,
-      "sha256": "c2ba2074cbafc51602779ae7167bc680047cebd015c69708a09e76d587de2855"
+      "bytes": 3354,
+      "sha256": "aafa826b77634f625c9d27bbc085a48f28b8e2f54cd893be7230fc4f60e29414"
     },
     {
       "file": "THIRD_PARTY_NOTICES.md",
@@ -193,8 +193,8 @@
     },
     {
       "file": "docs/compatibility.md",
-      "bytes": 3723,
-      "sha256": "86fa4b80e882776cc7008c73075d678137e85c490e7aa0565637600c3041137a"
+      "bytes": 4207,
+      "sha256": "46e1708dd103218f873179d1b7ab61fa4eec246f8d8c8d64d119e05d0a7231a7"
     },
     {
       "file": "docs/graphics-and-efi.md",
@@ -208,8 +208,8 @@
     },
     {
       "file": "docs/known-issues.md",
-      "bytes": 1795,
-      "sha256": "a3b71e4eecfb4644c107998e61c4723942a85dac46ee06c26358d6b9117cebad"
+      "bytes": 1192,
+      "sha256": "b3f2c81b4af622bbdaf92f786407147c1cb1011597d664d8e6ca8d6106d8e352"
     },
     {
       "file": "docs/publication-status.md",
@@ -218,8 +218,8 @@
     },
     {
       "file": "docs/release-notes.md",
-      "bytes": 1520,
-      "sha256": "b3c2ea8ea1f8d9fa007baba44ec0f2f99753c17553ba1f0b4396ae41aabbdbaa"
+      "bytes": 1454,
+      "sha256": "0127cbb6ed78e7361e4de6bc532c79d91626eb83414e4bb9a090ece36fe02113"
     },
     {
       "file": "docs/rollback.md",
@@ -2038,8 +2038,8 @@
     },
     {
       "file": "evidence/2026-11-04/SUMMARY.md",
-      "bytes": 1987,
-      "sha256": "b6211a137ff6766da04208cfe0e8d487503456df959a18413068f7511ac00ecb"
+      "bytes": 1870,
+      "sha256": "608d433487f2b06742c4604aba78c353e95d4d755de90e660e353fb6a4d51866"
     },
     {
       "file": "kernel/config/mbp14342p1.config",
@@ -2193,8 +2193,8 @@
     },
     {
       "file": "manifests/validation.json",
-      "bytes": 2506,
-      "sha256": "d214ccfb86befbf60cebc698f150d419975910752c802d384cada8761787bda0"
+      "bytes": 2654,
+      "sha256": "da4461264a996bc48eedbbc545933df04990b4ad6bd4276864bb9226b50a66b1"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",

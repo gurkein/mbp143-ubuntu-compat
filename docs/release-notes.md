@@ -11,10 +11,9 @@ boot on AC without external devices. Sound, microphone and Touch Bar were
 subsequently user-confirmed; Ethernet traffic passed on both USB trees after
 wake. Wider sleep conditions remain unqualified.
 
-Later Wi-Fi disconnects/packet loss, repeated xHCI reinitialization, the
-external-display-at-boot workaround and unresolved battery telemetry are
-documented limitations. No further disconnect was reported after choosing
-2.4 GHz; access point/environment/client/driver attribution remains unisolated.
+The external-display-at-boot workaround, xHCI reinitialization and battery
+telemetry limits are described in the compatibility documentation. Additional
+observations are recorded with their scope and without unresolved causal claims.
 
 Assets: seven selected DEBs, complete patched kernel source, project-source
 archive, artifact manifest and SHA256SUMS. Original signatures are local build

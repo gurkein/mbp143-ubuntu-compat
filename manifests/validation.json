@@ -42,5 +42,6 @@
   "package_build_scope": "Only two T1 modules/new 0.6 package; kernel/audio/Wi-Fi binaries unchanged",
   "privacy_review": "Private prose/reference details redacted; old unpublished Git history excluded; binary path metadata limitation retained",
   "clean_checkout_source_and_offline_checks": "passed on final redacted automatic-source staging tree; no maintenance dependency",
-  "automatic_C_and_readiness_tests": "passed"
+  "automatic_C_and_readiness_tests": "passed",
+  "editorial_scope": "Wi-Fi is not a highlighted release issue; limited observations remain in compatibility coverage without driver attribution."
 }

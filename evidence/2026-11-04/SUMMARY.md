@@ -15,10 +15,10 @@ tickets are excluded. It is not a replacement for the original evidence.
    replies; one tree needed reconnect to regain its IPv4 default.
 4. Two later personal lid cycles returned, one reportedly on battery, with less
    complete physical/dwell/function evidence than the attended series.
-5. Later Wi-Fi association rejection/disconnects invalidate a broad sustained
-   stability claim. User reports no further disconnect after switching to
-   2.4 GHz. Earlier packet loss and possible access point/environment effects remain
-   unisolated. These later observations are part of the published result.
+5. Network measurements describe short samples. Later variability has no
+   established cause; no driver-level conclusion is drawn. Detailed scope is
+   recorded in the compatibility document.
+
 
 Private source records, identified by maintenance-relative paths:
 

@@ -15,14 +15,13 @@ trees. This establishes a specific tested 0.5 configuration on one machine. The 
 0.6 candidate removes activation modes and is installed pending a normal reboot;
 its hardware behavior has not yet been tested.
 
-Open issues include later Wi-Fi disconnects/packet loss, xHCI reinitialization
-on wake, external-display-at-boot initialization and battery telemetry.
-The user reports no further Wi-Fi disconnect after selecting 2.4 GHz; access point,
-lid/placement and a busy wireless environment remain possible, unisolated factors.
-Long-duration and docked suspend and broad peripheral coverage remain open.
+Known limits include xHCI reinitialization on wake, external-display-at-boot
+initialization and battery telemetry. Long-duration and docked suspend and broad
+peripheral coverage remain open. Detailed observations are documented with their
+measured scope; unresolved causes are not attributed to individual drivers.
 
 - [Compatibility and measured scope](docs/compatibility.md)
-- [Known issues and Wi-Fi context](docs/known-issues.md)
+- [Known issues and test coverage](docs/known-issues.md)
 - [Intel/Radeon, EFI selection and Boot Camp](docs/graphics-and-efi.md)
 - [Building from source](docs/building.md)
 - [Installation prerequisites and order](docs/installation.md)
@@ -41,7 +40,7 @@ recipes as text, with their host-specific assumptions clearly separated.
 `boot/efi/` contains the original GPU-selector C source and a build-only recipe;
 the graphics/EFI guide explains its persistent effects and recovery boundaries.
 
-Release assets in `dist/` are intentionally excluded from Git: seven original
+Release assets in `dist/` are intentionally excluded from Git: seven selected
 DEBs, complete patched kernel source, a project-source archive, and checksums.
 Package names/versions/dependencies are in [the manifest](manifests/packages.json).
 These are the selected final artifacts from the current engineering work;

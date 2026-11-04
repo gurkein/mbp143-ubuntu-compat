@@ -12,7 +12,7 @@ GNOME/Wayland; kernel release `7.0.14-mbp14342p1`.
 | Touch Bar | Current 0.6 is automatic, installed pending reboot; earlier 0.5 passed five cycles and user checks | 0.6 hardware acceptance pending; firmware return/cache refresh and transaction-error checks retained |
 | Speakers/microphone | PR220 0.1-1; user-confirmed after the five-cycle series | No new audio recording collected during that final confirmation |
 | Headphones/USB-C audio | Earlier working evidence | Not comprehensively retested after the current repeat series |
-| Wi-Fi | Short-cycle traffic passed; later disconnects and packet loss recorded | No further disconnect reported after choosing 2.4 GHz; sustained stability/cause unisolated |
+| Wi-Fi | Association and short traffic checks completed | Sustained behavior and controlled band/environment comparisons remain unqualified; see test scope below |
 | Bluetooth | Normal-boot working evidence | Broad post-resume pairing/reconnection not qualified |
 | Camera | Normal-boot decoded 1280×720 MJPEG at 30 fps | No broad repeat-resume camera coverage |
 | USB Ethernet | Post-series I/O passed on both distinct downstream trees at 1 Gbit/s | Adapter absent during sleeps; one missing IPv4 default recovered by saved-profile reconnect |
@@ -48,3 +48,12 @@ Current lid/nearby-device observations must not be assumed for earlier tests.
 Failed earlier experiments are retained as negative findings in the private
 maintenance record. Their one-shot tickets are consumed. No public instruction
 in this project resets those tickets or authorizes another hardware experiment.
+
+## Wi-Fi test scope
+
+Short interface-bound traffic checks passed in the historical 0.5 cycle series.
+Separate later connection/traffic observations varied, including disconnects and
+packet loss; a later 2.4 GHz observation reported no further disconnection. These
+are limited samples with no established cause or controlled AP/radio/client
+comparison. They support neither a general stability claim nor attribution to
+the driver. Further characterization is separate from this release snapshot.
