@@ -88,7 +88,12 @@
       "prerelease": true,
       "url": "https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1",
       "published_at": "2026-11-05T19:08:30Z",
-      "all_downloads_verified": true
+      "all_downloads_verified": true,
+      "retired": true,
+      "retired_on": "2026-11-06",
+      "public_assets_available": false,
+      "source_tag_retained": true,
+      "source_tag_url": "https://github.com/gurkein/mbp143-ubuntu-compat/tree/v0.1.0-experimental.1"
     },
     {
       "repository": "gurkein/mbp143-ubuntu-compat",

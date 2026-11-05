@@ -52,3 +52,8 @@ build-path metadata; they are not claimed to be fully anonymized binaries.
 
 The maintainer accepted retaining existing build-path metadata in the selected
 binary artifacts; no rebuild for path redaction is requested.
+
+The initial `v0.1.0-experimental.1` GitHub Release and its public assets were
+removed on 2026-11-06. Its source tag and historical receipt remain. The current
+six-package Release is unchanged, and current packaging recipes use its
+available assets rather than retired download endpoints.

@@ -1,5 +1,5 @@
 {
-  "note": "Current source tree; released assets remain frozen at their source tags.",
+  "note": "Current source tree; historical release retirement is recorded separately from immutable source tags.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -228,8 +228,8 @@
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 3378,
-      "sha256": "c8d7c879290c082f1a7b9fa540828b7aded229061c2b4a5e1d9fbc448c23a859"
+      "bytes": 3667,
+      "sha256": "391c9838bd5eaa80b52ab2ddf3e4ee7053682568e6243887758a51db879fee41"
     },
     {
       "file": "docs/release-notes.md",
@@ -2228,8 +2228,8 @@
     },
     {
       "file": "manifests/releases.json",
-      "bytes": 6395,
-      "sha256": "316ee20b6ebc735030765bc9c26ec4b623486b42714a8d33ccafbf9dc86380c1"
+      "bytes": 6629,
+      "sha256": "92f9c10c3a8303409a7779a5da835dbf711d99cb56442509a46fce8a37d3fdd8"
     },
     {
       "file": "manifests/source-replay.json",
