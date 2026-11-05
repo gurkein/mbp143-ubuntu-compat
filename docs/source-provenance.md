@@ -59,6 +59,7 @@ EFI/GRUB installer is a text reference because it embeds a host path and changes
 boot defaults. The input manifest records original and adapted hashes. No
 firmware change, EFI launch or new binary build was performed for publication.
 
-The initial Release was retired on 2026-11-06; its source tag and publication
-receipt remain. Current assembly accepts the published experimental.2 DEBs as
-hash-pinned inputs, avoiding any dependency on deleted first-release assets.
+The original seven-package publication was retired on 2026-11-06; its source
+commit `b11abe0` and historical receipt remain. The current six-package release
+uses the canonical `v0.1.0-experimental.1` tag. Current assembly accepts its DEBs
+as hash-pinned inputs, avoiding any dependency on retired download endpoints.

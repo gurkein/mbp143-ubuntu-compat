@@ -1,6 +1,6 @@
 # Experimental compatibility snapshot
 
-Published prerelease: [`v0.1.0-experimental.2`](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.2).
+Published prerelease: [`v0.1.0-experimental.1`](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1).
 
 For MacBookPro14,3 on Ubuntu 26.04.1 with exact kernel
 `7.0.14-mbp14342p1`. Includes seven kernel backports, automatic T1 0.6,

@@ -1,5 +1,5 @@
 {
-  "note": "Current source tree; historical release retirement is recorded separately from immutable source tags.",
+  "note": "Canonical six-package source tree with explicitly historical pre-rename receipts.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -18,8 +18,8 @@
     },
     {
       "file": "CHANGELOG.md",
-      "bytes": 2536,
-      "sha256": "d6f41329c022a7ad8f5ac1d70cda08fc942234fcbcf5a2d14874fc035651d026"
+      "bytes": 2900,
+      "sha256": "f0eafe801c83ae74e0616c57d60d40af9dd3bb8cba49d95caa340141909f67b4"
     },
     {
       "file": "CREDITS.md",
@@ -174,7 +174,7 @@
     {
       "file": "README.md",
       "bytes": 4201,
-      "sha256": "c96a983197d8c4b65d21f39854eda9a9685cdcd1161f4326ae538f7c8e9dda82"
+      "sha256": "3d7c535dc790afe193ba7069b1929712332045e887159c9d2c47502068de3657"
     },
     {
       "file": "SOURCE-NOTICES.txt",
@@ -192,6 +192,11 @@
       "sha256": "8f8427a8be827e93431b1a7484670f105c83b09be89f15a855b2cb1b1b0db585"
     },
     {
+      "file": "archive/manifests/releases-before-tag-rename.json",
+      "bytes": 6754,
+      "sha256": "946528fcdab7fceab6e0ab85b239391cf535f6d9af00ac7c037fbaf5b05e598d"
+    },
+    {
       "file": "boot/efi/Makefile",
       "bytes": 1402,
       "sha256": "ce44c82e71370c05a28017caa02b3c829bbf99b17667164afd29c2983138b65d"
@@ -203,8 +208,8 @@
     },
     {
       "file": "docs/building.md",
-      "bytes": 4982,
-      "sha256": "9c6d87e0b5c971f227affe3dfafd1901eda3327f583b8eaba88f9bc24959ecc7"
+      "bytes": 4998,
+      "sha256": "c0a2a1110bf629902eb8cc6c60dabe4ff6f97b9c65d4e69c50fd9c6e231edd42"
     },
     {
       "file": "docs/compatibility.md",
@@ -228,13 +233,13 @@
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 3667,
-      "sha256": "391c9838bd5eaa80b52ab2ddf3e4ee7053682568e6243887758a51db879fee41"
+      "bytes": 3851,
+      "sha256": "83576441e050896e1351451b749bb98626d0a653541ba7cc40a491e21126f971"
     },
     {
       "file": "docs/release-notes.md",
       "bytes": 3440,
-      "sha256": "434247c84b70e57f982b3cbb29bc27072f6989c0fad06fd59269e7b633e58e3a"
+      "sha256": "8f79045796777e52ee1a5204d2513f5186f969c9176fc39c1e8f836c22c9376e"
     },
     {
       "file": "docs/rollback.md",
@@ -248,8 +253,8 @@
     },
     {
       "file": "docs/source-provenance.md",
-      "bytes": 3746,
-      "sha256": "d6c549a12e74811a618e4c4aa85967306e95aa50292f33b566b6b5b246367743"
+      "bytes": 3830,
+      "sha256": "de41ea614fe39ba5cbc889af7323b031cf348527a8a4f5d1925126bcd95cc133"
     },
     {
       "file": "drivers/audio/LICENSE",
@@ -2188,8 +2193,8 @@
     },
     {
       "file": "manifests/inputs.json",
-      "bytes": 233545,
-      "sha256": "5f6f5fd8b00ff13252939b1cd59fb878ad9a0359ac261ad8722ebf9a87cafede"
+      "bytes": 233605,
+      "sha256": "4a59eef85c4b235e441158ccf38e0b80377d342b33c1d032fd9fdf6bf77f8726"
     },
     {
       "file": "manifests/kernel-patch-targets.json",
@@ -2208,8 +2213,8 @@
     },
     {
       "file": "manifests/package-layout.json",
-      "bytes": 4537,
-      "sha256": "02a91df74b4edf0d01d7191d5a1bf574c72b07db68ef2b0a658748ac35d43ae4"
+      "bytes": 4555,
+      "sha256": "5a025566a6630d25e58601bed64bb608ed1cd99f38b812e31c47062a58a326e8"
     },
     {
       "file": "manifests/package-revisions.json",
@@ -2228,8 +2233,8 @@
     },
     {
       "file": "manifests/releases.json",
-      "bytes": 6629,
-      "sha256": "92f9c10c3a8303409a7779a5da835dbf711d99cb56442509a46fce8a37d3fdd8"
+      "bytes": 645,
+      "sha256": "a17a9348c1d425128189f008257fcf407128b81903045c3e03de721ca76aed00"
     },
     {
       "file": "manifests/source-replay.json",

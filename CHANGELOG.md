@@ -37,8 +37,15 @@ Replace the layered trial/mode-result/phase-trace/audio-resume/Wi-Fi-D0 packages
 with `mbp143-ibridge`, `mbp143-t1`, `mbp143-audio` and `mbp143-wifi`. Together with
 kernel image and optional headers, this gives five runtime packages and six
 DEBs in total. Signed executable contents are preserved; module paths,
-selection rules and exact dependencies are updated. The initial publication is retained as a historical source tag and receipt.
+selection rules and exact dependencies are updated. The initial publication is retained by its historical source commit and receipt.
 
 Require kernel-image configuration before module unpacking and exclude the older
 generic T1 DKMS source only for this supplied kernel, protecting package-owned
 module files when headers are configured. Official-kernel DKMS behavior remains.
+
+## 2026-11-06 — Canonical experimental tag
+
+Rename the six-package prerelease to `v0.1.0-experimental.1`, replacing the
+retired seven-package tag and removing `.2`. Preserve binary package contents
+and full kernel source; refresh the project archive and checksum metadata for
+the canonical tag. Update issue #1 and current documentation links accordingly.

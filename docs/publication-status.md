@@ -5,7 +5,7 @@ Source publication reviewed on 2026-11-05 for
 patches, the exact config, package templates, build-only tools, offline tests,
 source/artifact manifests, compatibility and rollback documentation.
 
-The [experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.2) is published
+The [experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1) is published
 with six DEBs, two complete source archives, an artifact manifest and checksums.
 All ten assets were downloaded and SHA-256 verified after upload. Runtime
 installation uses five DEBs; headers are optional for module compilation.
@@ -53,7 +53,9 @@ build-path metadata; they are not claimed to be fully anonymized binaries.
 The maintainer accepted retaining existing build-path metadata in the selected
 binary artifacts; no rebuild for path redaction is requested.
 
-The initial `v0.1.0-experimental.1` GitHub Release and its public assets were
-removed on 2026-11-06. Its source tag and historical receipt remain. The current
-six-package Release is unchanged, and current packaging recipes use its
-available assets rather than retired download endpoints.
+The original seven-package publication was removed on 2026-11-06. The current
+six-package release is named `v0.1.0-experimental.1`; the obsolete `.2` tag is
+removed. The old seven-package source remains reachable at commit `b11abe0`.
+The six binary DEBs and full kernel source are preserved; the project source
+archive and checksum metadata are refreshed to match the canonical source tag.
+Historical pre-rename receipts are identified separately in `archive/manifests/`.

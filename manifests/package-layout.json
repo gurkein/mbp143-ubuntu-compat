@@ -1,6 +1,6 @@
 {
   "kernel": "7.0.14-mbp14342p1",
-  "source_release": "v0.1.0-experimental.2",
+  "source_release": "v0.1.0-experimental.1",
   "legacy_packages": [
     "mbp143-trial-drivers-7.0.14-mbp14342p1",
     "mbp143-t1-mode-result-7.0.14-mbp14342p1",
@@ -95,5 +95,5 @@
       "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)"
     }
   ],
-  "historical_initial_source_release": "v0.1.0-experimental.1"
+  "historical_initial_source_commit": "b11abe013404ca9b4613c17e9c6df6b10dc9d2ea"
 }

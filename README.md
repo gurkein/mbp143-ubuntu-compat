@@ -38,7 +38,7 @@ measured scope; unresolved causes are not attributed to individual drivers.
 
 ## Repository and release contents
 
-[Download the experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.2). It provides six DEBs
+[Download the experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1). It provides six DEBs
 (five runtime packages plus optional build headers), both complete source
 archives and verified checksums.
 
