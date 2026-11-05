@@ -1,24 +1,24 @@
-Valid-License-Identifier: ISC
-SPDX-URL: https://spdx.org/licenses/ISC.html
-Usage-Guide:
-  To use the ISC License put the following SPDX tag/value pair into a
-  comment according to the placement guidelines in the licensing rules
-  documentation:
-    SPDX-License-Identifier: ISC
-License-Text:
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: mbp143-ubuntu-compat selected compatibility bundle
+Source: https://github.com/gurkein/mbp143-ubuntu-compat
+Comment: Documentation-only +license1 revision, prepared 2026-11-05.
+ Complete corresponding source must accompany the DEBs in the same release.
+ See SOURCE-DISTRIBUTION.md and SOURCE-NOTICES.txt for source and copyright mapping.
 
-ISC License
+Files: *
+Copyright: Original per-file holders listed in SOURCE-NOTICES.txt and the sources
+License: multiple-per-file
+ Linux as a whole is GPL-2.0-only with the syscall exception for relevant UAPI
+ headers. T1/audio retain their GPL and individual file terms; Broadcom files
+ retain ISC and individual file terms. No blanket relicensing is applied.
+ Full license texts are supplied in LICENSES/. See THIRD_PARTY_NOTICES.md.
 
-Copyright (c) <year> <copyright holders>
+Files: independent project tools and independently authored packaging hooks
+Copyright: 2026 mbp143-ubuntu-compat contributors
+License: MIT
+ See LICENSES/MIT-project.txt.
 
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted, provided that the above
-copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
-SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
-OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
-CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+Files: newly authored project documentation
+Copyright: 2026 mbp143-ubuntu-compat contributors
+License: CC-BY-4.0
+ See LICENSES/kernel/dual/CC-BY-4.0 and LICENSE.md.

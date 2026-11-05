@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-2.0-only
+# Combined work includes or assembles GPL kernel/driver code.
+# Distribution notice added 2026-11-05; original notices preserved.
+# See THIRD_PARTY_NOTICES.md and LICENSES/GPL-2.0.txt.
 """Exercise actual candidate state machine and cache-committing worker in C."""
 from pathlib import Path
 import subprocess

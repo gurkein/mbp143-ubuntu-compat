@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: GPL-2.0-only
 /*
+ * Distribution changes by mbp143-ubuntu-compat contributors, 2026-11-05:
+ * added this notice to the selected source snapshot. Functional adaptations
+ * are described in docs/source-provenance.md and the accompanying patches.
+ * Original authorship and per-file license terms remain unchanged.
+ */
+/*
  * cs8409-tables.c  --  HD audio codec driver for Cirrus Logic CS8409 HDA bridge chip
  *
  * Copyright (C) 2021 Cirrus Logic, Inc. and

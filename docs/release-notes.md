@@ -38,3 +38,10 @@ snapshot, and DEBs alone do not install the complete tested boot/power policy.
 The five-cycle hardware evidence above was recorded with 0.5. For 0.6,
 automatic/failure/abort/race tests, 125 imported-symbol CRC checks, signatures,
 module selection/downgrade, initramfs and boot-conversion checks passed.
+
+## Distribution-only licensing revision
+
+The selected DEBs now have `+license1` versions. They add full license/copyright
+notices and corresponding-source instructions; exact dependencies are updated.
+Kernel and module payloads/signatures are unchanged. This revision adds no new
+hardware qualification. See [source distribution](source-distribution.md).

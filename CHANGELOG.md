@@ -18,3 +18,12 @@
   display, USB and battery limitations without claiming general qualification.
 - Preserved seven original DEBs as release assets; excluded failed Wi-Fi
   packaging revisions, private keys and one-shot PM experiment runners.
+
+## 2026-11-05 — Distribution licensing corrections
+
+- Add dated source distribution notices; retain original per-file licenses.
+- Clarify GPL coverage of source-generating recipes and combined C tests.
+- Add full license texts, actual source copyright notices and source-release
+  instructions to all seven DEBs as `+license1` revisions; update exact package
+  dependencies. Executable payloads and signatures are unchanged.
+- Publish source/asset mappings and offline checks for these corrections.

@@ -1,7 +1,7 @@
 # Publication status
 
-Local candidate updated on 2026-11-04. No GitHub repository, upload or public
-release has been created by assembly.
+Local candidate updated on 2026-11-05. The target GitHub repository exists;
+no source push, asset upload or public release has been performed by this task.
 
 Included: selected source trees, seven kernel patches, exact config, original
 package templates, seven DEBs, full patched kernel-source asset, build-only
@@ -16,7 +16,9 @@ a portable build-only Makefile, Boot Camp/rollback documentation and the origina
 installer as text. Only a build-command dry run was performed; no EFI binary
 was compiled, installed or executed, and no firmware/GRUB setting changed.
 
-The selected DEBs retain their recorded package hashes. Some generated
+The selected DEBs use documentation-only `+license1` revisions. Original and
+revised hashes and unchanged executable payloads are recorded in the licensing
+manifest. Sources and notices are described in [source distribution](source-distribution.md). Some generated
 headers and binary/module metadata contain the original local build path;
 the per-package counts are documented in the payload audit. Those path strings
 were not rewritten or presented as fully anonymized binary metadata.
@@ -26,8 +28,8 @@ and `manifests/payload-audit.json`. Successful offline/source/build checks do no
 add hardware coverage. A complete new kernel build and on-device installation
 from this public candidate were not performed.
 
-Before first upload: connect the intended GitHub account, verify repository
-owner/visibility, review this exact candidate and select a prerelease tag. Then
+Before first upload: review this exact candidate, verify repository
+owner/visibility and select a prerelease tag. Then
 upload sources and release assets, verify the downloads, and publish the scoped
 experimental release notes.
 

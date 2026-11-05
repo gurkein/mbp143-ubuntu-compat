@@ -5,7 +5,7 @@ An experimental compatibility bundle for the 15-inch 2017 MacBook Pro
 
 It brings together seven kernel backports, automatic T1/Touch Bar S3 handling,
 CS8409 audio recovery, BCM43602 D0 retention, and the source/build information
-behind seven locally verified DEBs. Imported work retains its authorship and
+behind seven documentation-corrected DEBs with unchanged executable payloads. Imported work retains its authorship and
 licenses. This is an independent community project.
 
 With the earlier T1 0.5 driver, five short, undocked, AC-powered S3 cycles passed consecutively in one boot
@@ -32,12 +32,12 @@ measured scope; unresolved causes are not attributed to individual drivers.
 - [Publication status and remaining checks](docs/publication-status.md)
 - [Credits and collaboration with Codex](CREDITS.md)
 - [Licensing and third-party notices](THIRD_PARTY_NOTICES.md)
+- [Corresponding source and package revisions](docs/source-distribution.md)
 
 ## Repository and release contents
 
 `kernel/` contains the patch series, configuration and public certificates.
-`drivers/` contains complete selected driver sources, including the exact
-T1 0.6 package source with tracing enabled. `scripts/` contains portable build
+`drivers/` contains complete selected driver sources, including the T1 0.6 package source with tracing enabled and dated distribution notices. `scripts/` contains portable build
 and verification tools. `reference/maintenance/` preserves original local
 recipes as text, with their host-specific assumptions clearly separated.
 `boot/efi/` contains the original GPU-selector C source and a build-only recipe;
@@ -56,12 +56,14 @@ not load modules, change boot policy or suspend the computer.
 
 ```sh
 python3 scripts/verify-files.py
+python3 scripts/verify-licenses.py
 python3 scripts/verify-patches.py
 python3 tests/offline/test-t1-s3-automatic-offline.py
 python3 tests/offline/test-audio-pr220-offline.py
 python3 tests/policy/test-suspend-check-offline.py
 ```
 
-Original independent tools are MIT-licensed; new documentation is CC BY 4.0.
+Independent tools are MIT-licensed; GPL-containing recipes and combined
+actual-C tests retain GPL terms; new documentation is CC BY 4.0.
 Driver sources and imported patches retain their per-file licenses; see
 [LICENSE.md](LICENSE.md). No private module-signing key is included.

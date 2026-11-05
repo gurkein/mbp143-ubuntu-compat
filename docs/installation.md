@@ -17,7 +17,8 @@ there is no automatic system/suspend activation script.
 4. Review a single APT simulation for the seven explicit DEB paths. It should not
    remove unrelated packages, replace Docker CE or install unrelated kernels.
 5. The dependency chain is kernel image/headers, trial drivers, T1 mode-result
-   0.1-1, then T1 phase-trace 0.6-1 and audio 0.1-1; Wi-Fi 0.1-4 depends on the
+   0.1-1+license1, then T1 phase-trace 0.6-1+license1 and audio
+   0.1-1+license1; Wi-Fi 0.1-4+license1 depends on the
    exact kernel image. Submit all seven explicit paths to APT in one reviewed
    transaction so it can resolve their declared relationships.
 6. Before reboot, inspect module selection and the generated initramfs, including
@@ -44,3 +45,7 @@ parameter. Remove old S3 activation options from the selected boot entry and
 module configuration when migrating. Transaction state/error checks and system
 readiness checks remain; no one-cycle user policy is implemented by the driver.
 Do not run old maintenance experiment helpers or reset consumed tickets.
+
+The release DEBs use documentation-only `+license1` revisions. Install matching
+revisions together; do not substitute original versions where an exact revised
+dependency is declared. Kernel/module executable payloads remain unchanged.

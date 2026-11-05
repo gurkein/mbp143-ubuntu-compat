@@ -1,0 +1,57 @@
+# Third-party notices
+
+Original authorship and per-file notices are preserved. See
+[Credits](CREDITS.md) for Codex collaboration, upstream work and research links. This collection does
+not imply endorsement by Apple, Canonical, Broadcom, AMD or upstream authors.
+
+| Component | Origin and pinned version | License treatment |
+|---|---|---|
+| Ubuntu/Linux kernel | Ubuntu `linux-source-7.0.0` binary source package `7.0.0-42.42`, internal version 7.0.14 | Linux per-file SPDX and `LICENSES/kernel/`; kernel COPYING retained in the full source archive |
+| Seven kernel backports | Original commits/mailing-list submissions listed in `kernel/patches/manifest.json` | Retain upstream authorship and applicable source licenses; local backports are identified |
+| Apple iBridge/Touch Bar | Ronald Tschalär and later contributors; wrapper [AJ-dev-i60/t1-touchbar](https://github.com/AJ-dev-i60/t1-touchbar), commit `20d65c7b0fe6d05ea9734f869b27384a62de5109` | Driver files retain GPL-2.0 SPDX headers; wrapper MIT text is retained separately |
+| MacBook CS8409 audio | [oliveira11670/snd_hda_macbookpro](https://codeberg.org/oliveira11670/snd_hda_macbookpro), baseline `53dd5fae334a101e8a940f1242bd6859dca14273`; derived from David Jo's driver and Linux audio sources | Preserve GPL and all per-file notices; local kernel-7 mapping and error-handling changes identified |
+| Audio recovery | [davidjo PR220](https://github.com/davidjo/snd_hda_macbookpro/pull/220), commit `b8bc4d935335a9a5476c478d491adf9b18012f58` | Imported patch and local adaptation are separate files |
+| BCM43602 D0 proposal | [Omarchy packages PR596](https://github.com/omacom/omarchy-pkgs/pull/596), pinned `1aac35af814bc9b3e0fa7669cdb9e42ebf277795`, only patch 0682 | Broadcom driver ISC and other per-file notices retained; other recipe patches are excluded |
+| Package hooks and kernel build recipes | Original generated Debian/Linux hooks plus independent local packaging scripts | Generated upstream scripts retain origin; independent local scripts are MIT; no blanket relicensing |
+
+The complete patched kernel source asset retains public self-test fixture keys
+from the original distro source. These are byte-verified upstream test data,
+not the host's private module-signing key. Public Canonical certificates are
+included for source reconstruction; they do not mean this custom kernel was
+signed by Canonical.
+
+Firmware blobs, personalized NVRAM, system backups and network credentials are
+excluded. Firmware/NVRAM acquisition and model-specific configuration remain
+separate from the source licenses above.
+
+The local GPU-selection EFI C helper and adapted build-only Makefile under
+`boot/efi/` are independent project tools covered by MIT. They use gnu-efi
+headers at build time; no header/library distribution or prebuilt EFI application
+is added here. The original host installer is retained as a text reference.
+
+## Distribution corrections — 2026-11-05
+
+The `+license1` DEBs add copyright/source notices and complete license texts.
+Kernel images, modules, signatures and non-documentation data payloads are
+unchanged. Exact-version dependencies refer to the matching corrected packages.
+Each DEB carries `copyright`, `SOURCE-NOTICES.txt`, `SOURCE-DISTRIBUTION.md`,
+`CREDITS.md` and `LICENSES/` under its package documentation directory. The
+original package copyright file, where present, is retained as
+`copyright.upstream`; it is not the complete notice for this collection.
+
+`SOURCE-NOTICES.txt` preserves initial source comments and copyright lines,
+including the actual Broadcom copyright holders instead of an unfilled ISC
+template. It supplements, rather than replaces, original per-file notices.
+The complete sources remain authoritative for each file's license.
+
+Selected C/header source snapshots carry a dated distribution-change comment.
+Source replay removes only that exact comment when comparing original patch
+outputs; functional changes and upstream patches remain separately identified.
+The complete kernel archive carries equivalent notices in the eleven patched
+files and the modified packaging recipe. Original source hashes are recorded.
+
+The source-generating `prepare-source.py.txt`, `prepare-t1-s3-repeat.py.txt`
+and `prepare-audio-pr220.py.txt` references, and the two actual-C offline tests,
+are GPL-2.0-only combined works containing or assembling kernel/driver material.
+Their imported portions keep original authorship and license notices. The
+independent MIT tools and independent policy tests are separate works.

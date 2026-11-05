@@ -48,5 +48,16 @@
   "release_comparison": "0.6 changes versus hardware-tested 0.5 are documented in release notes; local deployment state is kept in private maintenance records.",
   "release_documentation": "Describes changes from tested 0.5 to 0.6; local loaded/reboot status excluded",
   "Touch_ID_reference": "Not working in this bundle; separate T1Bridge model-specific progress linked, reviewed 2026-11-04",
-  "source_export": "git archive of a committed snapshot; local environment paths ignored and tracked credential names refused"
+  "source_export": "git archive of a committed snapshot; local environment paths ignored and tracked credential names refused",
+  "licensing_corrections_2026_11_05": {
+    "source_notice_normalization": "305 source files; exact original bytes preserved after removing only dated notice",
+    "full_kernel_archive": "All regular files rehashed; only 12 dated notices added; original fixture bytes retained",
+    "package_revisions": "Seven +license1 DEBs; all non-documentation payload entries, symlinks, modes and hooks unchanged",
+    "actual_C_tests": "T1 and audio offline tests passed after annotations; no hardware I/O",
+    "policy_tests": "passed with ordinary temporary files",
+    "installation": false,
+    "module_or_kernel_compilation": false,
+    "source_archives": "Both corresponding-source archives must accompany every binary release",
+    "whitespace_review": "Authored changes pass diff --check. Copied original license texts and verbatim source-notice excerpts retain upstream whitespace/EOF blank lines intentionally."
+  }
 }

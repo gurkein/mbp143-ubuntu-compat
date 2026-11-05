@@ -28,18 +28,21 @@ does not include the 32 GiB original kernel build directory.
 - T1 `baseline/`: source copied for the original trial companion package.
 - T1 `mode-result-0.1/`: source for the exact dependency package still declared
   by 0.6. It normalizes successful USB byte-count returns for the mode worker.
-- T1 `automatic-0.6/`: exact current package build-source snapshot with tracing
+- T1 `automatic-0.6/`: current package build-source snapshot with dated distribution comments with tracing
   enabled. MacBookPro14,3 S3 handling is automatic; there are no once/repeat
   activation parameters. Read-only status/count remain. The aggregated
-  baseline-to-package patch reconstructs the complete current source.
+  baseline-to-package patch reconstructs the functional source; dated
+  distribution comments are checked separately without changing upstream patches.
 - Audio `baseline/` and `pr220-0.1/`: complete source-only copies of the baseline
   and PR220/local-error-handling candidate used for builds. A combined patch and
   separate imported/local patches are preserved.
 - Wi-Fi `d0-0.1/`: complete selected brcm80211 build-source subtree, based on the
   target kernel plus only patch 0682. Vendor helpers remain kernel-supplied.
 
-Original package control files/non-binary override data are preserved under
-`packaging/templates/`; the seven selected DEBs remain unmodified. Scripts
+Revised package control files and original non-binary override data are preserved under
+`packaging/templates/`; the original DEBs are the inputs to documentation-only `+license1` revisions.
+Original and revised hashes, dependency changes and payload comparisons are in
+`manifests/licensing.json`; no executable payload was rebuilt. Scripts
 under `reference/maintenance/` are text snapshots and retain original paths and
 historical assertions. They are evidence of build/deployment steps, not portable
 commands or the maintained status reference.

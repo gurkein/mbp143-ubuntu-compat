@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify imported sources and patches
         run: python3 scripts/verify-files.py
+      - name: Verify license scope and source notices
+        run: python3 scripts/verify-licenses.py
       - name: Reproduce patch outputs in temporary copies
         run: python3 scripts/verify-patches.py
       - name: Test T1 state machine and races

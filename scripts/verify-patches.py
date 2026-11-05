@@ -7,6 +7,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+from license_notices import without_notice
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -34,9 +35,12 @@ def main():
         for component, base, patch, target in specs:
             dest = folder / component
             shutil.copytree(ROOT / base, dest)
+            for source in dest.rglob('*'):
+                if source.is_file() and source.suffix in {'.c', '.h'}:
+                    source.write_bytes(without_notice(source.read_bytes()))
             apply(dest, ROOT / patch)
             for path in dest.rglob('*'):
-                if path.is_file() and path.read_bytes() != (ROOT / target / path.relative_to(dest)).read_bytes():
+                if path.is_file() and path.read_bytes() != without_notice((ROOT / target / path.relative_to(dest)).read_bytes()):
                     raise RuntimeError('Driver patch output mismatch: ' + str(path))
     print('Seven kernel patches and T1/audio/Wi-Fi patch reproduction passed with zero fuzz.')
 

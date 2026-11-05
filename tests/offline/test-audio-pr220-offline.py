@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-2.0-only
+# Combined work includes or assembles GPL kernel/driver code.
+# Distribution notice added 2026-11-05; original notices preserved.
+# See THIRD_PARTY_NOTICES.md and LICENSES/GPL-2.0.txt.
 """Exercise candidate init/resume recovery and failures with mocked HDA only."""
 from pathlib import Path
 import subprocess

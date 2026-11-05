@@ -1,9 +1,9 @@
 Package: linux-image-7.0.14-mbp14342p1
 Source: linux-mbp143
-Version: 7.0.0-42.42+mbp143.1
+Version: 7.0.0-42.42+mbp143.1+license1
 Architecture: amd64
 Maintainer: Local MacBook Trial Builder <builder@localhost>
-Installed-Size: 690434
+Installed-Size: 686063
 Section: kernel
 Priority: optional
 Homepage: https://www.kernel.org/

@@ -28,3 +28,30 @@ The local GPU-selection EFI C helper and adapted build-only Makefile under
 `boot/efi/` are independent project tools covered by MIT. They use gnu-efi
 headers at build time; no header/library distribution or prebuilt EFI application
 is added here. The original host installer is retained as a text reference.
+
+## Distribution corrections — 2026-11-05
+
+The `+license1` DEBs add copyright/source notices and complete license texts.
+Kernel images, modules, signatures and non-documentation data payloads are
+unchanged. Exact-version dependencies refer to the matching corrected packages.
+Each DEB carries `copyright`, `SOURCE-NOTICES.txt`, `SOURCE-DISTRIBUTION.md`,
+`CREDITS.md` and `LICENSES/` under its package documentation directory. The
+original package copyright file, where present, is retained as
+`copyright.upstream`; it is not the complete notice for this collection.
+
+`SOURCE-NOTICES.txt` preserves initial source comments and copyright lines,
+including the actual Broadcom copyright holders instead of an unfilled ISC
+template. It supplements, rather than replaces, original per-file notices.
+The complete sources remain authoritative for each file's license.
+
+Selected C/header source snapshots carry a dated distribution-change comment.
+Source replay removes only that exact comment when comparing original patch
+outputs; functional changes and upstream patches remain separately identified.
+The complete kernel archive carries equivalent notices in the eleven patched
+files and the modified packaging recipe. Original source hashes are recorded.
+
+The source-generating `prepare-source.py.txt`, `prepare-t1-s3-repeat.py.txt`
+and `prepare-audio-pr220.py.txt` references, and the two actual-C offline tests,
+are GPL-2.0-only combined works containing or assembling kernel/driver material.
+Their imported portions keep original authorship and license notices. The
+independent MIT tools and independent policy tests are separate works.
