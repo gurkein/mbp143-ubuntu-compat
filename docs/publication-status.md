@@ -1,11 +1,14 @@
 # Publication status
 
-Local candidate updated on 2026-11-05. The target GitHub repository exists;
-no source push, asset upload or public release has been performed by this task.
+Source publication reviewed on 2026-11-05 for
+`gurkein/mbp143-ubuntu-compat`. Git contains selected source trees, seven kernel
+patches, the exact config, package templates, build-only tools, offline tests,
+source/artifact manifests, compatibility and rollback documentation.
 
-Included: selected source trees, seven kernel patches, exact config, original
-package templates, seven DEBs, full patched kernel-source asset, build-only
-tools, offline tests, source/artifact manifests, compatibility and rollback docs.
+The seven DEBs and two complete source archives are prepared locally in ignored
+`dist/`. They are not included in a Git clone. No binary Release has been
+published; the DEBs and both source archives must be uploaded together when
+creating one. See [source distribution](source-distribution.md).
 
 The owner chose MIT for independent tools and CC BY 4.0 for new documentation;
 imported source notices remain in force. Historical recipes are text references.
@@ -28,10 +31,9 @@ and `manifests/payload-audit.json`. Successful offline/source/build checks do no
 add hardware coverage. A complete new kernel build and on-device installation
 from this public candidate were not performed.
 
-Before first upload: review this exact candidate, verify repository
-owner/visibility and select a prerelease tag. Then
-upload sources and release assets, verify the downloads, and publish the scoped
-experimental release notes.
+Before publishing a binary Release: select a prerelease tag, upload all
+manifest-listed DEBs and both source archives, verify downloaded checksums,
+and publish the scoped experimental release notes.
 
 T1 0.6 replaces 0.5 in the selected source/package set. It removes once/repeat
 activation modes while preserving the ordered transaction path and error checks.

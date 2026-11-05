@@ -60,5 +60,15 @@
     "source_archives": "Both corresponding-source archives must accompany every binary release",
     "whitespace_review": "Authored changes pass diff --check. Copied original license texts and verbatim source-notice excerpts retain upstream whitespace/EOF blank lines intentionally."
   },
-  "numeric_package_revisions": "Seven packages rebuilt from original DEBs with standard numeric revisions; unchanged executable/data payload, modes, symlinks and hooks verified."
+  "numeric_package_revisions": "Seven packages rebuilt from original DEBs with standard numeric revisions; unchanged executable/data payload, modes, symlinks and hooks verified.",
+  "final_publication_review_2026_11_05": {
+    "imported_source_and_asset_hashes": "passed",
+    "license_scope_and_seven_revisions": "passed",
+    "seven_kernel_and_driver_patch_replay": "passed",
+    "T1_audio_policy_offline_tests": "passed",
+    "repository_owner": "gurkein",
+    "repository_visibility": "public",
+    "binary_release_published": false,
+    "hardware_tests_performed": false
+  }
 }

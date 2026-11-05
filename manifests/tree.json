@@ -1,5 +1,5 @@
 {
-  "note": "All tracked/non-ignored publication files except this manifest; excludes dist/build/cache/local credentials.",
+  "note": "All tracked publication files except this manifest; excludes dist/build/cache/local credentials.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -223,8 +223,8 @@
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 2857,
-      "sha256": "a1a6080413b14a67c823a214009e9ed2c8764d2bc2827c3754d474cfbb537ba0"
+      "bytes": 3007,
+      "sha256": "e0ba821e9bc6fefae2daa0ebe03e27634be7967e93b52b4b8897ad48b1f754bf"
     },
     {
       "file": "docs/release-notes.md",
@@ -2223,8 +2223,8 @@
     },
     {
       "file": "manifests/validation.json",
-      "bytes": 4428,
-      "sha256": "94a9cf609e3da8e7e54672a6fbe01eb49b76a9dc75c896c2c76c3c8b079813e7"
+      "bytes": 4829,
+      "sha256": "c2b1d573759aca9af3babde3aba4bbb8ba1f8eb92d8733bbb9ea8c622db0960e"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",
