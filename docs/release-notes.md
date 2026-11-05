@@ -1,18 +1,19 @@
 # Experimental compatibility snapshot
 
-Proposed tag: `v0.1.0-experimental.1` (not yet created).
+Published prerelease: [`v0.1.0-experimental.1`](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1).
 
 For MacBookPro14,3 on Ubuntu 26.04.1 with exact kernel
 `7.0.14-mbp14342p1`. Includes seven kernel backports, automatic T1 0.6,
-PR220-derived audio recovery and BCM43602 D0 packaging 0.1-4.
+PR220-derived audio recovery and BCM43602 D0 packaging 0.1-5.
 
 The earlier 0.5 revision passed five consecutive approximately 45-second normal-route S3 cycles in one
 boot on AC without external devices. Sound, microphone and Touch Bar were
 subsequently user-confirmed; Ethernet traffic passed on both USB trees after
 wake. Wider sleep conditions remain unqualified.
 
-The external-display-at-boot workaround, xHCI reinitialization and battery
-telemetry limits are described in the compatibility documentation. Additional
+The external-display-at-boot workaround and battery telemetry limits are
+described in the compatibility documentation. Wake logs record xHCI
+reinitialization alongside successful post-wake USB traffic on both trees. Additional
 observations are recorded with their scope and without unresolved causal claims.
 
 Assets: seven selected DEBs, complete patched kernel source, project-source
@@ -45,3 +46,8 @@ The selected DEBs now have standard numeric Debian packaging revisions. They add
 notices and corresponding-source instructions; exact dependencies are updated.
 Kernel and module payloads/signatures are unchanged. This revision adds no new
 hardware qualification. See [source distribution](source-distribution.md).
+
+The release contains six runtime DEBs and optional kernel headers for building
+modules. All eleven downloadable assets were re-downloaded and hash-verified.
+The maintainer also reports successful sleep/wake with peripherals attached,
+outside the controlled five-cycle series.

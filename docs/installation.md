@@ -14,13 +14,14 @@ there is no automatic system/suspend activation script.
 3. Confirm the model, architecture, Ubuntu release, initramfs backend and available
    boot space. The verified packaging repair used dracut; do not assume an
    initramfs-tools host has equivalent helper inclusion.
-4. Review a single APT simulation for the seven explicit DEB paths. It should not
+4. Review a single APT simulation for the six runtime DEB paths. The seventh
+   package, `linux-headers`, is optional for compiling modules. It should not
    remove unrelated packages, replace Docker CE or install unrelated kernels.
-5. The dependency chain is kernel image/headers, trial drivers, T1 mode-result
+5. The runtime dependency chain is kernel image, trial drivers, T1 mode-result
    0.1-2, then T1 phase-trace 0.6-2 and audio
    0.1-2; Wi-Fi 0.1-5 depends on the
-   exact kernel image. Submit all seven explicit paths to APT in one reviewed
-   transaction so it can resolve their declared relationships.
+   exact kernel image. Submit the six runtime paths (and optional headers when
+   needed) to APT in one reviewed transaction so it can resolve the relationships.
 6. Before reboot, inspect module selection and the generated initramfs, including
    WCC/CYW/BCA/brcmutil and the intended T1 pair. Preserve original modules and
    kernel-scoped depmod overrides. Do not live-unload or rebind T1/audio/Wi-Fi.
@@ -49,3 +50,9 @@ Do not run old maintenance experiment helpers or reset consumed tickets.
 The release DEBs use numeric packaging revisions containing documentation-only changes. Install matching
 revisions together; do not substitute original versions where an exact revised
 dependency is declared. Kernel/module executable payloads remain unchanged.
+
+The layered T1 packages preserve the development dependency chain: the baseline
+supplies initial modules, mode-result supplies the USB result correction, and
+automatic T1 supplies the selected final pair with that correction included.
+The depmod rules select the final pair; multiple copies do not mean multiple
+Touch Bar drivers run simultaneously.

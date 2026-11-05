@@ -2,7 +2,9 @@
 
 - **USB:** two downstream xHCIs reinitialize on each resume. Post-wake Ethernet
   works on both trees, but one tree needed saved-profile reconnect to regain an
-  IPv4 default route. Native Thunderbolt and peripheral-present sleep are open.
+  IPv4 default route. The maintainer reports successful sleep/wake with
+  peripherals attached outside the controlled series; broader device combinations
+  and native Thunderbolt coverage remain to be characterized.
 - **Display:** booting with an external display attached can leave the internal
   panel unavailable. Verified workaround: boot with external display detached,
   then attach after login. Keep Radeon available to Mutter for external output.

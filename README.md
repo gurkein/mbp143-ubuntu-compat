@@ -17,9 +17,11 @@ and removes once/repeat activation options. See the
 [changes from the tested version](docs/release-notes.md#changes-from-tested-t1-05).
 
 
-Known limits include xHCI reinitialization on wake, external-display-at-boot
-initialization and battery telemetry. Long-duration and docked suspend and broad
-peripheral coverage remain open. Detailed observations are documented with their
+Known limits include external-display-at-boot initialization and battery
+telemetry. Wake logs record xHCI reinitialization; post-wake USB Ethernet traffic
+passed on both downstream trees. The maintainer also reports successful
+sleep/wake with peripherals attached, outside the controlled five-cycle series.
+Long-duration sleep and broader peripheral combinations remain to be characterized. Detailed observations are documented with their
 measured scope; unresolved causes are not attributed to individual drivers.
 
 - [Compatibility and measured scope](docs/compatibility.md)
@@ -35,6 +37,11 @@ measured scope; unresolved causes are not attributed to individual drivers.
 - [Corresponding source and package revisions](docs/source-distribution.md)
 
 ## Repository and release contents
+
+[Download the experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1). It provides seven DEBs
+(six runtime packages plus optional build headers), both complete source
+archives and verified checksums.
+
 
 `kernel/` contains the patch series, configuration and public certificates.
 `drivers/` contains complete selected driver sources, including the T1 0.6 package source with tracing enabled and dated distribution notices. `scripts/` contains portable build

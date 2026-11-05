@@ -5,10 +5,11 @@ Source publication reviewed on 2026-11-05 for
 patches, the exact config, package templates, build-only tools, offline tests,
 source/artifact manifests, compatibility and rollback documentation.
 
-The seven DEBs and two complete source archives are prepared locally in ignored
-`dist/`. They are not included in a Git clone. No binary Release has been
-published; the DEBs and both source archives must be uploaded together when
-creating one. See [source distribution](source-distribution.md).
+The [experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1) is published
+with seven DEBs, two complete source archives, an artifact manifest and checksums.
+All eleven assets were downloaded and SHA-256 verified after upload. Runtime
+installation uses six DEBs; headers are optional for module compilation.
+Release assets remain excluded from Git clones; download them from the release. See [source distribution](source-distribution.md).
 
 The owner chose MIT for independent tools and CC BY 4.0 for new documentation;
 imported source notices remain in force. Historical recipes are text references.
@@ -31,9 +32,11 @@ and `manifests/payload-audit.json`. Successful offline/source/build checks do no
 add hardware coverage. A complete new kernel build and on-device installation
 from this public candidate were not performed.
 
-Before publishing a binary Release: select a prerelease tag, upload all
-manifest-listed DEBs and both source archives, verify downloaded checksums,
-and publish the scoped experimental release notes.
+The release tag `v0.1.0-experimental.1` points to `b11abe0`.
+Its assets are frozen at that source snapshot; subsequent main-branch
+documentation updates do not replace the published source archive or binaries.
+Future binary releases must again include both corresponding-source archives
+and verified checksums. See `manifests/releases.json` for the publication receipt.
 
 T1 0.6 replaces 0.5 in the selected source/package set. It removes once/repeat
 activation modes while preserving the ordered transaction path and error checks.

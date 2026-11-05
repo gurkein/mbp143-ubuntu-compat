@@ -1,5 +1,5 @@
 {
-  "note": "All tracked publication files except this manifest; excludes dist/build/cache/local credentials.",
+  "note": "Current tracked source tree; release assets remain frozen at their tagged source commit.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -173,8 +173,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 3723,
-      "sha256": "2b1e234f16d25a755613a3565349326bb56f2860c5bc7df8889eaa57cbc4f361"
+      "bytes": 4178,
+      "sha256": "b54b38a96c29909a712f27a2afcbe690e7e592040fdc16c17e3631e6c3110f3a"
     },
     {
       "file": "SOURCE-NOTICES.txt",
@@ -213,23 +213,23 @@
     },
     {
       "file": "docs/installation.md",
-      "bytes": 3333,
-      "sha256": "43b6c795e6a646bfc4f8f1a6e7660a863e3afc36d8a9878b7f7637c8fcb94c29"
+      "bytes": 3778,
+      "sha256": "02fbf29c26ec270b13e8cf14b3e5ce185c41e27c199319873fc6d85432c15c7b"
     },
     {
       "file": "docs/known-issues.md",
-      "bytes": 1192,
-      "sha256": "b3f2c81b4af622bbdaf92f786407147c1cb1011597d664d8e6ca8d6106d8e352"
+      "bytes": 1328,
+      "sha256": "54e887a6c9fac95f8e8fa52e34349f8a48b4de47bb1134e16e8f29fc53545e07"
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 3007,
-      "sha256": "e0ba821e9bc6fefae2daa0ebe03e27634be7967e93b52b4b8897ad48b1f754bf"
+      "bytes": 3374,
+      "sha256": "3cecc4c95b84eb39512774b243ceb864275d7badc21aa9bfea0d3a880eb16e6b"
     },
     {
       "file": "docs/release-notes.md",
-      "bytes": 2543,
-      "sha256": "947f0b57c19cf2483873d0004eabbd503efac1b99fd2b5029ef62e7644348007"
+      "bytes": 2970,
+      "sha256": "c7a9c6f5b7836b40a7b9dcee65ec330f19d57c1435199eb11678b057cd29047d"
     },
     {
       "file": "docs/rollback.md",
@@ -2215,6 +2215,11 @@
       "file": "manifests/payload-audit.json",
       "bytes": 4157,
       "sha256": "bf103c204e0ffc44b4e3f34815dd1579ccf84038d179011b686aca432dd0f65c"
+    },
+    {
+      "file": "manifests/releases.json",
+      "bytes": 3405,
+      "sha256": "c786edfd270eee0a95d91b65864506556f1aa8e782999e954089ab1e0787d709"
     },
     {
       "file": "manifests/source-replay.json",
