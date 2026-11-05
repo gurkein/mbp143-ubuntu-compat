@@ -89,6 +89,89 @@
       "url": "https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1",
       "published_at": "2026-11-05T19:08:30Z",
       "all_downloads_verified": true
+    },
+    {
+      "repository": "gurkein/mbp143-ubuntu-compat",
+      "tag": "v0.1.0-experimental.2",
+      "commit": "56544d58395d50223bfac0b67883f18bfe9516e1",
+      "release_id": 435666686,
+      "draft": false,
+      "assets": [
+        {
+          "file": "kernel-source-7.0.14-mbp14342p1.tar.gz",
+          "id": 714636465,
+          "bytes": 335767579,
+          "sha256": "fcce412f446f24f7c55c1aab4c7daecd4b98a40478d853cfffbb7eabfc5aeffc",
+          "download_verified": true
+        },
+        {
+          "file": "mbp143-ubuntu-compat-source.tar.gz",
+          "id": 714643341,
+          "bytes": 3032320,
+          "sha256": "97263f971198ef072cce5ea2f7087d619ce90d0e9631a6bd17f597505ccfdd4a",
+          "download_verified": true
+        },
+        {
+          "file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+          "id": 714643502,
+          "bytes": 140631180,
+          "sha256": "114fba7bdc108ae03abd3c8c704d578f3ec8f21975d1a7132b8460bbe654e098",
+          "download_verified": true
+        },
+        {
+          "file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+          "id": 714646307,
+          "bytes": 12856680,
+          "sha256": "780160fade6ccb63c4dab3a07056f185ccebe82ac0410038e7254b91baaadb5f",
+          "download_verified": true
+        },
+        {
+          "file": "mbp143-ibridge_0.6-1_amd64.deb",
+          "id": 714646843,
+          "bytes": 79564,
+          "sha256": "8f639724c934a8cd99b6f7f6f90cec095866cb7441ec61709cd010753d2fc56a",
+          "download_verified": true
+        },
+        {
+          "file": "mbp143-t1_0.6-1_amd64.deb",
+          "id": 714646951,
+          "bytes": 83134,
+          "sha256": "2c9a4cd2ca51af7d99c3c13f407fd1e9f929dc12a722e9afac44a5bff042f1d5",
+          "download_verified": true
+        },
+        {
+          "file": "mbp143-audio_0.1-1_amd64.deb",
+          "id": 714647059,
+          "bytes": 121702,
+          "sha256": "04002ae3230a3330d627c56e18b3ec0b8b86b74a2727997409d63b04551ae35d",
+          "download_verified": true
+        },
+        {
+          "file": "mbp143-wifi_0.1-1_amd64.deb",
+          "id": 714647173,
+          "bytes": 306564,
+          "sha256": "31139e6a65bae18cd0c351850cdcd26ac781f10c8a71878b82cf91f388a0b46b",
+          "download_verified": true
+        },
+        {
+          "file": "artifacts.json",
+          "id": 714647280,
+          "bytes": 1852,
+          "sha256": "928540d2d9a18eed570ec5b076964cd6794cb26afc6da36cef7f24827a7fe699",
+          "download_verified": true
+        },
+        {
+          "file": "SHA256SUMS",
+          "id": 714647376,
+          "bytes": 921,
+          "sha256": "058c4486f7e18d1d450b71fe4bfd01b5bd30c40fe88534bf45a3ba4bf5926d90",
+          "download_verified": true
+        }
+      ],
+      "prerelease": true,
+      "url": "https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.2",
+      "published_at": "2026-11-05T20:04:04Z",
+      "all_downloads_verified": true
     }
   ]
 }

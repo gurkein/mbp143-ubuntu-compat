@@ -1,5 +1,5 @@
 {
-  "note": "Current six-package source tree; excludes ignored release assets and local credentials.",
+  "note": "Current source tree; released archives and binaries remain frozen at each tagged source commit.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -2228,8 +2228,8 @@
     },
     {
       "file": "manifests/releases.json",
-      "bytes": 3405,
-      "sha256": "c786edfd270eee0a95d91b65864506556f1aa8e782999e954089ab1e0787d709"
+      "bytes": 6395,
+      "sha256": "316ee20b6ebc735030765bc9c26ec4b623486b42714a8d33ccafbf9dc86380c1"
     },
     {
       "file": "manifests/source-replay.json",
