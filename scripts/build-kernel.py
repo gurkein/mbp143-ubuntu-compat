@@ -28,7 +28,7 @@ def main():
     for certificate in (ROOT / 'kernel/public-certificates').glob('*.pem'):
         shutil.copyfile(certificate, output / 'debian' / certificate.name)
     env = dict(os.environ, KBUILD_BUILD_USER='mbp143-builder', KBUILD_BUILD_HOST='local',
-               KDEB_SOURCENAME='linux-mbp143', KDEB_PKGVERSION='7.0.0-42.42+mbp143.2+local1',
+               KDEB_SOURCENAME='linux-mbp143', KDEB_PKGVERSION='7.0.0-42.42+mbp143.3+local1',
                KDEB_CHANGELOG_DIST='resolute', DEBFULLNAME='Local MacBook Trial Builder',
                DEBEMAIL='builder@localhost',
                DEB_BUILD_PROFILES='pkg.linux-mbp143.nokerneldbg pkg.linux-mbp143.nokernellibc')

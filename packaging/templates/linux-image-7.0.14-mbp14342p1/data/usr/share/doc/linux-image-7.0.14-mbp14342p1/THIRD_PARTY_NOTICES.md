@@ -55,3 +55,11 @@ and `prepare-audio-pr220.py.txt` references, and the two actual-C offline tests,
 are GPL-2.0-only combined works containing or assembling kernel/driver material.
 Their imported portions keep original authorship and license notices. The
 independent MIT tools and independent policy tests are separate works.
+
+## Six-package layout — 2026-11-05
+
+The role-based packages select only the final signed iBridge, Touch Bar, audio
+and Wi-Fi module. Baseline and intermediate package dependencies are removed;
+original source snapshots and patch attribution remain as reconstruction inputs.
+Kernel and module executable bytes are unchanged. New dependency, conflict,
+selection and initramfs metadata is verified separately from hardware behavior.

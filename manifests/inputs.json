@@ -4122,84 +4122,6 @@
       "publication_adaptation": "Dated distribution notice and/or explicit license scope; see manifests/licensing.json."
     },
     {
-      "source": "experiments/kernel-42/packages/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "destination": "dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "component": "binary packages",
-      "license": "see per-file source notices",
-      "disposition": "release asset",
-      "sha256": "08769c39c227feab9405a0c9933c3e53199b65a361ceb4a7aed8a31048a58651",
-      "bytes": 12856836,
-      "original_destination": "dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "original_sha256": "a1ffea1597f0909c83a9c0a54e08ad2a5a5befa862810375b65597cb584eb4e1",
-      "adaptation": "Documentation-only packaging-only repack; executable/data payload and hooks unchanged.",
-      "source_sha256": "a1ffea1597f0909c83a9c0a54e08ad2a5a5befa862810375b65597cb584eb4e1"
-    },
-    {
-      "source": "experiments/kernel-42/packages/linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "destination": "dist/linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "component": "binary packages",
-      "license": "see per-file source notices",
-      "disposition": "release asset",
-      "sha256": "aeea4819bb45d4ffa1b77a81e0325d9daf18bf208f6816df1e73d149605a7fcd",
-      "bytes": 140631684,
-      "original_destination": "dist/linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "original_sha256": "bad5a0ba5b31c99f98285e812d292cebaddcb702e5e04b540053ce57e1194076",
-      "adaptation": "Documentation-only packaging-only repack; executable/data payload and hooks unchanged.",
-      "source_sha256": "bad5a0ba5b31c99f98285e812d292cebaddcb702e5e04b540053ce57e1194076"
-    },
-    {
-      "source": "experiments/kernel-42/packages/mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "destination": "dist/mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "component": "binary packages",
-      "license": "see per-file source notices",
-      "disposition": "release asset",
-      "sha256": "b3de7d89c56ce7e8fcd0f7d0a94d37d10360b3fda614af2360f518baef341ed0",
-      "bytes": 140798,
-      "original_destination": "dist/mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "original_sha256": "832b6b041fdc9b269b0dea908edf72091b978eff85f7e7376831fea7e5d58788",
-      "adaptation": "Documentation-only packaging-only repack; executable/data payload and hooks unchanged.",
-      "source_sha256": "832b6b041fdc9b269b0dea908edf72091b978eff85f7e7376831fea7e5d58788"
-    },
-    {
-      "source": "experiments/kernel-42/candidates/t1-mode-result-only/package/mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-1_amd64.deb",
-      "destination": "dist/mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-2_amd64.deb",
-      "component": "binary packages",
-      "license": "see per-file source notices",
-      "disposition": "release asset",
-      "sha256": "ca7a1d28de8d75fbb2559c56f0825d6fd950cab5590ff785227ad56fb459870b",
-      "bytes": 80800,
-      "original_destination": "dist/mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-1_amd64.deb",
-      "original_sha256": "be5e270f3a4e40450e8203144108b9892991281027f9440ddb2da12790df37ad",
-      "adaptation": "Documentation-only packaging-only repack; executable/data payload and hooks unchanged.",
-      "source_sha256": "be5e270f3a4e40450e8203144108b9892991281027f9440ddb2da12790df37ad"
-    },
-    {
-      "source": "experiments/kernel-42/candidates/audio-pr220/package/mbp143-audio-resume-7.0.14-mbp14342p1_0.1-1_amd64.deb",
-      "destination": "dist/mbp143-audio-resume-7.0.14-mbp14342p1_0.1-2_amd64.deb",
-      "component": "binary packages",
-      "license": "see per-file source notices",
-      "disposition": "release asset",
-      "sha256": "884eba96440afcf4b51b1c74c4bca73db8b3607b05578b70a67114f1ce26bbc3",
-      "bytes": 124850,
-      "original_destination": "dist/mbp143-audio-resume-7.0.14-mbp14342p1_0.1-1_amd64.deb",
-      "original_sha256": "3c606444c1b2871c97fb02f3757cd3b9eaad4353c7d048e1d94dd8cabdd83ca5",
-      "adaptation": "Documentation-only packaging-only repack; executable/data payload and hooks unchanged.",
-      "source_sha256": "3c606444c1b2871c97fb02f3757cd3b9eaad4353c7d048e1d94dd8cabdd83ca5"
-    },
-    {
-      "source": "experiments/kernel-42/candidates/connectivity-pr596/wifi-d0-only/package-v0.1-4/mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-4_amd64.deb",
-      "destination": "dist/mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-5_amd64.deb",
-      "component": "binary packages",
-      "license": "see per-file source notices",
-      "disposition": "release asset",
-      "sha256": "57ff07e714e4e655723fd260711b2a492c6ee911be7d73ec7e65cf8e9478fd2e",
-      "bytes": 307040,
-      "original_destination": "dist/mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-4_amd64.deb",
-      "original_sha256": "bd53ab7969815da4d502d213f39e8f52cd90b1069bf0713405a86212195ff177",
-      "adaptation": "Documentation-only packaging-only repack; executable/data payload and hooks unchanged.",
-      "source_sha256": "bd53ab7969815da4d502d213f39e8f52cd90b1069bf0713405a86212195ff177"
-    },
-    {
       "source": "assets/boot/intel-display/mbp143-gpu-switch.c",
       "destination": "boot/efi/mbp143-gpu-switch.c",
       "component": "graphics/EFI",
@@ -4335,18 +4257,64 @@
       "bytes": 2831
     },
     {
-      "source": "experiments/kernel-42/candidates/t1-s3-automatic/package/mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-1_amd64.deb",
-      "destination": "dist/mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
-      "component": "t1 binary package",
-      "version": "0.6-1",
-      "license": "preserved source licenses",
+      "source": "v0.1.0-experimental.1:linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+      "destination": "dist/linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+      "component": "role-based package",
+      "license": "preserved per-file licenses",
       "disposition": "release asset",
-      "sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
-      "bytes": 96614,
-      "original_destination": "dist/mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-1_amd64.deb",
-      "original_sha256": "a5fb4bf9024668e318f680dc3db71c3ac5d5d867b403fdb98c452f34acdf70e3",
-      "adaptation": "Documentation-only packaging-only repack; executable/data payload and hooks unchanged.",
-      "source_sha256": "a5fb4bf9024668e318f680dc3db71c3ac5d5d867b403fdb98c452f34acdf70e3"
+      "sha256": "114fba7bdc108ae03abd3c8c704d578f3ec8f21975d1a7132b8460bbe654e098",
+      "bytes": 140631180,
+      "signed_executable_payload_preserved": true
+    },
+    {
+      "source": "v0.1.0-experimental.1:linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+      "destination": "dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+      "component": "role-based package",
+      "license": "preserved per-file licenses",
+      "disposition": "release asset",
+      "sha256": "780160fade6ccb63c4dab3a07056f185ccebe82ac0410038e7254b91baaadb5f",
+      "bytes": 12856680,
+      "signed_executable_payload_preserved": true
+    },
+    {
+      "source": "v0.1.0-experimental.1:mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
+      "destination": "dist/mbp143-ibridge_0.6-1_amd64.deb",
+      "component": "role-based package",
+      "license": "preserved per-file licenses",
+      "disposition": "release asset",
+      "sha256": "8f639724c934a8cd99b6f7f6f90cec095866cb7441ec61709cd010753d2fc56a",
+      "bytes": 79564,
+      "signed_executable_payload_preserved": true
+    },
+    {
+      "source": "v0.1.0-experimental.1:mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
+      "destination": "dist/mbp143-t1_0.6-1_amd64.deb",
+      "component": "role-based package",
+      "license": "preserved per-file licenses",
+      "disposition": "release asset",
+      "sha256": "2c9a4cd2ca51af7d99c3c13f407fd1e9f929dc12a722e9afac44a5bff042f1d5",
+      "bytes": 83134,
+      "signed_executable_payload_preserved": true
+    },
+    {
+      "source": "v0.1.0-experimental.1:mbp143-audio-resume-7.0.14-mbp14342p1_0.1-2_amd64.deb",
+      "destination": "dist/mbp143-audio_0.1-1_amd64.deb",
+      "component": "role-based package",
+      "license": "preserved per-file licenses",
+      "disposition": "release asset",
+      "sha256": "04002ae3230a3330d627c56e18b3ec0b8b86b74a2727997409d63b04551ae35d",
+      "bytes": 121702,
+      "signed_executable_payload_preserved": true
+    },
+    {
+      "source": "v0.1.0-experimental.1:mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-5_amd64.deb",
+      "destination": "dist/mbp143-wifi_0.1-1_amd64.deb",
+      "component": "role-based package",
+      "license": "preserved per-file licenses",
+      "disposition": "release asset",
+      "sha256": "31139e6a65bae18cd0c351850cdcd26ac781f10c8a71878b82cf91f388a0b46b",
+      "bytes": 306564,
+      "signed_executable_payload_preserved": true
     }
   ],
   "component_versions": {
@@ -4355,7 +4323,7 @@
     "audio": "PR220 0.1-1",
     "wifi": "D0 source 0.1-1, unchanged binary in packaging 0.1-4",
     "graphics/EFI": "original GPU-selection source; portable build-only recipe revision 1",
-    "publication_package_revision": "Standard numeric packaging revisions in package-revisions.json; functional versions unchanged."
+    "publication_package_revision": "Six roles; kernel metadata mbp143.3, iBridge/T1 0.6-1, audio/Wi-Fi 0.1-1."
   },
   "origin_register": "docs/source-provenance.md and THIRD_PARTY_NOTICES.md",
   "license_selection": "Independent tools MIT; new documentation CC BY 4.0; imported work retains per-file notices.",

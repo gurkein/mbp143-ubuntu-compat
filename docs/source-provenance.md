@@ -26,8 +26,7 @@ does not include the 32 GiB original kernel build directory.
 ## Drivers
 
 - T1 `baseline/`: source copied for the original trial companion package.
-- T1 `mode-result-0.1/`: source for the exact dependency package still declared
-  by 0.6. It normalizes successful USB byte-count returns for the mode worker.
+- T1 `mode-result-0.1/`: historical source snapshot retained for patch provenance. It normalizes successful USB byte-count returns for the mode worker.
 - T1 `automatic-0.6/`: current package build-source snapshot with dated distribution comments with tracing
   enabled. MacBookPro14,3 S3 handling is automatic; there are no once/repeat
   activation parameters. Read-only status/count remain. The aggregated
@@ -40,7 +39,7 @@ does not include the 32 GiB original kernel build directory.
   target kernel plus only patch 0682. Vendor helpers remain kernel-supplied.
 
 Revised package control files and original non-binary override data are preserved under
-`packaging/templates/`; the original DEBs are the inputs to documentation-only numeric packaging revisions.
+`packaging/templates/`; the earlier-release DEBs are hash-pinned inputs to the role-based package builder.
 Original and revised hashes, dependency changes and payload comparisons are in
 `manifests/licensing.json`; no executable payload was rebuilt. Scripts
 under `reference/maintenance/` are text snapshots and retain original paths and

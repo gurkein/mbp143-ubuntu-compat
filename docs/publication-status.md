@@ -5,10 +5,10 @@ Source publication reviewed on 2026-11-05 for
 patches, the exact config, package templates, build-only tools, offline tests,
 source/artifact manifests, compatibility and rollback documentation.
 
-The [experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1) is published
-with seven DEBs, two complete source archives, an artifact manifest and checksums.
-All eleven assets were downloaded and SHA-256 verified after upload. Runtime
-installation uses six DEBs; headers are optional for module compilation.
+The [experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.2) is published
+with six DEBs, two complete source archives, an artifact manifest and checksums.
+All ten assets were downloaded and SHA-256 verified after upload. Runtime
+installation uses five DEBs; headers are optional for module compilation.
 Release assets remain excluded from Git clones; download them from the release. See [source distribution](source-distribution.md).
 
 The owner chose MIT for independent tools and CC BY 4.0 for new documentation;
@@ -32,7 +32,7 @@ and `manifests/payload-audit.json`. Successful offline/source/build checks do no
 add hardware coverage. A complete new kernel build and on-device installation
 from this public candidate were not performed.
 
-The release tag `v0.1.0-experimental.1` points to `b11abe0`.
+The release tag and `artifacts.json` record the exact source commit.
 Its assets are frozen at that source snapshot; subsequent main-branch
 documentation updates do not replace the published source archive or binaries.
 Future binary releases must again include both corresponding-source archives

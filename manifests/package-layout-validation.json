@@ -1,0 +1,50 @@
+{
+  "temporary_depmod_selection": {
+    "apple-ibridge": "/lib/modules/7.0.14-mbp14342p1/updates/mbp143-ibridge/apple-ibridge.ko",
+    "apple-touchbar": "/lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1/apple-touchbar.ko",
+    "snd-hda-codec-cs8409": "/lib/modules/7.0.14-mbp14342p1/updates/mbp143-audio/snd-hda-codec-cs8409.ko",
+    "brcmfmac": "/lib/modules/7.0.14-mbp14342p1/updates/mbp143-wifi/brcmfmac.ko"
+  },
+  "bridge_before_touchbar": true,
+  "fresh_six_packages": {
+    "installed": [
+      "linux-image-7.0.14-mbp14342p1",
+      "mbp143-audio",
+      "mbp143-ibridge",
+      "mbp143-t1",
+      "mbp143-wifi",
+      "linux-headers-7.0.14-mbp14342p1"
+    ],
+    "removed": [],
+    "kernel_configured_before_module_unpack": true
+  },
+  "fresh_five_runtime_packages": {
+    "installed": [
+      "linux-image-7.0.14-mbp14342p1",
+      "mbp143-audio",
+      "mbp143-ibridge",
+      "mbp143-t1",
+      "mbp143-wifi"
+    ],
+    "removed": [],
+    "kernel_configured_before_module_unpack": true
+  },
+  "published_06_migration": {
+    "installed": [
+      "linux-image-7.0.14-mbp14342p1",
+      "mbp143-audio",
+      "mbp143-ibridge",
+      "mbp143-t1",
+      "mbp143-wifi",
+      "linux-headers-7.0.14-mbp14342p1"
+    ],
+    "removed": [
+      "mbp143-audio-resume-7.0.14-mbp14342p1",
+      "mbp143-t1-phase-trace-7.0.14-mbp14342p1",
+      "mbp143-t1-mode-result-7.0.14-mbp14342p1",
+      "mbp143-trial-drivers-7.0.14-mbp14342p1",
+      "mbp143-wifi-d0-7.0.14-mbp14342p1"
+    ],
+    "kernel_configured_before_module_unpack": true
+  }
+}

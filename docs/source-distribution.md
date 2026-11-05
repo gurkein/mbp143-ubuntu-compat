@@ -15,7 +15,7 @@ The pinned source commit and hashes are in `artifacts.json` and `SHA256SUMS`.
 payload equality. The build instructions are in `docs/building.md`.
 
 The corrected DEBs use standard numeric Debian packaging revisions listed in
-`manifests/packages.json`; functional driver versions remain unchanged. Only documentation
+`manifests/packages.json`; functional driver versions remain unchanged. Documentation, module locations, kernel-specific DKMS policy
 and package metadata changed; executable files and signed modules are preserved.
 These publication packages were not installed or newly hardware-tested. The
 kernel release and driver functional versions retain their existing scope.
@@ -34,3 +34,7 @@ License references: [GPLv2](https://spdx.org/licenses/GPL-2.0-only.html),
 [Linux licensing rules](https://docs.kernel.org/process/license-rules.html),
 [MIT](https://opensource.org/license/mit),
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en).
+
+The six-package layout carries one final driver module per role. Current
+package metadata is in `package-layout.json`, relative to `manifests/` in the
+source archive. Earlier release assets remain frozen and separately attributed.

@@ -1,9 +1,8 @@
 Package: linux-headers-7.0.14-mbp14342p1
 Source: linux-mbp143
-Version: 7.0.0-42.42+mbp143.2
+Version: 7.0.0-42.42+mbp143.3
 Architecture: amd64
 Maintainer: Local MacBook Trial Builder <builder@localhost>
-Installed-Size: 57565
 Section: kernel
 Priority: optional
 Homepage: https://www.kernel.org/
@@ -11,3 +10,4 @@ Description: Linux kernel headers for 7.0.14-mbp14342p1 on amd64
  This package provides kernel header files for 7.0.14-mbp14342p1 on amd64
  .
  This is useful for people who need to build external modules
+Installed-Size: 57564

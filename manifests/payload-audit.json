@@ -5,7 +5,8 @@
     "tools/testing/selftests/net/ovpn/data64.key"
   ],
   "private_module_signing_key_copied": false,
-  "package_payloads": [
+  "license_revision": "See licensing.json for original/revised hashes, unchanged payload checks and added license documentation.",
+  "historical_payload_audit": [
     {
       "package": "linux-headers-7.0.14-mbp14342p1",
       "payload_files": 7423,
@@ -64,5 +65,48 @@
       "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     }
   ],
-  "license_revision": "See licensing.json for original/revised hashes, unchanged payload checks and added license documentation."
+  "package_payloads": [
+    {
+      "package": "linux-image-7.0.14-mbp14342p1",
+      "version": "7.0.0-42.42+mbp143.3",
+      "executable_payload_preserved": true,
+      "source_input_sha256": "aeea4819bb45d4ffa1b77a81e0325d9daf18bf208f6816df1e73d149605a7fcd",
+      "note": "One final module per driver role; exact signed bytes checked during assembly. Kernel non-documentation payload unchanged."
+    },
+    {
+      "package": "linux-headers-7.0.14-mbp14342p1",
+      "version": "7.0.0-42.42+mbp143.3",
+      "executable_payload_preserved": true,
+      "source_input_sha256": "08769c39c227feab9405a0c9933c3e53199b65a361ceb4a7aed8a31048a58651",
+      "note": "One final module per driver role; exact signed bytes checked during assembly. Kernel non-documentation payload unchanged."
+    },
+    {
+      "package": "mbp143-ibridge",
+      "version": "0.6-1",
+      "executable_payload_preserved": true,
+      "source_input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
+      "note": "One final module per driver role; exact signed bytes checked during assembly. Kernel non-documentation payload unchanged."
+    },
+    {
+      "package": "mbp143-t1",
+      "version": "0.6-1",
+      "executable_payload_preserved": true,
+      "source_input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
+      "note": "One final module per driver role; exact signed bytes checked during assembly. Kernel non-documentation payload unchanged."
+    },
+    {
+      "package": "mbp143-audio",
+      "version": "0.1-1",
+      "executable_payload_preserved": true,
+      "source_input_sha256": "884eba96440afcf4b51b1c74c4bca73db8b3607b05578b70a67114f1ce26bbc3",
+      "note": "One final module per driver role; exact signed bytes checked during assembly. Kernel non-documentation payload unchanged."
+    },
+    {
+      "package": "mbp143-wifi",
+      "version": "0.1-1",
+      "executable_payload_preserved": true,
+      "source_input_sha256": "57ff07e714e4e655723fd260711b2a492c6ee911be7d73ec7e65cf8e9478fd2e",
+      "note": "One final module per driver role; exact signed bytes checked during assembly. Kernel non-documentation payload unchanged."
+    }
+  ]
 }

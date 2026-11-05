@@ -14,14 +14,15 @@ there is no automatic system/suspend activation script.
 3. Confirm the model, architecture, Ubuntu release, initramfs backend and available
    boot space. The verified packaging repair used dracut; do not assume an
    initramfs-tools host has equivalent helper inclusion.
-4. Review a single APT simulation for the six runtime DEB paths. The seventh
-   package, `linux-headers`, is optional for compiling modules. It should not
-   remove unrelated packages, replace Docker CE or install unrelated kernels.
-5. The runtime dependency chain is kernel image, trial drivers, T1 mode-result
-   0.1-2, then T1 phase-trace 0.6-2 and audio
-   0.1-2; Wi-Fi 0.1-5 depends on the
-   exact kernel image. Submit the six runtime paths (and optional headers when
-   needed) to APT in one reviewed transaction so it can resolve the relationships.
+4. Review a single APT simulation for the five runtime DEB paths. The sixth
+   package, `linux-headers`, is optional for compiling modules. Only the five
+   superseded compatibility packages should be removed during migration.
+5. Runtime packages are `linux-image-7.0.14-mbp14342p1`, `mbp143-ibridge`,
+   `mbp143-t1`, `mbp143-audio` and `mbp143-wifi`. Every driver depends on the
+   exact kernel-image package; Touch Bar also depends on the matching iBridge
+   package. Submit all five runtime paths and optional headers to APT in one
+   reviewed transaction. No baseline, mode-result or phase-trace package is
+   needed by this layout.
 6. Before reboot, inspect module selection and the generated initramfs, including
    WCC/CYW/BCA/brcmutil and the intended T1 pair. Preserve original modules and
    kernel-scoped depmod overrides. Do not live-unload or rebind T1/audio/Wi-Fi.
@@ -51,8 +52,23 @@ The release DEBs use numeric packaging revisions containing documentation-only c
 revisions together; do not substitute original versions where an exact revised
 dependency is declared. Kernel/module executable payloads remain unchanged.
 
-The layered T1 packages preserve the development dependency chain: the baseline
-supplies initial modules, mode-result supplies the USB result correction, and
-automatic T1 supplies the selected final pair with that correction included.
-The depmod rules select the final pair; multiple copies do not mean multiple
-Touch Bar drivers run simultaneously.
+
+## Migrating from the first prerelease
+
+The new packages conflict with and replace the old trial-driver, mode-result,
+phase-trace, audio-resume and Wi-Fi-D0 package names. APT removes those obsolete
+packages in the same transaction. The four selected signed modules retain their
+existing executable bytes; their package-owned paths now match their roles.
+
+Existing custom readiness manifests must use the new module paths and the
+verified hashes/source versions. Keep failure latches and consumed experiment
+records intact. Use a normal reboot for activation when selected and loaded
+modules differ; never live-unload these drivers. Rebuilding an initramfs is part
+of package installation and does not establish suspend acceptance.
+
+The driver packages pre-depend on the configured exact kernel image. iBridge
+also owns `/etc/dkms/apple-ib-drv--7.0.14-mbp14342p1.conf`, which excludes the
+older generic T1 DKMS source from this supplied kernel. This prevents DKMS from
+archiving the package-owned modules when optional headers are configured later;
+other kernels retain their normal DKMS behavior. The setting is removed when
+the iBridge package is purged.

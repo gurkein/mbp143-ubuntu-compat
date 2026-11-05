@@ -1,8 +1,0 @@
-Version 0.1-4: packaging-only repair; driver binary unchanged.
-On this host update-initramfs calls dracut directly. Version 0.1-2 added a
-dracut module but instmods inherited host-only filtering, omitting unloaded
-vendor helpers after failed probing. Version 0.1-3 tried an unused native
-initramfs-tools hook; neither image passed verification and neither was booted.
-Use hostonly='' instmods -c for all three existing vendor helpers. Test against
-the real dracut copy function and unpack the final initramfs before reboot.
-No forced loading, live driver reset, firmware or NVRAM change is included.

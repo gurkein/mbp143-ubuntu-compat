@@ -24,7 +24,7 @@ suspend command as part of these checks. All examples are run from the repo root
 Extract the matching headers DEB to a temporary directory:
 
 ```sh
-dpkg-deb -x dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb /tmp/mbp143-headers
+dpkg-deb -x dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb /tmp/mbp143-headers
 python3 scripts/build-drivers.py t1 --headers /tmp/mbp143-headers/usr/src/linux-headers-7.0.14-mbp14342p1 --output build/t1
 ```
 
@@ -64,12 +64,12 @@ quota and thermal stops. The historical build recipe is preserved under
 
 See [source-distribution obligations](source-distribution.md). The release
 uses documentation-only numeric packaging revisions with updated exact dependencies.
-`python3 scripts/repack-license.py --help` describes the build-only repacker.
+`python3 scripts/package-release.py --help` describes the build-only repacker.
 It refuses unknown original inputs and verifies all non-documentation payloads.
 
 
 `packaging/templates/` preserves control scripts and selected non-binary data
-from the exact seven DEBs. Hooks execute only when packages are installed or
+from the exact six DEBs. Hooks execute only when packages are installed or
 removed. They are never executed by offline checks. The selected modules,
 package relationships, sources and hashes are recorded in manifests. Rebuilt
 payloads need new package versions; do not overwrite an original release asset.
@@ -77,3 +77,21 @@ payloads need new package versions; do not overwrite an original release asset.
 Firmware and personalized NVRAM are not bundled. Wi-Fi 0.1-4 includes a dracut
 hook that retains dynamically requested WCC/CYW/BCA helpers even when unloaded;
 the helpers themselves come from the matching kernel image, not that override.
+
+## Six-package release assembly
+
+Download the seven original inputs from `v0.1.0-experimental.1` into a separate
+input directory, then run:
+
+```sh
+python3 scripts/package-release.py --input-directory /path/to/original-assets --output-directory /path/to/new-packages
+```
+
+The builder checks the input hashes in `manifests/package-layout.json`, extracts
+only the selected final modules and builds the six role-based packages. It
+preserves signed module bytes and kernel executable data, creates exact-kernel
+selection rules and records the hashes and dependency graph. Nothing is
+installed. Historical baseline sources remain only for provenance/patch replay.
+A local T1 override requires explicit binary, hash, version and corresponding
+source arguments; it must not be mixed into a public release without its own
+source and verification record.

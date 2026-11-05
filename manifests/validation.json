@@ -70,5 +70,16 @@
     "repository_visibility": "public",
     "binary_release_published": false,
     "hardware_tests_performed": false
+  },
+  "six_package_layout": {
+    "executable_payload_preserved": true,
+    "fresh_install_simulation": "passed five runtime / six including headers",
+    "earlier_release_migration": "passed; exactly five legacy names removed",
+    "depmod_selection": "passed four roles; bridge precedes Touch Bar",
+    "driver_compile": false,
+    "hardware_qualification_added": false,
+    "kernel_before_module_unpack": "passed in fresh/runtime/previous-release APT simulations",
+    "dkms_duplicate_module_selection": "verified with temporary copies; no host loads",
+    "kernel_specific_dkms_policy": "iBridge owns exact-kernel exclusion for generic apple-ib-drv source"
   }
 }

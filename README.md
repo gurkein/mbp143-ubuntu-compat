@@ -5,7 +5,7 @@ An experimental compatibility bundle for the 15-inch 2017 MacBook Pro
 
 It brings together seven kernel backports, automatic T1/Touch Bar S3 handling,
 CS8409 audio recovery, BCM43602 D0 retention, and the source/build information
-behind seven documentation-corrected DEBs with unchanged executable payloads. Imported work retains its authorship and
+behind six role-based DEBs with unchanged executable payloads. Imported work retains its authorship and
 licenses. This is an independent community project.
 
 With the earlier T1 0.5 driver, five short, undocked, AC-powered S3 cycles passed consecutively in one boot
@@ -38,8 +38,8 @@ measured scope; unresolved causes are not attributed to individual drivers.
 
 ## Repository and release contents
 
-[Download the experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1). It provides seven DEBs
-(six runtime packages plus optional build headers), both complete source
+[Download the experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.2). It provides six DEBs
+(five runtime packages plus optional build headers), both complete source
 archives and verified checksums.
 
 
@@ -50,7 +50,7 @@ recipes as text, with their host-specific assumptions clearly separated.
 `boot/efi/` contains the original GPU-selector C source and a build-only recipe;
 the graphics/EFI guide explains its persistent effects and recovery boundaries.
 
-Release assets in `dist/` are intentionally excluded from Git: seven selected
+Release assets in `dist/` are intentionally excluded from Git: six selected
 DEBs, complete patched kernel source, a project-source archive, and checksums.
 Package names/versions/dependencies are in [the manifest](manifests/packages.json).
 These are the selected final artifacts from the current engineering work;
@@ -64,6 +64,7 @@ not load modules, change boot policy or suspend the computer.
 ```sh
 python3 scripts/verify-files.py
 python3 scripts/verify-licenses.py
+python3 scripts/verify-package-layout.py
 python3 scripts/verify-patches.py
 python3 tests/offline/test-t1-s3-automatic-offline.py
 python3 tests/offline/test-audio-pr220-offline.py

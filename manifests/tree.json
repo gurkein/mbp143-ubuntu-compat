@@ -1,5 +1,5 @@
 {
-  "note": "Current tracked source tree; release assets remain frozen at their tagged source commit.",
+  "note": "Current six-package source tree; excludes ignored release assets and local credentials.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -8,8 +8,8 @@
     },
     {
       "file": ".github/workflows/offline.yml",
-      "bytes": 865,
-      "sha256": "57fd262f190128243c7e49bb387f3ff4306c02afb97891f7873b4dd862aafc3f"
+      "bytes": 975,
+      "sha256": "ff4b050a2e8af3bda5aa7e5881ecb33da7b0745521cd44fec102b419eb638488"
     },
     {
       "file": ".gitignore",
@@ -18,8 +18,8 @@
     },
     {
       "file": "CHANGELOG.md",
-      "bytes": 1817,
-      "sha256": "ef88ec83bc14cfbd67fc0ca251f9b76424eab503de4f1adcb5577d8a6c8549fb"
+      "bytes": 2553,
+      "sha256": "102cbd73271bd686236448bbf44bfb5fcaa2525f6c2b2d9ff30fcf4b4ce8bb7e"
     },
     {
       "file": "CREDITS.md",
@@ -173,8 +173,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 4178,
-      "sha256": "b54b38a96c29909a712f27a2afcbe690e7e592040fdc16c17e3631e6c3110f3a"
+      "bytes": 4201,
+      "sha256": "c96a983197d8c4b65d21f39854eda9a9685cdcd1161f4326ae538f7c8e9dda82"
     },
     {
       "file": "SOURCE-NOTICES.txt",
@@ -183,8 +183,13 @@
     },
     {
       "file": "THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
+      "bytes": 4958,
+      "sha256": "9d44f5549bfa1beccc2b055d66c27907df3d503af8b3bbdb578291944a4e0793"
+    },
+    {
+      "file": "archive/manifests/initial-binary-inputs.json",
+      "bytes": 2710,
+      "sha256": "8f8427a8be827e93431b1a7484670f105c83b09be89f15a855b2cb1b1b0db585"
     },
     {
       "file": "boot/efi/Makefile",
@@ -198,8 +203,8 @@
     },
     {
       "file": "docs/building.md",
-      "bytes": 3845,
-      "sha256": "5ded2597d5edcfea51792d538ca9455fc0fa6628cce75327b2aafeb88a770b63"
+      "bytes": 4690,
+      "sha256": "257163e53fefba80db75b720426b590a7c0456dd7f3755311409c95912ecbb74"
     },
     {
       "file": "docs/compatibility.md",
@@ -208,13 +213,13 @@
     },
     {
       "file": "docs/graphics-and-efi.md",
-      "bytes": 5638,
-      "sha256": "d13ad3c7f0139bb129c5c6c95b8c0141e764356ca7b385e519dcf6207ea4be37"
+      "bytes": 5636,
+      "sha256": "c334e02002c611e4b75864eb8db461e6434698e1cf40d3a49335ad61f9774c10"
     },
     {
       "file": "docs/installation.md",
-      "bytes": 3778,
-      "sha256": "02fbf29c26ec270b13e8cf14b3e5ce185c41e27c199319873fc6d85432c15c7b"
+      "bytes": 4666,
+      "sha256": "fd9e8fed9d97082f82b68e19a088d31933894f0f3cd8e9f5632878b9167526ea"
     },
     {
       "file": "docs/known-issues.md",
@@ -223,28 +228,28 @@
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 3374,
-      "sha256": "3cecc4c95b84eb39512774b243ceb864275d7badc21aa9bfea0d3a880eb16e6b"
+      "bytes": 3378,
+      "sha256": "c8d7c879290c082f1a7b9fa540828b7aded229061c2b4a5e1d9fbc448c23a859"
     },
     {
       "file": "docs/release-notes.md",
-      "bytes": 2970,
-      "sha256": "c7a9c6f5b7836b40a7b9dcee65ec330f19d57c1435199eb11678b057cd29047d"
+      "bytes": 3440,
+      "sha256": "434247c84b70e57f982b3cbb29bc27072f6989c0fad06fd59269e7b633e58e3a"
     },
     {
       "file": "docs/rollback.md",
-      "bytes": 1938,
-      "sha256": "475e51f4948405c1358a8e832d3e38799d23f13bd176df51ca49669480358ced"
+      "bytes": 1936,
+      "sha256": "5078e2c09be952f5470ef7dd250d2b5921a8e115e47478c7d8fdab5cb7da9328"
     },
     {
       "file": "docs/source-distribution.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
+      "bytes": 2435,
+      "sha256": "3c7ca6967b418dabd97637311bb86efc07d99aa7d93eac92e3ca8997434e5767"
     },
     {
       "file": "docs/source-provenance.md",
-      "bytes": 3520,
-      "sha256": "07bd4bfa474211021f119cc201354106fd904bc49593c3fa218149f4fa603d5b"
+      "bytes": 3512,
+      "sha256": "42385c81741118e824566895bf08709742abcd05a598aa00af5c3421a745debe"
     },
     {
       "file": "drivers/audio/LICENSE",
@@ -2183,8 +2188,8 @@
     },
     {
       "file": "manifests/inputs.json",
-      "bytes": 236745,
-      "sha256": "caf4847ad2e582829726b9388bf6afdc66e028a43f6ac0bd0c002f822c53ef76"
+      "bytes": 233545,
+      "sha256": "5f6f5fd8b00ff13252939b1cd59fb878ad9a0359ac261ad8722ebf9a87cafede"
     },
     {
       "file": "manifests/kernel-patch-targets.json",
@@ -2193,28 +2198,33 @@
     },
     {
       "file": "manifests/licensing.json",
-      "bytes": 88332,
-      "sha256": "1753d87e0eeab2e48caefe3d1d7eaa97027ce42a2943d4cf2fd59dd46c2206ea"
+      "bytes": 89443,
+      "sha256": "bd68950a2d8557128126fe79231b68bd3ba7c45e9434020eb325d29c0241cb8e"
     },
     {
-      "file": "manifests/original-packages.json",
-      "bytes": 2710,
-      "sha256": "8f8427a8be827e93431b1a7484670f105c83b09be89f15a855b2cb1b1b0db585"
+      "file": "manifests/package-layout-validation.json",
+      "bytes": 1538,
+      "sha256": "6866269258d681e6e5388335b7a7127fc620a3faba9312edc1147476c39bdd9c"
+    },
+    {
+      "file": "manifests/package-layout.json",
+      "bytes": 4603,
+      "sha256": "6eb6187654ec83683d5941311231834e4dd3478de9f6ffcb8891802187b33658"
     },
     {
       "file": "manifests/package-revisions.json",
-      "bytes": 398,
-      "sha256": "947998f9cde45374dbaa87d4c68ebf1889a24d840a03a37f563bc19199b2720a"
+      "bytes": 229,
+      "sha256": "f8a8bdd677c42614b65ef78b71c321cc6d3f108862588da90aed2b49d006441b"
     },
     {
       "file": "manifests/packages.json",
-      "bytes": 2712,
-      "sha256": "15cf1d46176ad73c2373fe49a4f8a1000cb48142bdefcf96aebe193207af589f"
+      "bytes": 2824,
+      "sha256": "68c89810f4b88489edf700ff1198bd5e660315d4289901820e19adc37c1f47d9"
     },
     {
       "file": "manifests/payload-audit.json",
-      "bytes": 4157,
-      "sha256": "bf103c204e0ffc44b4e3f34815dd1579ccf84038d179011b686aca432dd0f65c"
+      "bytes": 6363,
+      "sha256": "29b5facbbd71aa268bed7d591c0d01d44567c271be92999f193b8461e9343cf8"
     },
     {
       "file": "manifests/releases.json",
@@ -2228,18 +2238,18 @@
     },
     {
       "file": "manifests/validation.json",
-      "bytes": 4829,
-      "sha256": "c2b1d573759aca9af3babde3aba4bbb8ba1f8eb92d8733bbb9ea8c622db0960e"
+      "bytes": 5491,
+      "sha256": "a42873e17294bb69a3b3246ebd93e7434bbba02827c8270551e571f6bca8ef0a"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",
       "bytes": 467,
-      "sha256": "41d2903729333225f4cd17c995ed3009667f4d4758a2994a5b33e708d501f118"
+      "sha256": "1579efdf34f18a66dd990b0de4a1689a3fde4e5b822765af6fc5d3f43f105b81"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/md5sums",
-      "bytes": 790313,
-      "sha256": "0054c25138beb705c3eedddf4a5d30e62837cca61d7a3c7c40d6254cc4cbe607"
+      "bytes": 790114,
+      "sha256": "4a68aeb4aab206cc14b2d4d72f39d356e445d858049e783fbc126d560fbca383"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/CREDITS.md",
@@ -2393,8 +2403,8 @@
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
+      "bytes": 2406,
+      "sha256": "6b2b5557f14e42883771a510d4017b366a904a22a383190c6f5775344ffca37c"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -2403,33 +2413,23 @@
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
-    },
-    {
-      "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/changelog.Debian.gz",
-      "bytes": 166,
-      "sha256": "3ea1d68606156e3991caf2b0abbb8102ec71dfd444d6565c5b42fd7c6f47aae1"
+      "bytes": 4958,
+      "sha256": "9d44f5549bfa1beccc2b055d66c27907df3d503af8b3bbdb578291944a4e0793"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/copyright",
-      "bytes": 1189,
-      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
-    },
-    {
-      "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/copyright.upstream",
-      "bytes": 691,
-      "sha256": "eb173b7d0714dfb8d4e6024ba85900caa2515882b6f23abf98a9a7c5bc1c1b5a"
+      "bytes": 436,
+      "sha256": "2bd268438605f8bccaeac67ad360d5c82aadc0d7b0ab8baa7ce3051732d71942"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/control",
       "bytes": 424,
-      "sha256": "b1b6ef4ad743fb6e92fdd848e9b6a026b7f1bcf8b1dfc3beeaee70c6aea3ee9d"
+      "sha256": "8a57812fe1bda9506511256695521ee6c49f657b50d28571ef0d3973cd91a0db"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/md5sums",
-      "bytes": 729016,
-      "sha256": "b4d85338ff81d046c36ade05108058779fd3a7c4cecba56023602dc299793f59"
+      "bytes": 728821,
+      "sha256": "f9290d9588d46f5f386f7324248d421e6e2236461301ad89bea148d2e2a4f266"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/postinst",
@@ -2603,8 +2603,8 @@
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
+      "bytes": 2406,
+      "sha256": "6b2b5557f14e42883771a510d4017b366a904a22a383190c6f5775344ffca37c"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -2613,1058 +2613,808 @@
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
-    },
-    {
-      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/changelog.Debian.gz",
-      "bytes": 166,
-      "sha256": "3ea1d68606156e3991caf2b0abbb8102ec71dfd444d6565c5b42fd7c6f47aae1"
+      "bytes": 4958,
+      "sha256": "9d44f5549bfa1beccc2b055d66c27907df3d503af8b3bbdb578291944a4e0793"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/copyright",
-      "bytes": 1189,
-      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
+      "bytes": 436,
+      "sha256": "2bd268438605f8bccaeac67ad360d5c82aadc0d7b0ab8baa7ce3051732d71942"
     },
     {
-      "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/copyright.upstream",
-      "bytes": 691,
-      "sha256": "eb173b7d0714dfb8d4e6024ba85900caa2515882b6f23abf98a9a7c5bc1c1b5a"
+      "file": "packaging/templates/mbp143-audio/DEBIAN/control",
+      "bytes": 674,
+      "sha256": "26b8707c8150185e9fc667e4393c192ffb520a4b2fa1b782ed2313a863679854"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 575,
-      "sha256": "cc01b40cf60be68ac2d8620d964a6de07161eb2c66a6a78d60b0b3bae9616a1d"
+      "file": "packaging/templates/mbp143-audio/DEBIAN/md5sums",
+      "bytes": 3294,
+      "sha256": "2e6d913e957443db2272f88b72f0ce70ae61b3ce0a08abf3a1f3a26125dbf97a"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "file": "packaging/templates/mbp143-audio/DEBIAN/postinst",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "file": "packaging/templates/mbp143-audio/DEBIAN/postrm",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/lib/depmod.d/zz-mbp143-audio-resume-7.0.14-mbp14342p1.conf",
-      "bytes": 137,
-      "sha256": "2921e87cfc75aa76d01078e5b8955fb23d50b9ebaa647a8b57b5bfb5232c4f17"
+      "file": "packaging/templates/mbp143-audio/data/usr/lib/depmod.d/mbp143-audio-7.0.14-mbp14342p1.conf",
+      "bytes": 107,
+      "sha256": "f9fade439d3f18b047c25c44aa80e0097da571371c32046d33de70663333ce39"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/CREDITS.md",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/CREDITS.md",
       "bytes": 4366,
       "sha256": "0dadabf92e41300d709bab564b763c9df3a47625500ae2624ad356eb497d45d1"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSE.md",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSE.md",
       "bytes": 1571,
       "sha256": "edd8d78fe9de57bb8bc6f482acb6b1037424c9b8596b597a84240db5f03650d8"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/GPL-2.0.txt",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/GPL-2.0.txt",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/ISC.txt",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/ISC.txt",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/MIT-project.txt",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/MIT-project.txt",
       "bytes": 1090,
       "sha256": "a0f8f80b690a2f60faf01b2af5ef5de06aa9aad386279bb3c9f18a30653ac116"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/MIT.txt",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/MIT.txt",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/0BSD",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/0BSD",
       "bytes": 983,
       "sha256": "6b50bcee8c2f90c73558dee62e444dde54f3cea86ccfcea84aa8be60005e67b4"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/CC0-1.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/CC0-1.0",
       "bytes": 7386,
       "sha256": "c8a97e7369419869e2d60eab21a9f13bf293bfc33aed0de3c459644a8edd0c80"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.1",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/GFDL-1.1",
       "bytes": 19177,
       "sha256": "8f13a0664b7e0f30d7a9001f3ecd87d3dea7964559d08337ca1a4b129d9e0e0d"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.2",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/GFDL-1.2",
       "bytes": 21352,
       "sha256": "e43e6da62a83b8bf96819ff1226151da373cb87f165cd538f405978a0a8c6b7a"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GPL-1.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/GPL-1.0",
       "bytes": 12951,
       "sha256": "e72efc63ce52380f374733ec7a733f5c11efa3c1f2b0cb48a9c355868ee5b09c"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/ISC",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/ISC",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Linux-OpenIB",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/Linux-OpenIB",
       "bytes": 1317,
       "sha256": "8ae20d34c2a74c85ae2760dd0034baf18e44bee3289b9b3a4fe46768b4ea2cd6"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/X11",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/X11",
       "bytes": 1625,
       "sha256": "21115f2385035c1ceeda8820b7f050c89a30418457a5e2a5c6091f2545d40e44"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Zlib",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/deprecated/Zlib",
       "bytes": 1165,
       "sha256": "3b42160485d3d596ff8a4956958c4360dc55f1e2414c964aef0ad2d3c2a92abb"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/dual/Apache-2.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/dual/Apache-2.0",
       "bytes": 10045,
       "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/dual/CC-BY-4.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/dual/CC-BY-4.0",
       "bytes": 19355,
       "sha256": "84d5ad08940d29065d8a6f062effa4204c2235c9f2487aa53748ed0a0a6cce86"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/dual/CDDL-1.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/dual/CDDL-1.0",
       "bytes": 19511,
       "sha256": "490abf7869e4638fbb43df99a20e5683224617a6bf9ffd06971cb02b153e53c1"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/dual/MPL-1.1",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/dual/MPL-1.1",
       "bytes": 26321,
       "sha256": "ccbda1d2f0cfef821f39e1880aae9213c7933e07713ee638ad1fb02547c0b97b"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/dual/copyleft-next-0.3.1",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/dual/copyleft-next-0.3.1",
       "bytes": 11429,
       "sha256": "28386705873e5eacf16b5d34dd06e58737a2c5a3622acda380a0f236c0a6d02a"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/GCC-exception-2.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/exceptions/GCC-exception-2.0",
       "bytes": 997,
       "sha256": "0dca50b78073055447d02e8f6ae4fa94c1d0e6d7fbb4c874c9db5eb960c8b3d4"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/Linux-syscall-note",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/exceptions/Linux-syscall-note",
       "bytes": 1258,
       "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-2-Clause",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/preferred/BSD-2-Clause",
       "bytes": 1641,
       "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/preferred/BSD-3-Clause",
       "bytes": 1845,
       "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
       "bytes": 2035,
       "sha256": "3f8a01d020e77c045e364c4681ee78c591041b7a38aa61972f689f4bc4cb5088"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/preferred/GPL-2.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/preferred/GPL-2.0",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.0",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/preferred/LGPL-2.0",
       "bytes": 26144,
       "sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.1",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/preferred/LGPL-2.1",
       "bytes": 27493,
       "sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/kernel/preferred/MIT",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/kernel/preferred/MIT",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/LICENSES/t1-wrapper-MIT.txt",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/LICENSES/t1-wrapper-MIT.txt",
       "bytes": 1064,
       "sha256": "2c6e5bfefee7882143062dd03d67ec8505f89764c574ead329e066de20931ee9"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/README",
-      "bytes": 3556,
-      "sha256": "a92e62d79fb0dd5f20f875a490c6941e9f92594999007ec5de5f0c6c3040a962"
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/SOURCE-DISTRIBUTION.md",
+      "bytes": 2406,
+      "sha256": "6b2b5557f14e42883771a510d4017b366a904a22a383190c6f5775344ffca37c"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
-    },
-    {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/SOURCE-NOTICES.txt",
       "bytes": 80037,
       "sha256": "478be6848dbdea9ba36f605e88a94e340ea1f5dad9e6e921bf34cedc8c870021"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/THIRD_PARTY_NOTICES.md",
+      "bytes": 4958,
+      "sha256": "9d44f5549bfa1beccc2b055d66c27907df3d503af8b3bbdb578291944a4e0793"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/combined-kernel7.patch",
-      "bytes": 5336,
-      "sha256": "8cd8a45da723a7714e7e2adfddc8aab6d77444bf0752baefeb3a66b674cafe4b"
+      "file": "packaging/templates/mbp143-audio/data/usr/share/doc/mbp143-audio/copyright",
+      "bytes": 436,
+      "sha256": "2bd268438605f8bccaeac67ad360d5c82aadc0d7b0ab8baa7ce3051732d71942"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/copyright",
-      "bytes": 1189,
-      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
+      "file": "packaging/templates/mbp143-ibridge/DEBIAN/conffiles",
+      "bytes": 47,
+      "sha256": "8aecd07e6a5d88b8f26d0ef433eecfea2d2eefc694d2adde4f69c2d54c170e6f"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/copyright.upstream",
-      "bytes": 18004,
-      "sha256": "091f12b2fa3623ded73330f65776bad538b50e87c617677b6aa3b6472bee368c"
+      "file": "packaging/templates/mbp143-ibridge/DEBIAN/control",
+      "bytes": 675,
+      "sha256": "d4e141584a823d3c32a2d28b316c29e2a5cb2e983af97453bf8a047c303f4d59"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/error-propagation.patch",
-      "bytes": 1992,
-      "sha256": "62551c6f1a53fbfa04c6eb8fce98926ff082bd672f9bcf3773416eb35f7d11e5"
+      "file": "packaging/templates/mbp143-ibridge/DEBIAN/md5sums",
+      "bytes": 3439,
+      "sha256": "db1ba4091ba5d405fd94b62c8610e80c6d26025d30cf8a95ff288df87055296b"
     },
     {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/provenance.json",
-      "bytes": 627,
-      "sha256": "11972bf8041991d46367439388136357100045a793c48d5a3bd5e904b267d2f0"
-    },
-    {
-      "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/upstream-220-kernel7.patch",
-      "bytes": 4871,
-      "sha256": "cf97c9b960aaef4237d2d8260363b6f580c3d15ce0afae62ed9b066eaf0327c3"
-    },
-    {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 559,
-      "sha256": "8901c871d2f6ae611a9bb6d1d2d9ae23503b74066c7e1c2a43a7644a409545b4"
-    },
-    {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "file": "packaging/templates/mbp143-ibridge/DEBIAN/postinst",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "file": "packaging/templates/mbp143-ibridge/DEBIAN/postrm",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/lib/depmod.d/mbp143-t1-mode-result-7.0.14-mbp14342p1.conf",
-      "bytes": 131,
-      "sha256": "a4502f5311fc543a41c0961610e986328ada71655f04c7cd6640bd52431c4245"
+      "file": "packaging/templates/mbp143-ibridge/data/etc/dkms/apple-ib-drv--7.0.14-mbp14342p1.conf",
+      "bytes": 146,
+      "sha256": "c5771a99f5b908d4f4b6a55ae26f7fbc9d8c3e3229662d1a54fb972d926419a4"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/CREDITS.md",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/lib/depmod.d/mbp143-ibridge-7.0.14-mbp14342p1.conf",
+      "bytes": 102,
+      "sha256": "dedaa5d94a89494902c7dd10e17f8c4d2139384b4bd0b1f43ac31d71b778b0a7"
+    },
+    {
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/CREDITS.md",
       "bytes": 4366,
       "sha256": "0dadabf92e41300d709bab564b763c9df3a47625500ae2624ad356eb497d45d1"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSE.md",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSE.md",
       "bytes": 1571,
       "sha256": "edd8d78fe9de57bb8bc6f482acb6b1037424c9b8596b597a84240db5f03650d8"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/GPL-2.0.txt",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/GPL-2.0.txt",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/ISC.txt",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/ISC.txt",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/MIT-project.txt",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/MIT-project.txt",
       "bytes": 1090,
       "sha256": "a0f8f80b690a2f60faf01b2af5ef5de06aa9aad386279bb3c9f18a30653ac116"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/MIT.txt",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/MIT.txt",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/0BSD",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/0BSD",
       "bytes": 983,
       "sha256": "6b50bcee8c2f90c73558dee62e444dde54f3cea86ccfcea84aa8be60005e67b4"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/CC0-1.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/CC0-1.0",
       "bytes": 7386,
       "sha256": "c8a97e7369419869e2d60eab21a9f13bf293bfc33aed0de3c459644a8edd0c80"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.1",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/GFDL-1.1",
       "bytes": 19177,
       "sha256": "8f13a0664b7e0f30d7a9001f3ecd87d3dea7964559d08337ca1a4b129d9e0e0d"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.2",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/GFDL-1.2",
       "bytes": 21352,
       "sha256": "e43e6da62a83b8bf96819ff1226151da373cb87f165cd538f405978a0a8c6b7a"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GPL-1.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/GPL-1.0",
       "bytes": 12951,
       "sha256": "e72efc63ce52380f374733ec7a733f5c11efa3c1f2b0cb48a9c355868ee5b09c"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/ISC",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/ISC",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Linux-OpenIB",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/Linux-OpenIB",
       "bytes": 1317,
       "sha256": "8ae20d34c2a74c85ae2760dd0034baf18e44bee3289b9b3a4fe46768b4ea2cd6"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/X11",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/X11",
       "bytes": 1625,
       "sha256": "21115f2385035c1ceeda8820b7f050c89a30418457a5e2a5c6091f2545d40e44"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Zlib",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/deprecated/Zlib",
       "bytes": 1165,
       "sha256": "3b42160485d3d596ff8a4956958c4360dc55f1e2414c964aef0ad2d3c2a92abb"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/dual/Apache-2.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/dual/Apache-2.0",
       "bytes": 10045,
       "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/dual/CC-BY-4.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/dual/CC-BY-4.0",
       "bytes": 19355,
       "sha256": "84d5ad08940d29065d8a6f062effa4204c2235c9f2487aa53748ed0a0a6cce86"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/dual/CDDL-1.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/dual/CDDL-1.0",
       "bytes": 19511,
       "sha256": "490abf7869e4638fbb43df99a20e5683224617a6bf9ffd06971cb02b153e53c1"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/dual/MPL-1.1",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/dual/MPL-1.1",
       "bytes": 26321,
       "sha256": "ccbda1d2f0cfef821f39e1880aae9213c7933e07713ee638ad1fb02547c0b97b"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/dual/copyleft-next-0.3.1",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/dual/copyleft-next-0.3.1",
       "bytes": 11429,
       "sha256": "28386705873e5eacf16b5d34dd06e58737a2c5a3622acda380a0f236c0a6d02a"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/GCC-exception-2.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/exceptions/GCC-exception-2.0",
       "bytes": 997,
       "sha256": "0dca50b78073055447d02e8f6ae4fa94c1d0e6d7fbb4c874c9db5eb960c8b3d4"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/Linux-syscall-note",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/exceptions/Linux-syscall-note",
       "bytes": 1258,
       "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-2-Clause",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/preferred/BSD-2-Clause",
       "bytes": 1641,
       "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/preferred/BSD-3-Clause",
       "bytes": 1845,
       "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
       "bytes": 2035,
       "sha256": "3f8a01d020e77c045e364c4681ee78c591041b7a38aa61972f689f4bc4cb5088"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/preferred/GPL-2.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/preferred/GPL-2.0",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.0",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/preferred/LGPL-2.0",
       "bytes": 26144,
       "sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.1",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/preferred/LGPL-2.1",
       "bytes": 27493,
       "sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/kernel/preferred/MIT",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/kernel/preferred/MIT",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/LICENSES/t1-wrapper-MIT.txt",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/LICENSES/t1-wrapper-MIT.txt",
       "bytes": 1064,
       "sha256": "2c6e5bfefee7882143062dd03d67ec8505f89764c574ead329e066de20931ee9"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/README",
-      "bytes": 313,
-      "sha256": "33cc968701d2b93d5cedbcecdec321e163b8d8d7fdd9d2e9f9cc64f475a0017c"
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/SOURCE-DISTRIBUTION.md",
+      "bytes": 2406,
+      "sha256": "6b2b5557f14e42883771a510d4017b366a904a22a383190c6f5775344ffca37c"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
-    },
-    {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/SOURCE-NOTICES.txt",
       "bytes": 80037,
       "sha256": "478be6848dbdea9ba36f605e88a94e340ea1f5dad9e6e921bf34cedc8c870021"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/THIRD_PARTY_NOTICES.md",
+      "bytes": 4958,
+      "sha256": "9d44f5549bfa1beccc2b055d66c27907df3d503af8b3bbdb578291944a4e0793"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/copyright",
-      "bytes": 1189,
-      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
+      "file": "packaging/templates/mbp143-ibridge/data/usr/share/doc/mbp143-ibridge/copyright",
+      "bytes": 436,
+      "sha256": "2bd268438605f8bccaeac67ad360d5c82aadc0d7b0ab8baa7ce3051732d71942"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/copyright.upstream",
-      "bytes": 18046,
-      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"
+      "file": "packaging/templates/mbp143-t1/DEBIAN/control",
+      "bytes": 793,
+      "sha256": "69fde930018a60e6aa480fa5fb53895b3e5b8311c4cba4ea7f13f43ef9185421"
     },
     {
-      "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/mode-result.patch",
-      "bytes": 375,
-      "sha256": "4822452c680ffa5dc122f173ee027dfc1ba37dd9effd9b74421fb6c911599ae2"
+      "file": "packaging/templates/mbp143-t1/DEBIAN/md5sums",
+      "bytes": 3180,
+      "sha256": "843cc879792f3db76ad70fd783981773a849ebfc5bad9f3a7206842825faf2d3"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 624,
-      "sha256": "b70be113b49e363483415a6621dd37cfed5cdd6bdeb2da576d60fc0b599ebf5f"
-    },
-    {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "file": "packaging/templates/mbp143-t1/DEBIAN/postinst",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "file": "packaging/templates/mbp143-t1/DEBIAN/postrm",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/lib/depmod.d/zz-mbp143-t1-phase-trace.conf",
-      "bytes": 204,
-      "sha256": "015fd5385542817a85ef2ad9e00f5f6616a352a68b34697a6fbbd101f34c2b62"
+      "file": "packaging/templates/mbp143-t1/data/usr/lib/depmod.d/mbp143-t1-7.0.14-mbp14342p1.conf",
+      "bytes": 98,
+      "sha256": "eefda6b66217c88f0b9cb53c677c3c61ffe0c46411b7cace6285089a098796ba"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/CREDITS.md",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/CREDITS.md",
       "bytes": 4366,
       "sha256": "0dadabf92e41300d709bab564b763c9df3a47625500ae2624ad356eb497d45d1"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSE.md",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSE.md",
       "bytes": 1571,
       "sha256": "edd8d78fe9de57bb8bc6f482acb6b1037424c9b8596b597a84240db5f03650d8"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/GPL-2.0.txt",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/GPL-2.0.txt",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/ISC.txt",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/ISC.txt",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/MIT-project.txt",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/MIT-project.txt",
       "bytes": 1090,
       "sha256": "a0f8f80b690a2f60faf01b2af5ef5de06aa9aad386279bb3c9f18a30653ac116"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/MIT.txt",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/MIT.txt",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/0BSD",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/0BSD",
       "bytes": 983,
       "sha256": "6b50bcee8c2f90c73558dee62e444dde54f3cea86ccfcea84aa8be60005e67b4"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/CC0-1.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/CC0-1.0",
       "bytes": 7386,
       "sha256": "c8a97e7369419869e2d60eab21a9f13bf293bfc33aed0de3c459644a8edd0c80"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.1",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/GFDL-1.1",
       "bytes": 19177,
       "sha256": "8f13a0664b7e0f30d7a9001f3ecd87d3dea7964559d08337ca1a4b129d9e0e0d"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.2",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/GFDL-1.2",
       "bytes": 21352,
       "sha256": "e43e6da62a83b8bf96819ff1226151da373cb87f165cd538f405978a0a8c6b7a"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GPL-1.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/GPL-1.0",
       "bytes": 12951,
       "sha256": "e72efc63ce52380f374733ec7a733f5c11efa3c1f2b0cb48a9c355868ee5b09c"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/ISC",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/ISC",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Linux-OpenIB",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/Linux-OpenIB",
       "bytes": 1317,
       "sha256": "8ae20d34c2a74c85ae2760dd0034baf18e44bee3289b9b3a4fe46768b4ea2cd6"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/X11",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/X11",
       "bytes": 1625,
       "sha256": "21115f2385035c1ceeda8820b7f050c89a30418457a5e2a5c6091f2545d40e44"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Zlib",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/deprecated/Zlib",
       "bytes": 1165,
       "sha256": "3b42160485d3d596ff8a4956958c4360dc55f1e2414c964aef0ad2d3c2a92abb"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/dual/Apache-2.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/dual/Apache-2.0",
       "bytes": 10045,
       "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/dual/CC-BY-4.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/dual/CC-BY-4.0",
       "bytes": 19355,
       "sha256": "84d5ad08940d29065d8a6f062effa4204c2235c9f2487aa53748ed0a0a6cce86"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/dual/CDDL-1.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/dual/CDDL-1.0",
       "bytes": 19511,
       "sha256": "490abf7869e4638fbb43df99a20e5683224617a6bf9ffd06971cb02b153e53c1"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/dual/MPL-1.1",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/dual/MPL-1.1",
       "bytes": 26321,
       "sha256": "ccbda1d2f0cfef821f39e1880aae9213c7933e07713ee638ad1fb02547c0b97b"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/dual/copyleft-next-0.3.1",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/dual/copyleft-next-0.3.1",
       "bytes": 11429,
       "sha256": "28386705873e5eacf16b5d34dd06e58737a2c5a3622acda380a0f236c0a6d02a"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/GCC-exception-2.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/exceptions/GCC-exception-2.0",
       "bytes": 997,
       "sha256": "0dca50b78073055447d02e8f6ae4fa94c1d0e6d7fbb4c874c9db5eb960c8b3d4"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/Linux-syscall-note",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/exceptions/Linux-syscall-note",
       "bytes": 1258,
       "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-2-Clause",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/preferred/BSD-2-Clause",
       "bytes": 1641,
       "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/preferred/BSD-3-Clause",
       "bytes": 1845,
       "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
       "bytes": 2035,
       "sha256": "3f8a01d020e77c045e364c4681ee78c591041b7a38aa61972f689f4bc4cb5088"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/preferred/GPL-2.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/preferred/GPL-2.0",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.0",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/preferred/LGPL-2.0",
       "bytes": 26144,
       "sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.1",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/preferred/LGPL-2.1",
       "bytes": 27493,
       "sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/kernel/preferred/MIT",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/kernel/preferred/MIT",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/LICENSES/t1-wrapper-MIT.txt",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/LICENSES/t1-wrapper-MIT.txt",
       "bytes": 1064,
       "sha256": "2c6e5bfefee7882143062dd03d67ec8505f89764c574ead329e066de20931ee9"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/README",
-      "bytes": 1819,
-      "sha256": "88e4216b8a16d629eb975d2cb47dccfc5694e85c455d296dbea6d5f7f2152529"
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/SOURCE-DISTRIBUTION.md",
+      "bytes": 2406,
+      "sha256": "6b2b5557f14e42883771a510d4017b366a904a22a383190c6f5775344ffca37c"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
-    },
-    {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/SOURCE-NOTICES.txt",
       "bytes": 80037,
       "sha256": "478be6848dbdea9ba36f605e88a94e340ea1f5dad9e6e921bf34cedc8c870021"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/THIRD_PARTY_NOTICES.md",
+      "bytes": 4958,
+      "sha256": "9d44f5549bfa1beccc2b055d66c27907df3d503af8b3bbdb578291944a4e0793"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/automatic-s3.patch",
-      "bytes": 10292,
-      "sha256": "9fa9bab7f2cdda26009ed84da02d85b39a5e8696723a52adcc0c22b31e1160d1"
+      "file": "packaging/templates/mbp143-t1/data/usr/share/doc/mbp143-t1/copyright",
+      "bytes": 436,
+      "sha256": "2bd268438605f8bccaeac67ad360d5c82aadc0d7b0ab8baa7ce3051732d71942"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/copyright",
-      "bytes": 1189,
-      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
+      "file": "packaging/templates/mbp143-wifi/DEBIAN/control",
+      "bytes": 577,
+      "sha256": "5ff050febe19d5a43cfca7d73e4e90c5bafba843cd9c4ee186c0dd7377fe74df"
     },
     {
-      "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/copyright.upstream",
-      "bytes": 18046,
-      "sha256": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"
+      "file": "packaging/templates/mbp143-wifi/DEBIAN/md5sums",
+      "bytes": 3334,
+      "sha256": "5ea58f21d4722e293ce1fdec3ea67e3a10a3143f0cc38899c4c96f364f16b8fd"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 566,
-      "sha256": "ba5b0feac3dda53772b5ccacffdbc5204c090f72bbae5682dff419ef8e64780c"
-    },
-    {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/postinst",
+      "file": "packaging/templates/mbp143-wifi/DEBIAN/postinst",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/postrm",
+      "file": "packaging/templates/mbp143-wifi/DEBIAN/postrm",
       "bytes": 279,
       "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/CREDITS.md",
+      "file": "packaging/templates/mbp143-wifi/data/usr/lib/depmod.d/mbp143-wifi-7.0.14-mbp14342p1.conf",
+      "bytes": 94,
+      "sha256": "862da6bdaaec95d92c2f14cf076d1b18c7f50b6e8630109a8dfb36a629473b41"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi/data/usr/lib/dracut/modules.d/91mbp143wifi/module-setup.sh",
+      "bytes": 336,
+      "sha256": "bd66a2daa47c6bfddbe498ed971bf706310af840e96075c51c6d2503079171b8"
+    },
+    {
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/CREDITS.md",
       "bytes": 4366,
       "sha256": "0dadabf92e41300d709bab564b763c9df3a47625500ae2624ad356eb497d45d1"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSE.md",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSE.md",
       "bytes": 1571,
       "sha256": "edd8d78fe9de57bb8bc6f482acb6b1037424c9b8596b597a84240db5f03650d8"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/GPL-2.0.txt",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/GPL-2.0.txt",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/ISC.txt",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/ISC.txt",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/MIT-project.txt",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/MIT-project.txt",
       "bytes": 1090,
       "sha256": "a0f8f80b690a2f60faf01b2af5ef5de06aa9aad386279bb3c9f18a30653ac116"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/MIT.txt",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/MIT.txt",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/0BSD",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/0BSD",
       "bytes": 983,
       "sha256": "6b50bcee8c2f90c73558dee62e444dde54f3cea86ccfcea84aa8be60005e67b4"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/CC0-1.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/CC0-1.0",
       "bytes": 7386,
       "sha256": "c8a97e7369419869e2d60eab21a9f13bf293bfc33aed0de3c459644a8edd0c80"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.1",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/GFDL-1.1",
       "bytes": 19177,
       "sha256": "8f13a0664b7e0f30d7a9001f3ecd87d3dea7964559d08337ca1a4b129d9e0e0d"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.2",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/GFDL-1.2",
       "bytes": 21352,
       "sha256": "e43e6da62a83b8bf96819ff1226151da373cb87f165cd538f405978a0a8c6b7a"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GPL-1.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/GPL-1.0",
       "bytes": 12951,
       "sha256": "e72efc63ce52380f374733ec7a733f5c11efa3c1f2b0cb48a9c355868ee5b09c"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/ISC",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/ISC",
       "bytes": 1046,
       "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Linux-OpenIB",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/Linux-OpenIB",
       "bytes": 1317,
       "sha256": "8ae20d34c2a74c85ae2760dd0034baf18e44bee3289b9b3a4fe46768b4ea2cd6"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/X11",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/X11",
       "bytes": 1625,
       "sha256": "21115f2385035c1ceeda8820b7f050c89a30418457a5e2a5c6091f2545d40e44"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Zlib",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/deprecated/Zlib",
       "bytes": 1165,
       "sha256": "3b42160485d3d596ff8a4956958c4360dc55f1e2414c964aef0ad2d3c2a92abb"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/dual/Apache-2.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/dual/Apache-2.0",
       "bytes": 10045,
       "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/dual/CC-BY-4.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/dual/CC-BY-4.0",
       "bytes": 19355,
       "sha256": "84d5ad08940d29065d8a6f062effa4204c2235c9f2487aa53748ed0a0a6cce86"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/dual/CDDL-1.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/dual/CDDL-1.0",
       "bytes": 19511,
       "sha256": "490abf7869e4638fbb43df99a20e5683224617a6bf9ffd06971cb02b153e53c1"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/dual/MPL-1.1",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/dual/MPL-1.1",
       "bytes": 26321,
       "sha256": "ccbda1d2f0cfef821f39e1880aae9213c7933e07713ee638ad1fb02547c0b97b"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/dual/copyleft-next-0.3.1",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/dual/copyleft-next-0.3.1",
       "bytes": 11429,
       "sha256": "28386705873e5eacf16b5d34dd06e58737a2c5a3622acda380a0f236c0a6d02a"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/GCC-exception-2.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/exceptions/GCC-exception-2.0",
       "bytes": 997,
       "sha256": "0dca50b78073055447d02e8f6ae4fa94c1d0e6d7fbb4c874c9db5eb960c8b3d4"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/Linux-syscall-note",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/exceptions/Linux-syscall-note",
       "bytes": 1258,
       "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-2-Clause",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/preferred/BSD-2-Clause",
       "bytes": 1641,
       "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/preferred/BSD-3-Clause",
       "bytes": 1845,
       "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
       "bytes": 2035,
       "sha256": "3f8a01d020e77c045e364c4681ee78c591041b7a38aa61972f689f4bc4cb5088"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/preferred/GPL-2.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/preferred/GPL-2.0",
       "bytes": 18600,
       "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.0",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/preferred/LGPL-2.0",
       "bytes": 26144,
       "sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.1",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/preferred/LGPL-2.1",
       "bytes": 27493,
       "sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/kernel/preferred/MIT",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/kernel/preferred/MIT",
       "bytes": 1372,
       "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/LICENSES/t1-wrapper-MIT.txt",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/LICENSES/t1-wrapper-MIT.txt",
       "bytes": 1064,
       "sha256": "2c6e5bfefee7882143062dd03d67ec8505f89764c574ead329e066de20931ee9"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/README",
-      "bytes": 199,
-      "sha256": "3ab3cc40035af3bbefb918481e9be777efc6d4dbe71906a28cf611378c1e6608"
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/SOURCE-DISTRIBUTION.md",
+      "bytes": 2406,
+      "sha256": "6b2b5557f14e42883771a510d4017b366a904a22a383190c6f5775344ffca37c"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
-    },
-    {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/SOURCE-NOTICES.txt",
       "bytes": 80037,
       "sha256": "478be6848dbdea9ba36f605e88a94e340ea1f5dad9e6e921bf34cedc8c870021"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/THIRD_PARTY_NOTICES.md",
+      "bytes": 4958,
+      "sha256": "9d44f5549bfa1beccc2b055d66c27907df3d503af8b3bbdb578291944a4e0793"
     },
     {
-      "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/copyright",
-      "bytes": 1189,
-      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 558,
-      "sha256": "0b25366170506487f673c3db6da66d60319fc526be2cb0aaacd535b3d4b4d9d1"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/postinst",
-      "bytes": 279,
-      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/postrm",
-      "bytes": 279,
-      "sha256": "5506891101b619a8bfc11e5e5107087a0d0908dd78ed36aeb0acc7e40b0c7ccb"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/lib/depmod.d/zz-mbp143-wifi-d0-7.0.14-mbp14342p1.conf",
-      "bytes": 120,
-      "sha256": "f7abe26d69c06e3dd0971dcf4c46a1701236b300d6378683710431e3b6b59e82"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/lib/dracut/modules.d/91mbp143wifid0/module-setup.sh",
-      "bytes": 437,
-      "sha256": "b345504138bc76c289b81f745b4dcf2b20cad585911bd52688a98b056c7a8524"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/0682.patch",
-      "bytes": 825,
-      "sha256": "fe67c659096e64f30ce92588133b06a4e38bbf204816a353619b2cccb290348c"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/CREDITS.md",
-      "bytes": 4366,
-      "sha256": "0dadabf92e41300d709bab564b763c9df3a47625500ae2624ad356eb497d45d1"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/INITRAMFS-FIX",
-      "bytes": 600,
-      "sha256": "4bbe5136bd9782e7a1418a1c6a89e60c1536b4da85806255fe4e3b23580619bf"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSE.md",
-      "bytes": 1571,
-      "sha256": "edd8d78fe9de57bb8bc6f482acb6b1037424c9b8596b597a84240db5f03650d8"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/GPL-2.0.txt",
-      "bytes": 18600,
-      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/ISC.txt",
-      "bytes": 1046,
-      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/MIT-project.txt",
-      "bytes": 1090,
-      "sha256": "a0f8f80b690a2f60faf01b2af5ef5de06aa9aad386279bb3c9f18a30653ac116"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/MIT.txt",
-      "bytes": 1372,
-      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/0BSD",
-      "bytes": 983,
-      "sha256": "6b50bcee8c2f90c73558dee62e444dde54f3cea86ccfcea84aa8be60005e67b4"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/CC0-1.0",
-      "bytes": 7386,
-      "sha256": "c8a97e7369419869e2d60eab21a9f13bf293bfc33aed0de3c459644a8edd0c80"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.1",
-      "bytes": 19177,
-      "sha256": "8f13a0664b7e0f30d7a9001f3ecd87d3dea7964559d08337ca1a4b129d9e0e0d"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GFDL-1.2",
-      "bytes": 21352,
-      "sha256": "e43e6da62a83b8bf96819ff1226151da373cb87f165cd538f405978a0a8c6b7a"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/GPL-1.0",
-      "bytes": 12951,
-      "sha256": "e72efc63ce52380f374733ec7a733f5c11efa3c1f2b0cb48a9c355868ee5b09c"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/ISC",
-      "bytes": 1046,
-      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Linux-OpenIB",
-      "bytes": 1317,
-      "sha256": "8ae20d34c2a74c85ae2760dd0034baf18e44bee3289b9b3a4fe46768b4ea2cd6"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/X11",
-      "bytes": 1625,
-      "sha256": "21115f2385035c1ceeda8820b7f050c89a30418457a5e2a5c6091f2545d40e44"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/deprecated/Zlib",
-      "bytes": 1165,
-      "sha256": "3b42160485d3d596ff8a4956958c4360dc55f1e2414c964aef0ad2d3c2a92abb"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/dual/Apache-2.0",
-      "bytes": 10045,
-      "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/dual/CC-BY-4.0",
-      "bytes": 19355,
-      "sha256": "84d5ad08940d29065d8a6f062effa4204c2235c9f2487aa53748ed0a0a6cce86"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/dual/CDDL-1.0",
-      "bytes": 19511,
-      "sha256": "490abf7869e4638fbb43df99a20e5683224617a6bf9ffd06971cb02b153e53c1"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/dual/MPL-1.1",
-      "bytes": 26321,
-      "sha256": "ccbda1d2f0cfef821f39e1880aae9213c7933e07713ee638ad1fb02547c0b97b"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/dual/copyleft-next-0.3.1",
-      "bytes": 11429,
-      "sha256": "28386705873e5eacf16b5d34dd06e58737a2c5a3622acda380a0f236c0a6d02a"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/GCC-exception-2.0",
-      "bytes": 997,
-      "sha256": "0dca50b78073055447d02e8f6ae4fa94c1d0e6d7fbb4c874c9db5eb960c8b3d4"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/exceptions/Linux-syscall-note",
-      "bytes": 1258,
-      "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-2-Clause",
-      "bytes": 1641,
-      "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause",
-      "bytes": 1845,
-      "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/preferred/BSD-3-Clause-Clear",
-      "bytes": 2035,
-      "sha256": "3f8a01d020e77c045e364c4681ee78c591041b7a38aa61972f689f4bc4cb5088"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/preferred/GPL-2.0",
-      "bytes": 18600,
-      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.0",
-      "bytes": 26144,
-      "sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/preferred/LGPL-2.1",
-      "bytes": 27493,
-      "sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/kernel/preferred/MIT",
-      "bytes": 1372,
-      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/LICENSES/t1-wrapper-MIT.txt",
-      "bytes": 1064,
-      "sha256": "2c6e5bfefee7882143062dd03d67ec8505f89764c574ead329e066de20931ee9"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/README",
-      "bytes": 2038,
-      "sha256": "f0b4294d8662e5e3d940f6cffdde362685576c62d6852d0f1398d4b492009dcc"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2161,
-      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
-      "bytes": 80037,
-      "sha256": "478be6848dbdea9ba36f605e88a94e340ea1f5dad9e6e921bf34cedc8c870021"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4525,
-      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/copyright",
-      "bytes": 1189,
-      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
-    },
-    {
-      "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/copyright.upstream",
-      "bytes": 1046,
-      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388"
+      "file": "packaging/templates/mbp143-wifi/data/usr/share/doc/mbp143-wifi/copyright",
+      "bytes": 436,
+      "sha256": "2bd268438605f8bccaeac67ad360d5c82aadc0d7b0ab8baa7ce3051732d71942"
     },
     {
       "file": "reference/maintenance/experiments/kernel-42/analysis/install-t1-s3-repeat.py.txt",
@@ -3769,7 +3519,7 @@
     {
       "file": "scripts/build-kernel.py",
       "bytes": 2231,
-      "sha256": "888e7c06ecb1ff071364eccc6d9456cdbbe269db7c1d15c74f0a3482f0593e59"
+      "sha256": "10b586c5e1f9f5b2115a0a7ce9a7383f90855521c511616f5b0088cbe30ea029"
     },
     {
       "file": "scripts/license_notices.py",
@@ -3782,9 +3532,9 @@
       "sha256": "95343af4c110d67996bf93e3dfcabd93784564649342e2484e5a0621102bd1ea"
     },
     {
-      "file": "scripts/repack-license.py",
-      "bytes": 7557,
-      "sha256": "ff8cb916d97d651e15f8c9a652077ba073187cc635d3008a1a0f9fecdf1ee915"
+      "file": "scripts/package-release.py",
+      "bytes": 12413,
+      "sha256": "66fc63bb0e42fe09cd45af99539cc86cb273d1be2fd4663322bd3227da3a7966"
     },
     {
       "file": "scripts/verify-files.py",
@@ -3793,8 +3543,13 @@
     },
     {
       "file": "scripts/verify-licenses.py",
-      "bytes": 3230,
-      "sha256": "cd613a55a5155186675fca8b2e27348e3febb1c2fcdb6e92ca5e0e50c9913c1a"
+      "bytes": 3224,
+      "sha256": "c9eccc6219e5ecdbb3bed13ba68a7d5e7ec2095e8ca2b3dc389d151127245086"
+    },
+    {
+      "file": "scripts/verify-package-layout.py",
+      "bytes": 4300,
+      "sha256": "1fea067fd64495da87bc1d8ca57f3a6a7d594e71b6187ed6b4b231039badaabd"
     },
     {
       "file": "scripts/verify-patches.py",

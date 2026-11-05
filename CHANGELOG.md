@@ -30,3 +30,16 @@
 
 Package versions use standard numeric Debian packaging revisions; the reason
 for the revision is recorded here rather than embedded in version strings.
+
+## Six-package distribution layout
+
+Replace the layered trial/mode-result/phase-trace/audio-resume/Wi-Fi-D0 packages
+with `mbp143-ibridge`, `mbp143-t1`, `mbp143-audio` and `mbp143-wifi`. Together with
+kernel image and optional headers, this gives five runtime packages and six
+DEBs in total. Signed executable contents are preserved; module paths,
+selection rules and exact dependencies are updated. The original experimental
+release remains available with its original sources and checksums.
+
+Require kernel-image configuration before module unpacking and exclude the older
+generic T1 DKMS source only for this supplied kernel, protecting package-owned
+module files when headers are configured. Official-kernel DKMS behavior remains.

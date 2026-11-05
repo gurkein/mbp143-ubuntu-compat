@@ -17,7 +17,7 @@ before changing the display/Boot Camp configuration.
 
 T1 overrides form a dependency chain. Do not remove a required baseline while
 leaving a dependent package installed. The maintenance environment's known
-signed 0.5 rollback is separate from the selected seven-DEB release set; other
+signed 0.5 rollback is separate from the selected six-DEB release set; other
 users must keep their own original package/module/policy backup. A backup path
 from the author's machine is not a usable recovery resource for another host.
 

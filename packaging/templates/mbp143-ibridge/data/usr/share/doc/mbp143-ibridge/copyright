@@ -1,0 +1,6 @@
+Source: https://github.com/gurkein/mbp143-ubuntu-compat
+Copyright: original per-file holders in SOURCE-NOTICES.txt and corresponding sources.
+License: imported kernel/driver per-file terms; independent project tools MIT;
+ new documentation CC BY 4.0. Complete license texts accompany this notice.
+Changes: six-package layout prepared 2026-11-05; signed executable bytes preserved.
+See THIRD_PARTY_NOTICES.md and SOURCE-DISTRIBUTION.md.

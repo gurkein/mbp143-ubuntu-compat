@@ -34,7 +34,7 @@ def main():
         assert 'SPDX-License-Identifier: GPL-2.0-only' in '\n'.join((ROOT / name).read_text().splitlines()[:3]), name
     packages = json.loads((ROOT / 'manifests/packages.json').read_text())
     versions = {row['Package']: row['Version'] for row in packages}
-    assert len(packages) == 7
+    assert len(packages) == 6
     revisions = json.loads((ROOT / 'manifests/package-revisions.json').read_text())
     for row in packages:
         assert row['Version'] == revisions[row['Package']]
@@ -58,7 +58,7 @@ def main():
                 assert archive.extractfile(prefix + 'SOURCE-NOTICES.txt').read() == (ROOT / 'SOURCE-NOTICES.txt').read_bytes()
         archive = ROOT / 'dist/kernel-source-7.0.14-mbp14342p1.tar.gz'
         assert digest(archive) == report['kernel_source_archive']['sha256']
-    print(f"Verified {len(report['source_annotations'])} dated source notices, GPL scope and seven package revisions"
+    print(f"Verified {len(report['source_annotations'])} dated source notices, GPL scope and six package roles"
           + (' with release assets.' if args.with_assets else '.'))
 
 if __name__ == '__main__':

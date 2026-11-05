@@ -1537,102 +1537,130 @@
   ],
   "packages": [
     {
-      "file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "sha256": "08769c39c227feab9405a0c9933c3e53199b65a361ceb4a7aed8a31048a58651",
-      "bytes": 12856836,
-      "Package": "linux-headers-7.0.14-mbp14342p1",
-      "Version": "7.0.0-42.42+mbp143.2",
-      "Architecture": "amd64",
-      "Depends": "",
-      "original_file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "original_sha256": "a1ffea1597f0909c83a9c0a54e08ad2a5a5befa862810375b65597cb584eb4e1",
-      "non_documentation_payload_unchanged": true,
-      "hooks_unchanged": true,
-      "verified_payload_entries": 7876
-    },
-    {
-      "file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "sha256": "aeea4819bb45d4ffa1b77a81e0325d9daf18bf208f6816df1e73d149605a7fcd",
-      "bytes": 140631684,
       "Package": "linux-image-7.0.14-mbp14342p1",
-      "Version": "7.0.0-42.42+mbp143.2",
+      "Version": "7.0.0-42.42+mbp143.3",
       "Architecture": "amd64",
       "Depends": "",
-      "original_file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "original_sha256": "bad5a0ba5b31c99f98285e812d292cebaddcb702e5e04b540053ce57e1194076",
-      "non_documentation_payload_unchanged": true,
-      "hooks_unchanged": true,
-      "verified_payload_entries": 8202
+      "Conflicts": "",
+      "file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+      "bytes": 140631180,
+      "sha256": "114fba7bdc108ae03abd3c8c704d578f3ec8f21975d1a7132b8460bbe654e098",
+      "input_file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+      "input_sha256": "aeea4819bb45d4ffa1b77a81e0325d9daf18bf208f6816df1e73d149605a7fcd",
+      "modules": [],
+      "executable_payload_preserved": true,
+      "local_T1_override": false
     },
     {
-      "file": "mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "sha256": "b3de7d89c56ce7e8fcd0f7d0a94d37d10360b3fda614af2360f518baef341ed0",
-      "bytes": 140798,
-      "Package": "mbp143-trial-drivers-7.0.14-mbp14342p1",
-      "Version": "7.0.0-42.42+mbp143.2",
+      "Package": "linux-headers-7.0.14-mbp14342p1",
+      "Version": "7.0.0-42.42+mbp143.3",
       "Architecture": "amd64",
-      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool",
-      "original_file": "mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1_amd64.deb",
-      "original_sha256": "832b6b041fdc9b269b0dea908edf72091b978eff85f7e7376831fea7e5d58788",
-      "non_documentation_payload_unchanged": true,
-      "hooks_unchanged": true,
-      "verified_payload_entries": 11
+      "Depends": "",
+      "Conflicts": "",
+      "file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+      "bytes": 12856680,
+      "sha256": "780160fade6ccb63c4dab3a07056f185ccebe82ac0410038e7254b91baaadb5f",
+      "input_file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+      "input_sha256": "08769c39c227feab9405a0c9933c3e53199b65a361ceb4a7aed8a31048a58651",
+      "modules": [],
+      "executable_payload_preserved": true,
+      "local_T1_override": false
     },
     {
-      "file": "mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-2_amd64.deb",
-      "sha256": "ca7a1d28de8d75fbb2559c56f0825d6fd950cab5590ff785227ad56fb459870b",
-      "bytes": 80800,
-      "Package": "mbp143-t1-mode-result-7.0.14-mbp14342p1",
-      "Version": "0.1-2",
+      "Package": "mbp143-ibridge",
+      "Version": "0.6-1",
       "Architecture": "amd64",
-      "Depends": "mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool",
-      "original_file": "mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-1_amd64.deb",
-      "original_sha256": "be5e270f3a4e40450e8203144108b9892991281027f9440ddb2da12790df37ad",
-      "non_documentation_payload_unchanged": true,
-      "hooks_unchanged": true,
-      "verified_payload_entries": 12
+      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)",
+      "Conflicts": "mbp143-trial-drivers-7.0.14-mbp14342p1, mbp143-t1-phase-trace-7.0.14-mbp14342p1",
+      "file": "mbp143-ibridge_0.6-1_amd64.deb",
+      "bytes": 79564,
+      "sha256": "8f639724c934a8cd99b6f7f6f90cec095866cb7441ec61709cd010753d2fc56a",
+      "input_file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
+      "input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
+      "modules": [
+        {
+          "module": "apple-ibridge",
+          "path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-ibridge/apple-ibridge.ko",
+          "sha256": "32bcbc5319ff7e9902c0366f430610e4f1c77b7524e3d60c3e1f442928c2dbb7",
+          "srcversion": "527ECFC2E2475671110EBB8",
+          "sig_key": "70:9F:57:6E:44:21:F5:8B:86:D6:82:E7:6E:DD:EE:D5:7B:86:7B:EB"
+        }
+      ],
+      "executable_payload_preserved": true,
+      "local_T1_override": false
     },
     {
-      "file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
-      "sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
-      "bytes": 96614,
-      "Package": "mbp143-t1-phase-trace-7.0.14-mbp14342p1",
-      "Version": "0.6-2",
+      "Package": "mbp143-t1",
+      "Version": "0.6-1",
       "Architecture": "amd64",
-      "Depends": "mbp143-t1-mode-result-7.0.14-mbp14342p1 (= 0.1-2), mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool",
-      "original_file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-1_amd64.deb",
-      "original_sha256": "a5fb4bf9024668e318f680dc3db71c3ac5d5d867b403fdb98c452f34acdf70e3",
-      "non_documentation_payload_unchanged": true,
-      "hooks_unchanged": true,
-      "verified_payload_entries": 13
+      "Depends": "mbp143-ibridge (= 0.6-1), linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)",
+      "Conflicts": "mbp143-trial-drivers-7.0.14-mbp14342p1, mbp143-t1-mode-result-7.0.14-mbp14342p1, mbp143-t1-phase-trace-7.0.14-mbp14342p1",
+      "file": "mbp143-t1_0.6-1_amd64.deb",
+      "bytes": 83134,
+      "sha256": "2c9a4cd2ca51af7d99c3c13f407fd1e9f929dc12a722e9afac44a5bff042f1d5",
+      "input_file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
+      "input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
+      "modules": [
+        {
+          "module": "apple-touchbar",
+          "path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1/apple-touchbar.ko",
+          "sha256": "cf2fe91fc4bc917ed91c85521e0fb02429eb5b253027e2289333e1846772e00f",
+          "srcversion": "0AD48240DE87D7790F73E69",
+          "sig_key": "70:9F:57:6E:44:21:F5:8B:86:D6:82:E7:6E:DD:EE:D5:7B:86:7B:EB"
+        }
+      ],
+      "executable_payload_preserved": true,
+      "local_T1_override": false
     },
     {
-      "file": "mbp143-audio-resume-7.0.14-mbp14342p1_0.1-2_amd64.deb",
-      "sha256": "884eba96440afcf4b51b1c74c4bca73db8b3607b05578b70a67114f1ce26bbc3",
-      "bytes": 124850,
-      "Package": "mbp143-audio-resume-7.0.14-mbp14342p1",
-      "Version": "0.1-2",
+      "Package": "mbp143-audio",
+      "Version": "0.1-1",
       "Architecture": "amd64",
-      "Depends": "mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool",
-      "original_file": "mbp143-audio-resume-7.0.14-mbp14342p1_0.1-1_amd64.deb",
-      "original_sha256": "3c606444c1b2871c97fb02f3757cd3b9eaad4353c7d048e1d94dd8cabdd83ca5",
-      "non_documentation_payload_unchanged": true,
-      "hooks_unchanged": true,
-      "verified_payload_entries": 12
+      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)",
+      "Conflicts": "mbp143-trial-drivers-7.0.14-mbp14342p1, mbp143-audio-resume-7.0.14-mbp14342p1",
+      "file": "mbp143-audio_0.1-1_amd64.deb",
+      "bytes": 121702,
+      "sha256": "04002ae3230a3330d627c56e18b3ec0b8b86b74a2727997409d63b04551ae35d",
+      "input_file": "mbp143-audio-resume-7.0.14-mbp14342p1_0.1-2_amd64.deb",
+      "input_sha256": "884eba96440afcf4b51b1c74c4bca73db8b3607b05578b70a67114f1ce26bbc3",
+      "modules": [
+        {
+          "module": "snd-hda-codec-cs8409",
+          "path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-audio/snd-hda-codec-cs8409.ko",
+          "sha256": "da6bb4a25dc5277dada9dd4a209e693debda7b53f1b8f6faf171d07a8bd6005b",
+          "srcversion": "970D105750B36D635A986E2",
+          "sig_key": "70:9F:57:6E:44:21:F5:8B:86:D6:82:E7:6E:DD:EE:D5:7B:86:7B:EB"
+        }
+      ],
+      "executable_payload_preserved": true,
+      "local_T1_override": false
     },
     {
-      "file": "mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-5_amd64.deb",
-      "sha256": "57ff07e714e4e655723fd260711b2a492c6ee911be7d73ec7e65cf8e9478fd2e",
-      "bytes": 307040,
-      "Package": "mbp143-wifi-d0-7.0.14-mbp14342p1",
-      "Version": "0.1-5",
+      "Package": "mbp143-wifi",
+      "Version": "0.1-1",
       "Architecture": "amd64",
-      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool",
-      "original_file": "mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-4_amd64.deb",
-      "original_sha256": "bd53ab7969815da4d502d213f39e8f52cd90b1069bf0713405a86212195ff177",
-      "non_documentation_payload_unchanged": true,
-      "hooks_unchanged": true,
-      "verified_payload_entries": 18
+      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)",
+      "Conflicts": "mbp143-wifi-d0-7.0.14-mbp14342p1",
+      "file": "mbp143-wifi_0.1-1_amd64.deb",
+      "bytes": 306564,
+      "sha256": "31139e6a65bae18cd0c351850cdcd26ac781f10c8a71878b82cf91f388a0b46b",
+      "input_file": "mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-5_amd64.deb",
+      "input_sha256": "57ff07e714e4e655723fd260711b2a492c6ee911be7d73ec7e65cf8e9478fd2e",
+      "modules": [
+        {
+          "module": "brcmfmac",
+          "path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-wifi/brcmfmac.ko",
+          "sha256": "f9dfe302aa5f08f2ca0c2378902ef75a548f51cb2a48d5b1c8e82445c3e866ee",
+          "srcversion": "D1E745B6EDB8545E0F10CFC",
+          "sig_key": "70:9F:57:6E:44:21:F5:8B:86:D6:82:E7:6E:DD:EE:D5:7B:86:7B:EB"
+        }
+      ],
+      "executable_payload_preserved": true,
+      "local_T1_override": false
     }
   ],
   "source_distribution": "Both source archives must accompany all seven DEBs in the same release.",
@@ -1705,5 +1733,5 @@
     "other_file_contents_unchanged": true,
     "public_fixture_contents_unchanged": true
   },
-  "version_scheme": "Standard numeric Debian packaging revisions; see package-revisions.json."
+  "version_scheme": "Six role-based packages; unchanged signed executables with new package paths/metadata."
 }

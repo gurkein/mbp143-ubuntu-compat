@@ -1,0 +1,13 @@
+Package: mbp143-ibridge
+Version: 0.6-1
+Architecture: amd64
+Maintainer: mbp143-ubuntu-compat contributors <6039975+gurkein@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Depends: linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool
+Pre-Depends: linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)
+Conflicts: mbp143-trial-drivers-7.0.14-mbp14342p1, mbp143-t1-phase-trace-7.0.14-mbp14342p1
+Replaces: mbp143-trial-drivers-7.0.14-mbp14342p1, mbp143-t1-phase-trace-7.0.14-mbp14342p1
+Description: Apple T1 iBridge support for MacBookPro14,3
+ Exact-kernel signed module; no live reload, boot-policy or PM operation.
+Installed-Size: 409

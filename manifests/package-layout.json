@@ -1,0 +1,98 @@
+{
+  "kernel": "7.0.14-mbp14342p1",
+  "source_release": "v0.1.0-experimental.1",
+  "legacy_packages": [
+    "mbp143-trial-drivers-7.0.14-mbp14342p1",
+    "mbp143-t1-mode-result-7.0.14-mbp14342p1",
+    "mbp143-t1-phase-trace-7.0.14-mbp14342p1",
+    "mbp143-audio-resume-7.0.14-mbp14342p1",
+    "mbp143-wifi-d0-7.0.14-mbp14342p1"
+  ],
+  "packages": [
+    {
+      "Package": "linux-image-7.0.14-mbp14342p1",
+      "Version": "7.0.0-42.42+mbp143.3",
+      "kind": "kernel",
+      "input_file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+      "input_sha256": "aeea4819bb45d4ffa1b77a81e0325d9daf18bf208f6816df1e73d149605a7fcd",
+      "Depends": ""
+    },
+    {
+      "Package": "linux-headers-7.0.14-mbp14342p1",
+      "Version": "7.0.0-42.42+mbp143.3",
+      "kind": "kernel",
+      "input_file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+      "input_sha256": "08769c39c227feab9405a0c9933c3e53199b65a361ceb4a7aed8a31048a58651",
+      "Depends": ""
+    },
+    {
+      "Package": "mbp143-ibridge",
+      "Version": "0.6-1",
+      "kind": "module",
+      "module": "apple-ibridge",
+      "input_file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
+      "input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1-phase-trace/apple-ibridge.ko",
+      "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-ibridge/apple-ibridge.ko",
+      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "legacy_conflicts": [
+        "mbp143-trial-drivers-7.0.14-mbp14342p1",
+        "mbp143-t1-phase-trace-7.0.14-mbp14342p1"
+      ],
+      "description": "Apple T1 iBridge support for MacBookPro14,3",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)",
+      "dkms_exclusion": "apple-ib-drv for 7.0.14-mbp14342p1 only"
+    },
+    {
+      "Package": "mbp143-t1",
+      "Version": "0.6-1",
+      "kind": "module",
+      "module": "apple-touchbar",
+      "input_file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
+      "input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1-phase-trace/apple-touchbar.ko",
+      "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1/apple-touchbar.ko",
+      "Depends": "mbp143-ibridge (= 0.6-1), linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "legacy_conflicts": [
+        "mbp143-trial-drivers-7.0.14-mbp14342p1",
+        "mbp143-t1-mode-result-7.0.14-mbp14342p1",
+        "mbp143-t1-phase-trace-7.0.14-mbp14342p1"
+      ],
+      "description": "Apple T1 Touch Bar with automatic model-scoped S3 handling",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)"
+    },
+    {
+      "Package": "mbp143-audio",
+      "Version": "0.1-1",
+      "kind": "module",
+      "module": "snd-hda-codec-cs8409",
+      "input_file": "mbp143-audio-resume-7.0.14-mbp14342p1_0.1-2_amd64.deb",
+      "input_sha256": "884eba96440afcf4b51b1c74c4bca73db8b3607b05578b70a67114f1ce26bbc3",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-audio-resume/snd-hda-codec-cs8409.ko",
+      "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-audio/snd-hda-codec-cs8409.ko",
+      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "legacy_conflicts": [
+        "mbp143-trial-drivers-7.0.14-mbp14342p1",
+        "mbp143-audio-resume-7.0.14-mbp14342p1"
+      ],
+      "description": "MacBookPro14,3 CS8409 audio with resume recovery",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)"
+    },
+    {
+      "Package": "mbp143-wifi",
+      "Version": "0.1-1",
+      "kind": "module",
+      "module": "brcmfmac",
+      "input_file": "mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-5_amd64.deb",
+      "input_sha256": "57ff07e714e4e655723fd260711b2a492c6ee911be7d73ec7e65cf8e9478fd2e",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-wifi-d0/brcmfmac.ko",
+      "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-wifi/brcmfmac.ko",
+      "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
+      "legacy_conflicts": [
+        "mbp143-wifi-d0-7.0.14-mbp14342p1"
+      ],
+      "description": "MacBookPro14,3 BCM43602 Wi-Fi D0 override",
+      "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)"
+    }
+  ]
+}

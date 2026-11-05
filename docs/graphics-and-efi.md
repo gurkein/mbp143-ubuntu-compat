@@ -1,7 +1,7 @@
 # Graphics, EFI selection and Boot Camp
 
 The tested configuration combines kernel/drivers with an existing firmware and
-desktop arrangement. Installing the seven DEBs alone does not reproduce it.
+desktop arrangement. Installing the six DEBs alone does not reproduce it.
 This document describes the MacBookPro14,3 maintenance setup; no new firmware
 write, GPU switch, reboot or hardware test was performed for publication.
 
