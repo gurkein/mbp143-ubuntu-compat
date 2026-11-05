@@ -1,6 +1,6 @@
 {
   "kernel": "7.0.14-mbp14342p1",
-  "source_release": "v0.1.0-experimental.1",
+  "source_release": "v0.1.0-experimental.2",
   "legacy_packages": [
     "mbp143-trial-drivers-7.0.14-mbp14342p1",
     "mbp143-t1-mode-result-7.0.14-mbp14342p1",
@@ -13,16 +13,16 @@
       "Package": "linux-image-7.0.14-mbp14342p1",
       "Version": "7.0.0-42.42+mbp143.3",
       "kind": "kernel",
-      "input_file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "input_sha256": "aeea4819bb45d4ffa1b77a81e0325d9daf18bf208f6816df1e73d149605a7fcd",
+      "input_file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+      "input_sha256": "114fba7bdc108ae03abd3c8c704d578f3ec8f21975d1a7132b8460bbe654e098",
       "Depends": ""
     },
     {
       "Package": "linux-headers-7.0.14-mbp14342p1",
       "Version": "7.0.0-42.42+mbp143.3",
       "kind": "kernel",
-      "input_file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
-      "input_sha256": "08769c39c227feab9405a0c9933c3e53199b65a361ceb4a7aed8a31048a58651",
+      "input_file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.3_amd64.deb",
+      "input_sha256": "780160fade6ccb63c4dab3a07056f185ccebe82ac0410038e7254b91baaadb5f",
       "Depends": ""
     },
     {
@@ -30,9 +30,9 @@
       "Version": "0.6-1",
       "kind": "module",
       "module": "apple-ibridge",
-      "input_file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
-      "input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
-      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1-phase-trace/apple-ibridge.ko",
+      "input_file": "mbp143-ibridge_0.6-1_amd64.deb",
+      "input_sha256": "8f639724c934a8cd99b6f7f6f90cec095866cb7441ec61709cd010753d2fc56a",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-ibridge/apple-ibridge.ko",
       "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-ibridge/apple-ibridge.ko",
       "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
       "legacy_conflicts": [
@@ -48,9 +48,9 @@
       "Version": "0.6-1",
       "kind": "module",
       "module": "apple-touchbar",
-      "input_file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
-      "input_sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
-      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1-phase-trace/apple-touchbar.ko",
+      "input_file": "mbp143-t1_0.6-1_amd64.deb",
+      "input_sha256": "2c9a4cd2ca51af7d99c3c13f407fd1e9f929dc12a722e9afac44a5bff042f1d5",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1/apple-touchbar.ko",
       "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-t1/apple-touchbar.ko",
       "Depends": "mbp143-ibridge (= 0.6-1), linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
       "legacy_conflicts": [
@@ -66,9 +66,9 @@
       "Version": "0.1-1",
       "kind": "module",
       "module": "snd-hda-codec-cs8409",
-      "input_file": "mbp143-audio-resume-7.0.14-mbp14342p1_0.1-2_amd64.deb",
-      "input_sha256": "884eba96440afcf4b51b1c74c4bca73db8b3607b05578b70a67114f1ce26bbc3",
-      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-audio-resume/snd-hda-codec-cs8409.ko",
+      "input_file": "mbp143-audio_0.1-1_amd64.deb",
+      "input_sha256": "04002ae3230a3330d627c56e18b3ec0b8b86b74a2727997409d63b04551ae35d",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-audio/snd-hda-codec-cs8409.ko",
       "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-audio/snd-hda-codec-cs8409.ko",
       "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
       "legacy_conflicts": [
@@ -83,9 +83,9 @@
       "Version": "0.1-1",
       "kind": "module",
       "module": "brcmfmac",
-      "input_file": "mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-5_amd64.deb",
-      "input_sha256": "57ff07e714e4e655723fd260711b2a492c6ee911be7d73ec7e65cf8e9478fd2e",
-      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-wifi-d0/brcmfmac.ko",
+      "input_file": "mbp143-wifi_0.1-1_amd64.deb",
+      "input_sha256": "31139e6a65bae18cd0c351850cdcd26ac781f10c8a71878b82cf91f388a0b46b",
+      "input_module": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-wifi/brcmfmac.ko",
       "module_path": "lib/modules/7.0.14-mbp14342p1/updates/mbp143-wifi/brcmfmac.ko",
       "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3), kmod, linux-initramfs-tool",
       "legacy_conflicts": [
@@ -94,5 +94,6 @@
       "description": "MacBookPro14,3 BCM43602 Wi-Fi D0 override",
       "Pre-Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.3)"
     }
-  ]
+  ],
+  "historical_initial_source_release": "v0.1.0-experimental.1"
 }

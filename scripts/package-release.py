@@ -98,6 +98,12 @@ def main():
                            ' Exact-kernel signed module; no live reload, boot-policy or PM operation.']
                 (stage / 'DEBIAN/control').write_text('\n'.join(control) + '\n')
                 source = before / row['input_module']
+                if override and is_t1:
+                    # Local historical T1 inputs can use an older package path.
+                    matches = list(before.rglob(row['module'] + '.ko'))
+                    if len(matches) != 1:
+                        raise RuntimeError('Expected one source module for ' + row['module'])
+                    source = matches[0]
                 target = stage / row['module_path']
                 target.parent.mkdir(parents=True)
                 shutil.copy2(source, target)

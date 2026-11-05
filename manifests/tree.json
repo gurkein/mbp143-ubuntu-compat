@@ -1,5 +1,5 @@
 {
-  "note": "Current source tree; released archives and binaries remain frozen at each tagged source commit.",
+  "note": "Current source tree; released assets remain frozen at their source tags.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -18,8 +18,8 @@
     },
     {
       "file": "CHANGELOG.md",
-      "bytes": 2553,
-      "sha256": "102cbd73271bd686236448bbf44bfb5fcaa2525f6c2b2d9ff30fcf4b4ce8bb7e"
+      "bytes": 2536,
+      "sha256": "d6f41329c022a7ad8f5ac1d70cda08fc942234fcbcf5a2d14874fc035651d026"
     },
     {
       "file": "CREDITS.md",
@@ -203,8 +203,8 @@
     },
     {
       "file": "docs/building.md",
-      "bytes": 4690,
-      "sha256": "257163e53fefba80db75b720426b590a7c0456dd7f3755311409c95912ecbb74"
+      "bytes": 4982,
+      "sha256": "9c6d87e0b5c971f227affe3dfafd1901eda3327f583b8eaba88f9bc24959ecc7"
     },
     {
       "file": "docs/compatibility.md",
@@ -243,13 +243,13 @@
     },
     {
       "file": "docs/source-distribution.md",
-      "bytes": 2435,
-      "sha256": "3c7ca6967b418dabd97637311bb86efc07d99aa7d93eac92e3ca8997434e5767"
+      "bytes": 2463,
+      "sha256": "bb3f84c1fe72abd03135d2ae082e42cd043f0cdc82cadabe26e699473be4f8d0"
     },
     {
       "file": "docs/source-provenance.md",
-      "bytes": 3512,
-      "sha256": "42385c81741118e824566895bf08709742abcd05a598aa00af5c3421a745debe"
+      "bytes": 3746,
+      "sha256": "d6c549a12e74811a618e4c4aa85967306e95aa50292f33b566b6b5b246367743"
     },
     {
       "file": "drivers/audio/LICENSE",
@@ -2208,8 +2208,8 @@
     },
     {
       "file": "manifests/package-layout.json",
-      "bytes": 4603,
-      "sha256": "6eb6187654ec83683d5941311231834e4dd3478de9f6ffcb8891802187b33658"
+      "bytes": 4537,
+      "sha256": "02a91df74b4edf0d01d7191d5a1bf574c72b07db68ef2b0a658748ac35d43ae4"
     },
     {
       "file": "manifests/package-revisions.json",
@@ -3533,8 +3533,8 @@
     },
     {
       "file": "scripts/package-release.py",
-      "bytes": 12413,
-      "sha256": "66fc63bb0e42fe09cd45af99539cc86cb273d1be2fd4663322bd3227da3a7966"
+      "bytes": 12780,
+      "sha256": "d748e574da8f799cdf4dad3c2ed94cbd226dcce5e66e948858f4b4123980c19d"
     },
     {
       "file": "scripts/verify-files.py",

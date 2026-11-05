@@ -37,4 +37,4 @@ License references: [GPLv2](https://spdx.org/licenses/GPL-2.0-only.html),
 
 The six-package layout carries one final driver module per role. Current
 package metadata is in `package-layout.json`, relative to `manifests/` in the
-source archive. Earlier release assets remain frozen and separately attributed.
+source archive. Current release assets remain frozen; retired publication records retain their attribution.

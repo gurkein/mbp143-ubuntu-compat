@@ -80,7 +80,7 @@ the helpers themselves come from the matching kernel image, not that override.
 
 ## Six-package release assembly
 
-Download the seven original inputs from `v0.1.0-experimental.1` into a separate
+Download the six DEBs from `v0.1.0-experimental.2` into a separate
 input directory, then run:
 
 ```sh
@@ -95,3 +95,8 @@ installed. Historical baseline sources remain only for provenance/patch replay.
 A local T1 override requires explicit binary, hash, version and corresponding
 source arguments; it must not be mixed into a public release without its own
 source and verification record.
+
+The initial prerelease is retired. The current builder uses the available
+six-package prerelease as its signed-binary seed, with pinned hashes and
+unchanged module bytes. Historical source tags/receipts retain the original
+assembly provenance; use this updated recipe rather than its retired input URLs.
