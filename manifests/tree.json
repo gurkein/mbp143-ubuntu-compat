@@ -1,5 +1,5 @@
 {
-  "note": "All tracked publication files except this manifest; excludes dist/build/cache/local credentials.",
+  "note": "All tracked/non-ignored publication files except this manifest; excludes dist/build/cache/local credentials.",
   "files": [
     {
       "file": ".github/ISSUE_TEMPLATE/hardware.md",
@@ -18,8 +18,8 @@
     },
     {
       "file": "CHANGELOG.md",
-      "bytes": 1658,
-      "sha256": "6d9527074a05924c459f9e8f6eab372c207971f5b3e9cd8c34a64ec5c804100c"
+      "bytes": 1817,
+      "sha256": "ef88ec83bc14cfbd67fc0ca251f9b76424eab503de4f1adcb5577d8a6c8549fb"
     },
     {
       "file": "CREDITS.md",
@@ -183,8 +183,8 @@
     },
     {
       "file": "THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "boot/efi/Makefile",
@@ -198,8 +198,8 @@
     },
     {
       "file": "docs/building.md",
-      "bytes": 3848,
-      "sha256": "63bfecf1e16e5cd0da43d4fdbdc88428eb8e81117b16954afd9443c384c8b76e"
+      "bytes": 3845,
+      "sha256": "5ded2597d5edcfea51792d538ca9455fc0fa6628cce75327b2aafeb88a770b63"
     },
     {
       "file": "docs/compatibility.md",
@@ -213,8 +213,8 @@
     },
     {
       "file": "docs/installation.md",
-      "bytes": 3344,
-      "sha256": "4fe9df183dcc1f058cc3a5565f71274335c4655829a05646650915a336fca8c4"
+      "bytes": 3333,
+      "sha256": "43b6c795e6a646bfc4f8f1a6e7660a863e3afc36d8a9878b7f7637c8fcb94c29"
     },
     {
       "file": "docs/known-issues.md",
@@ -223,13 +223,13 @@
     },
     {
       "file": "docs/publication-status.md",
-      "bytes": 2851,
-      "sha256": "2b4382734e4d0e9f29c532f3d0cea82463a0cc313b87d9397718cc88b8a2117b"
+      "bytes": 2857,
+      "sha256": "a1a6080413b14a67c823a214009e9ed2c8764d2bc2827c3754d474cfbb537ba0"
     },
     {
       "file": "docs/release-notes.md",
-      "bytes": 2520,
-      "sha256": "6340ade43df2bfaf93ce460d683739faa0d55478dcdff8e53d65a5f84ca404c5"
+      "bytes": 2543,
+      "sha256": "947f0b57c19cf2483873d0004eabbd503efac1b99fd2b5029ef62e7644348007"
     },
     {
       "file": "docs/rollback.md",
@@ -238,13 +238,13 @@
     },
     {
       "file": "docs/source-distribution.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "docs/source-provenance.md",
-      "bytes": 3514,
-      "sha256": "f45bd6052ddd1fce3f01f170f1c1e5fa9e297379866023e5f3e3941d7bbb36d0"
+      "bytes": 3520,
+      "sha256": "07bd4bfa474211021f119cc201354106fd904bc49593c3fa218149f4fa603d5b"
     },
     {
       "file": "drivers/audio/LICENSE",
@@ -2183,8 +2183,8 @@
     },
     {
       "file": "manifests/inputs.json",
-      "bytes": 236742,
-      "sha256": "213f6d8de1f37a555f4d74e44dbc9fe891d31783756a0b25c0f17e053e1d94ec"
+      "bytes": 236745,
+      "sha256": "caf4847ad2e582829726b9388bf6afdc66e028a43f6ac0bd0c002f822c53ef76"
     },
     {
       "file": "manifests/kernel-patch-targets.json",
@@ -2193,8 +2193,8 @@
     },
     {
       "file": "manifests/licensing.json",
-      "bytes": 88416,
-      "sha256": "d7c8390868b820e0adb5ac48bbf8cb3cda3398863866b57c34901d2d9ec28a17"
+      "bytes": 88332,
+      "sha256": "1753d87e0eeab2e48caefe3d1d7eaa97027ce42a2943d4cf2fd59dd46c2206ea"
     },
     {
       "file": "manifests/original-packages.json",
@@ -2202,14 +2202,19 @@
       "sha256": "8f8427a8be827e93431b1a7484670f105c83b09be89f15a855b2cb1b1b0db585"
     },
     {
+      "file": "manifests/package-revisions.json",
+      "bytes": 398,
+      "sha256": "947998f9cde45374dbaa87d4c68ebf1889a24d840a03a37f563bc19199b2720a"
+    },
+    {
       "file": "manifests/packages.json",
-      "bytes": 2892,
-      "sha256": "edc77b2d14070625826b16abb765a47d35de83bdd7715032826870de484214dc"
+      "bytes": 2712,
+      "sha256": "15cf1d46176ad73c2373fe49a4f8a1000cb48142bdefcf96aebe193207af589f"
     },
     {
       "file": "manifests/payload-audit.json",
-      "bytes": 4087,
-      "sha256": "e8da7a1994a218f0de32ddf0f42481c2d9d2815115487c2352153c5160e7e2ab"
+      "bytes": 4157,
+      "sha256": "bf103c204e0ffc44b4e3f34815dd1579ccf84038d179011b686aca432dd0f65c"
     },
     {
       "file": "manifests/source-replay.json",
@@ -2218,18 +2223,18 @@
     },
     {
       "file": "manifests/validation.json",
-      "bytes": 4243,
-      "sha256": "fa6d47fb824f5bf5eca9ca6983c44d0a3ffe5281d0c5a0635d2c006f6e270da4"
+      "bytes": 4428,
+      "sha256": "94a9cf609e3da8e7e54672a6fbe01eb49b76a9dc75c896c2c76c3c8b079813e7"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 476,
-      "sha256": "dd6e11c532f62302d2215bf87b0ebe1c6fed0250adc77ac6800ec77aeb42afe4"
+      "bytes": 467,
+      "sha256": "41d2903729333225f4cd17c995ed3009667f4d4758a2994a5b33e708d501f118"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/md5sums",
       "bytes": 790313,
-      "sha256": "53ebb8143d0eeced08faf0e9e0a065571acc67c59f01204eea200c325f01c615"
+      "sha256": "0054c25138beb705c3eedddf4a5d30e62837cca61d7a3c7c40d6254cc4cbe607"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/CREDITS.md",
@@ -2383,8 +2388,8 @@
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -2393,8 +2398,8 @@
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/changelog.Debian.gz",
@@ -2404,7 +2409,7 @@
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/copyright",
       "bytes": 1189,
-      "sha256": "c33f6f5675eb3ac7f7da953283a875b19071bc146a19d92a46c8dba9f319860d"
+      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/data/usr/share/doc/linux-headers-7.0.14-mbp14342p1/copyright.upstream",
@@ -2413,13 +2418,13 @@
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 433,
-      "sha256": "5ea460b1e9a4163c4616c37764d1d01c415ff7f8823cbaa01bcd068145cb0976"
+      "bytes": 424,
+      "sha256": "b1b6ef4ad743fb6e92fdd848e9b6a026b7f1bcf8b1dfc3beeaee70c6aea3ee9d"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/md5sums",
       "bytes": 729016,
-      "sha256": "a8257ddd01f218b309d0a29103de6a50befac23af7efc21008a0672dd0e71a75"
+      "sha256": "b4d85338ff81d046c36ade05108058779fd3a7c4cecba56023602dc299793f59"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/DEBIAN/postinst",
@@ -2593,8 +2598,8 @@
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -2603,8 +2608,8 @@
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/changelog.Debian.gz",
@@ -2614,7 +2619,7 @@
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/copyright",
       "bytes": 1189,
-      "sha256": "c33f6f5675eb3ac7f7da953283a875b19071bc146a19d92a46c8dba9f319860d"
+      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
     },
     {
       "file": "packaging/templates/linux-image-7.0.14-mbp14342p1/data/usr/share/doc/linux-image-7.0.14-mbp14342p1/copyright.upstream",
@@ -2623,8 +2628,8 @@
     },
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 593,
-      "sha256": "213382e3fc1a565bb1843df6aced889a99b6074345917c7da4b0d60b399dcc61"
+      "bytes": 575,
+      "sha256": "cc01b40cf60be68ac2d8620d964a6de07161eb2c66a6a78d60b0b3bae9616a1d"
     },
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/DEBIAN/postinst",
@@ -2798,8 +2803,8 @@
     },
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -2808,8 +2813,8 @@
     },
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/combined-kernel7.patch",
@@ -2819,7 +2824,7 @@
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/copyright",
       "bytes": 1189,
-      "sha256": "c33f6f5675eb3ac7f7da953283a875b19071bc146a19d92a46c8dba9f319860d"
+      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
     },
     {
       "file": "packaging/templates/mbp143-audio-resume-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-audio-resume-7.0.14-mbp14342p1/copyright.upstream",
@@ -2843,8 +2848,8 @@
     },
     {
       "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 577,
-      "sha256": "f97c65bf72ba09e36bc0f726f46c259ff095ee2460b6ef57328118839cfaf14a"
+      "bytes": 559,
+      "sha256": "8901c871d2f6ae611a9bb6d1d2d9ae23503b74066c7e1c2a43a7644a409545b4"
     },
     {
       "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/DEBIAN/postinst",
@@ -3018,8 +3023,8 @@
     },
     {
       "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -3028,13 +3033,13 @@
     },
     {
       "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/copyright",
       "bytes": 1189,
-      "sha256": "c33f6f5675eb3ac7f7da953283a875b19071bc146a19d92a46c8dba9f319860d"
+      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
     },
     {
       "file": "packaging/templates/mbp143-t1-mode-result-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-mode-result-7.0.14-mbp14342p1/copyright.upstream",
@@ -3048,8 +3053,8 @@
     },
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 651,
-      "sha256": "704dd884c23a18e2ab1b4eb79564a6fadde757f7b26a5584bdf5225e0fad44cc"
+      "bytes": 624,
+      "sha256": "b70be113b49e363483415a6621dd37cfed5cdd6bdeb2da576d60fc0b599ebf5f"
     },
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/DEBIAN/postinst",
@@ -3223,8 +3228,8 @@
     },
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -3233,8 +3238,8 @@
     },
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/automatic-s3.patch",
@@ -3244,7 +3249,7 @@
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/copyright",
       "bytes": 1189,
-      "sha256": "c33f6f5675eb3ac7f7da953283a875b19071bc146a19d92a46c8dba9f319860d"
+      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
     },
     {
       "file": "packaging/templates/mbp143-t1-phase-trace-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-t1-phase-trace-7.0.14-mbp14342p1/copyright.upstream",
@@ -3253,8 +3258,8 @@
     },
     {
       "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 584,
-      "sha256": "98231b0f72ce3a1182c07984259629ec235eff62851803f70142a5489e3d47dc"
+      "bytes": 566,
+      "sha256": "ba5b0feac3dda53772b5ccacffdbc5204c090f72bbae5682dff419ef8e64780c"
     },
     {
       "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/DEBIAN/postinst",
@@ -3423,8 +3428,8 @@
     },
     {
       "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -3433,18 +3438,18 @@
     },
     {
       "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "packaging/templates/mbp143-trial-drivers-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-trial-drivers-7.0.14-mbp14342p1/copyright",
       "bytes": 1189,
-      "sha256": "c33f6f5675eb3ac7f7da953283a875b19071bc146a19d92a46c8dba9f319860d"
+      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
     },
     {
       "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/control",
-      "bytes": 576,
-      "sha256": "bfe0ad58f7f8c8d10bb57be2eae7b8bb6ffc58ae730b4dff810d0f90a0933bbb"
+      "bytes": 558,
+      "sha256": "0b25366170506487f673c3db6da66d60319fc526be2cb0aaacd535b3d4b4d9d1"
     },
     {
       "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/DEBIAN/postinst",
@@ -3633,8 +3638,8 @@
     },
     {
       "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/SOURCE-DISTRIBUTION.md",
-      "bytes": 2074,
-      "sha256": "72750fe3fc415760e6d1a2ed2bca4d77625d6419ff3e9dd422f9515ceb641140"
+      "bytes": 2161,
+      "sha256": "74856b87e828ae49169a464fbcd514e38f583ed266dff9dd4c7f262d5c2afb3b"
     },
     {
       "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/SOURCE-NOTICES.txt",
@@ -3643,13 +3648,13 @@
     },
     {
       "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/THIRD_PARTY_NOTICES.md",
-      "bytes": 4529,
-      "sha256": "d0360d3acddb14ba529981972f329709f0d51b41af2aa7f65bab582a2ee99f4b"
+      "bytes": 4525,
+      "sha256": "406fabd3aa996eec75c459fbb4bec53cdb519d277ab5173ce33a1ad5e845eff3"
     },
     {
       "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/copyright",
       "bytes": 1189,
-      "sha256": "c33f6f5675eb3ac7f7da953283a875b19071bc146a19d92a46c8dba9f319860d"
+      "sha256": "2e82222bd6770bb750e9ccf42e292ca7f66cbeaaa196e1be6c766d46f94560fd"
     },
     {
       "file": "packaging/templates/mbp143-wifi-d0-7.0.14-mbp14342p1/data/usr/share/doc/mbp143-wifi-d0-7.0.14-mbp14342p1/copyright.upstream",
@@ -3759,7 +3764,7 @@
     {
       "file": "scripts/build-kernel.py",
       "bytes": 2231,
-      "sha256": "807426f64d8078019436c2a97e4c6f67e9bb3f9a8d426ab2fa9fce57e60f78ca"
+      "sha256": "888e7c06ecb1ff071364eccc6d9456cdbbe269db7c1d15c74f0a3482f0593e59"
     },
     {
       "file": "scripts/license_notices.py",
@@ -3774,7 +3779,7 @@
     {
       "file": "scripts/repack-license.py",
       "bytes": 7557,
-      "sha256": "7b66e10c4f8630f9a232f62ade7afc0c603728f70be107bc51d8cbbc84b8e3c0"
+      "sha256": "ff8cb916d97d651e15f8c9a652077ba073187cc635d3008a1a0f9fecdf1ee915"
     },
     {
       "file": "scripts/verify-files.py",
@@ -3783,8 +3788,8 @@
     },
     {
       "file": "scripts/verify-licenses.py",
-      "bytes": 3139,
-      "sha256": "3f56154deeb66ded591d79791ec167c72634a92e5a322698b65fba914371f2dd"
+      "bytes": 3230,
+      "sha256": "cd613a55a5155186675fca8b2e27348e3febb1c2fcdb6e92ca5e0e50c9913c1a"
     },
     {
       "file": "scripts/verify-patches.py",

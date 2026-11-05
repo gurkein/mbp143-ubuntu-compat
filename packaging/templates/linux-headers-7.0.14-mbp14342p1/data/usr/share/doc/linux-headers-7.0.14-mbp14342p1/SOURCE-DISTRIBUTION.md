@@ -14,7 +14,8 @@ The pinned source commit and hashes are in `artifacts.json` and `SHA256SUMS`.
 `manifests/licensing.json` maps original DEBs to corrected DEBs and records
 payload equality. The build instructions are in `docs/building.md`.
 
-The corrected DEBs use the original version plus `+license1`. Only documentation
+The corrected DEBs use standard numeric Debian packaging revisions listed in
+`manifests/packages.json`; functional driver versions remain unchanged. Only documentation
 and package metadata changed; executable files and signed modules are preserved.
 These publication packages were not installed or newly hardware-tested. The
 kernel release and driver functional versions retain their existing scope.

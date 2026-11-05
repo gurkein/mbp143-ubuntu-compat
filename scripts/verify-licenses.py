@@ -35,8 +35,9 @@ def main():
     packages = json.loads((ROOT / 'manifests/packages.json').read_text())
     versions = {row['Package']: row['Version'] for row in packages}
     assert len(packages) == 7
+    revisions = json.loads((ROOT / 'manifests/package-revisions.json').read_text())
     for row in packages:
-        assert row['Version'].endswith('+license1')
+        assert row['Version'] == revisions[row['Package']]
         for name, version in versions.items():
             if name + ' (=' in row['Depends']:
                 assert name + ' (= ' + version + ')' in row['Depends']

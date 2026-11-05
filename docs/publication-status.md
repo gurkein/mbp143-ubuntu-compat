@@ -16,7 +16,7 @@ a portable build-only Makefile, Boot Camp/rollback documentation and the origina
 installer as text. Only a build-command dry run was performed; no EFI binary
 was compiled, installed or executed, and no firmware/GRUB setting changed.
 
-The selected DEBs use documentation-only `+license1` revisions. Original and
+The selected DEBs use documentation-only numeric packaging revisions. Original and
 revised hashes and unchanged executable payloads are recorded in the licensing
 manifest. Sources and notices are described in [source distribution](source-distribution.md). Some generated
 headers and binary/module metadata contain the original local build path;

@@ -41,7 +41,7 @@ def main():
                         help='A new directory, distinct from the original assets')
     args = parser.parse_args()
     originals = json.loads((ROOT / 'manifests/original-packages.json').read_text())
-    versions = {row['Package']: row['Version'] + '+license1' for row in originals}
+    versions = json.loads((ROOT / 'manifests/package-revisions.json').read_text())
     # Check every input before creating output or unpacking anything.
     for row in originals:
         if digest(args.input_directory / row['file']) != row['sha256']:
@@ -74,7 +74,7 @@ def main():
             copyright_file.write_text('''Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: mbp143-ubuntu-compat selected compatibility bundle
 Source: https://github.com/gurkein/mbp143-ubuntu-compat
-Comment: Documentation-only +license1 revision, prepared 2026-11-05.
+Comment: Documentation-only packaging revision, prepared 2026-11-05.
  Complete corresponding source must accompany the DEBs in the same release.
  See SOURCE-DISTRIBUTION.md and SOURCE-NOTICES.txt for source and copyright mapping.
 

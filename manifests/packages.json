@@ -1,65 +1,65 @@
 [
   {
-    "file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1+license1_amd64.deb",
-    "sha256": "26e09183dc29c875c271ec1a85b27944a441527dbe7eb6ba67f7ec68d76a03a4",
-    "bytes": 12856832,
+    "file": "linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+    "sha256": "08769c39c227feab9405a0c9933c3e53199b65a361ceb4a7aed8a31048a58651",
+    "bytes": 12856836,
     "Package": "linux-headers-7.0.14-mbp14342p1",
-    "Version": "7.0.0-42.42+mbp143.1+license1",
+    "Version": "7.0.0-42.42+mbp143.2",
     "Architecture": "amd64",
     "Depends": ""
   },
   {
-    "file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1+license1_amd64.deb",
-    "sha256": "e085a979db59495715cf71acc3f3d08102441132d188db25dc3c8b295f37bc29",
-    "bytes": 140631680,
+    "file": "linux-image-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+    "sha256": "aeea4819bb45d4ffa1b77a81e0325d9daf18bf208f6816df1e73d149605a7fcd",
+    "bytes": 140631684,
     "Package": "linux-image-7.0.14-mbp14342p1",
-    "Version": "7.0.0-42.42+mbp143.1+license1",
+    "Version": "7.0.0-42.42+mbp143.2",
     "Architecture": "amd64",
     "Depends": ""
   },
   {
-    "file": "mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1+license1_amd64.deb",
-    "sha256": "db81ee187b0e1e448c0735723dbaa874f6cde2dd27b59e3b6437d36a08e81ce3",
-    "bytes": 140794,
+    "file": "mbp143-trial-drivers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb",
+    "sha256": "b3de7d89c56ce7e8fcd0f7d0a94d37d10360b3fda614af2360f518baef341ed0",
+    "bytes": 140798,
     "Package": "mbp143-trial-drivers-7.0.14-mbp14342p1",
-    "Version": "7.0.0-42.42+mbp143.1+license1",
+    "Version": "7.0.0-42.42+mbp143.2",
     "Architecture": "amd64",
-    "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1+license1), kmod, linux-initramfs-tool"
+    "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool"
   },
   {
-    "file": "mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-1+license1_amd64.deb",
-    "sha256": "be184785b155bd1119075dcc07d3c8e1a407c9e5b5f7febba7f91218c075b28c",
-    "bytes": 80794,
+    "file": "mbp143-t1-mode-result-7.0.14-mbp14342p1_0.1-2_amd64.deb",
+    "sha256": "ca7a1d28de8d75fbb2559c56f0825d6fd950cab5590ff785227ad56fb459870b",
+    "bytes": 80800,
     "Package": "mbp143-t1-mode-result-7.0.14-mbp14342p1",
-    "Version": "0.1-1+license1",
+    "Version": "0.1-2",
     "Architecture": "amd64",
-    "Depends": "mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1+license1), kmod, linux-initramfs-tool"
+    "Depends": "mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool"
   },
   {
-    "file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-1+license1_amd64.deb",
-    "sha256": "40d86a7498bfd7abbb025923adfa126e061fb81cb1f41378fd48194500184355",
-    "bytes": 96610,
+    "file": "mbp143-t1-phase-trace-7.0.14-mbp14342p1_0.6-2_amd64.deb",
+    "sha256": "45ab1c495cb49bc86c746a48e5cceb6f02e7b81e7ee106399f553bb1cb0580b6",
+    "bytes": 96614,
     "Package": "mbp143-t1-phase-trace-7.0.14-mbp14342p1",
-    "Version": "0.6-1+license1",
+    "Version": "0.6-2",
     "Architecture": "amd64",
-    "Depends": "mbp143-t1-mode-result-7.0.14-mbp14342p1 (= 0.1-1+license1), mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1+license1), kmod, linux-initramfs-tool"
+    "Depends": "mbp143-t1-mode-result-7.0.14-mbp14342p1 (= 0.1-2), mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool"
   },
   {
-    "file": "mbp143-audio-resume-7.0.14-mbp14342p1_0.1-1+license1_amd64.deb",
-    "sha256": "ea01ed78b77daaba9b3453aba571ec5ce7bdba9a30ae03267efbcb10d01935e9",
-    "bytes": 124840,
+    "file": "mbp143-audio-resume-7.0.14-mbp14342p1_0.1-2_amd64.deb",
+    "sha256": "884eba96440afcf4b51b1c74c4bca73db8b3607b05578b70a67114f1ce26bbc3",
+    "bytes": 124850,
     "Package": "mbp143-audio-resume-7.0.14-mbp14342p1",
-    "Version": "0.1-1+license1",
+    "Version": "0.1-2",
     "Architecture": "amd64",
-    "Depends": "mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1+license1), kmod, linux-initramfs-tool"
+    "Depends": "mbp143-trial-drivers-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool"
   },
   {
-    "file": "mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-4+license1_amd64.deb",
-    "sha256": "3e6a01f37b5c07aa55420e26073cf32b3dcd7451687dc76a4b2177478c377534",
-    "bytes": 307032,
+    "file": "mbp143-wifi-d0-7.0.14-mbp14342p1_0.1-5_amd64.deb",
+    "sha256": "57ff07e714e4e655723fd260711b2a492c6ee911be7d73ec7e65cf8e9478fd2e",
+    "bytes": 307040,
     "Package": "mbp143-wifi-d0-7.0.14-mbp14342p1",
-    "Version": "0.1-4+license1",
+    "Version": "0.1-5",
     "Architecture": "amd64",
-    "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.1+license1), kmod, linux-initramfs-tool"
+    "Depends": "linux-image-7.0.14-mbp14342p1 (= 7.0.0-42.42+mbp143.2), kmod, linux-initramfs-tool"
   }
 ]

@@ -1,0 +1,9 @@
+{
+  "linux-headers-7.0.14-mbp14342p1": "7.0.0-42.42+mbp143.2",
+  "linux-image-7.0.14-mbp14342p1": "7.0.0-42.42+mbp143.2",
+  "mbp143-trial-drivers-7.0.14-mbp14342p1": "7.0.0-42.42+mbp143.2",
+  "mbp143-t1-mode-result-7.0.14-mbp14342p1": "0.1-2",
+  "mbp143-t1-phase-trace-7.0.14-mbp14342p1": "0.6-2",
+  "mbp143-audio-resume-7.0.14-mbp14342p1": "0.1-2",
+  "mbp143-wifi-d0-7.0.14-mbp14342p1": "0.1-5"
+}

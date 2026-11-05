@@ -24,7 +24,7 @@ suspend command as part of these checks. All examples are run from the repo root
 Extract the matching headers DEB to a temporary directory:
 
 ```sh
-dpkg-deb -x dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.1+license1_amd64.deb /tmp/mbp143-headers
+dpkg-deb -x dist/linux-headers-7.0.14-mbp14342p1_7.0.0-42.42+mbp143.2_amd64.deb /tmp/mbp143-headers
 python3 scripts/build-drivers.py t1 --headers /tmp/mbp143-headers/usr/src/linux-headers-7.0.14-mbp14342p1 --output build/t1
 ```
 
@@ -63,7 +63,7 @@ quota and thermal stops. The historical build recipe is preserved under
 ## Packaging
 
 See [source-distribution obligations](source-distribution.md). The release
-uses documentation-only `+license1` revisions with updated exact dependencies.
+uses documentation-only numeric packaging revisions with updated exact dependencies.
 `python3 scripts/repack-license.py --help` describes the build-only repacker.
 It refuses unknown original inputs and verifies all non-documentation payloads.
 

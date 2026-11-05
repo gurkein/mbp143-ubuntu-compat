@@ -40,7 +40,7 @@ does not include the 32 GiB original kernel build directory.
   target kernel plus only patch 0682. Vendor helpers remain kernel-supplied.
 
 Revised package control files and original non-binary override data are preserved under
-`packaging/templates/`; the original DEBs are the inputs to documentation-only `+license1` revisions.
+`packaging/templates/`; the original DEBs are the inputs to documentation-only numeric packaging revisions.
 Original and revised hashes, dependency changes and payload comparisons are in
 `manifests/licensing.json`; no executable payload was rebuilt. Scripts
 under `reference/maintenance/` are text snapshots and retain original paths and

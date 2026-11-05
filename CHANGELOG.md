@@ -24,6 +24,9 @@
 - Add dated source distribution notices; retain original per-file licenses.
 - Clarify GPL coverage of source-generating recipes and combined C tests.
 - Add full license texts, actual source copyright notices and source-release
-  instructions to all seven DEBs as `+license1` revisions; update exact package
+  instructions to all seven DEBs as numeric packaging revisions; update exact package
   dependencies. Executable payloads and signatures are unchanged.
 - Publish source/asset mappings and offline checks for these corrections.
+
+Package versions use standard numeric Debian packaging revisions; the reason
+for the revision is recorded here rather than embedded in version strings.

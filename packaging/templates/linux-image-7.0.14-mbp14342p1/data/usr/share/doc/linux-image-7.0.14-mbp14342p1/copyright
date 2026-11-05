@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: mbp143-ubuntu-compat selected compatibility bundle
 Source: https://github.com/gurkein/mbp143-ubuntu-compat
-Comment: Documentation-only +license1 revision, prepared 2026-11-05.
+Comment: Documentation-only packaging revision, prepared 2026-11-05.
  Complete corresponding source must accompany the DEBs in the same release.
  See SOURCE-DISTRIBUTION.md and SOURCE-NOTICES.txt for source and copyright mapping.
 

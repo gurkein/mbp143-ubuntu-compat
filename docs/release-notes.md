@@ -41,7 +41,7 @@ module selection/downgrade, initramfs and boot-conversion checks passed.
 
 ## Distribution-only licensing revision
 
-The selected DEBs now have `+license1` versions. They add full license/copyright
+The selected DEBs now have standard numeric Debian packaging revisions. They add full license/copyright
 notices and corresponding-source instructions; exact dependencies are updated.
 Kernel and module payloads/signatures are unchanged. This revision adds no new
 hardware qualification. See [source distribution](source-distribution.md).

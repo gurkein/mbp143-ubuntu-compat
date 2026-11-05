@@ -52,12 +52,13 @@
   "licensing_corrections_2026_11_05": {
     "source_notice_normalization": "305 source files; exact original bytes preserved after removing only dated notice",
     "full_kernel_archive": "All regular files rehashed; only 12 dated notices added; original fixture bytes retained",
-    "package_revisions": "Seven +license1 DEBs; all non-documentation payload entries, symlinks, modes and hooks unchanged",
+    "package_revisions": "Seven packaging-only DEBs; all non-documentation payload entries, symlinks, modes and hooks unchanged",
     "actual_C_tests": "T1 and audio offline tests passed after annotations; no hardware I/O",
     "policy_tests": "passed with ordinary temporary files",
     "installation": false,
     "module_or_kernel_compilation": false,
     "source_archives": "Both corresponding-source archives must accompany every binary release",
     "whitespace_review": "Authored changes pass diff --check. Copied original license texts and verbatim source-notice excerpts retain upstream whitespace/EOF blank lines intentionally."
-  }
+  },
+  "numeric_package_revisions": "Seven packages rebuilt from original DEBs with standard numeric revisions; unchanged executable/data payload, modes, symlinks and hooks verified."
 }

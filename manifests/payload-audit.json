@@ -11,32 +11,32 @@
       "payload_files": 7423,
       "private_key_token_matches": 0,
       "files_containing_original_build_path": 5,
-      "note": "Original executable/data payload retained in +license1; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
-      "audit_scope": "Original binary/data payload; retained unchanged in +license1. Added documentation is verified separately."
+      "note": "Original executable/data payload retained in packaging-only; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
+      "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     },
     {
       "package": "linux-image-7.0.14-mbp14342p1",
       "payload_files": 6921,
       "private_key_token_matches": 0,
       "files_containing_original_build_path": 5141,
-      "note": "Original executable/data payload retained in +license1; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
-      "audit_scope": "Original binary/data payload; retained unchanged in +license1. Added documentation is verified separately."
+      "note": "Original executable/data payload retained in packaging-only; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
+      "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     },
     {
       "package": "mbp143-trial-drivers-7.0.14-mbp14342p1",
       "payload_files": 4,
       "private_key_token_matches": 0,
       "files_containing_original_build_path": 2,
-      "note": "Original executable/data payload retained in +license1; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
-      "audit_scope": "Original binary/data payload; retained unchanged in +license1. Added documentation is verified separately."
+      "note": "Original executable/data payload retained in packaging-only; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
+      "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     },
     {
       "package": "mbp143-t1-mode-result-7.0.14-mbp14342p1",
       "payload_files": 5,
       "private_key_token_matches": 0,
       "files_containing_original_build_path": 0,
-      "note": "Original executable/data payload retained in +license1; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
-      "audit_scope": "Original binary/data payload; retained unchanged in +license1. Added documentation is verified separately."
+      "note": "Original executable/data payload retained in packaging-only; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
+      "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     },
     {
       "package": "mbp143-t1-phase-trace-7.0.14-mbp14342p1",
@@ -44,24 +44,24 @@
       "payload_files": 6,
       "private_key_token_matches": 0,
       "files_containing_original_build_path": 0,
-      "note": "Original executable/data payload retained in +license1; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
-      "audit_scope": "Original binary/data payload; retained unchanged in +license1. Added documentation is verified separately."
+      "note": "Original executable/data payload retained in packaging-only; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
+      "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     },
     {
       "package": "mbp143-audio-resume-7.0.14-mbp14342p1",
       "payload_files": 8,
       "private_key_token_matches": 0,
       "files_containing_original_build_path": 0,
-      "note": "Original executable/data payload retained in +license1; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
-      "audit_scope": "Original binary/data payload; retained unchanged in +license1. Added documentation is verified separately."
+      "note": "Original executable/data payload retained in packaging-only; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
+      "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     },
     {
       "package": "mbp143-wifi-d0-7.0.14-mbp14342p1",
       "payload_files": 7,
       "private_key_token_matches": 0,
       "files_containing_original_build_path": 0,
-      "note": "Original executable/data payload retained in +license1; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
-      "audit_scope": "Original binary/data payload; retained unchanged in +license1. Added documentation is verified separately."
+      "note": "Original executable/data payload retained in packaging-only; added license documentation and metadata are recorded in licensing.json. No hooks executed. Original build-path strings can remain.",
+      "audit_scope": "Original binary/data payload; retained unchanged in packaging-only. Added documentation is verified separately."
     }
   ],
   "license_revision": "See licensing.json for original/revised hashes, unchanged payload checks and added license documentation."

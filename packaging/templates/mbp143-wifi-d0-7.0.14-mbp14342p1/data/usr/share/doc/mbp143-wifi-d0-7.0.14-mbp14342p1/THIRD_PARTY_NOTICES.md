@@ -31,7 +31,7 @@ is added here. The original host installer is retained as a text reference.
 
 ## Distribution corrections — 2026-11-05
 
-The `+license1` DEBs add copyright/source notices and complete license texts.
+The revised DEBs add copyright/source notices and complete license texts.
 Kernel images, modules, signatures and non-documentation data payloads are
 unchanged. Exact-version dependencies refer to the matching corrected packages.
 Each DEB carries `copyright`, `SOURCE-NOTICES.txt`, `SOURCE-DISTRIBUTION.md`,
