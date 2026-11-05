@@ -47,5 +47,6 @@
   "temporary_history_backup": "deleted at owner request; original private maintenance evidence and driver rollback backups unaffected",
   "release_comparison": "0.6 changes versus hardware-tested 0.5 are documented in release notes; local deployment state is kept in private maintenance records.",
   "release_documentation": "Describes changes from tested 0.5 to 0.6; local loaded/reboot status excluded",
-  "Touch_ID_reference": "Not working in this bundle; separate T1Bridge model-specific progress linked, reviewed 2026-11-04"
+  "Touch_ID_reference": "Not working in this bundle; separate T1Bridge model-specific progress linked, reviewed 2026-11-04",
+  "source_export": "git archive of a committed snapshot; local environment paths ignored and tracked credential names refused"
 }

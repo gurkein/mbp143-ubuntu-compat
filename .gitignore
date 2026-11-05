@@ -15,3 +15,9 @@ modules.order
 *.pfx
 signing_key.pem
 .env
+
+# Local direnv credentials and cache
+.envrc
+.envrc.*
+.env.*
+.direnv/

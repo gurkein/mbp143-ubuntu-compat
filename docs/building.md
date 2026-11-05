@@ -1,5 +1,19 @@
 # Build and verify without installing
 
+## Source release export
+
+Export source from a committed Git snapshot rather than the working directory:
+
+```sh
+python3 scripts/make-source-archive.py --update-assets
+```
+
+The exporter uses `git archive`, excludes untracked/ignored local files and
+refuses tracked local environment/credential paths. Keep `.envrc`, `.env*` and
+`.direnv/` private. Commit intended source changes before generating a release.
+
+## Build prerequisites
+
 Use Python 3, a C compiler, make, binutils, kmod and the exact target headers.
 The original kernel toolchain inventory is in `kernel/toolchain.txt`. Build in
 fresh writable output directories; never run `make install`, driver reload or a

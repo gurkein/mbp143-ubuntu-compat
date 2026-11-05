@@ -13,8 +13,8 @@
     },
     {
       "file": ".gitignore",
-      "bytes": 137,
-      "sha256": "593ba013855b25c93d94e20033fd4ba4735133c283088b8e21b874757411ab05"
+      "bytes": 207,
+      "sha256": "f5696e023577f7be3277e64d654f2768320ae5490dd744dc084efb71ae305a0d"
     },
     {
       "file": "CHANGELOG.md",
@@ -193,8 +193,8 @@
     },
     {
       "file": "docs/building.md",
-      "bytes": 3093,
-      "sha256": "2d3c9f5c7b684aac50a7b4d67d0e725a362f36996c65c59767c72a7f63d91082"
+      "bytes": 3525,
+      "sha256": "fd37dde70fd88206b0ce619e8ee37a444f1bd0b7cc5e3cba3a17187c187b0d74"
     },
     {
       "file": "docs/compatibility.md",
@@ -2198,8 +2198,8 @@
     },
     {
       "file": "manifests/validation.json",
-      "bytes": 3198,
-      "sha256": "52328237ba9962818353af25338e995cff7b4bc35d586b47b114ef08414c509f"
+      "bytes": 3326,
+      "sha256": "77a741f429a787dc59bef9b7127386075024c93d28c6091cff0eecb39c342db4"
     },
     {
       "file": "packaging/templates/linux-headers-7.0.14-mbp14342p1/DEBIAN/control",
@@ -2530,6 +2530,11 @@
       "file": "scripts/build-kernel.py",
       "bytes": 2231,
       "sha256": "807426f64d8078019436c2a97e4c6f67e9bb3f9a8d426ab2fa9fce57e60f78ca"
+    },
+    {
+      "file": "scripts/make-source-archive.py",
+      "bytes": 2685,
+      "sha256": "95343af4c110d67996bf93e3dfcabd93784564649342e2484e5a0621102bd1ea"
     },
     {
       "file": "scripts/verify-files.py",
