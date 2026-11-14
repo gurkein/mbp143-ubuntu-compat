@@ -1,10 +1,10 @@
 # Publication status
 
-## 2026-11-14 — Patched Ubuntu -43 in progress
+## 2026-11-14 — Patched Ubuntu -43 running
 
-A separate local `7.0.14-mbp14343p1` kernel image and headers (`7.0.0-43.43+mbp143.1`) have been built and installed, and the custom GRUB entry has been updated to select it. The kernel has not been booted. Matching DKMS signing and final initramfs refresh are pending; no -43 runtime or hardware acceptance is claimed.
+The maintainer confirms the current host is running custom `7.0.14-mbp14343p1` (`7.0.0-43.43+mbp143.1`) and reports successful suspend/resume testing on it. The test conditions, cycle count and device-by-device checks were not included with this update, so no broader coverage is inferred. See the [compatibility summary](compatibility.md).
 
-The published `v0.1.0-experimental.1` assets remain frozen and scoped to the earlier `7.0.14-mbp14342p1` configuration. This documentation update does not replace or alter those DEBs/source archives. A future -43 binary release requires completed matching package/signature/image verification, corresponding source archives and a new review of the resulting compatibility scope.
+The published `v0.1.0-experimental.1` assets remain frozen and scoped to the earlier `7.0.14-mbp14342p1` configuration. This documentation update does not replace or alter those DEBs/source archives. A future -43 binary release requires matching source archives and a separate review of its package contents and compatibility scope.
 
 Source publication reviewed on 2026-11-05 for
 `gurkein/mbp143-ubuntu-compat`. Git contains selected source trees, seven kernel

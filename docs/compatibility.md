@@ -1,8 +1,12 @@
 # Compatibility and acceptance scope
 
-Evidence date: 2026-11-04. Host model: MacBookPro14,3, Intel i7-7820HQ, Intel HD
-630 plus Radeon Pro 560, BCM43602, Cirrus CS8409 and Apple T1. Ubuntu 26.04.1,
-GNOME/Wayland; kernel release `7.0.14-mbp14342p1`.
+Evidence dates: detailed component matrix and controlled cycle data below are
+from 2026-11-04. On 2026-11-14, the maintainer confirmed the current machine is
+running patched `7.0.14-mbp14343p1` (`7.0.0-43.43+mbp143.1`) and reported that
+it passed suspend/resume tests. The conditions and component checks for those
+tests were not enumerated here. Host model: MacBookPro14,3, Intel i7-7820HQ,
+Intel HD 630 plus Radeon Pro 560, BCM43602, Cirrus CS8409 and Apple T1. Ubuntu
+26.04.1, GNOME/Wayland.
 
 | Component | Observed result | Qualification limit |
 |---|---|---|
@@ -18,8 +22,9 @@ GNOME/Wayland; kernel release `7.0.14-mbp14342p1`.
 | Camera | Normal-boot decoded 1280×720 MJPEG at 30 fps | No broad repeat-resume camera coverage |
 | USB Ethernet | Post-series I/O passed on both distinct downstream trees at 1 Gbit/s | Adapter absent during sleeps; one missing IPv4 default recovered by saved-profile reconnect |
 | Thunderbolt/xHCI | Two xHCIs reinitialize per cycle; later USB traffic passed | Native Thunderbolt/docked/broader protocols not qualified |
-| NVMe | Boot and per-cycle file fsync/read passed | Preserve existing D3cold protection |
+| NVMe | Boot and per-cycle file fsync/read passed in the historical 0.5 series | Preserve existing D3cold protection; the 2026-11-14 -43 report does not enumerate storage checks |
 | Battery reporting | UPower capacity-cache error corrected by restart; voltage dip unresolved | Percentage and battery behavior need separate qualification |
+| Patched kernel -43 | Current kernel per maintainer confirmation; suspend/resume tests reported as passed | Test count, dwell, power route and individual device coverage were not specified in this update; official generic -43 is a separate kernel configuration |
 
 ## Historical 0.5 five-cycle series
 
