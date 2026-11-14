@@ -1,5 +1,7 @@
 # MacBookPro14,3 Ubuntu compatibility
 
+**Kernel update (2026-11-14):** The public binary prerelease below remains scoped to the previously documented `7.0.14-mbp14342p1` kernel. A separate patched `7.0.14-mbp14343p1` (`7.0.0-43.43+mbp143.1`) image and headers have been built and installed locally, and the custom GRUB entry now points to that kernel. It has not yet been booted or hardware-verified; matching DKMS signing and final initramfs work remain pending. No -43 binaries are included in the current release. See [publication status](docs/publication-status.md).
+
 An experimental compatibility bundle for the 15-inch 2017 MacBook Pro
 (`MacBookPro14,3`) on Ubuntu 26.04.1, scoped to `7.0.14-mbp14342p1`.
 
