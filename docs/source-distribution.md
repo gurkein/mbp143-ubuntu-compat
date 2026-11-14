@@ -1,5 +1,7 @@
 # Source distribution for the binary packages
 
+For the current -43 release, use [the eight-package DKMS guide](../releases/kernel43/README.md). The following instructions describe the historical -42 release.
+
 Every release containing these DEBs must provide both source archives alongside
 them, with equivalent download access from the same release:
 

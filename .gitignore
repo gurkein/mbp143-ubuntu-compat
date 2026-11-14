@@ -21,3 +21,4 @@ signing_key.pem
 .envrc.*
 .env.*
 .direnv/
+/dist43/

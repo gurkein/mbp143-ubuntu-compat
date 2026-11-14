@@ -1,5 +1,7 @@
 # Build and verify without installing
 
+For the current -43 release, use [the eight-package DKMS guide](../releases/kernel43/README.md). The following instructions describe the historical -42 release.
+
 ## Source release export
 
 Export source from a committed Git snapshot rather than the working directory:

@@ -1,0 +1,16 @@
+Subject: Preserve Ubuntu -43 reset quirks and add reviewed Apple VRAM-zero predicate
+
+--- a/drivers/gpu/drm/amd/amdgpu/vi.c
++++ b/drivers/gpu/drm/amd/amdgpu/vi.c
+@@ -1425,6 +1425,11 @@
+ 	unsigned int i;
+ 	u32 clock_cntl, pc;
+ 
++	/* Reset switchable Apple GPUs whose firmware left VRAM at zero. */
++	if (adev->pdev->subsystem_vendor == PCI_VENDOR_ID_APPLE &&
++	    !(RREG32(mmMC_VM_FB_LOCATION) & MC_VM_FB_LOCATION__FB_BASE_MASK))
++		return true;
++
+ 	for (i = 0; i < ARRAY_SIZE(vi_reset_quirks); i++)
+ 		if (adev->pdev->device == vi_reset_quirks[i].device &&
+ 		    adev->pdev->subsystem_vendor == vi_reset_quirks[i].subsystem_vendor &&

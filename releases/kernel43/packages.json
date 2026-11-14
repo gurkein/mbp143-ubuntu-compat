@@ -1,0 +1,66 @@
+[
+  {
+    "file": "linux-headers-7.0.14-mbp14343p1_7.0.0-43.43+mbp143.1_amd64.deb",
+    "sha256": "ff669200727c9818505952ccf5ff2b8d5097a9b3b96095b48ea8d6d3c8bd5f92",
+    "Package": "linux-headers-7.0.14-mbp14343p1",
+    "Version": "7.0.0-43.43+mbp143.1",
+    "Architecture": "amd64",
+    "Depends": ""
+  },
+  {
+    "file": "linux-image-7.0.14-mbp14343p1_7.0.0-43.43+mbp143.1_amd64.deb",
+    "sha256": "94e3f698851ce4dd2ee64540551fdc801d8a035b0e53b952b4cd5ceda349c2d2",
+    "Package": "linux-image-7.0.14-mbp14343p1",
+    "Version": "7.0.0-43.43+mbp143.1",
+    "Architecture": "amd64",
+    "Depends": ""
+  },
+  {
+    "file": "mbp143-t1-dkms_0.8-1_all.deb",
+    "sha256": "11e5d6c2098ce572c29766957da5c71f9530b5252e2a2477f2bc31b4ba902f4e",
+    "Package": "mbp143-t1-dkms",
+    "Version": "0.8-1",
+    "Architecture": "all",
+    "Depends": "dkms (>= 3.0), build-essential, python3, kmod, linux-initramfs-tool"
+  },
+  {
+    "file": "mbp143-audio-dkms_0.1-3_all.deb",
+    "sha256": "42118ecbb148712c32fc0c6cdcb472f6d2d4d3ffe62757054343d3a6eda964af",
+    "Package": "mbp143-audio-dkms",
+    "Version": "0.1-3",
+    "Architecture": "all",
+    "Depends": "dkms (>= 3.0), build-essential, python3, kmod, linux-initramfs-tool"
+  },
+  {
+    "file": "mbp143-wifi-dkms_0.2-4_all.deb",
+    "sha256": "82dfd323c16994b131b2755c278ffa92c745dcd4fa4556c7f9828c154c63d0c2",
+    "Package": "mbp143-wifi-dkms",
+    "Version": "0.2-4",
+    "Architecture": "all",
+    "Depends": "dkms (>= 3.0), build-essential, python3, kmod, linux-initramfs-tool"
+  },
+  {
+    "file": "mbp143-sbs-dkms_0.1-1_all.deb",
+    "sha256": "c2ee46463fb2c12bed14ce850fe3a2ec2c59cbc8576eb8ea8d58092d256b0d98",
+    "Package": "mbp143-sbs-dkms",
+    "Version": "0.1-1",
+    "Architecture": "all",
+    "Depends": "dkms (>= 3.0), build-essential, python3, kmod, linux-initramfs-tool"
+  },
+  {
+    "file": "mbp143-thunderbolt-dkms_0.1-1_all.deb",
+    "sha256": "4401d4b724320f9d4379fb01273b16954e7e5c31cbbcc8ec0486941edf2e19d3",
+    "Package": "mbp143-thunderbolt-dkms",
+    "Version": "0.1-1",
+    "Architecture": "all",
+    "Depends": "dkms (>= 3.0), build-essential, python3, kmod, linux-initramfs-tool"
+  },
+  {
+    "file": "mbp143-amdgpu-dkms_0.3-1_all.deb",
+    "sha256": "af340cda78e109fce4a8e50808d79f276cd1b3b352d9ee69c656f832c9ed5049",
+    "Package": "mbp143-amdgpu-dkms",
+    "Version": "0.3-1",
+    "Architecture": "all",
+    "Depends": "dkms (>= 3.0), build-essential, python3, kmod, linux-initramfs-tool"
+  }
+]

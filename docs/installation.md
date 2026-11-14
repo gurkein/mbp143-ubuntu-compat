@@ -1,5 +1,7 @@
 # Installation prerequisites and package order
 
+For the current -43 release, use [the eight-package DKMS guide](../releases/kernel43/README.md). The following instructions describe the historical -42 release.
+
 Target only the documented MacBookPro14,3/Ubuntu/kernel combination. These are
 experimental exact-kernel overrides, not a general Ubuntu driver installer.
 The initial publication provides existing artifacts and manual review steps;

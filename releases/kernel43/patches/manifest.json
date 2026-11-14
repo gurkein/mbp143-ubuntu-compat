@@ -1,0 +1,62 @@
+[
+  {
+    "file": "0001-pci-config-accessible.patch",
+    "source": "https://github.com/torvalds/linux/commit/e18d1abc3bff0a24a5299f3c150ab9546e9439aa",
+    "notes": "PCI accessibility prerequisite; unchanged logic, line offsets only",
+    "sha256": "48c6e8c31e72f6b7762828b80433edec178d5f8295d4401cf4045821ceb50ced",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/pci/pci.c\nHunk #2 succeeded at 5083 (offset 13 lines).\n",
+    "applied_patch_sha256": "48c6e8c31e72f6b7762828b80433edec178d5f8295d4401cf4045821ceb50ced",
+    "resulting_files": {
+      "drivers/pci/pci.c": "0793126c31f68ba3457f6eb43f83d6efdc337cebd2b1ff1224abf7123d6c5db4"
+    }
+  },
+  {
+    "file": "0002-pci-save-v3.patch",
+    "source": "https://lists.openwall.net/linux-kernel/2026/10/19/3216",
+    "notes": "PCI v3 preserve saved configuration; line offsets only",
+    "sha256": "12a43337dce5b0a7ae0315203ebc84da1382ba84a928ba92ccada54c05af1126",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/pci/pci.c\n",
+    "applied_patch_sha256": "12a43337dce5b0a7ae0315203ebc84da1382ba84a928ba92ccada54c05af1126",
+    "resulting_files": {
+      "drivers/pci/pci.c": "be9cef007af1886621a22ac58ef323f5fb39beccffc68afc3aaf7ca687bae7de"
+    }
+  },
+  {
+    "file": "0003-pci-link-v3.patch",
+    "source": "https://lists.openwall.net/linux-kernel/2026/10/19/3211",
+    "notes": "PCI v3 reject inaccessible link status; line offsets only",
+    "sha256": "84de6e1334ad296af8bc5284246332fb27ed3076227eaed22c9e387326679881",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/pci/pci.c\nHunk #1 succeeded at 4563 (offset 13 lines).\nHunk #2 succeeded at 4579 (offset 13 lines).\nHunk #3 succeeded at 4604 (offset 13 lines).\nHunk #4 succeeded at 4839 (offset 13 lines).\n",
+    "applied_patch_sha256": "84de6e1334ad296af8bc5284246332fb27ed3076227eaed22c9e387326679881",
+    "resulting_files": {
+      "drivers/pci/pci.c": "2f6b76e579ecdd3cebf20f494bacf8c08105a04564c7ae523f54af0bc8161075"
+    }
+  },
+  {
+    "file": "0004-acpica-parent-bus.patch",
+    "source": "https://github.com/open-acpica/acpica/pull/1236",
+    "notes": "ACPICA PR 1236 head 578ce82251c75eb44dcc36ce5b16caa6bdb315c6; Linux naming adaptation",
+    "sha256": "d30945b24d903bcdcecd5fce92c7a7bdaaa1604afd98c804fdd4e3d272736882",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/acpi/acpica/hwpci.c\n",
+    "applied_patch_sha256": "d30945b24d903bcdcecd5fce92c7a7bdaaa1604afd98c804fdd4e3d272736882",
+    "resulting_files": {
+      "drivers/acpi/acpica/hwpci.c": "07a5ec259623d867c86a769da1d57888ec5908deaf959779f87bc922f56f79d0"
+    }
+  },
+  {
+    "file": "0005-apple-native-pme.patch",
+    "source": "https://lore.landau.one/lkml/20260924132859.24751-1-fbeltranmillalen%40gmail.com/",
+    "notes": "Apple native PME; same calculate_control change with concise comment",
+    "sha256": "d3fddbed422b92e76f61842f8267407ff49dce1630f4e03ea7709b0c6ddcc053",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/acpi/pci_root.c\n",
+    "applied_patch_sha256": "d3fddbed422b92e76f61842f8267407ff49dce1630f4e03ea7709b0c6ddcc053",
+    "resulting_files": {
+      "drivers/acpi/pci_root.c": "99f383361f4ddce02f9c20cb4c02a62f60ee4bdd955455761d01cfe76008cffa"
+    }
+  }
+]

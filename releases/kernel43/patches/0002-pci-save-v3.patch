@@ -1,0 +1,29 @@
+Subject: [LOCAL BACKPORT] PCI v3 preserve saved configuration; line offsets only
+Source: https://lists.openwall.net/linux-kernel/2026/10/19/3216
+
+--- a/drivers/pci/pci.c
++++ b/drivers/pci/pci.c
+@@ -1774,10 +1774,23 @@
+  * pci_save_state - save the PCI configuration space of a device before
+  *		    suspending
+  * @dev: PCI device that we're dealing with
++ *
++ * If the config space of @dev is not accessible, the previous snapshot is
++ * kept and reported as saved, as writing back the all-ones values read from
++ * such a device would corrupt it once it is accessible again.
++ *
++ * Return: 0 on success, or a negative errno if a capability could not be
++ * saved.
+  */
+ int pci_save_state(struct pci_dev *dev)
+ {
+ 	int i;
++
++	if (!pci_dev_config_accessible(dev, "save state")) {
++		dev->state_saved = true;
++		return 0;
++	}
++
+ 	/* XXX: 100% dword access ok here? */
+ 	for (i = 0; i < 16; i++) {
+ 		pci_read_config_dword(dev, i * 4, &dev->saved_config_space[i]);

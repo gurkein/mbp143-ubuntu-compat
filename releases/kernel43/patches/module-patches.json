@@ -1,0 +1,44 @@
+[
+  {
+    "file": "0006-amdgpu-vi-vram.patch",
+    "source": "https://www.mail-archive.com/amd-gfx%40lists.freedesktop.org/msg153399.html",
+    "notes": "VI v3 VRAM predicate; Ubuntu 42 has no intermediate reset quirk table to remove",
+    "sha256": "f41b71f5f5c8340acbec74776145ef991e7827f3458f59dc01f6abbb9c07752a",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/gpu/drm/amd/amdgpu/vi.c\n",
+    "applied_patch_sha256": "a94069e6784eb693886c7dab12c8a6b5e7f60cf50b8bde040fc1c853ddb3604a",
+    "resulting_files": {
+      "drivers/gpu/drm/amd/amdgpu/vi.c": "4570ebbeaeb36172c2ea1d47ff50f959e1fd496eba0d11b251275d2370c4fd51"
+    }
+  },
+  {
+    "file": "0007-thunderbolt-sxfp-v3.patch",
+    "source": "https://lkml.rescloud.iu.edu/hypermail/linux/kernel/2610.2/13908.html",
+    "notes": "SXFP v3: nhi.c instead of newer pci.c; pdev device accessor; nullable legacy ops",
+    "sha256": "6855f8a16309df23dc85252e5910b6f64b788af79fc6b16cb078b1fba594c526",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/thunderbolt/acpi.c\npatching file drivers/thunderbolt/domain.c\npatching file drivers/thunderbolt/nhi.h\npatching file drivers/thunderbolt/nhi.c\npatching file drivers/thunderbolt/switch.c\nHunk #1 succeeded at 4027 (offset 7 lines).\npatching file drivers/thunderbolt/tb.h\npatching file drivers/thunderbolt/tb_regs.h\n",
+    "applied_patch_sha256": "6855f8a16309df23dc85252e5910b6f64b788af79fc6b16cb078b1fba594c526",
+    "resulting_files": {
+      "drivers/thunderbolt/acpi.c": "140d30492986685a5e6ea9369c60b79a2ca909b47ae6c61c93135e102af04df0",
+      "drivers/thunderbolt/domain.c": "bdef8350f92b99f3d80465a877b0afe99d66af8a695dfd0adefd5ca4a1b5a24e",
+      "drivers/thunderbolt/nhi.h": "556d511a5dcc3f11c83eded7f3f172a44737b61aba3b1a9ad42539db4c292336",
+      "drivers/thunderbolt/nhi.c": "b67420da5e6c12289ca6e464591ea16c50d2efacbcdbe3071011ea1af157e69d",
+      "drivers/thunderbolt/switch.c": "0be46f310e732ea0dd81671a2f8b08a66842d98ada1335c3ab6349429fb9d923",
+      "drivers/thunderbolt/tb.h": "3bb9f136566cb5f07fed54d0a98dcbf8fd83947c74a8b9ce3d969cd1490771e5",
+      "drivers/thunderbolt/tb_regs.h": "b8bcf8d4ec6a73bd54f7adb41fd1c6b7f32f4e22a36dc61248ec1e07aeda256d"
+    }
+  },
+  {
+    "file": "0008-acpi-sbs-relative-capacity.patch",
+    "source": "https://lkml.iu.edu/2609.0/07583.html",
+    "notes": "ACPI SBS relative state of charge; Itay Shem-tov; upstream 7.4-rc1; line offsets only",
+    "sha256": "a4f113cb11c6eceae6c12bd3fe008a809e737a72da9671336ff1e7b77d8b8347",
+    "status": "applied with fuzz=0",
+    "application_log": "patching file drivers/acpi/sbs.c\n",
+    "applied_patch_sha256": "a4f113cb11c6eceae6c12bd3fe008a809e737a72da9671336ff1e7b77d8b8347",
+    "resulting_files": {
+      "drivers/acpi/sbs.c": "e8c3bf07343cf119b1eeb951b37879231af18c127c9db132f20dbadd153cb465"
+    }
+  }
+]

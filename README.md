@@ -1,79 +1,36 @@
 # MacBookPro14,3 Ubuntu compatibility
 
-**Kernel update (2026-11-14):** The maintainer confirms the machine is now running patched `7.0.14-mbp14343p1` (`7.0.0-43.43+mbp143.1`) and reports that it has passed suspend/resume tests. Test conditions and per-device coverage are not detailed in this update. The published binary prerelease below remains scoped to the earlier `7.0.14-mbp14342p1` configuration; no -43 binaries are included. See [compatibility scope](docs/compatibility.md) and [publication status](docs/publication-status.md).
+Experimental Ubuntu 26.04.1 compatibility packages for the 15-inch 2017
+MacBook Pro (MacBookPro14,3). The current host runs patched
+`7.0.14-mbp14343p1`, based on Ubuntu `7.0.0-43.43`. The maintainer confirms
+successful suspend/resume tests on this kernel.
 
-An experimental compatibility bundle for the 15-inch 2017 MacBook Pro
-(`MacBookPro14,3`) on Ubuntu 26.04.1, scoped to `7.0.14-mbp14342p1`.
+[Download the -43 experimental release](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.2.0-experimental.1).
 
-It brings together seven kernel backports, automatic T1/Touch Bar S3 handling,
-CS8409 audio recovery, BCM43602 D0 retention, and the source/build information
-behind six role-based DEBs with unchanged executable payloads. Imported work retains its authorship and
-licenses. This is an independent community project.
+The new layout contains **eight DEBs**: kernel image, matching headers and six
+source-only DKMS packages. Headers are required for DKMS compilation. The kernel
+retains five PCI/ACPI patches; AMDGPU, Thunderbolt and SBS corrections are now
+provided by DKMS, alongside T1/Touch Bar, CS8409 audio and BCM43602 Wi-Fi fixes.
+DKMS packages target the 7.0 series and use the standard APT/DKMS lifecycle.
 
-With the earlier T1 0.5 driver, five short, undocked, AC-powered S3 cycles passed consecutively in one boot
-through logind/systemd/NetworkManager. Speakers, microphone and Touch Bar were
-subsequently user-confirmed; USB Ethernet traffic passed on both downstream
-trees. This establishes a specific tested 0.5 configuration on one machine.
-Version 0.6 makes the same ordered S3 handling automatic for the supported model
-and removes once/repeat activation options. See the
-[changes from the tested version](docs/release-notes.md#changes-from-tested-t1-05).
-
-
-Known limits include external-display-at-boot initialization and battery
-telemetry. Wake logs record xHCI reinitialization; post-wake USB Ethernet traffic
-passed on both downstream trees. The maintainer also reports successful
-sleep/wake with peripherals attached, outside the controlled five-cycle series.
-Long-duration sleep and broader peripheral combinations remain to be characterized. Detailed observations are documented with their
-measured scope; unresolved causes are not attributed to individual drivers.
-
+- [Package versions and -43 installation](releases/kernel43/README.md)
+- [Exact package manifest](releases/kernel43/packages.json)
 - [Compatibility and measured scope](docs/compatibility.md)
-- [Known issues and test coverage](docs/known-issues.md)
-- [Intel/Radeon, EFI selection and Boot Camp](docs/graphics-and-efi.md)
-- [Building from source](docs/building.md)
-- [Installation prerequisites and order](docs/installation.md)
-- [Recovery and rollback](docs/rollback.md)
-- [Source provenance and local changes](docs/source-provenance.md)
-- [Publication status and remaining checks](docs/publication-status.md)
-- [Credits and collaboration with Codex](CREDITS.md)
-- [Licensing and third-party notices](THIRD_PARTY_NOTICES.md)
-- [Corresponding source and package revisions](docs/source-distribution.md)
+- [Known issues](docs/known-issues.md)
+- [Graphics, EFI and Boot Camp](docs/graphics-and-efi.md)
+- [Credits](CREDITS.md) and [licensing](LICENSE.md)
 
-## Repository and release contents
+The release includes eight DEBs, six complete DKMS source archives, the complete
+patched kernel source, a project source archive and SHA-256 metadata. Private
+signing keys and personalized firmware/NVRAM are excluded.
 
-[Download the experimental prerelease](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1). It provides six DEBs
-(five runtime packages plus optional build headers), both complete source
-archives and verified checksums.
+The detailed historical five-cycle series used T1 0.5 on -42. The -43 result is
+user-confirmed; cycle count, dwell and per-device coverage were not enumerated
+in this update. External-display-at-boot behavior, long-duration sleep and broad
+peripheral coverage retain the limits in the compatibility documentation.
 
-
-`kernel/` contains the patch series, configuration and public certificates.
-`drivers/` contains complete selected driver sources, including the T1 0.6 package source with tracing enabled and dated distribution notices. `scripts/` contains portable build
-and verification tools. `reference/maintenance/` preserves original local
-recipes as text, with their host-specific assumptions clearly separated.
-`boot/efi/` contains the original GPU-selector C source and a build-only recipe;
-the graphics/EFI guide explains its persistent effects and recovery boundaries.
-
-Release assets in `dist/` are intentionally excluded from Git: six selected
-DEBs, complete patched kernel source, a project-source archive, and checksums.
-Package names/versions/dependencies are in [the manifest](manifests/packages.json).
-These are the selected final artifacts from the current engineering work;
-they are not labeled as generally stable packages.
-
-## Offline checks
-
-These checks compile mocked C tests or use ordinary temporary files. They do
-not load modules, change boot policy or suspend the computer.
-
-```sh
-python3 scripts/verify-files.py
-python3 scripts/verify-licenses.py
-python3 scripts/verify-package-layout.py
-python3 scripts/verify-patches.py
-python3 tests/offline/test-t1-s3-automatic-offline.py
-python3 tests/offline/test-audio-pr220-offline.py
-python3 tests/policy/test-suspend-check-offline.py
-```
-
-Independent tools are MIT-licensed; GPL-containing recipes and combined
-actual-C tests retain GPL terms; new documentation is CC BY 4.0.
-Driver sources and imported patches retain their per-file licenses; see
-[LICENSE.md](LICENSE.md). No private module-signing key is included.
+`v0.1.0-experimental.1` remains available as the historical -42 binary/source
+snapshot. Existing `kernel/`, `drivers/`, build scripts and offline tests describe
+that snapshot. Current -43 patches, configuration and package metadata live in
+`releases/kernel43/`; complete current driver sources are accompanying release
+assets. Imported work retains its authorship and per-file licenses.

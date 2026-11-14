@@ -1,0 +1,144 @@
+From: Sergey Armodin <dolph-in@yandex.ru>
+Subject: [PATCH wireless-next v3] wifi: brcmfmac: pcie: restore FEM control pin mode on Apple BCM43602
+Source: https://lore-kernel.gnuweeb.org/all/20261101172011.1591620-1-dolph-in%40yandex.ru/
+
+On a MacBookPro14,3 with a BCM43602 (14e4:43ba, subsystem 106b:0173),
+5 GHz stops working once the chip has been reset to its power-on
+state, which happens over S3 while running on battery. Scans still
+report 5 GHz networks, but every attempt to join one fails: the
+firmware ends the join with a SET_SSID event with status
+BRCMF_E_STATUS_FAIL and no LINK event, which brcmfmac reports as
+WLAN_STATUS_AUTH_TIMEOUT, seen in wpa_supplicant as
+"CTRL-EVENT-ASSOC-REJECT ... status_code=16". A 2.4 GHz network could
+still be joined in that state. Reloading the driver, power cycling
+the slot or a secondary bus reset do not help; only a reboot of the
+machine does.
+
+On this board 5 GHz depends on bit 4 of the ChipCommon chipcontrol
+register, which Broadcom's sbchipc.h calls
+CCTRL4360_DISCRETE_FEMCTRL_MODE (front-end module control through the
+discrete FEM control pins). After a reboot the bit is set. brcmfmac
+never writes it and firmware 7.35.177.61 does not set it after a
+power-on reset, so presumably the platform firmware sets it at boot.
+The watchdog reset brcmfmac does on probe and remove preserves the
+bit, but a power-on reset clears it: power cycling the slot of a
+working system breaks 5 GHz the same way. Read with the driver unbound
+after the firmware has run, chipcontrol is 0x01400010 after a reboot
+and 0x01000000 after S3 on battery. Bit 22 is lost as well, but
+setting bit 4 alone before the firmware is downloaded is enough to
+make 5 GHz work again.
+
+A MacBookPro14,2 (subsystem 106b:0157) was reported to behave the same
+way, over S3 on AC power as well as on battery: with the driver
+unbound, chipcontrol read 0x01400090 after a boot, 0 after S3 and
+0x01000000 once the firmware had run again, and setting bit 4 from
+user space before loading the driver made 5 GHz work again.
+
+A MacBookPro13,3 (subsystem 106b:015a) was reported to lose the bit as
+well, but only over S3 off the charger: with the driver unbound,
+chipcontrol read 0x01400090 after a boot and 0 after S3 with the
+charger unplugged for some or all of the sleep, but kept bit 4 over S3
+on the charger. After S3 on battery, joins failed with status 16, and
+setting bit 4 from user space before loading the driver made 5 GHz
+work again.
+
+A MacBookPro11,5 (subsystem 106b:0152), on the other hand, boots with
+chipcontrol 0x0100000c, bit 4 clear, and 5 GHz works there, so not
+every Apple BCM43602 board uses this mode.
+
+Set the bit, if it is clear, before downloading the firmware, but only
+for the MacBookPro13,3, MacBookPro14,2 and MacBookPro14,3 subsystem
+IDs. Subsystem ID 0x0157 may not be unique to the MacBookPro14,2: it
+is also the ID that the module on the MacBookPro14,3 reports after a
+reset, until the platform firmware rewrites it to 0x0173, so other
+boards with the same module may match too. When the firmware is lost
+over a resume, brcmfmac removes and probes the device again, so this
+covers S3 as well as a driver reload.
+
+Tested on a MacBookPro14,3 with firmware 7.35.177.61: after power
+cycling the slot and after S3 on battery the driver sets the bit and
+5 GHz associates again; after a normal boot the bit is already set and
+nothing is written. Not tested with this patch on a MacBookPro13,3 or
+a MacBookPro14,2.
+
+Tested-by: Angel Lindo <angellindo@gmail.com> # MacBookPro14,3
+Signed-off-by: Sergey Armodin <dolph-in@yandex.ru>
+---
+v3:
+- Also set the bit on the MacBookPro13,3 (subsystem 106b:015a), from
+  chipcontrol readings reported for that board.
+- Add Angel Lindo's Tested-by from v2 on a MacBookPro14,3. His build
+  also carried other local patches, one of them keeping the card in D0
+  over suspend. His chipcontrol read 0x01000010 after each resume and
+  0x01400010 after a boot: bit 22 was lost, so the chip was still
+  reset, and bit 4 was set again by this patch. v3 only adds a
+  subsystem ID, so nothing changes on that board.
+
+v2:
+- Only set the bit on the MacBookPro14,2 and MacBookPro14,3 instead of
+  on all Apple BCM43602 boards, since a MacBookPro11,5 boots with the
+  bit clear and 5 GHz works there.
+- Describe the MacBookPro14,2 and MacBookPro11,5 reports.
+- Retested on the MacBookPro14,3 with a slot power cycle. The S3 result
+  is from v1, which does the same on this board.
+
+v1: https://lore.kernel.org/linux-wireless/20261018193950.14287-1-dolph-in@yandex.ru/
+v2: https://lore.kernel.org/linux-wireless/20261023143003.1307752-1-dolph-in@yandex.ru/
+
+ .../broadcom/brcm80211/brcmfmac/pcie.c        | 40 +++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
+index 17bae04c1..7c4d312fa 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
+@@ -726,9 +726,49 @@ static void brcmf_pcie_attach(struct brcmf_pciedev_info *devinfo)
+ }
+ 
+ 
++/* ChipCommon chipcontrol bit selecting the discrete FEM control pin mode */
++#define BRCMF_CC_CHIPCTL_4360_DISCRETE_FEMCTRL_MODE	BIT(4)
++
++/* On the Apple boards below, 5 GHz on the BCM43602 only works with the
++ * discrete FEM control pin mode selected in the ChipCommon chipcontrol
++ * register. The bit is set after a reboot, but a power-on reset of the chip
++ * (e.g. over S3) clears it and the firmware does not set it again. Restore
++ * it before the firmware is started. Other Apple boards may not use this
++ * mode (a MacBookPro11,5 boots with the bit clear), so they are left alone.
++ */
++static void brcmf_pcie_43602_apple_femctrl(struct brcmf_pciedev_info *devinfo)
++{
++	const struct pci_dev *pdev = devinfo->pdev;
++	u32 val;
++
++	if (pdev->subsystem_vendor != PCI_VENDOR_ID_APPLE)
++		return;
++
++	switch (pdev->subsystem_device) {
++	case 0x0157:	/* MacBookPro14,2, possibly others */
++	case 0x015a:	/* MacBookPro13,3 */
++	case 0x0173:	/* MacBookPro14,3 */
++		break;
++	default:
++		return;
++	}
++
++	brcmf_pcie_select_core(devinfo, BCMA_CORE_CHIPCOMMON);
++	val = READCC32(devinfo, chipcontrol);
++	if (val & BRCMF_CC_CHIPCTL_4360_DISCRETE_FEMCTRL_MODE)
++		return;
++
++	brcmf_dbg(PCIE, "chipcontrol 0x%08x, setting discrete FEM control mode\n",
++		  val);
++	WRITECC32(devinfo, chipcontrol,
++		  val | BRCMF_CC_CHIPCTL_4360_DISCRETE_FEMCTRL_MODE);
++}
++
+ static int brcmf_pcie_enter_download_state(struct brcmf_pciedev_info *devinfo)
+ {
+ 	if (devinfo->ci->chip == BRCM_CC_43602_CHIP_ID) {
++		brcmf_pcie_43602_apple_femctrl(devinfo);
++
+ 		brcmf_pcie_select_core(devinfo, BCMA_CORE_ARM_CR4);
+ 		brcmf_pcie_write_reg32(devinfo, BRCMF_PCIE_ARMCR4REG_BANKIDX,
+ 				       5);

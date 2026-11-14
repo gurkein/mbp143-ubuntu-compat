@@ -1,0 +1,77 @@
+[
+  {
+    "file": "linux-headers-7.0.14-mbp14343p1_7.0.0-43.43+mbp143.1_amd64.deb",
+    "bytes": 14696532,
+    "sha256": "ff669200727c9818505952ccf5ff2b8d5097a9b3b96095b48ea8d6d3c8bd5f92"
+  },
+  {
+    "file": "linux-image-7.0.14-mbp14343p1_7.0.0-43.43+mbp143.1_amd64.deb",
+    "bytes": 161552344,
+    "sha256": "94e3f698851ce4dd2ee64540551fdc801d8a035b0e53b952b4cd5ceda349c2d2"
+  },
+  {
+    "file": "mbp143-t1-dkms_0.8-1_all.deb",
+    "bytes": 90826,
+    "sha256": "11e5d6c2098ce572c29766957da5c71f9530b5252e2a2477f2bc31b4ba902f4e"
+  },
+  {
+    "file": "mbp143-t1-0.8-dkms-source.tar.gz",
+    "bytes": 43675,
+    "sha256": "50addd4a348675d7e2c0cc491b0291926c5e47a737fb9cc1d5c03464e1ea6279"
+  },
+  {
+    "file": "mbp143-audio-dkms_0.1-3_all.deb",
+    "bytes": 523198,
+    "sha256": "42118ecbb148712c32fc0c6cdcb472f6d2d4d3ffe62757054343d3a6eda964af"
+  },
+  {
+    "file": "mbp143-audio-0.1-dkms-source.tar.gz",
+    "bytes": 638972,
+    "sha256": "da3ab468904d8d33c721a132d4dc09ea1be200c0dfbb15d4047ebef5527a9d12"
+  },
+  {
+    "file": "mbp143-wifi-dkms_0.2-4_all.deb",
+    "bytes": 286164,
+    "sha256": "82dfd323c16994b131b2755c278ffa92c745dcd4fa4556c7f9828c154c63d0c2"
+  },
+  {
+    "file": "mbp143-wifi-0.2-dkms-source.tar.gz",
+    "bytes": 286337,
+    "sha256": "6ea500f460b0fdb70dff055fad77cfbaf14d33be79a0bbcfefdac4df8212cc3b"
+  },
+  {
+    "file": "mbp143-sbs-dkms_0.1-1_all.deb",
+    "bytes": 15842,
+    "sha256": "c2ee46463fb2c12bed14ce850fe3a2ec2c59cbc8576eb8ea8d58092d256b0d98"
+  },
+  {
+    "file": "mbp143-sbs-0.1-dkms-source.tar.gz",
+    "bytes": 7911,
+    "sha256": "8d38ea0ee217b700847452960bfa8c6ede00a871f63dada0340ca03764a117ad"
+  },
+  {
+    "file": "mbp143-thunderbolt-dkms_0.1-1_all.deb",
+    "bytes": 198296,
+    "sha256": "4401d4b724320f9d4379fb01273b16954e7e5c31cbbcc8ec0486941edf2e19d3"
+  },
+  {
+    "file": "mbp143-thunderbolt-0.1-dkms-source.tar.gz",
+    "bytes": 248369,
+    "sha256": "adf4c9ac43a3929ee17ee9c528351225c757e8e4e93735666784ce53fb864e6c"
+  },
+  {
+    "file": "mbp143-amdgpu-dkms_0.3-1_all.deb",
+    "bytes": 10971472,
+    "sha256": "af340cda78e109fce4a8e50808d79f276cd1b3b352d9ee69c656f832c9ed5049"
+  },
+  {
+    "file": "mbp143-amdgpu-0.3-dkms-source.tar.gz",
+    "bytes": 39008968,
+    "sha256": "a4f82d0247d5650deaab32b17fd56c4b043eaf8afa731d3f2efcf0bc8b84794d"
+  },
+  {
+    "file": "kernel-source-7.0.14-mbp14343p1.tar.gz",
+    "bytes": 336137937,
+    "sha256": "0697cb70b461ff222f15ffed465c7150fad130954b6a1ae4a1c979be42f7d463"
+  }
+]

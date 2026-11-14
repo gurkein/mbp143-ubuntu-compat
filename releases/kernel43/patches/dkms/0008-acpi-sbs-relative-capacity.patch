@@ -1,0 +1,14 @@
+Subject: [LOCAL BACKPORT] ACPI SBS relative state of charge; Itay Shem-tov; upstream 7.4-rc1; line offsets only
+Source: https://lkml.iu.edu/2609.0/07583.html
+
+--- a/drivers/acpi/sbs.c
++++ b/drivers/acpi/sbs.c
+@@ -320,7 +320,7 @@
+ 	{0x0a, SMBUS_READ_WORD, offsetof(struct acpi_battery, rate_now)},
+ 	{0x0b, SMBUS_READ_WORD, offsetof(struct acpi_battery, rate_avg)},
+ 	{0x0f, SMBUS_READ_WORD, offsetof(struct acpi_battery, capacity_now)},
+-	{0x0e, SMBUS_READ_WORD, offsetof(struct acpi_battery, state_of_charge)},
++	{0x0d, SMBUS_READ_WORD, offsetof(struct acpi_battery, state_of_charge)},
+ 	{0x16, SMBUS_READ_WORD, offsetof(struct acpi_battery, state)},
+ };
+ 

@@ -1,5 +1,7 @@
 # Recovery and rollback
 
+For the current -43 release, use [the eight-package DKMS guide](../releases/kernel43/README.md). The following instructions describe the historical -42 release.
+
 Keep a selectable official Ubuntu kernel and an independent backup before
 installation. Do not rely solely on a custom kernel entry if display or input
 fails. Detach the external display for the verified internal-panel boot workaround.

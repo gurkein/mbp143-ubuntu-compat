@@ -1,0 +1,44 @@
+Subject: [LOCAL BACKPORT] PCI accessibility prerequisite; unchanged logic, line offsets only
+Source: https://github.com/torvalds/linux/commit/e18d1abc3bff0a24a5299f3c150ab9546e9439aa
+
+--- a/drivers/pci/pci.c
++++ b/drivers/pci/pci.c
+@@ -721,6 +721,28 @@
+ 	return 0;
+ }
+ EXPORT_SYMBOL_GPL(pci_find_dvsec_capability);
++
++static bool pci_dev_config_accessible(struct pci_dev *dev, char *msg)
++{
++	u32 val;
++
++	/*
++	 * If a device's config space is inaccessible, reads typically
++	 * return ~0.  Since Device and Vendor ID are always ~0 for VFs,
++	 * check the Command and Status registers instead.
++	 *
++	 * N.B. This is racy because the device may become inaccessible
++	 * before the next access.
++	 */
++	pci_read_config_dword(dev, PCI_COMMAND, &val);
++	if (PCI_POSSIBLE_ERROR(val)) {
++		pci_warn(dev, "Device config space inaccessible; unable to %s\n",
++				msg);
++		return false;
++	}
++
++	return true;
++}
+ 
+ /**
+  * pci_find_parent_resource - return resource region of parent bus of given
+@@ -5048,6 +5070,9 @@
+ 	 * to a non-D0 state anyway.
+ 	 */
+ 	pci_set_power_state(dev, PCI_D0);
++
++	if (!pci_dev_config_accessible(dev, "save state"))
++		return;
+ 
+ 	pci_save_state(dev);
+ 	/*

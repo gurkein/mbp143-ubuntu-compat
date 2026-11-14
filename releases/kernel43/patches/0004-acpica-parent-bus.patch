@@ -1,0 +1,37 @@
+Subject: [LOCAL BACKPORT] ACPICA PR 1236 head 578ce82251c75eb44dcc36ce5b16caa6bdb315c6; Linux naming adaptation
+Source: https://github.com/open-acpica/acpica/pull/1236
+
+--- a/drivers/acpi/acpica/hwpci.c
++++ b/drivers/acpi/acpica/hwpci.c
+@@ -13,7 +13,6 @@
+ 
+ /* PCI configuration space values */
+ #define PCI_CFG_HEADER_TYPE_REG             0x0E
+-#define PCI_CFG_PRIMARY_BUS_NUMBER_REG      0x18
+ #define PCI_CFG_SECONDARY_BUS_NUMBER_REG    0x19
+ /* PCI header values */
+ #define PCI_HEADER_TYPE_MASK                0x7F
+@@ -358,17 +357,13 @@
+ 		return (AE_OK);
+ 	}
+ 
+-	/* Bridge: Get the Primary bus_number */
+-
+-	status = acpi_os_read_pci_configuration(pci_id,
+-						PCI_CFG_PRIMARY_BUS_NUMBER_REG,
+-						&pci_value, 8);
+-	if (ACPI_FAILURE(status)) {
+-		return (status);
+-	}
+-
++	/*
++	 * The parent bridge already supplied this bridge's bus number. Its
++	 * own primary-bus register can still read zero during D3cold -> D0,
++	 * before PCI configuration has been restored. Keep the inherited bus
++	 * so a PCI_Config operation region does not cache the wrong device.
++	 */
+ 	*is_bridge = TRUE;
+-	pci_id->bus = (u16)pci_value;
+ 
+ 	/* Bridge: Get the Secondary bus_number */
+ 

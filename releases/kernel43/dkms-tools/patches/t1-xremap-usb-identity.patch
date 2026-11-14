@@ -1,0 +1,35 @@
+--- a/apple-touchbar.c
++++ b/apple-touchbar.c
+@@ -1298,6 +1298,17 @@
+ 		.keybit = { [BIT_WORD(BTN_TOUCH)] = BIT_MASK(BTN_TOUCH) },
+ 		.driver_info = APPLETB_DEVID_TOUCHPAD,
+ 	},			/* Builtin USB touchpad device */
++	{
++		.flags = INPUT_DEVICE_ID_MATCH_BUS |
++			INPUT_DEVICE_ID_MATCH_VENDOR |
++			INPUT_DEVICE_ID_MATCH_PRODUCT |
++			INPUT_DEVICE_ID_MATCH_KEYBIT,
++		.bustype = BUS_USB,
++		.vendor = 0x1234,
++		.product = 0x5678,
++		.keybit = { [BIT_WORD(KEY_FN)] = BIT_MASK(KEY_FN) },
++		.driver_info = APPLETB_DEVID_KEYBOARD,
++	},			/* xremap's default uinput identity */
+ 	{ },			/* Terminating zero entry */
+ };
+ 
+@@ -1307,6 +1318,14 @@
+ 	struct device *dev = &inp_dev->dev;
+ 
+ 	if (inp_dev->id.bustype == BUS_SPI)
++		return true;
++
++	/* xremap forwards grabbed internal-keyboard events through uinput. */
++	if (inp_dev->id.bustype == BUS_USB &&
++	    inp_dev->id.vendor == 0x1234 && inp_dev->id.product == 0x5678 &&
++	    inp_dev->name &&
++	    (!strcmp(inp_dev->name, "xremap") ||
++	     !strncmp(inp_dev->name, "xremap pid=", 11)))
+ 		return true;
+ 
+ 	/* in kernel: dev && !is_usb_device(dev) */

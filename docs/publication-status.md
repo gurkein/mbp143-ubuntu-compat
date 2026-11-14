@@ -4,7 +4,7 @@
 
 The maintainer confirms the current host is running custom `7.0.14-mbp14343p1` (`7.0.0-43.43+mbp143.1`) and reports successful suspend/resume testing on it. The test conditions, cycle count and device-by-device checks were not included with this update, so no broader coverage is inferred. See the [compatibility summary](compatibility.md).
 
-The published `v0.1.0-experimental.1` assets remain frozen and scoped to the earlier `7.0.14-mbp14342p1` configuration. This documentation update does not replace or alter those DEBs/source archives. A future -43 binary release requires matching source archives and a separate review of its package contents and compatibility scope.
+The published `v0.1.0-experimental.1` assets remain frozen and scoped to the earlier `7.0.14-mbp14342p1` configuration. This documentation update does not replace or alter those DEBs/source archives. The new -43 release is published separately as `v0.2.0-experimental.1`, with eight DEBs, six DKMS source archives, full kernel source and project source. See [the current package guide](../releases/kernel43/README.md).
 
 Source publication reviewed on 2026-11-05 for
 `gurkein/mbp143-ubuntu-compat`. Git contains selected source trees, seven kernel
