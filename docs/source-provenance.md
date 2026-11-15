@@ -1,5 +1,9 @@
 # Source provenance
 
+For the current -43 kernel and seven DKMS families, see
+[all applied patches and their delivering packages](patches.md). The original
+source snapshots and -42 reconstruction details below are historical.
+
 The extraction checkpoint and source-relative file/hash mapping are recorded in
 `manifests/inputs.json`. New documentation supersedes stale status paragraphs
 from candidate READMEs; original dated observations remain historical evidence.

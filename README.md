@@ -15,6 +15,7 @@ DKMS packages target the 7.0 series and use the standard APT/DKMS lifecycle.
 An optional **ninth DEB**, i915 0.1-1, was added on November 15 for the
 external-attached boot fix, with its own source archive and `SHA256SUMS-i915`.
 
+- [All applied patches: purpose and delivering package](docs/patches.md)
 - [Package versions and -43 installation](releases/kernel43/README.md)
 - [Exact package manifest](releases/kernel43/packages.json)
 - [Compatibility and measured scope](docs/compatibility.md)

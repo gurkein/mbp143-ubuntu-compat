@@ -12,6 +12,9 @@
 | `mbp143-amdgpu-dkms` | `0.3-1` |
 | `mbp143-i915-dkms` (optional display add-on, November 15) | `0.1-1` |
 
+For every kernel/driver change, its purpose, provenance and delivering package,
+see the [complete applied-patch guide](../../docs/patches.md).
+
 ## Installation
 
 Download the eight DEBs from the release into a dedicated directory, alongside

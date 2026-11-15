@@ -1,5 +1,9 @@
 # Source-only DKMS driver migration
 
+This retained maintenance reference includes dated and superseded deployment
+paragraphs. Use the [current patch/package inventory](../../../docs/patches.md)
+for the -43 release and seven DKMS families, including the i915 add-on.
+
 Current policy supports automatic build/install throughout the **7.0** kernel
 series (`^7[.]0([.-]|$)`). Matching kernel/header installation invokes Ubuntu's
 standard DKMS hooks; no per-ABI permission is needed for -42, -43 or later 7.0

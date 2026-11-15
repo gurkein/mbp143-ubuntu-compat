@@ -1,5 +1,9 @@
 # Experimental compatibility snapshot
 
+This page describes the historical -42 snapshot. For the current -43 release
+and i915 add-on, use the [package guide](../releases/kernel43/README.md) and
+[complete patch inventory](patches.md).
+
 Published prerelease: [`v0.1.0-experimental.1`](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.1.0-experimental.1).
 
 For MacBookPro14,3 on Ubuntu 26.04.1 with exact kernel

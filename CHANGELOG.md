@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-15 — Complete applied-patch guide
+
+- Map all project-maintained kernel and driver changes to their published
+  packages, with the problem addressed, implementation and source provenance.
+- Cover built-in 0001–0005, DKMS 0006–0008, T1/audio/Wi-Fi/i915 changes, build
+  adaptations and separate host policies; distinguish superseded -42 layouts.
+- Link the maintained inventory from the main README, installation guide and
+  historical provenance/release references.
+
 ## 2026-11-15 — i915 release add-on
 
 - Publish unchanged `mbp143-i915-dkms 0.1-1` and complete corresponding DKMS
