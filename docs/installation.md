@@ -34,7 +34,11 @@ there is no automatic system/suspend activation script.
 The maintenance setup also required model-specific NVRAM, protected NVMe D3cold,
 `skip_acpi_power=1`, Intel-primary display configuration and exact-driver systemd
 readiness/runtime restoration. DEBs alone do not install that complete policy.
-Original local recipes are text references; review per-machine applicability,
+For the documented suspend setup, [install and verify the NVMe protection](nvme-d3cold.md)
+separately; the guide provides the reviewed helper, service and read-only checks.
+The subsequent [i915 four-lane display fix](i915-four-lanes.md) is documented
+separately and is not included in the eight-package -43 release.
+Other original local recipes are text references; review per-machine applicability,
 country regulatory settings and private adapter address before adapting them.
 
 The [graphics and EFI guide](graphics-and-efi.md) explains persistent GPU

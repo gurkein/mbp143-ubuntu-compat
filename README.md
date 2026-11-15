@@ -17,6 +17,8 @@ DKMS packages target the 7.0 series and use the standard APT/DKMS lifecycle.
 - [Exact package manifest](releases/kernel43/packages.json)
 - [Compatibility and measured scope](docs/compatibility.md)
 - [Known issues](docs/known-issues.md)
+- [NVMe protection required for the documented suspend setup](docs/nvme-d3cold.md)
+- [External-attached boot: i915 four-lane fix and availability](docs/i915-four-lanes.md)
 - [Graphics, EFI and Boot Camp](docs/graphics-and-efi.md)
 - [Credits](CREDITS.md) and [licensing](LICENSE.md)
 
@@ -26,8 +28,11 @@ signing keys and personalized firmware/NVRAM are excluded.
 
 The detailed historical five-cycle series used T1 0.5 on -42. The -43 result is
 user-confirmed; cycle count, dwell and per-device coverage were not enumerated
-in this update. External-display-at-boot behavior, long-duration sleep and broad
-peripheral coverage retain the limits in the compatibility documentation.
+in this update. On November 15, a separate i915 0.1-1 four-lane package passed
+one external-display-attached reboot with both screens active on custom -43.
+That package is not included in the eight-DEB release. Repeated/cold boots,
+official -43 runtime and new-i915 suspend remain unqualified. Long-duration
+sleep and broad peripheral coverage retain their documented limits.
 
 `v0.1.0-experimental.1` remains available as the historical -42 binary/source
 snapshot. Existing `kernel/`, `drivers/`, build scripts and offline tests describe

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-15 — NVMe installation and external-attached display documentation
+
+- Add the persistent NVMe D3cold helper and explicit installation/service checks;
+  clarify that the driver DEBs do not install required host suspend protection.
+- Document the separate i915 0.1-1 four-lane workaround, attribution and one
+  successful external-attached reboot on custom -43, with rollback boundaries.
+- Update display summaries while retaining unqualified runtime/PM limits and
+  explicitly distinguishing the unchanged eight-package release assets.
+
 ## Unreleased — experimental snapshot, 2026-11-04
 
 - Removed once/repeat activation modes in T1 0.6 for both local and public use;

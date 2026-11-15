@@ -1,7 +1,7 @@
 # Graphics, EFI selection and Boot Camp
 
 The tested configuration combines kernel/drivers with an existing firmware and
-desktop arrangement. Installing the six DEBs alone does not reproduce it.
+desktop arrangement. Installing the driver DEBs alone does not reproduce it.
 This document describes the MacBookPro14,3 maintenance setup; no new firmware
 write, GPU switch, reboot or hardware test was performed for publication.
 
@@ -19,10 +19,13 @@ Radeon available. Its default `install` mode hides Radeon and is unsuitable for
 this external-display setup. Stale udev tags also required cleanup in the
 original maintenance work.
 
-Native-PME boots with an external display attached sometimes left the internal
-panel unavailable. Verified workaround: boot with external display detached,
-then attach after login. A later lid close/open transition worked, but the
-firmware/kernel/display initialization cause remains unisolated.
+Boots with an external display attached previously left the internal panel
+unavailable. On 2026-11-15, the separate `mbp143-i915-dkms 0.1-1` four-lane
+workaround passed one external-attached normal reboot on custom -43, with both
+screens active. [Fix, provenance, package availability and limits](i915-four-lanes.md).
+Repeated/cold boots, official -43 runtime and PM with the new i915 remain
+unqualified. Booting detached and attaching after login remains a recovery
+option and the workaround for installations without this fix.
 
 ## Persistent GPU preference and the EFI helpers
 

@@ -5,9 +5,11 @@
   IPv4 default route. The maintainer reports successful sleep/wake with
   peripherals attached outside the controlled series; broader device combinations
   and native Thunderbolt coverage remain to be characterized.
-- **Display:** booting with an external display attached can leave the internal
-  panel unavailable. Verified workaround: boot with external display detached,
-  then attach after login. Keep Radeon available to Mutter for external output.
+- **Display:** the separate [i915 four-lane fix](i915-four-lanes.md) passed one
+  external-attached normal reboot on custom -43 on 2026-11-15. It is not included
+  in the eight-package release. Repeated/cold boots, official -43 runtime and PM
+  remain unqualified. Without the fix, boot detached and attach after login;
+  keep that recovery option and keep Radeon available to Mutter.
 - **Battery:** an incorrect UPower full-capacity cache produced an erroneous
   percentage; restarting it corrected the value without a corresponding energy
   gain. A voltage dip remains unexplained. Successful wake is not battery

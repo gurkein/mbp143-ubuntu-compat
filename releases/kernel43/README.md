@@ -34,6 +34,17 @@ That key is not distributed. Configure your own local DKMS signing/trust policy
 when required; these artifacts do not establish general Secure Boot support.
 The kernel does not enable CONFIG_MODULE_SIG_FORCE.
 
+## Additional system policy and display fix
+
+For the documented suspend setup, [install and verify persistent NVMe D3cold
+protection](../../docs/nvme-d3cold.md). It is required by the sleep readiness
+check and is not supplied by these DEBs.
+
+A subsequent [i915 four-lane workaround](../../docs/i915-four-lanes.md) passed
+one external-display-attached reboot on custom -43. Its separate
+`mbp143-i915-dkms 0.1-1` package is not included in this eight-package release;
+see the linked scope and availability notes.
+
 The packages do not install the complete host sleep/readiness, NVMe D3cold,
 model-specific NVRAM, graphics/EFI or keyboard policy. Review the corresponding
 project documentation before adapting those settings. Old maintenance runners,
