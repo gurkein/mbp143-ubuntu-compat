@@ -62,5 +62,15 @@
     "Version": "0.3-1",
     "Architecture": "all",
     "Depends": "dkms (>= 3.0), build-essential, python3, kmod, linux-initramfs-tool"
+  },
+  {
+    "file": "mbp143-i915-dkms_0.1-1_all.deb",
+    "bytes": 1969408,
+    "sha256": "1b9b3690e4bbb1df2f0029081b100fa7d08e2847f650a67edeae54b2b869778c"
+  },
+  {
+    "file": "mbp143-i915-0.1-dkms-source.tar.gz",
+    "bytes": 2767860,
+    "sha256": "cd3ac546983038745143253a718e5b39b0084b83f164d6481369c8fceac6f36a"
   }
 ]

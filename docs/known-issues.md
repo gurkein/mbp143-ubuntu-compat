@@ -6,8 +6,8 @@
   peripherals attached outside the controlled series; broader device combinations
   and native Thunderbolt coverage remain to be characterized.
 - **Display:** the separate [i915 four-lane fix](i915-four-lanes.md) passed one
-  external-attached normal reboot on custom -43 on 2026-11-15. It is not included
-  in the eight-package release. Repeated/cold boots, official -43 runtime and PM
+  external-attached normal reboot on custom -43 on 2026-11-15. It is available
+  as an optional ninth release DEB. Repeated/cold boots, official -43 runtime and PM
   remain unqualified. Without the fix, boot detached and attach after login;
   keep that recovery option and keep Radeon available to Mutter.
 - **Battery:** an incorrect UPower full-capacity cache produced an erroneous

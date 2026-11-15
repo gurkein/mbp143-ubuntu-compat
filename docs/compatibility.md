@@ -29,7 +29,8 @@ Intel HD 630 plus Radeon Pro 560, BCM43602, Cirrus CS8409 and Apple T1. Ubuntu
 The display rows include the 2026-11-15 i915 follow-up; other historical rows
 retain their original scope. See [the four-lane fix](i915-four-lanes.md) and
 [required NVMe suspend protection](nvme-d3cold.md). The i915 package is a
-separate maintenance addition, absent from the eight-package release.
+separate maintenance addition, published as an optional ninth release DEB with
+its own source archive and `SHA256SUMS-i915`.
 
 ## Historical 0.5 five-cycle series
 

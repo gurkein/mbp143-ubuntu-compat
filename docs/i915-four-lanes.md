@@ -40,11 +40,29 @@ on each target. Build success on official -43 does not establish runtime success
 
 ## Package availability and installation boundaries
 
-This is a subsequent maintenance addition. **The eight-package
-`v0.2.0-experimental.1` release does not include the i915 DEB or its source
-archive.** Its original assets/checksums are unchanged. This page records the
-fix and its validation; downloading the eight existing DEBs does not install it.
-There is no published i915 download in that release at this documentation update.
+Published on 2026-11-15 as an optional ninth DEB in
+[`v0.2.0-experimental.1`](https://github.com/gurkein/mbp143-ubuntu-compat/releases/tag/v0.2.0-experimental.1),
+alongside its complete source archive and a separate checksum file:
+
+- [mbp143-i915-dkms_0.1-1_all.deb](https://github.com/gurkein/mbp143-ubuntu-compat/releases/download/v0.2.0-experimental.1/mbp143-i915-dkms_0.1-1_all.deb)
+- [Complete DKMS source](https://github.com/gurkein/mbp143-ubuntu-compat/releases/download/v0.2.0-experimental.1/mbp143-i915-0.1-dkms-source.tar.gz)
+- [SHA256SUMS-i915](https://github.com/gurkein/mbp143-ubuntu-compat/releases/download/v0.2.0-experimental.1/SHA256SUMS-i915)
+
+The original eight-package assets and their `SHA256SUMS` remain unchanged.
+The i915 add-on is verified separately; downloading only the original eight
+DEBs does not install this fix. From a directory containing the add-on DEB,
+source archive and checksum file, after reviewing the recovery/signing notes:
+
+```sh
+sha256sum -c SHA256SUMS-i915
+sudo apt install --simulate ./mbp143-i915-dkms_0.1-1_all.deb
+sudo apt install ./mbp143-i915-dkms_0.1-1_all.deb
+```
+
+Matching kernel headers, DKMS build dependencies and disk space are required.
+The package compiles i915 locally; allow compilation time and monitor ordinary
+system thermal management. No exact duration is promised. Retain the source
+archive and upstream license notices with redistribution.
 
 The separately built package uses standard APT/dh-dkms hooks, local signing
 policy, depmod and initramfs handling. It ships no private keys or precompiled

@@ -10,12 +10,17 @@
 | `mbp143-sbs-dkms` | `0.1-1` |
 | `mbp143-thunderbolt-dkms` | `0.1-1` |
 | `mbp143-amdgpu-dkms` | `0.3-1` |
+| `mbp143-i915-dkms` (optional display add-on, November 15) | `0.1-1` |
 
 ## Installation
 
 Download the eight DEBs from the release into a dedicated directory, alongside
 SHA256SUMS and the source archives. Verify checksums before installing.
 Keep a working official Ubuntu kernel selectable for recovery.
+The optional i915 add-on has a separate source archive and `SHA256SUMS-i915`;
+see [its installation and recovery notes](../../docs/i915-four-lanes.md).
+The APT wildcard below also selects i915 if its DEB is in the same directory.
+Verify the add-on checksum separately before including it.
 
 ```sh
 sha256sum --ignore-missing -c SHA256SUMS
@@ -42,8 +47,9 @@ check and is not supplied by these DEBs.
 
 A subsequent [i915 four-lane workaround](../../docs/i915-four-lanes.md) passed
 one external-display-attached reboot on custom -43. Its separate
-`mbp143-i915-dkms 0.1-1` package is not included in this eight-package release;
-see the linked scope and availability notes.
+`mbp143-i915-dkms 0.1-1` package is now an optional ninth release DEB, supplied
+with complete source and a separate `SHA256SUMS-i915`. Original eight-package
+assets/checksums are unchanged; see the linked installation and recovery notes.
 
 The packages do not install the complete host sleep/readiness, NVMe D3cold,
 model-specific NVRAM, graphics/EFI or keyboard policy. Review the corresponding

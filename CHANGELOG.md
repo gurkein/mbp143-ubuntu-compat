@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-15 — i915 release add-on
+
+- Publish unchanged `mbp143-i915-dkms 0.1-1` and complete corresponding DKMS
+  source with `SHA256SUMS-i915` as an optional ninth DEB in the -43 release.
+- Add download/checksum/APT instructions; preserve original release assets and
+  the scoped external-attached boot acceptance and recovery limits.
+
 ## 2026-11-15 — NVMe installation and external-attached display documentation
 
 - Add the persistent NVMe D3cold helper and explicit installation/service checks;
